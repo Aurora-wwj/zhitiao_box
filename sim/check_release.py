@@ -3,6 +3,7 @@ import ast,hashlib,json,re,xml.etree.ElementTree as ET
 from pathlib import Path
 from fpga_check import check as check_fpga
 from zynq_check import check as check_zynq
+from report_check import check as check_report
 ROOT=Path(__file__).resolve().parents[1]
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
@@ -50,5 +51,6 @@ def main():
   assert not name.startswith('deployment.local'),str(p)
  check_fpga()
  check_zynq()
- print('PASS: final JSON / two complete cycles / source and HEX SHA / Keil inputs / FPGA identities and reports / licensed Zynq sources / historical archive / forbidden filenames')
+ check_report()
+ print('PASS: final export and screenshots / two complete cycles / source and HEX SHA / Keil inputs / FPGA identities and reports / licensed Zynq sources / historical archive / forbidden filenames')
 if __name__=='__main__':main()

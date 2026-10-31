@@ -5,4 +5,5 @@
 /build/fpga/reports/** -text
 /src/third_party/openocd/** -text
 *.bit binary
+*.png binary
 *.pdf binary

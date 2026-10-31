@@ -13,6 +13,7 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y iverilog tcl
       - run: python -B -m unittest discover -s sim -p test_fpga_release.py -v
       - run: python -B -m unittest discover -s sim -p test_zynq_release.py -v
+      - run: python -B -m unittest discover -s sim -p test_report_evidence.py -v
       - run: python -B -m unittest discover -s tests -v
         working-directory: src/agent
         env:

@@ -397,7 +397,7 @@
   "in_flight": null,
   "hardware_state_uncertain": false,
   "wall_started_at": 1793364587.471562,
-  "elapsed_s": 81.16940819999581,
+  "elapsed_s": 81.18937509999523,
   "report_path": "E:\\zhidiao-agent\\.zhidiao\\runs\\run_5d8e004954664f6c8f8ff0f85d31959b.json",
   "attempts": 2,
   "max_attempts": 3,

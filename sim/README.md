@@ -21,6 +21,10 @@ python -B -m unittest discover -s sim -p test_fpga_release.py -v
 
 在根目录运行 `python3.13 -B -m unittest discover -s sim -p test_zynq_release.py -v`。覆盖20份源码／许可的SHA与tar成员、来源清单、源码损坏拒绝、已有构建目录保护、只读SD文件检查及错误位流／缺失工具拒绝。脚本不执行上传ARM程序、不写板卡；完整OpenOCD本机编译是额外的构建验证，见build/openocd及data/test_summary.md。CI没有把本机编译或ARM上板写成自动通过。
 
+## 网页导出与截图证据
+
+运行 `python3.13 -B -m unittest discover -s sim -p test_report_evidence.py -v` 或 `python3.13 -B sim/report_check.py`。核对同run的两种来源记录、公开JSON／CSV／完整diff身份、网页三位小数及4张原PNG的SHA／尺寸，防止将PL-only图计作完整闭环。图片内数值为人工核对后登记，脚本不是OCR或新的真机测试。
+
 ## 历史脚本
 
 smoke/ 保存经过匿名化的四份 .py.txt 历史材料，不能直接执行；正式入口映射及已知缺陷见 smoke/README.md。正式离线测试仍在 src/agent/tests。

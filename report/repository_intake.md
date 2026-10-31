@@ -9,6 +9,8 @@
 后续已收到独立Agent、Project、历史smoke、FPGA四分包及Zynq_Linux_Test两分包：已迁入并核验Agent、最终STM32、运行JSON、HEX、FPGA源输入／v5位流／原始实现报告和可公开的OpenOCD源码／许可。不以旧Agent checkout代替上传版本。Linux测试包不是完整SD重建输入，原大SD包仍未读取。
 此文档是整理依据，不代表硬件重建或本次真机验证；当前缺件与验收范围统一见release_status.md。
 
+后续收到最终网页导出的zhidiao-run.json和photos.zip：前者与已归档run_5d8e…仅总elapsed_s差约0.02s，使用新导出作为主来源但不重复计数；后者含4张网页原图，没有报名介绍页原图或板卡实物照片。报名信息按对话截图转录，来源与图文对应见data/report_sources.json。
+
 ## 依据与优先级
 
 AMD 自主选题 3.3.5.1：完整源码、仿真／验证、资源／时序、上板脚本和实测对比、可复现构建。

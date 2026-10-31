@@ -20,5 +20,9 @@
     "bytes": 37273220,
     "sha256": "6cf4aaf320c9aaaae11b938725f0e9666cafa9fe6a97f8dc1a9a5159c1084b11",
     "parts": 2
+  },
+  "photos_zip": {
+    "bytes": 2080994,
+    "sha256": "b35f07dce1f2a762e1cd161b69325f5a870ffddbd0a4ad09908a2cee3d59b98c"
   }
 }

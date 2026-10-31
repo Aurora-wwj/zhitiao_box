@@ -1,5 +1,7 @@
 # 软件与发布检查
 
+以下按资料接收批次保留历史记录；当前网页证据补充结果见末尾，不把历史测试数或硬件运行重复统计。
+
 上传最终运行报告：真实两轮四接口 PASS，周期／freshness／UART健康与源码及HEX身份已由 sim/check_release.py 独立核对。
 本次整理后 Linux Python 3.13 离线全量：457 tests in 24.324s，OK；sim/check_release.py 检查通过。未调用在线 API。Windows已有438项全量反馈和LED28项截图是历史证据，不能代替本次整理后执行。
 本地不包含Keil、Vivado、板卡；未重编译固件／FPGA或重跑真机。当前缺件与后续FPGA接收状态见report/release_status.md。
@@ -37,3 +39,13 @@ Python3.13根sim现有15项回归全部通过（6 FPGA、5分包、4 Zynq），�
 未执行上传ARM ELF、ARM交叉构建、Windows／Keil／Vivado重建或本轮板卡测试。没有把PC编译成功等同Zynq OpenOCD／USB／SWD通过；Linux／BOOT完整构建配方和冷启动验收仍缺。
 
 暂存区20份Zynq源码／许可SHA匹配；逐项检查Git暂存树未包含排除清单中的原ELF／镜像／HEX／整个ZIP或私钥文件名／私钥块。从Git暂存树导出的干净副本再次运行sim/check_release.py通过，原STM32／HEX／FPGA身份及本轮源码归档都保持一致。
+
+## 最终网页导出与原图补充（本轮）
+
+网页zhidiao-run.json与此前原件逐字段比较，仅总elapsed_s约差0.0199669s，仍为同一run_5d8e…；公开JSON沿用原路径脱敏并更新该值。4张原PNG逐字节复制、记录SHA；报名页原图未包含在ZIP，报名信息按对话截图转录。完整diff连同无关注释变动保留，截图原精度与网页三位小数对应，PL-only图独立标注。
+
+Linux Python3.13.5 Agent全量：459 tests in 24.442s，OK，无skip；含2项新增JavaScript回归，实际执行内联前端脚本，确认当前／历史ID、轮次与JSON互不混淆、选择历史不发起执行请求。根sim：18 tests in 0.598s，OK，无skip，含Icarus12.0实际RTL仿真及3项新增证据回归；坏图片／CSV、错误PL-only归类和不完整diff均拒绝。命令与结果摘录见final_evidence_verification.txt。
+
+sim/check_release.py通过。设计初稿Markdown／PDF同步更新为5页，表格和4张原图已实际渲染检查。Agent执行／审批逻辑、黄金STM32 main.c／HEX与v5位流未改；这不是新一次Windows／Keil／Vivado或真机测试。没有调用在线模型或板端工具。
+
+暂存区4张PNG与原图SHA一致，STM32清单和14项FPGA文件SHA均保持。Git暂存树导出的干净副本通过sim/check_release.py及2项前端JavaScript测试，确认行尾归一化没有破坏证据或报告标识行为。

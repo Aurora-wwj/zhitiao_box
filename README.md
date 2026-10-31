@@ -1,6 +1,10 @@
-# 智调盒 — AI 上板摆渡站
+# 智调盒——AI上板摆渡站
 
 智调读 tiáo / ZHITIAO。基于 FPGA 独立物理反馈的 STM32 AI 闭环调试系统。
+
+报名方向：**AMD-自主选题（初级）**。报名所选平台类别覆盖AMD 7 Series／Zynq-7000／UltraScale系列，实际使用ALINX AX7Z020（xc7z020clg400-2），目标板STM32G431。报名简介及已验证范围见[项目介绍](report/project_overview.md)。
+
+面向AI辅助硬件开发的“最后一米”：通过网络连接PC Agent，以USB／SWD完成烧录与复位，以UART和PL采集真实反馈。研发调试、远程协作、FAE支持与共享实验室是应用方向，当前实证是STM32 GPIO周期调节。
 
 自然语言目标 → Agent → 确定性 Controller → build / flash / UART / PL → FAIL 证据 → AI diff → 人工批准 → 重建验证 → PASS。
 
@@ -8,9 +12,13 @@
 
 最终真实四接口两轮 run_5d8e004954664f6c8f8ff0f85d31959b：**601.7169 ms FAIL → HAL_Delay 300 改为 500 → 1001.08682 ms PASS**，目标完整周期 1000±50 ms。两轮均有四工具、fresh_edges=2；第一轮 partial_tail=true、truncated=false，未阻止 PL。
 
-原始最终报告、发布 main.c 与第二轮 HEX 已做 SHA 一致性核对。见 [公开 JSON](data/final_run_sanitized.json)、[测量表](data/measurements.csv)、[证据说明](report/test_evidence.md)。这不是本次云端重新进行的板卡测试。
+原始最终报告、发布main.c与第二轮HEX已做SHA一致性核对。主证据现采用用户最后上传的网页导出JSON的脱敏副本；与此前归档是同一次run，仅导出总耗时相差约0.02秒，不是新增实测。见[公开JSON](data/final_run_sanitized.json)、[测量表](data/measurements.csv)、[证据说明](report/test_evidence.md)及[来源清单](data/report_sources.json)。这不是本次云端重新进行的板卡测试。
 
-**已整理 Agent、STM32、最终 JSON/HEX，以及 FPGA RTL／BD／XDC／工程、v5 bit 和 baseline/final 原始实现报告。** 另已接收两分包的 Zynq Linux测试材料，加入带许可的OpenOCD／libusb源码、构建入口及板端文件检查。含私钥的镜像和来源不完整的二进制不原样发布。FPGA四项外部IP仍按依赖交付，完整BOOT／Linux构建输入、实际硬件重建、现场照片与正式主报告仍待补齐；当前不是完整比赛提交包。见 [发布状态](report/release_status.md)。
+![真实四接口两轮实测：601.717ms FAIL到1001.087ms PASS](data/screenshots/ui_four_tool_pass.png)
+
+原图显示三位小数，与JSON原精度一致；四张原图及场景说明见[截图索引](data/screenshots/README.md)。其中1000.192ms单轮图明确跳过UART，单独作为PL-only参考，不计入完整四接口闭环。
+
+**已整理Agent、STM32、网页JSON／四张实测截图／最终HEX，以及FPGA RTL／BD／XDC／工程、v5 bit和baseline/final原始实现报告。** 另已加入Zynq测试包中带许可的OpenOCD／libusb源码、构建入口及板端文件检查。含私钥的镜像和来源不完整的二进制不原样发布。FPGA四项外部IP仍按依赖交付，完整BOOT／Linux构建输入、实际硬件重建、板卡／接线实物照片与正式主报告仍待补齐；当前不是完整比赛提交包。见[发布状态](report/release_status.md)。
 
 v5 SHA 与指导一致。原 final 报告 LUT 7274、FF 12083、BRAM 20.5、DSP 0、IOB 44，WNS 0.709 ns、TNS 0。报告仍含未约束路径等 HIGH 警告，不能据此声称全设计时序验收完成；[原件与比较](report/fpga_evidence.md) 保留这些限制。
 
@@ -73,7 +81,7 @@ AX7Z020（Zynq-7000）＋STM32G431＋ST-Link/V2。PA1→M18 为周期观测；PA
 
 ## 文档与许可
 
-[Skill 索引](skill/README.md) · [设计初稿](report/design_report.md) · [优化与失败分析](report/optimization_notes.md) · [验证总结](data/test_summary.md)。src/agent/docs 中日期文档为开发历史，不替代本页当前状态。
+[Skill 索引](skill/README.md) · [设计初稿](report/design_report.md) · [设计初稿PDF](report/design_report.pdf) · [优化与失败分析](report/optimization_notes.md) · [验证总结](data/test_summary.md)。src/agent/docs 中日期文档为开发历史，不替代本页当前状态。
 
 [Zynq测试包核对](report/zynq_intake.md) · [OpenOCD构建](build/openocd/README.md) · [PL加载与检查](board/zynq/pl_preparation.md)。已确认fixed镜像有静态IP配置，但未把配置存在当作冷启动已验收；内嵌SSH主机私钥的镜像不公开。
 

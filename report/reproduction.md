@@ -21,6 +21,8 @@ OpenOCD0.12.0安装在/sd/tools/openocd/bin/openocd，scripts为/sd/tools/openoc
 在 src/agent 复制 deployment.example.json 为 deployment.local.json，修改所有本机绝对路径与 SSH 路径；确认 v5 已加载。运行 deployment-check --preview-only，再按提示执行实际检查；real-build／real-flash／real-log／real-test 使用现有 CLI --help 的参数，均保留审批。
 启动 start_ui.bat，选择配置、工程、Core/Src/main.c、模型与 Key，勾选 UART。批准任务范围与每个 diff，确认每轮 audit 四工具齐全，PASS 来自 PL。导出新的报告，不能重放 data/ 中的历史审批。
 
+报告区分别标注当前运行ID与历史所选ID：轮次表、审计JSON及“下载当前JSON”对应当前运行；历史选择只影响下载所选报告／恢复入口，不切换当前结果展示。资料中的旧截图可能尚无这些标签，按data/screenshots/README.md的说明解读。复现前述实测案例要保留UART启用；PL-only基线截图不等于四接口验收。
+
 ## 验证边界
 
 云端软件测试不等于 Windows Keil／Vivado 重建或本轮上板验证。Vivado 实际版本 2017.4，较指南推荐版本旧；正式报告需解释差异。重建步骤见 ../build/fpga/README.md，外部IP清单见 ../src/fpga/README.md。已提供Tcl，尚待真实Vivado执行并保存新构建记录。

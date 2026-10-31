@@ -1,0 +1,169 @@
+{
+  "run_id": "run_5d8e004954664f6c8f8ff0f85d31959b",
+  "unique_full_loop_runs": 1,
+  "primary_source": {
+    "kind": "user_uploaded_web_export",
+    "original_name": "zhidiao-run.json",
+    "bytes": 85178,
+    "sha256": "425db60b3ecf61e5616369a245de05c1005fbd19a08a86d734526a0b0202154b",
+    "raw_published": false,
+    "public_path": "data/final_run_sanitized.json",
+    "public_sha256": "6a4ff7c3ca3c44f17c4c9d48f9203423a2479e82a94979540a484cf8545a55a4",
+    "elapsed_s": 81.18937509999523,
+    "anonymization": "Reuse existing field-level path anonymization; the only raw-source change from the previous snapshot is elapsed_s. Numeric measurements, audit, approvals and full source diff retained. Historical approvals cannot be replayed."
+  },
+  "previous_source": {
+    "kind": "agent_archive_saved_report",
+    "source_member": "zhidiao-agent/.zhidiao/runs/run_5d8e004954664f6c8f8ff0f85d31959b.json",
+    "sha256": "c33c0993cd4e1f9baeafc2f22c1147ee1878d55685b96652b057f7195ffe6a0a",
+    "previous_public_sha256": "1a41199bdec1f8e46937586fc7b32060c97f3d1790b70f68db363fe0b46dd124",
+    "elapsed_s": 81.16940819999581
+  },
+  "comparison": {
+    "same_run": true,
+    "changed_raw_json_pointers": [
+      "/elapsed_s"
+    ],
+    "elapsed_delta_s": 0.019966899999417365,
+    "measurement_or_tool_changes": false
+  },
+  "goal": {
+    "gpio": "PA1",
+    "expected_period_ms": 1000,
+    "tolerance_ms": 50
+  },
+  "cycles": [
+    {
+      "attempt": 1,
+      "tool_names": [
+        "build_firmware",
+        "flash_firmware",
+        "read_target_log",
+        "run_hardware_test"
+      ],
+      "all_tools_success": true,
+      "period_ms": 601.7169,
+      "high_ms": 300.36864,
+      "error_ms": 398.2831,
+      "passed": false,
+      "fresh_edges": 2,
+      "uart_partial_tail": true,
+      "uart_truncated": false,
+      "displayed_period_ms": "601.717",
+      "displayed_error_ms": "398.283"
+    },
+    {
+      "attempt": 2,
+      "tool_names": [
+        "build_firmware",
+        "flash_firmware",
+        "read_target_log",
+        "run_hardware_test"
+      ],
+      "all_tools_success": true,
+      "period_ms": 1001.08682,
+      "high_ms": 500.07403,
+      "error_ms": 1.0868199999999888,
+      "passed": true,
+      "fresh_edges": 2,
+      "uart_partial_tail": false,
+      "uart_truncated": false,
+      "displayed_period_ms": "1001.087",
+      "displayed_error_ms": "1.087"
+    }
+  ],
+  "source_edit": {
+    "path": "data/final_source_change.diff",
+    "sha256": "c1711a187e304da90276002cc5fd8d3c837bb9194931131e6405f06c0415a4a6",
+    "original_diff_utf8_sha256": "be9e80b71fe94a9a3d32c554fece757b0092df1c1a15238d7261a8de4fbffc62",
+    "line_endings": "public diff normalized to LF; golden main.c unchanged",
+    "includes_unrelated_comment_change": true,
+    "before_source_sha256": "7a9f900ade8d8564e51d4053d38edc1fd31cc227f87bb76ab63029567d92dc54",
+    "after_source_sha256": "79f6deb58231d3bc2cef887154c136a74e0da9e839a26ea41fd9468e205633cd"
+  },
+  "screenshots": {
+    "archive_original_name": "photos.zip",
+    "archive_sha256": "b35f07dce1f2a762e1cd161b69325f5a870ffddbd0a4ad09908a2cee3d59b98c",
+    "files": [
+      {
+        "source_member": "photos/1.png",
+        "path": "data/screenshots/ui_four_tool_pass.png",
+        "bytes": 593890,
+        "sha256": "76ff3798c4884ff880f2a95201645c8087a0b3cd6ce99b29577d472a4d7bafe3",
+        "width": 1440,
+        "height": 852,
+        "altered": false,
+        "scenario": "four_tool_fail_edit_pass",
+        "evidence_scope": "full_loop",
+        "associated_run_id": "run_5d8e004954664f6c8f8ff0f85d31959b",
+        "displayed_period_ms": [
+          "601.717",
+          "1001.087"
+        ],
+        "association_basis": "user supplied context and visually inspected screenshot; no automated OCR or signed image binding"
+      },
+      {
+        "source_member": "photos/2.png",
+        "path": "data/screenshots/ui_pl_only_baseline.png",
+        "bytes": 488652,
+        "sha256": "6ea10263ac30306191499e4742f1b4cb45ea096efea6081c05179eb523b6e828",
+        "width": 1440,
+        "height": 852,
+        "altered": false,
+        "scenario": "pl_only_baseline_already_passed",
+        "evidence_scope": "screenshot_only",
+        "associated_run_id": null,
+        "displayed_period_ms": [
+          "1000.192"
+        ],
+        "association_basis": "user supplied context and visually inspected screenshot; no automated OCR or signed image binding"
+      },
+      {
+        "source_member": "photos/3.png",
+        "path": "data/screenshots/ui_uart_results.png",
+        "bytes": 528201,
+        "sha256": "ed1d31abaca75911e02ae98d6f9d003a5f86860ae997a17ebc6e660602d9b2b4",
+        "width": 1440,
+        "height": 852,
+        "altered": false,
+        "scenario": "four_tool_uart_and_rounds",
+        "evidence_scope": "full_loop",
+        "associated_run_id": "run_5d8e004954664f6c8f8ff0f85d31959b",
+        "displayed_period_ms": [
+          "601.717",
+          "1001.087"
+        ],
+        "association_basis": "user supplied context and visually inspected screenshot; no automated OCR or signed image binding"
+      },
+      {
+        "source_member": "photos/4.png",
+        "path": "data/screenshots/ui_report_audit.png",
+        "bytes": 468939,
+        "sha256": "8e954c291e949cff5661d5889e814eb3b4cb512d9ed0c377a1d07342c3844fac",
+        "width": 1440,
+        "height": 852,
+        "altered": false,
+        "scenario": "current_report_with_separate_history_selection",
+        "evidence_scope": "full_loop",
+        "associated_run_id": "run_5d8e004954664f6c8f8ff0f85d31959b",
+        "displayed_period_ms": [
+          "601.717",
+          "1001.087"
+        ],
+        "association_basis": "user supplied context and visually inspected screenshot; no automated OCR or signed image binding",
+        "displayed_history_selection": "run_217870f74053439bb265c9368ed4fd0a",
+        "displayed_current_report_id": "run_5d8e004954664f6c8f8ff0f85d31959b"
+      }
+    ]
+  },
+  "registration": {
+    "source": "user supplied inline registration screenshot; transcribed, not independently verified with contest website",
+    "original_image_file_received": false,
+    "manufacturer": "AMD",
+    "selected_platform": "AMD 7 Series FPGA、Zynq-7000 SoC、UltraScale或UltraScale+系列器件",
+    "direction": "AMD-自主选题（初级）",
+    "project_name": "智调盒——AI上板摆渡站",
+    "actual_board": "ALINX AX7Z020",
+    "actual_device": "xc7z020clg400-2"
+  }
+}
