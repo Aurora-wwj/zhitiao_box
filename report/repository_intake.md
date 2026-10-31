@@ -6,8 +6,8 @@
 
 已完整读取 AMD 2026 选题指南、仓库整理指导、Skill 小修正三份 PDF。
 上传的代码合集 ZIP 超过当前附件工具 32 MiB 单文件传输上限，未成功下载，工作区亦无该合集副本。
-后续已收到独立 Agent 与 Project ZIP，已迁入并核验 Agent、最终 STM32、运行 JSON 和 HEX；FPGA、bitstream 和实现报告仍待补。不以旧 Agent checkout 代替上传版本。
-此文档仅是本地整理依据，不代表完成发布、重建或真机验证；后续将按 release_status.md 显著标注缺件，发布已收到的整理内容。
+后续已收到独立Agent、Project、历史smoke及FPGA四分包：已迁入并核验Agent、最终STM32、运行JSON、HEX、FPGA源输入／v5位流／原始实现报告。不以旧Agent checkout代替上传版本。SD仍无可读副本。
+此文档是整理依据，不代表硬件重建或本次真机验证；当前缺件与验收范围统一见release_status.md。
 
 ## 依据与优先级
 
@@ -46,7 +46,7 @@ AMD 自主选题 3.3.5.1：完整源码、仿真／验证、资源／时序、�
 
 ## 取得合集后必须核对的黄金证据
 
-以下值来自整理指导，尚未对合集中的原件独立核验：
+以下值来自整理指导，现已分别对Agent／STM32及FPGA独立分包原件核验：
 
 - 最终 main.c SHA：79f6deb58231d3bc2cef887154c136a74e0da9e839a26ea41fd9468e205633cd。
 - v5 bit SHA：fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6。
@@ -56,6 +56,8 @@ AMD 自主选题 3.3.5.1：完整源码、仿真／验证、资源／时序、�
 - desktop.py 的真实 UI timeout_s=120，以及最终 runtime 配置、LED 与 UART 地址是否一致。
 
 先验证这些内容，再更新主 README 为最终真实通过。PDF 的陈述不能替代原始运行 JSON、源码和实现报告。
+
+FPGA补充检查发现的边界也已公开：final报告有未约束路径等HIGH警告，正WNS不等于完整时序覆盖；原RTL启动HIGH的首次值可能含残段。位流未重建、黄金RTL未改；详情见fpga_evidence.md及src/fpga/README.md。
 
 ## 发布前检查
 

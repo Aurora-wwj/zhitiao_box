@@ -1,0 +1,117 @@
+{
+  "archive": "fpga_zip",
+  "files": [
+    {
+      "source": "zhidiao_measure_ax7z020/linux_ov5640.srcs/sources_1/new/zhidiao_measure_core.v",
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/sources_1/new/zhidiao_measure_core.v",
+      "original_sha256": "8894480ed22a6eb89e9b6613e35b4df0a633f904a5fadf81bf08f003ad14d455",
+      "public_sha256": "8894480ed22a6eb89e9b6613e35b4df0a633f904a5fadf81bf08f003ad14d455",
+      "bytes": 5343,
+      "changes": "none"
+    },
+    {
+      "source": "zhidiao_measure_ax7z020/linux_ov5640.srcs/sources_1/bd/system/system.bd",
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/sources_1/bd/system/system.bd",
+      "original_sha256": "47cf28ed6d8c51664bea705e5c67b8feee56a049c961fcee81cef89f3698f296",
+      "public_sha256": "47cf28ed6d8c51664bea705e5c67b8feee56a049c961fcee81cef89f3698f296",
+      "bytes": 374145,
+      "changes": "none"
+    },
+    {
+      "source": "zhidiao_measure_ax7z020/linux_ov5640.srcs/sources_1/bd/system/hdl/system_wrapper.v",
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/sources_1/bd/system/hdl/system_wrapper.v",
+      "original_sha256": "b453c9b353cff4b1ce2a5bdac86f4b4aea0bc5b69814295e6d132eb5deba1211",
+      "public_sha256": "68e5eea35ee0bd1a6e916decbdb5aedbc28ec770a0f190e4812d621bf3cd798e",
+      "bytes": 6638,
+      "changes": "privacy metadata only"
+    },
+    {
+      "source": "zhidiao_measure_ax7z020/linux_ov5640.srcs/constrs_1/new/system.xdc",
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/constrs_1/new/system.xdc",
+      "original_sha256": "b02bbce8764da2896e36d3cbc660fdfc826fba6a38a7bfec56b944a439e6af09",
+      "public_sha256": "b02bbce8764da2896e36d3cbc660fdfc826fba6a38a7bfec56b944a439e6af09",
+      "bytes": 160,
+      "changes": "none"
+    },
+    {
+      "source": "zhidiao_measure_ax7z020/linux_ov5640.srcs/constrs_1/new/hdmi_out.xdc",
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/constrs_1/new/hdmi_out.xdc",
+      "original_sha256": "55c6580ee9e5244514bf65d7dc4447faba37b779843310be7053e7bce0a378d5",
+      "public_sha256": "55c6580ee9e5244514bf65d7dc4447faba37b779843310be7053e7bce0a378d5",
+      "bytes": 1192,
+      "changes": "none"
+    },
+    {
+      "source": "zhidiao_measure_ax7z020/linux_ov5640.srcs/constrs_1/new/an5642.xdc",
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/constrs_1/new/an5642.xdc",
+      "original_sha256": "8b7ddbf13548beff5b4871cb93a7c161b94caa5abddcdaef18913fea4d7b0327",
+      "public_sha256": "8b7ddbf13548beff5b4871cb93a7c161b94caa5abddcdaef18913fea4d7b0327",
+      "bytes": 4165,
+      "changes": "none"
+    },
+    {
+      "source": "zhidiao_measure_ax7z020/linux_ov5640.srcs/constrs_1/new/zhidiao_measure.xdc",
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/constrs_1/new/zhidiao_measure.xdc",
+      "original_sha256": "2f6a5d06f4f09e8ad68b53be2c7de09ba290e93851ad0b49b8120cb509f979f6",
+      "public_sha256": "2f6a5d06f4f09e8ad68b53be2c7de09ba290e93851ad0b49b8120cb509f979f6",
+      "bytes": 592,
+      "changes": "none"
+    },
+    {
+      "source": "zhidiao_measure_ax7z020/linux_ov5640.xpr",
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.xpr",
+      "original_sha256": "7fefe7cacba07965f58025b5e51a804aed524be8f9c4d7581c539dd1f60da457",
+      "public_sha256": "0e8c4c48fd6f2af0b7efad5f88064f44437e34724400b17b1eb2c3298330e5f0",
+      "bytes": 73522,
+      "changes": "privacy metadata only"
+    },
+    {
+      "source": "zhidiao_measure_ax7z020/linux_ov5640.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl",
+      "path": "src/fpga/zhidiao_measure/system_bd.tcl",
+      "original_sha256": "5357846606a030bc56d58ce1423f29ae3efaeea0ab90cfe624380101baddc617",
+      "public_sha256": "5357846606a030bc56d58ce1423f29ae3efaeea0ab90cfe624380101baddc617",
+      "bytes": 65167,
+      "changes": "none"
+    },
+    {
+      "source": "zhidiao_observe_v5_led.bit",
+      "path": "build/fpga/zhidiao_observe_v5_led.bit",
+      "original_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+      "public_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+      "bytes": 1904732,
+      "changes": "none"
+    },
+    {
+      "source": "zhidiao_measure_ax7z020/linux_ov5640.runs/impl_1/system_wrapper_utilization_placed.rpt",
+      "path": "build/fpga/reports/final/system_wrapper_utilization_placed.rpt",
+      "original_sha256": "677f6e9047c98f62743aeb348ea811bb2ec83455dc86f977848244a676233b5f",
+      "public_sha256": "53df1de777ed70a3195dfbc93fa825a314b96fe52250d066cc1e06d3add0ada9",
+      "bytes": 12194,
+      "changes": "privacy metadata only"
+    },
+    {
+      "source": "zhidiao_measure_ax7z020/linux_ov5640.runs/impl_1/system_wrapper_timing_summary_routed.rpt",
+      "path": "build/fpga/reports/final/system_wrapper_timing_summary_routed.rpt",
+      "original_sha256": "ce2dc445fe5009b2098fd6e79c603d7183fdf3741eb7f61830b97ecf2cc1fdae",
+      "public_sha256": "090949369d888cdd6c02a8c323f8dd8c263ac915af50a05cbc0b41ca9034fbff",
+      "bytes": 664898,
+      "changes": "privacy metadata only"
+    },
+    {
+      "source": "vendor_base_ax7z020/linux_ov5640.runs/impl_1/system_wrapper_utilization_placed.rpt",
+      "path": "build/fpga/reports/baseline/system_wrapper_utilization_placed.rpt",
+      "original_sha256": "d8d57899bcc7c7109414e75d38941573bd4ee75667d9afb5e78b7121c28e4ba6",
+      "public_sha256": "dbc572e139805ec35a5733c2b5043936d0a19d0cd021fbc86ba7cbf95138a9b9",
+      "bytes": 11894,
+      "changes": "privacy metadata only"
+    },
+    {
+      "source": "vendor_base_ax7z020/linux_ov5640.runs/impl_1/system_wrapper_timing_summary_routed.rpt",
+      "path": "build/fpga/reports/baseline/system_wrapper_timing_summary_routed.rpt",
+      "original_sha256": "24fdef63a3ccdc68da17aa170998934361fe465f0adc31b39699fbda8a04113e",
+      "public_sha256": "9b6c61ad4240b87e9634e387b14bfa5fbaa3fe9c71aa7dafd2461987f5f03df4",
+      "bytes": 675316,
+      "changes": "privacy metadata only"
+    }
+  ]
+}

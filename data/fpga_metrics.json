@@ -1,0 +1,40 @@
+{
+  "baseline": {
+    "lut": 6756.0,
+    "ff": 10853.0,
+    "bram": 20.5,
+    "dsp": 0.0,
+    "iob": 38.0,
+    "wns_ns": 1.091,
+    "tns_ns": 0.0,
+    "setup_failing_endpoints": 0.0,
+    "whs_ns": 0.047,
+    "ths_ns": 0.0,
+    "hold_failing_endpoints": 0.0,
+    "wpws_ns": 0.529,
+    "tpws_ns": 0.0,
+    "pulse_failing_endpoints": 0.0,
+    "unconstrained_pins": 942,
+    "inputs_without_delay": 20,
+    "outputs_without_delay": 6
+  },
+  "final": {
+    "lut": 7274.0,
+    "ff": 12083.0,
+    "bram": 20.5,
+    "dsp": 0.0,
+    "iob": 44.0,
+    "wns_ns": 0.709,
+    "tns_ns": 0.0,
+    "setup_failing_endpoints": 0.0,
+    "whs_ns": 0.02,
+    "ths_ns": 0.0,
+    "hold_failing_endpoints": 0.0,
+    "wpws_ns": 0.529,
+    "tpws_ns": 0.0,
+    "pulse_failing_endpoints": 0.0,
+    "unconstrained_pins": 942,
+    "inputs_without_delay": 22,
+    "outputs_without_delay": 10
+  }
+}

@@ -10,5 +10,10 @@
   "smoke_archive": {
     "sha256": "f024fbffd0208402ded4ccbb26e08a5befd35ef77057e162010b8853ff0c3c75",
     "bytes": 4157
+  },
+  "fpga_zip": {
+    "sha256": "1f87f8d6dad48ae1286790ebec802fd776a0e939093d7cb384498fa327abf052",
+    "bytes": 116739469,
+    "parts": 4
   }
 }

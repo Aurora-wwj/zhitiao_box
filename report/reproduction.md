@@ -2,7 +2,7 @@
 
 ## 软件与状态
 
-克隆本仓库，安装 Python 3.13。当前 FPGA／板端材料尚待上传，因此可完整验证软件和检查 STM32 工程输入，但暂不能仅凭此仓库从零重建 FPGA／Linux。
+克隆本仓库，安装 Python 3.13。FPGA源输入、v5位流和实现报告已收到，重建另需合法Vivado 2017.4及四项外部IP；SD／Linux／BOOT材料仍待补充。不能仅凭当前仓库重建整套Linux镜像。
 
 在 src/agent 下设置 PYTHONPATH=src，运行 python -B -m unittest discover -s tests -v。Windows 可用 py -3.13 或 scripts/test_windows.ps1。
 运行 start_demo.bat 验证离线 UI；start_ai_mock.bat 另需 API Key、同意联网和上下文分享，不依赖真实板卡。
@@ -15,7 +15,7 @@ Windows 安装 Keil MDK（最终材料使用 V5.06 update 6）与 STM32G4xx DFP 
 ## Zynq 与四接口
 
 参考 board/hardware_setup.md 与 board/wiring.md。配置网口、严格 known_hosts 与非交互 SSH；私钥自行生成保管，不进入仓库。上电后恢复 authorized_keys、准备 PL（冷启动持久化未验收）。
-取得最终 v5 bit 后先核对 SHA fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6，再由部署方加载，检查 prog_done；prog_done 不证明镜像身份。
+本仓库 build/fpga/zhidiao_observe_v5_led.bit 先核对 SHA fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6，再由部署方按目标Linux的受支持方法加载，检查 prog_done；prog_done 不证明镜像身份。SD加载脚本尚未收到，不凭猜测提供写寄存器／重配命令。
 OpenOCD 0.12.0 安装在 /sd/tools/openocd/bin/openocd，scripts 为 /sd/tools/openocd/share/openocd/scripts，使用 interface/stlink.cfg 与 target/stm32g4x.cfg。二进制和 Linux/BOOT 镜像未包含，获取说明待板端材料。
 
 在 src/agent 复制 deployment.example.json 为 deployment.local.json，修改所有本机绝对路径与 SSH 路径；确认 v5 已加载。运行 deployment-check --preview-only，再按提示执行实际检查；real-build／real-flash／real-log／real-test 使用现有 CLI --help 的参数，均保留审批。
@@ -23,7 +23,9 @@ OpenOCD 0.12.0 安装在 /sd/tools/openocd/bin/openocd，scripts 为 /sd/tools/o
 
 ## 验证边界
 
-云端软件测试不等于 Windows Keil／Vivado 重建或本轮上板验证。Vivado 实际版本 2017.4，较指南推荐版本旧；需在正式报告解释，并在取得源工程后提供真正可用的 Tcl 与重建记录。
+云端软件测试不等于 Windows Keil／Vivado 重建或本轮上板验证。Vivado 实际版本 2017.4，较指南推荐版本旧；正式报告需解释差异。重建步骤见 ../build/fpga/README.md，外部IP清单见 ../src/fpga/README.md。已提供Tcl，尚待真实Vivado执行并保存新构建记录。
+
+安装Icarus Verilog和Tcl后，在根目录运行 `python -B -m unittest discover -s sim -p test_fpga_release.py -v` 验证RTL与整理脚本；未安装模拟器时RTL项会显示skip，不能称为仿真通过。原始全设计报告仍含未约束路径等HIGH警告，启动相位边界见FPGA说明。
 
 ## 独立工具命令（在 src/agent 的 PowerShell）
 

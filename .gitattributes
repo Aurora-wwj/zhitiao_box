@@ -1,4 +1,7 @@
 * text=auto eol=lf
 /src/stm32/** -text
 /build/stm32/*.hex -text
+/src/fpga/zhidiao_measure/** -text
+/build/fpga/reports/** -text
+*.bit binary
 *.pdf binary

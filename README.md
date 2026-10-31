@@ -10,7 +10,9 @@
 
 原始最终报告、发布 main.c 与第二轮 HEX 已做 SHA 一致性核对。见 [公开 JSON](data/final_run_sanitized.json)、[测量表](data/measurements.csv)、[证据说明](report/test_evidence.md)。这不是本次云端重新进行的板卡测试。
 
-**仓库正在分包整理：Agent、STM32 与最终 JSON/HEX 已收到；FPGA 源工程、v5 bit、原始实现报告、板端脚本、现场照片及正式主报告尚待补充。历史 smoke 已按只读参考整理；SD 压缩包超出附件下载上限，尚未读取。当前不是完整比赛提交包。** 缺项见 [发布状态](report/release_status.md)。
+**已整理 Agent、STM32、最终 JSON/HEX，以及四份分包恢复的 FPGA RTL／BD／XDC／工程、v5 bit 和 baseline/final 原始实现报告。** FPGA 提供 Vivado 2017.4 重建 Tcl，四项供应商 IP 以依赖清单和合法获取步骤交付；尚未实际运行 Vivado 重建。历史 smoke 为只读参考。SD 压缩包尚未取得可读副本，板端脚本／镜像来源、现场照片与正式主报告仍待补齐；当前不是完整比赛提交包。见 [发布状态](report/release_status.md)。
+
+v5 SHA 与指导一致。原 final 报告 LUT 7274、FF 12083、BRAM 20.5、DSP 0、IOB 44，WNS 0.709 ns、TNS 0。报告仍含未约束路径等 HIGH 警告，不能据此声称全设计时序验收完成；[原件与比较](report/fpga_evidence.md) 保留这些限制。
 
 ## FPGA 的作用与架构
 
@@ -32,7 +34,7 @@ flowchart LR
 
 ## 快速开始
 
-FPGA／SD原ZIP超过附件上限时，按 [分包步骤](report/upload_parts.md) 生成每份小于30 MiB的小ZIP。当前两份大附件尚无可检视副本，其内容仍待核对。
+SD 原 ZIP 超过附件上限时，按 [分包步骤](report/upload_parts.md) 生成每份小于30 MiB的小ZIP。FPGA 的四份已重组、检查并整理；SD 仍待分包接收。
 
 Python 3.13，Agent 运行依赖标准库。在仓库的 src/agent 目录执行：
 
@@ -45,19 +47,19 @@ py -3.13 -B -m unittest discover -s tests -v
 
 start_demo.bat：离线脚本模型＋模拟硬件；start_ai_mock.bat：真实 NiceCode＋模拟硬件；start_ui.bat：真实部署。真实 API 需要进程环境中的 Key 或启动器遮罩输入，可能计费。不要提交 Key。
 
-真实部署先阅读 [从零复现](report/reproduction.md)。复制 deployment.example.json 为 deployment.local.json 并改成自己的绝对路径。默认示例为 v5＋LED；deployment.no-led.example.json 使用同一 v5，只关闭灯。当前仓库尚未收到 bitstream，不能仅凭示例配置就访问硬件。
+真实部署先阅读 [从零复现](report/reproduction.md)。在 src/agent 复制 deployment.example.json 为 deployment.local.json 并改成自己的绝对路径。默认示例为 v5＋LED；deployment.no-led.example.json 使用同一 v5，只关闭灯。位流见 [build/fpga](build/fpga/README.md)；加载镜像、认证与寄存器身份仍须在板端确认。
 
 ## 硬件与连接
 
-AX7Z020（Zynq-7000）＋STM32G431＋ST-Link/V2。PA1→M18 为周期观测；PA2/USART2_TX→M17，115200 8N1。GPIO 0x43C60000 bit0–3 为 active-low 四灯；最终管脚约束待 FPGA 包核对。详见 [接线](board/wiring.md)。
+AX7Z020（Zynq-7000）＋STM32G431＋ST-Link/V2。PA1→M18 为周期观测；PA2/USART2_TX→M17，115200 8N1。GPIO 0x43C60000 bit0–3 为 active-low 四灯；J14/K14/J18/H18 已与最终 XDC 核对。详见 [接线](board/wiring.md)。
 
 ## AMD 推荐目录对照
 
 | 推荐项 | 本仓库 |
 | --- | --- |
-| src | src/agent（内含原 Python src 布局）、src/stm32/gpio_pl_test；FPGA 源码待补 |
-| sim | 软件测试入口、验证说明与匿名历史 smoke 文本 |
-| build | STM32 构建入口与最终 HEX；FPGA 重建／报告待补 |
+| src | src/agent（内含原 Python src 布局）、src/stm32/gpio_pl_test、src/fpga/zhidiao_measure |
+| sim | 软件测试、计数核 RTL 仿真、构建控制流检查与匿名历史 smoke 文本 |
+| build | STM32 构建入口／HEX；FPGA Tcl／v5 bit／baseline 和 final 原报告 |
 | board | 接线、部署与冷启动说明 |
 | data | 匿名报告、测量 CSV、校验清单 |
 | skill | 按五类可复用能力组织，不要求原子化或固定数量 |
@@ -67,7 +69,7 @@ AX7Z020（Zynq-7000）＋STM32G431＋ST-Link/V2。PA1→M18 为周期观测；PA
 
 ## 已知边界
 
-真实模型由 NiceCode API 提供，请求模型记录在报告中；未实现本地 LLM／PYNQ。一次修改一个批准的现有 UTF-8 文件；UART 115200 8N1。冷启动后的 SSH 公钥恢复和 PL 自动加载未验证持久化，需每次上电按部署说明准备。LED 表示工具状态，不等于 DUT PASS。云端没有 Keil/Vivado/板卡，硬件重建未在此环境执行。
+真实模型由 NiceCode API 提供，请求模型记录在报告中；未实现本地 LLM／PYNQ。一次修改一个批准的现有 UTF-8 文件；UART 115200 8N1。冷启动后的 SSH 公钥恢复和 PL 自动加载未验证持久化，需每次上电按部署说明准备。LED 表示工具状态，不等于 DUT PASS。原计数 RTL 在复位时输入已高的首次结果有启动残段边界，须等待后续稳定周期；见 [FPGA 说明](src/fpga/README.md)。云端没有 Keil/Vivado/板卡，硬件重建未在此环境执行。
 
 ## 文档与许可
 

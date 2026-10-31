@@ -29,3 +29,7 @@ python -B -m unittest discover -s tests -p "test_pl_observer.py" -v
 ```
 
 Windows使用Python3.13时可将python换为`py -3.13`。这些是离线验证，硬件迁移还须按report/reproduction.md重新部署并获得自己的实测报告。
+## 本次原件检查补充
+
+已收到最终计数RTL和实现报告，来源与SHA见data/fpga_manifest.json；Icarus仿真覆盖见sim/fpga/measure_core_tb.v。同步器复位为0，输入复位时已HIGH的首次valid可能包含启动残段；应等待后续稳定周期，不能仅凭valid或两个新边沿保证所有启动相位。valid也会保留旧结果，freshness检查不可省。
+原全设计时序报告仍有未约束路径等HIGH警告，不能用正WNS单独证明CDC、所有外部I/O或全设计时序覆盖完成。黄金RTL／位流本次未修改，详情见report/fpga_evidence.md。

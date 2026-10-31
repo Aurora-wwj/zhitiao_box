@@ -1,18 +1,22 @@
 # 发布状态
 
-2026-11-01 分包整理阶段。
+2026-11-01：FPGA四分包已合并整理，仍非最终完整比赛提交包。
 
-已收到并整理：Agent 正式代码／测试／启动器；GPIO_PL_Test 重建输入；最终 HEX；两轮真实四工具报告的匿名副本。
-已核对：main.c SHA、提案 UTF-8 SHA、checkpoint 一致；HEX 与第二轮产物 SHA 一致；两轮 audit／freshness／UART partial-tail。
-待补：最终 FPGA 源工程／BD／IP／XDC、v5 bit、utilization／timing 原报告、板端脚本及镜像许可来源、实物图片、官网同版设计报告。
-指南所述 bit SHA 与资源数字目前仅可作为待核对引用，不标成仓库已具备或本次重新验证。
-没有用旧 Agent checkout 或虚构 FPGA 文件替代缺失材料。
+## 已整理并核对
 
-## 后续分包接收：smoke／SD
+- Agent正式源码／测试／PC UI；STM32重建输入、黄金main.c与最终HEX。
+- 两轮真实四接口匿名JSON：601.7169→1001.08682ms，源码／提案／checkpoint及HEX身份一致，UART partial-tail、PL freshness保留。
+- 最终FPGA RTL／BD／导出Tcl／wrapper／四份XDC／XPR；v5 bit的SHA与指导一致。
+- baseline/final原始utilization及timing报告，指标已解析并对照指导；只匿名化主机信息。
+- Vivado2017.4构建入口、四项外部IP的VLNV与37文件SHA、合法获取／检查步骤；不整体再分发未知许可IP。
+- 4份匿名历史smoke参考、5项分包工具回归、6项FPGA整理回归（含实际Icarus RTL仿真及Tcl替身控制流检查）。Agent457项离线回归此前通过，生产代码本轮未改。
 
-已接收并检查4份历史smoke代码，个人路径已匿名化，发布为sim/smoke/*.py.txt，保留来源与公开版SHA，不参与运行。
-Zhidiao_Linux_microSD.zip超过当前32MiB附件传输上限，无法读取，未执行任何板端内容。仍需拆分上传小包后核对v5位流、脚本、OpenOCD／BOOT／Linux来源及许可；不从名称推断二进制可再分发。
+## 仍需补齐或验收
 
-## 后续FPGA大包接收
+- Zhidiao_Linux_microSD.zip仍超过32MiB附件下载上限，无可读副本。需像FPGA一样分包上传，之后核对板端脚本、启动链、OpenOCD／Linux／BOOT来源和许可。
+- 实物／接线照片与正式主报告的同版文件；现有设计报告PDF明确为整理初稿。
+- 实际Vivado2017.4重建记录及Windows Keil重建／本次整理后的上板验收。云端没有这些工具和板卡；命令替身测试不证明Vivado重建成功。
+- 时序覆盖审阅：原final报告有942个未约束最大延迟pin等HIGH警告，不能仅凭WNS0.709宣称全设计时序验收完成。
+- 黄金RTL启动HIGH时首次值可能含残段、valid会保留旧值，须等待后续稳定周期并检查freshness；没有修改原v5来掩盖该边界。冷启动恢复仍未验收。
 
-Zhidiao_PL.zip同样超过32MiB限制，未能下载到工作区。FPGA源码、位流和实现报告仍未检视。新增sim/prepare_upload_parts.py将原件切成普通小ZIP，重组后校验整体SHA，方便继续接收；步骤见upload_parts.md。5项工具回归通过，不替代FPGA重建／上板。
+没有用旧Agent checkout、虚构源码或假成功日志填补缺件。分包步骤见upload_parts.md，FPGA证据详情见fpga_evidence.md。

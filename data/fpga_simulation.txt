@@ -1,0 +1,28 @@
+Linux / Python 3.13.5 / Icarus Verilog version 12.0 (stable) (), 2026-11-01
+Command: python3.13 -B -m unittest discover -s sim -p test_*.py -v
+Actual RTL simulation; Tcl build commands are test doubles, not Vivado.
+
+test_constraints_and_bd_contract (test_fpga_release.FpgaReleaseTests.test_constraints_and_bd_contract) ... ok
+test_external_ip_hash_and_vlnv_rejection (test_fpga_release.FpgaReleaseTests.test_external_ip_hash_and_vlnv_rejection) ... ok
+test_external_ip_positive_then_tamper (test_fpga_release.FpgaReleaseTests.test_external_ip_positive_then_tamper) ... ok
+test_published_files_and_derived_metrics (test_fpga_release.FpgaReleaseTests.test_published_files_and_derived_metrics) ... ok
+test_rtl_behavior (test_fpga_release.FpgaReleaseTests.test_rtl_behavior) ... ok
+test_tcl_syntax_and_build_control_flow (test_fpga_release.FpgaReleaseTests.test_tcl_syntax_and_build_control_flow) ... ok
+test_corrupted_payload_is_rejected_and_partial_output_removed (test_upload_parts.UploadPartsTests.test_corrupted_payload_is_rejected_and_partial_output_removed) ... ok
+test_existing_input_output_and_parts_are_preserved (test_upload_parts.UploadPartsTests.test_existing_input_output_and_parts_are_preserved) ... ok
+test_missing_or_duplicated_parts_are_rejected (test_upload_parts.UploadPartsTests.test_missing_or_duplicated_parts_are_rejected) ... ok
+test_mixed_archives_are_rejected (test_upload_parts.UploadPartsTests.test_mixed_archives_are_rejected) ... ok
+test_out_of_order_parts_restore_identical_bytes_in_small_ordinary_zips (test_upload_parts.UploadPartsTests.test_out_of_order_parts_restore_identical_bytes_in_small_ordinary_zips) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.189s
+
+OK
+PASS: reset, silence and non-50% duty full-cycle measurement
+PASS: changed period/high measurement and edge counting
+PASS: stopped input retains data; software freshness is required
+PASS: 32-bit timestamp subtraction and edge counter wrap
+PASS: startup HIGH recovery (first value is not guaranteed to be a full physical cycle)
+PASS: reset clears sticky measurement and counters
+ALL RTL CHECKS PASSED
+sim/fpga/measure_core_tb.v:85: $finish called at 1946000 (1ps)

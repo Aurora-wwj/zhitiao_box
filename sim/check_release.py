@@ -1,6 +1,7 @@
 """Read-only validation of the received public release, no hardware or API I/O."""
 import ast,hashlib,json,re,xml.etree.ElementTree as ET
 from pathlib import Path
+from fpga_check import check as check_fpga
 ROOT=Path(__file__).resolve().parents[1]
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
@@ -46,5 +47,6 @@ def main():
   name=p.name.lower()
   assert name not in ('dropbear_rsa_host_key','id_rsa','id_ed25519','id_ecdsa'),str(p)
   assert not name.startswith('deployment.local'),str(p)
- print('PASS: final JSON / two complete cycles / source and HEX SHA / Keil inputs / historical archive / forbidden filenames')
+ check_fpga()
+ print('PASS: final JSON / two complete cycles / source and HEX SHA / Keil inputs / FPGA identities and reports / historical archive / forbidden filenames')
 if __name__=='__main__':main()

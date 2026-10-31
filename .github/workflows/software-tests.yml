@@ -10,6 +10,8 @@ jobs:
           python-version: '3.13'
       - run: python -B sim/check_release.py
       - run: python -B -m unittest discover -s sim -p test_upload_parts.py -v
+      - run: sudo apt-get update && sudo apt-get install -y iverilog tcl
+      - run: python -B -m unittest discover -s sim -p test_fpga_release.py -v
       - run: python -B -m unittest discover -s tests -v
         working-directory: src/agent
         env:

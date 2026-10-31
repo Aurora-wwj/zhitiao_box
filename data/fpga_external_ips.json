@@ -1,0 +1,216 @@
+{
+  "vivado": "2017.4",
+  "part": "xc7z020clg400-2",
+  "policy": "External dependency inventory, not redistribution of vendor IP. Obtain the matching lawful ALINX board example ip_repo.",
+  "ips": [
+    {
+      "vlnv": "alinx.com.cn:user:i2c_extender:1.1",
+      "directory": "alinx/i2c_extender",
+      "files": [
+        {
+          "path": "alinx/i2c_extender/component.xml",
+          "bytes": 23150,
+          "sha256": "a51eebf7ec6203ad46a0043e679bb76a30d9a0b91f4e446e418a6d414b05b89f"
+        },
+        {
+          "path": "alinx/i2c_extender/src/i2c_extender.v",
+          "bytes": 1060,
+          "sha256": "f5d2d92832e8267d81ee40943a4cc8b0c1ccee84756861ed8e1c4e7e543d7793"
+        },
+        {
+          "path": "alinx/i2c_extender/xgui/i2c_extender_v1_0.tcl",
+          "bytes": 205,
+          "sha256": "e0725b60cdc4cd625ee059e557ee3f5569fcd085edf601849e69e4d438080d96"
+        },
+        {
+          "path": "alinx/i2c_extender/xgui/i2c_extender_v1_1.tcl",
+          "bytes": 205,
+          "sha256": "e0725b60cdc4cd625ee059e557ee3f5569fcd085edf601849e69e4d438080d96"
+        }
+      ]
+    },
+    {
+      "vlnv": "www.alinx.com.cn:user:alinx_ov5640:6.4",
+      "directory": "alinx/ov5640_ip",
+      "files": [
+        {
+          "path": "alinx/ov5640_ip/component.xml",
+          "bytes": 20229,
+          "sha256": "83c3803db90e9beb25982782b60e99f9ca795414f5bb600f8c29c843172d626c"
+        },
+        {
+          "path": "alinx/ov5640_ip/src/alinx_ov5640.v",
+          "bytes": 3426,
+          "sha256": "ee34ea93d64ba50ad874729216465aaeddcbcb53806034e4cd63ca6e922b13f2"
+        },
+        {
+          "path": "alinx/ov5640_ip/src/cmos_8_16bit.v",
+          "bytes": 935,
+          "sha256": "48c16e44aed25233fff1c4d9f0a146d3a3d3a7cb71c9429cbe1c0865ff4fc8f1"
+        },
+        {
+          "path": "alinx/ov5640_ip/src/cmos_in_axi4s.v",
+          "bytes": 3062,
+          "sha256": "cb6da92fc78b69cb0af9f9e929a75ec9c046edcf6df581578dc92d1a060be631"
+        },
+        {
+          "path": "alinx/ov5640_ip/src/cmos_in_axi4s_coupler.v",
+          "bytes": 4378,
+          "sha256": "ae4c79666874e1255f7df7636da67b7487bfc4dba5518d3ab2baa95842b2f7a2"
+        },
+        {
+          "path": "alinx/ov5640_ip/src/cmos_in_axi4s_formatter.v",
+          "bytes": 3538,
+          "sha256": "645b3ae74ceff82284c2fd509610c58f4ab0988056511b9ddc064671f0e4adf2"
+        },
+        {
+          "path": "alinx/ov5640_ip/xgui/alinx_ov5640_v1_0.tcl",
+          "bytes": 205,
+          "sha256": "e0725b60cdc4cd625ee059e557ee3f5569fcd085edf601849e69e4d438080d96"
+        },
+        {
+          "path": "alinx/ov5640_ip/xgui/alinx_ov5640_v5_3.tcl",
+          "bytes": 1617,
+          "sha256": "6767bbf273a5c914a51cda4c9965c7e9e8695a1e270751b2fea8283350f40e77"
+        },
+        {
+          "path": "alinx/ov5640_ip/xgui/alinx_ov5640_v5_4.tcl",
+          "bytes": 1617,
+          "sha256": "6767bbf273a5c914a51cda4c9965c7e9e8695a1e270751b2fea8283350f40e77"
+        },
+        {
+          "path": "alinx/ov5640_ip/xgui/alinx_ov5640_v6_0.tcl",
+          "bytes": 205,
+          "sha256": "e0725b60cdc4cd625ee059e557ee3f5569fcd085edf601849e69e4d438080d96"
+        },
+        {
+          "path": "alinx/ov5640_ip/xgui/alinx_ov5640_v6_1.tcl",
+          "bytes": 829,
+          "sha256": "eeb28daf468192781fbeed0fb10b254bc2290ee430236a4f7afb4288809aa1bc"
+        },
+        {
+          "path": "alinx/ov5640_ip/xgui/alinx_ov5640_v6_2.tcl",
+          "bytes": 926,
+          "sha256": "2be41356b320bb74fb3bd4bbed13af6bacf3d600f6be6d01cb6888cc0726b05a"
+        },
+        {
+          "path": "alinx/ov5640_ip/xgui/alinx_ov5640_v6_4.tcl",
+          "bytes": 926,
+          "sha256": "2be41356b320bb74fb3bd4bbed13af6bacf3d600f6be6d01cb6888cc0726b05a"
+        }
+      ]
+    },
+    {
+      "vlnv": "digilentinc.com:ip:axi_dynclk:1.0",
+      "directory": "ip/axi_dynclk_v1_0",
+      "files": [
+        {
+          "path": "ip/axi_dynclk_v1_0/component.xml",
+          "bytes": 37106,
+          "sha256": "21813665c84b1b75d9076f7e772730df199bc3ca71215d2a48a383cb37da38cd"
+        },
+        {
+          "path": "ip/axi_dynclk_v1_0/src/axi_dynclk.vhd",
+          "bytes": 10008,
+          "sha256": "2b8d2de5d2731fd0b83c06efb0566f83bd64016e699d067e39dc396de681ecaf"
+        },
+        {
+          "path": "ip/axi_dynclk_v1_0/src/axi_dynclk_S00_AXI.vhd",
+          "bytes": 18625,
+          "sha256": "871c0b0a56ad7caefecc844d23faf5af6ad904019c2cdbbb3ef5edc5048495e0"
+        },
+        {
+          "path": "ip/axi_dynclk_v1_0/src/mmcme2_drp.v",
+          "bytes": 15355,
+          "sha256": "3833e1439bc56a53d682cd4a8c99b6a9d3e6378b9e27667df290f0f8896faeac"
+        },
+        {
+          "path": "ip/axi_dynclk_v1_0/xgui/axi_dynclk_v1_0.tcl",
+          "bytes": 1891,
+          "sha256": "729c79ebdf8c55ede738aa3047c3e26d25926fb14317da1a741e4e10c0c2d7c3"
+        }
+      ]
+    },
+    {
+      "vlnv": "digilentinc.com:ip:rgb2dvi:1.3",
+      "directory": "ip/rgb2dvi_v1_3",
+      "files": [
+        {
+          "path": "ip/rgb2dvi_v1_3/component.xml",
+          "bytes": 31599,
+          "sha256": "ab1b3a6b954dc7739b702562cd6ecec044f037aae335cd87747acfba40883f33"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/docs/rgb2dvi_v1_2.pdf",
+          "bytes": 385156,
+          "sha256": "cbd8609fb8b415031e6260db92a324f71697afe4f606f95c5216045e320fa04b"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/src/ClockGen.vhd",
+          "bytes": 8316,
+          "sha256": "5df9265e586b55396a75070197b141eb00a36f6dfd0ed69c8b544257405a83ef"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/src/DVI_Constants.vhd",
+          "bytes": 3151,
+          "sha256": "d8dbbbc3c8696d4527ee0d3c4757f1a40d0acebc845899483bc61c2bb8270cde"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/src/OutputSERDES.vhd",
+          "bytes": 8366,
+          "sha256": "6205d58405919d4f899a525256e2cafa725408f6644642755cd0de63e69b286e"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/src/SyncAsync.vhd",
+          "bytes": 3727,
+          "sha256": "5561ac8099ed13f3114e97387aab5f7f30ad28a8be2fc540004cbee3f19eb3a7"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/src/SyncAsyncReset.vhd",
+          "bytes": 3734,
+          "sha256": "3ce7ade3267959da59b4d448cc6641018e4f0ac3de9f8f998d0b9ff84a3794bc"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/src/TMDS_Encoder.vhd",
+          "bytes": 7863,
+          "sha256": "b047a257c1172412d1b354a98e3cc77d013d0f3c1af6ff646233abf8b669c196"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/src/rgb2dvi.vhd",
+          "bytes": 7834,
+          "sha256": "9ef5ceb9dbee2c77a524cf076baa2563f9d1d1e015c1da3c5e0c081506de3f23"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/src/rgb2dvi.xdc",
+          "bytes": 292,
+          "sha256": "51b9ac7f1229a2250cddb1d490e45e536dd836eb5c42851f67359c7a5aef6130"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/src/rgb2dvi_clocks.xdc",
+          "bytes": 114,
+          "sha256": "d39d2f58a6cf74c30eef3c4b7d37c436359ea3fcfaff3ddcc0a1a69388b73ac8"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/src/rgb2dvi_ooc.xdc",
+          "bytes": 136,
+          "sha256": "77f9820235b2c3ce1e99d369db4932a76705633eeb5f950908855183931dc1a2"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/xgui/rgb2dvi_v1_1.tcl",
+          "bytes": 2930,
+          "sha256": "44d93693f4a4eac11a86d7ff2be4dc03e2bab44a407c342bd3dd8f1477c55f92"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/xgui/rgb2dvi_v1_2.tcl",
+          "bytes": 3055,
+          "sha256": "a2d21c71fd3908455a5d9bafd53b784fa650bf7290cb777b449bdeb8e04df566"
+        },
+        {
+          "path": "ip/rgb2dvi_v1_3/xgui/rgb2dvi_v1_3.tcl",
+          "bytes": 3055,
+          "sha256": "a2d21c71fd3908455a5d9bafd53b784fa650bf7290cb777b449bdeb8e04df566"
+        }
+      ]
+    }
+  ]
+}
