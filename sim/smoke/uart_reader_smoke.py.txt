@@ -1,0 +1,102 @@
+import subprocess
+import sys
+from pathlib import Path
+
+HOST = "192.168.10.2"
+USER = "root"
+
+UART_RX_FIFO = "0x43C50000"
+UART_STATUS  = "0x43C50008"
+UART_CONTROL = "0x43C5000C"
+
+home = Path.home()
+key_file = home / ".ssh" / "id_zhidiao_rsa"
+known_hosts = home / ".ssh" / "known_hosts"
+
+duration_s = float(sys.argv[1]) if len(sys.argv) > 1 else 5.0
+
+# 每轮大约 sleep 1 ms。
+# devmem 本身也有开销，所以实际持续时间会略长于 duration_s。
+loops = max(1, int(duration_s * 100))
+
+remote_script = f"""
+BB=/bin/busybox
+
+# Reset RX FIFO.
+$BB devmem {UART_CONTROL} 32 0x00000002 >/dev/null
+
+# Read status once to clear any old latched error flags.
+$BB devmem {UART_STATUS} 32 >/dev/null
+
+i=0
+while [ $i -lt {loops} ]; do
+    status=$($BB devmem {UART_STATUS} 32)
+
+    # Status bit 0 = RX FIFO contains valid data.
+    if [ $((status & 1)) -ne 0 ]; then
+        data=$($BB devmem {UART_RX_FIFO} 32)
+        echo "DATA:$data"
+    fi
+
+    $BB usleep 10000
+    i=$((i + 1))
+done
+
+status=$($BB devmem {UART_STATUS} 32)
+echo "FINAL_STATUS:$status"
+"""
+
+ssh_cmd = [
+    "ssh",
+    "-o", "BatchMode=yes",
+    "-o", "StrictHostKeyChecking=yes",
+    "-o", f"UserKnownHostsFile={known_hosts}",
+    "-o", "HostKeyAlgorithms=+ssh-rsa",
+    "-o", "PubkeyAcceptedAlgorithms=+ssh-rsa",
+    "-i", str(key_file),
+    f"{USER}@{HOST}",
+    remote_script,
+]
+
+print(f"reading UART for about {duration_s:.1f} s ...")
+
+result = subprocess.run(
+    ssh_cmd,
+    capture_output=True,
+    text=True,
+)
+
+if result.returncode != 0:
+    print("SSH/read failed:")
+    print(result.stderr)
+    raise SystemExit(result.returncode)
+
+received = bytearray()
+final_status = None
+
+for line in result.stdout.splitlines():
+    line = line.strip()
+
+    if line.startswith("DATA:"):
+        value_text = line.split(":", 1)[1]
+        value = int(value_text, 16)
+        received.append(value & 0xFF)
+
+    elif line.startswith("FINAL_STATUS:"):
+        value_text = line.split(":", 1)[1]
+        final_status = int(value_text, 16)
+
+print()
+print("byte_count:", len(received))
+print("hex:", " ".join(f"{b:02X}" for b in received))
+print("ascii:", repr(received.decode("ascii", errors="replace")))
+
+if final_status is not None:
+    print()
+    print(f"final_status: 0x{final_status:08X}")
+    print("rx_valid:", bool(final_status & 0x01))
+    print("rx_full:", bool(final_status & 0x02))
+    print("tx_empty:", bool(final_status & 0x04))
+    print("overrun_error:", bool(final_status & 0x20))
+    print("frame_error:", bool(final_status & 0x40))
+    print("parity_error:", bool(final_status & 0x80))

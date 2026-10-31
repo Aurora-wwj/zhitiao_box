@@ -1,0 +1,33 @@
+{
+  "archive_sha256": "f024fbffd0208402ded4ccbb26e08a5befd35ef77057e162010b8853ff0c3c75",
+  "files": [
+    {
+      "original_name": "hardware_test_smoke.py",
+      "original_sha256": "201dc7859cd201eb3b087d1bf2846a5109a27b1a80b6e7f4a66285cea9203171",
+      "public_name": "hardware_test_smoke.py.txt",
+      "public_sha256": "bce3dbd3ece374826dfb1c575c19f083dd7ba13ed9b6cccdaadd9f5b2ce2c2a2",
+      "mode": "historical_text_only"
+    },
+    {
+      "original_name": "period_reader_smoke.py",
+      "original_sha256": "4b944434ffb207017bbaa5700088da759c2d4ab814744f327b07dfd77f99e5d0",
+      "public_name": "period_reader_smoke.py.txt",
+      "public_sha256": "d7ad3b2617cb3f060e17cbedc021bcac4b129274cffc0e5c5a39628d320794f9",
+      "mode": "historical_text_only"
+    },
+    {
+      "original_name": "realbackend_hardware_test_smoke.py",
+      "original_sha256": "96e622514a2e6f769f1675195ba9ce448c78fc6114d8d012a85f69b0b66fa466",
+      "public_name": "realbackend_hardware_test_smoke.py.txt",
+      "public_sha256": "263dfe3cf748dbdd730bb3c449cd29deedf8d587ae3445b6796c22a7006adc16",
+      "mode": "historical_text_only"
+    },
+    {
+      "original_name": "uart_reader_smoke.py",
+      "original_sha256": "c79e67771334032eb7c7314a580df4cb0dd4b7df4d45bd48df1fac22a1b9ab93",
+      "public_name": "uart_reader_smoke.py.txt",
+      "public_sha256": "23b0c72cbda1f435af864140ea5dc62f9cae970dbd54bb348339019b373d9a98",
+      "mode": "historical_text_only"
+    }
+  ]
+}

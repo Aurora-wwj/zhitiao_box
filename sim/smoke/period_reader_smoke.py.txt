@@ -1,0 +1,84 @@
+import subprocess
+import time
+
+HOST = "root@192.168.10.2"
+IDENTITY = r"C:\Users\USER\.ssh\id_zhidiao_rsa"
+
+PERIOD_ADDR = "0x43C30000"
+HIGH_ADDR   = "0x43C30008"
+EDGE_ADDR   = "0x43C40000"
+VALID_ADDR  = "0x43C40008"
+
+PL_CLOCK_HZ = 100_000_000
+
+
+def remote_devmem(addr: str) -> int:
+    cmd = [
+        "ssh",
+        "-o", "BatchMode=yes",
+        "-o", "StrictHostKeyChecking=yes",
+        "-o", r"UserKnownHostsFile=C:\Users\USER\.ssh\known_hosts",
+        "-o", "HostKeyAlgorithms=+ssh-rsa",
+        "-o", "PubkeyAcceptedAlgorithms=+ssh-rsa",
+        "-i", IDENTITY,
+        HOST,
+        f"/bin/busybox devmem {addr} 32",
+    ]
+
+    result = subprocess.run(
+        cmd,
+        capture_output=True,
+        text=True,
+        timeout=10,
+        check=True,
+    )
+
+    return int(result.stdout.strip(), 16)
+
+
+def unsigned_delta(new: int, old: int) -> int:
+    return (new - old) & 0xFFFFFFFF
+
+
+def read_fresh_measurement(timeout_s: float = 5.0):
+    edge_start = remote_devmem(EDGE_ADDR)
+    deadline = time.monotonic() + timeout_s
+
+    while time.monotonic() < deadline:
+        edge_now = remote_devmem(EDGE_ADDR)
+        valid = remote_devmem(VALID_ADDR) & 0x1
+
+        # 至少等待两个新的物理边沿，避免把旧寄存器当成新证据
+        if valid and unsigned_delta(edge_now, edge_start) >= 2:
+            period_ticks = remote_devmem(PERIOD_ADDR)
+            high_ticks = remote_devmem(HIGH_ADDR)
+
+            if period_ticks <= 0:
+                raise RuntimeError("Invalid period_ticks")
+
+            period_ms = period_ticks / 100_000.0
+            high_ms = high_ticks / 100_000.0
+            frequency_hz = PL_CLOCK_HZ / period_ticks
+            duty_percent = high_ticks * 100.0 / period_ticks
+
+            return {
+                "edge_start": edge_start,
+                "edge_end": edge_now,
+                "period_ticks": period_ticks,
+                "high_ticks": high_ticks,
+                "period_ms": period_ms,
+                "high_ms": high_ms,
+                "frequency_hz": frequency_hz,
+                "duty_percent": duty_percent,
+            }
+
+        time.sleep(0.1)
+
+    raise TimeoutError("No fresh PL measurement before timeout")
+
+
+if __name__ == "__main__":
+    result = read_fresh_measurement(5.0)
+
+    for key, value in result.items():
+        print(f"{key}: {value}")

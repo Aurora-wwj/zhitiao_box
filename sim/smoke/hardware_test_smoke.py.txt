@@ -1,0 +1,32 @@
+import json
+
+from zhidiao_agent.observations import ObservationBackend
+from period_reader_smoke import read_fresh_measurement
+
+
+def period_reader(timeout_s: float):
+    measurement = read_fresh_measurement(timeout_s)
+
+    # ObservationBackend 的稳定契约只需要 period_ms。
+    return {
+        "period_ms": measurement["period_ms"],
+    }
+
+
+backend = ObservationBackend(
+    period_reader=period_reader,
+)
+
+result = backend.run_hardware_test(
+    "gpio_period",
+    {
+        "expected_period_ms": 1000,
+        "tolerance_ms": 50,
+    },
+)
+
+print(json.dumps(
+    result.to_dict(),
+    ensure_ascii=False,
+    indent=2,
+))

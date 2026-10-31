@@ -6,5 +6,9 @@
   "project_zip": {
     "sha256": "33c58225ea24560eb20ce9054ade95d8cfe46977ecddccf4977ea06b7e7cbe2b",
     "bytes": 16629484
+  },
+  "smoke_archive": {
+    "sha256": "f024fbffd0208402ded4ccbb26e08a5befd35ef77057e162010b8853ff0c3c75",
+    "bytes": 4157
   }
 }

@@ -1,0 +1,45 @@
+import json
+
+from zhidiao_agent.deployment import DeploymentConfig
+from zhidiao_agent.observations import ObservationBackend
+from zhidiao_agent.tools.real_backend import RealBackend
+
+from period_reader_smoke import read_fresh_measurement
+
+
+def period_reader(timeout_s: float):
+    measurement = read_fresh_measurement(timeout_s)
+
+    return {
+        "period_ms": measurement["period_ms"],
+    }
+
+
+config = DeploymentConfig.load(
+    r".\deployment.local.json"
+)
+
+observations = ObservationBackend(
+    period_reader=period_reader,
+)
+
+backend = RealBackend(
+    config=config,
+    observations=observations,
+)
+
+result = backend.run_hardware_test(
+    "gpio_period",
+    {
+        "expected_period_ms": 600,
+        "tolerance_ms": 50,
+    },
+)
+
+print(
+    json.dumps(
+        result.to_dict(),
+        ensure_ascii=False,
+        indent=2,
+    )
+)

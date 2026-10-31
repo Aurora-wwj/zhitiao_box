@@ -1,5 +1,5 @@
 """Read-only validation of the received public release, no hardware or API I/O."""
-import hashlib,json,re,xml.etree.ElementTree as ET
+import ast,hashlib,json,re,xml.etree.ElementTree as ET
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -33,10 +33,18 @@ def main():
  for node in tree.findall('.//FilePath'):
   path=(project/'MDK-ARM'/node.text.replace('\\','/')).resolve()
   assert path.is_relative_to(project.resolve()) and path.is_file(),node.text
+ archive=ROOT/'sim/smoke/manifest.json'
+ if archive.exists():
+  for entry in json.loads(archive.read_text(encoding='utf-8'))['files']:
+   name=entry['public_name']
+   assert Path(name).name==name and name.endswith('.py.txt'),name
+   path=archive.parent/name
+   assert digest(path)==entry['public_sha256'],name
+   ast.parse(path.read_text(encoding='utf-8'),filename=name)
  for p in ROOT.rglob('*'):
   if '.git' in p.relative_to(ROOT).parts or not p.is_file():continue
   name=p.name.lower()
   assert name not in ('dropbear_rsa_host_key','id_rsa','id_ed25519','id_ecdsa'),str(p)
   assert not name.startswith('deployment.local'),str(p)
- print('PASS: final JSON / two complete cycles / source and HEX SHA / Keil inputs / forbidden filenames')
+ print('PASS: final JSON / two complete cycles / source and HEX SHA / Keil inputs / historical archive / forbidden filenames')
 if __name__=='__main__':main()

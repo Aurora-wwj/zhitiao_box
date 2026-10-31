@@ -10,7 +10,7 @@
 
 原始最终报告、发布 main.c 与第二轮 HEX 已做 SHA 一致性核对。见 [公开 JSON](data/final_run_sanitized.json)、[测量表](data/measurements.csv)、[证据说明](report/test_evidence.md)。这不是本次云端重新进行的板卡测试。
 
-**仓库正在分包整理：Agent、STM32 与最终 JSON/HEX 已收到；FPGA 源工程、v5 bit、原始实现报告、板端脚本、现场照片及正式主报告尚待补充。当前不是完整比赛提交包。** 缺项见 [发布状态](report/release_status.md)。
+**仓库正在分包整理：Agent、STM32 与最终 JSON/HEX 已收到；FPGA 源工程、v5 bit、原始实现报告、板端脚本、现场照片及正式主报告尚待补充。历史 smoke 已按只读参考整理；SD 压缩包超出附件下载上限，尚未读取。当前不是完整比赛提交包。** 缺项见 [发布状态](report/release_status.md)。
 
 ## FPGA 的作用与架构
 
@@ -54,7 +54,7 @@ AX7Z020（Zynq-7000）＋STM32G431＋ST-Link/V2。PA1→M18 为周期观测；PA
 | 推荐项 | 本仓库 |
 | --- | --- |
 | src | src/agent（内含原 Python src 布局）、src/stm32/gpio_pl_test；FPGA 源码待补 |
-| sim | 软件测试入口与验证说明 |
+| sim | 软件测试入口、验证说明与匿名历史 smoke 文本 |
 | build | STM32 构建入口与最终 HEX；FPGA 重建／报告待补 |
 | board | 接线、部署与冷启动说明 |
 | data | 匿名报告、测量 CSV、校验清单 |
