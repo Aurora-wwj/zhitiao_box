@@ -17,6 +17,10 @@ python -B -m unittest discover -s sim -p test_fpga_release.py -v
 
 非系统安装可通过IVERILOG、VVP指定可执行路径，IVERILOG_BASE指定iverilog的ivl库目录。临时.vvp自动清理。无板卡、网络API或任意devmem调用。另见../report/fpga_evidence.md的启动相位和时序覆盖边界。
 
+## Zynq公开材料与检查脚本
+
+在根目录运行 `python3.13 -B -m unittest discover -s sim -p test_zynq_release.py -v`。覆盖20份源码／许可的SHA与tar成员、来源清单、源码损坏拒绝、已有构建目录保护、只读SD文件检查及错误位流／缺失工具拒绝。脚本不执行上传ARM程序、不写板卡；完整OpenOCD本机编译是额外的构建验证，见build/openocd及data/test_summary.md。CI没有把本机编译或ARM上板写成自动通过。
+
 ## 历史脚本
 
 smoke/ 保存经过匿名化的四份 .py.txt 历史材料，不能直接执行；正式入口映射及已知缺陷见 smoke/README.md。正式离线测试仍在 src/agent/tests。

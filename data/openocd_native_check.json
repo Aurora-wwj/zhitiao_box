@@ -1,0 +1,26 @@
+{
+  "mode": "native-software-check",
+  "compiler_target": "x86_64-linux-gnu",
+  "source_sha256": {
+    "openocd-0.12.0.tar.gz": "bb367fd19ab96a65ee5b269b60326d9f36bca1c64d9865cc36985d3651aba563",
+    "libusb-1.0.30.tar.bz2": "fea36f34f9156400209595e300840767ab1a385ede1dc7ee893015aea9c6dbaf"
+  },
+  "elf": {
+    "class": 64,
+    "machine": 62,
+    "static": true,
+    "arm_hard_float": false
+  },
+  "sha256": "8b05084e37ca6f4a54cf23069d1905d09b4abc0d644ed2e42492a4e4556d2114",
+  "version_output": "Open On-Chip Debugger 0.12.0\nLicensed under GNU GPL v2\nFor bug reports, read\n\thttp://openocd.org/doc/doxygen/bugs.html",
+  "board_tested": false,
+  "python": "3.13.5",
+  "compiler_version": "gcc (Debian 14.2.0-19) 14.2.0",
+  "stlink_hla_enabled": true,
+  "libusb1_enabled": true,
+  "arm_cross_built": false,
+  "uploaded_arm_elf_executed": false,
+  "command": "python3.13 -B build/openocd/build.py --native --output <new-directory> --jobs 4 --timeout-s 600",
+  "caveat": "Native x86-64 build only. Linker warned about glibc NSS and name/user lookup runtime dependencies. No Zynq/USB/SWD test.",
+  "static_link_fix": "Use Automake AM_LDFLAGS=-all-static; do not pass libtool-only -all-static to Jim Tcl via global LDFLAGS."
+}

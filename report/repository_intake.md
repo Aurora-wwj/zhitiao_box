@@ -6,7 +6,7 @@
 
 已完整读取 AMD 2026 选题指南、仓库整理指导、Skill 小修正三份 PDF。
 上传的代码合集 ZIP 超过当前附件工具 32 MiB 单文件传输上限，未成功下载，工作区亦无该合集副本。
-后续已收到独立Agent、Project、历史smoke及FPGA四分包：已迁入并核验Agent、最终STM32、运行JSON、HEX、FPGA源输入／v5位流／原始实现报告。不以旧Agent checkout代替上传版本。SD仍无可读副本。
+后续已收到独立Agent、Project、历史smoke、FPGA四分包及Zynq_Linux_Test两分包：已迁入并核验Agent、最终STM32、运行JSON、HEX、FPGA源输入／v5位流／原始实现报告和可公开的OpenOCD源码／许可。不以旧Agent checkout代替上传版本。Linux测试包不是完整SD重建输入，原大SD包仍未读取。
 此文档是整理依据，不代表硬件重建或本次真机验证；当前缺件与验收范围统一见release_status.md。
 
 ## 依据与优先级

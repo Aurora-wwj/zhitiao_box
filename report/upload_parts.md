@@ -1,6 +1,6 @@
 # 大附件分包与重组
 
-附件下载工具单文件上限32 MiB。FPGA与SD ZIP目前均超过限制，尚未检视；这不是Vivado工程错误。
+附件下载工具单文件上限32MiB。FPGA四分包和Zynq_Linux_Test两分包现已收到、校验并整理；原完整SD大包仍未读取。以下用于后续大附件，不需要重复提交已经收到的包。
 
 在Windows的zhitiaohe项目目录拉取main，使用Python3.13：
 
@@ -18,6 +18,8 @@ py -3.13 sim/prepare_upload_parts.py split "D:\实际目录\Zhidiao_Linux_microS
 ```
 
 工具不修改原ZIP、不解压或执行内容，仅切分字节并记录整体／分块SHA。分包仅用于向本次整理提供材料，不是GitHub发布源码，生成文件已加入.gitignore。
+
+若文件名为Zynq_Linux_Test.zip或其他名称，替换输入路径；每组使用新的空输出目录。该测试包的两份已经收齐，不能与FPGA或其他SD包混组。
 
 收到所有分包后，重组示例：
 

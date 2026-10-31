@@ -30,4 +30,8 @@ Skill按闭环调试、可信PL、UART、部署和失败排查五类组织，各
 
 ## 复现与限制
 
-详见report/reproduction.md及build/fpga/README.md。实际Vivado2017.4，与指南推荐新版存在差异；已提供重建Tcl，但Vivado／Keil重建未在云端执行。四项供应商IP因完整再分发许可未附，按VLNV／37文件SHA和合法获取步骤列为外部依赖；不能称为无外部依赖的一键构建。SD板端包、实物照片与正式主报告仍待补齐，SSH与PL冷启动持久化待验证。UART有限窗口与字节上限，单文件修改且需审批，依赖第三方API的可用性。
+详见report/reproduction.md及build/fpga/README.md。实际Vivado2017.4，与指南推荐新版存在差异；已提供重建Tcl，但Vivado／Keil重建未在云端执行。四项供应商IP因完整再分发许可未附，按VLNV／37文件SHA和合法获取步骤列为外部依赖；不能称为无外部依赖的一键构建。UART有限窗口与字节上限，单文件修改且需审批，依赖第三方API的可用性。
+
+Zynq_Linux_Test两分包已核对，带许可的OpenOCD／libusb源码及构建入口公开，887份部署脚本与源码一致。fixed FIT与原件kernel／fdt相同，ramdisk增加静态IP和主机私钥等；私钥和含密钥镜像不公开，原ARM ELF因确切静态依赖来源不齐也不直接发布。完整BOOT／Linux构建配方、实物照片与正式主报告仍待补齐，SSH authorized_keys与PL冷启动持久化待实测，不能从配置存在推断验收通过。
+
+本轮根sim的15项检查通过，另实际完成OpenOCD Linux x86-64本机静态构建与0.12.0版本检查，构建中的libtool／Jim Tcl链接问题已修正；保留glibc NSS警告。此结果不代表ARM交叉编译、Zynq／USB／SWD或烧录已经复验，详见data/openocd_native_check.json。

@@ -3,5 +3,6 @@
 /build/stm32/*.hex -text
 /src/fpga/zhidiao_measure/** -text
 /build/fpga/reports/** -text
+/src/third_party/openocd/** -text
 *.bit binary
 *.pdf binary

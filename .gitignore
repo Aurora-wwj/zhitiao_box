@@ -33,4 +33,6 @@ part-*.zip
 /Zhidiao_PL.zip
 /Zhidiao_Linux_microSD.zip
 /build/fpga/work*/
+/build/openocd/work*/
+/Zynq_Linux_Test.zip
 *.vvp

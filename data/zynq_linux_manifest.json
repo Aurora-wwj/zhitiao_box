@@ -1,0 +1,251 @@
+{
+  "archive": "zynq_linux_test_zip",
+  "published_files": [
+    {
+      "path": "src/third_party/openocd/openocd-0.12.0.tar.gz",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz",
+      "bytes": 8445833,
+      "sha256": "bb367fd19ab96a65ee5b269b60326d9f36bca1c64d9865cc36985d3651aba563"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/README",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/README",
+      "bytes": 12242,
+      "sha256": "a0b180f131496a0ee40496a67140e887d8b74930aba66f4f0cc46d43924bf769"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/license-rules.txt",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/license-rules.txt",
+      "bytes": 10617,
+      "sha256": "0a37155eb8bc0cb94477a0cae4f030e39da9317374e8a9f597e9229fd09aff78"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/exceptions/eCos-exception-2.0",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/exceptions/eCos-exception-2.0",
+      "bytes": 1001,
+      "sha256": "034da732b4f3079b8783fff756613c1cff89dec5ac80c5cdd90532b7539922a1"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-Source-Code",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/BSD-Source-Code",
+      "bytes": 1654,
+      "sha256": "5cf024f6e3611d5c6fb98748d1a0ad99b8cf9ffe46f2d60fa10c299cd29e0a75"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-3-Clause",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/BSD-3-Clause",
+      "bytes": 1845,
+      "sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/gfdl-1.2.texi.readme",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/gfdl-1.2.texi.readme",
+      "bytes": 166,
+      "sha256": "76515be2d7334a1a038f775238c9a4c2b37e19514248e5eea0434cdfee526f9d"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-2-Clause-Views",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/BSD-2-Clause-Views",
+      "bytes": 1898,
+      "sha256": "1483f15e9fddc73b5df0acab1c42d21ecd0bf6ade8a79179fb90c09f13d03dcd"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/GFDL-1.2",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/GFDL-1.2",
+      "bytes": 21155,
+      "sha256": "f35396f4095619f986736ca5e2976b313d381463a35c921c9ae677cc7eb83e28"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-2-Clause",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/BSD-2-Clause",
+      "bytes": 1641,
+      "sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/MIT",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/MIT",
+      "bytes": 1372,
+      "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/GPL-2.0",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/GPL-2.0",
+      "bytes": 18732,
+      "sha256": "7d35bc44da7bb763022e3c2c32cfc0125dd222060bc50992420599d8e65f6c0a"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-1-Clause",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/BSD-1-Clause",
+      "bytes": 1415,
+      "sha256": "f3ba76203a7b6993db31f987559cc4c621ae1ff78119ced2a669756c2c5fd3b1"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/stand-alone/GPL-3.0",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/stand-alone/GPL-3.0",
+      "bytes": 35789,
+      "sha256": "9a41b56594cd89743ca72f188318c9871661847074dd16497ae0c695fe3ab9c9"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/COPYING",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/COPYING",
+      "bytes": 362,
+      "sha256": "1b8f7e37ee5afbbf95c2a4d62b12b25232e29538692663b434318503a9a88419"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/AUTHORS",
+      "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/AUTHORS",
+      "bytes": 477,
+      "sha256": "ee9d62773d4cf3183cdfd80abdb566a421bfcde531d5214ee46b474176839b1f"
+    },
+    {
+      "path": "src/third_party/openocd/libusb-1.0.30.tar.bz2",
+      "source": "openocd_sources/libusb-1.0.30.tar.bz2",
+      "bytes": 656112,
+      "sha256": "fea36f34f9156400209595e300840767ab1a385ede1dc7ee893015aea9c6dbaf"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/libusb-1.0.30/COPYING",
+      "source": "openocd_sources/libusb-1.0.30.tar.bz2!/libusb-1.0.30/COPYING",
+      "bytes": 26436,
+      "sha256": "5df07007198989c622f5d41de8d703e7bef3d0e79d62e24332ee739a452af62a"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/libusb-1.0.30/README",
+      "source": "openocd_sources/libusb-1.0.30.tar.bz2!/libusb-1.0.30/README",
+      "bytes": 873,
+      "sha256": "ba152b9ae04b7cdf3cf09e8c91f60971b0c8f6106562e7cd31a2f2bf97f690db"
+    },
+    {
+      "path": "src/third_party/openocd/licenses/libusb-1.0.30/AUTHORS",
+      "source": "openocd_sources/libusb-1.0.30.tar.bz2!/libusb-1.0.30/AUTHORS",
+      "bytes": 4015,
+      "sha256": "27fd82b016838197d5276ba98d2187ed5a1ad0e171767322f356f0a9f6395941"
+    }
+  ],
+  "upstream_entrypoints": {
+    "openocd": "https://openocd.org/pages/getting-openocd.html",
+    "libusb": "https://libusb.info/"
+  },
+  "source_provenance": "Source archives supplied by the team, license files retained. No independent upstream signature verification claimed.",
+  "deployed_script_comparison": {
+    "matched_files": 887,
+    "mismatches": [],
+    "interface/stlink.cfg": "identical to source archive",
+    "target/stm32g4x.cfg": "identical to source archive"
+  },
+  "not_published": [
+    {
+      "source": "BOOT.BIN",
+      "bytes": 2427944,
+      "sha256": "fa7c65b7880bf6c66ac4ce6186cb2dc88c7b6d3a48ed3c48e768c7cdb68f5641",
+      "reason": "Missing FSBL/U-Boot/boot project sources and redistribution provenance"
+    },
+    {
+      "source": "image.ub",
+      "bytes": 9537472,
+      "sha256": "224b9b884352a931244541017024fdbff69297feeaadab2b1e5eb0d030bb0344",
+      "reason": "Missing Linux/rootfs build sources and recipe; includes credential databases"
+    },
+    {
+      "source": "image_fixed.ub",
+      "bytes": 9539416,
+      "sha256": "71fb28754b857b808340f87e9b54de2197d54141fd4c90eb1fd94360ac78635a",
+      "reason": "Contains an embedded private SSH host key; missing complete build sources"
+    },
+    {
+      "source": "arm_hello",
+      "bytes": 460468,
+      "sha256": "ae79b34943aa5abed191ff0925a2d0df7e13d30b101e7bf99f25eaa6578cdd7c",
+      "reason": "No corresponding application source supplied"
+    },
+    {
+      "source": "GPIO1.hex",
+      "bytes": 15936,
+      "sha256": "6badc294885ad0d62a38835da97e661ef93de3d04f31d17862dc733297626744",
+      "reason": "Historical firmware; does not match final verified HEX"
+    },
+    {
+      "source": "openocd_deploy/openocd-0.12.0-armhf-static/bin/openocd",
+      "bytes": 15679348,
+      "sha256": "3ee6df238e78a728c8f1cb78aa02495def8d7820773bc8f0d460d6b3828c55b2",
+      "reason": "Static ARM hard-float ELF; exact toolchain/build flags and all linked-library sources not supplied"
+    }
+  ],
+  "excluded_secrets": [
+    {
+      "source": "dropbear_rsa_host_key",
+      "action": "excluded; no key content or key hash published"
+    },
+    {
+      "source": "image_fixed.ub!/etc/dropbear/dropbear_rsa_host_key",
+      "action": "entire image excluded"
+    }
+  ],
+  "fit_components": {
+    "image.ub": {
+      "/images/kernel@0": {
+        "bytes": 3787208,
+        "sha256": "1d79eb0f62608d56b475b62c775497677003d61d9c7fc7469a7feb2e7e72cd7e"
+      },
+      "/images/fdt@0": {
+        "bytes": 21486,
+        "sha256": "bda8484b21a73218f455412e1f87e31c0fa52fdd3d44d285d1cddc08e06d6738"
+      },
+      "/images/ramdisk@0": {
+        "bytes": 5727133,
+        "sha256": "44a420be66d9281cf0ece5566f5d987c2948e9fcbdcd28f9d35164741964d8c9"
+      }
+    },
+    "image_fixed.ub": {
+      "/images/kernel@0": {
+        "bytes": 3787208,
+        "sha256": "1d79eb0f62608d56b475b62c775497677003d61d9c7fc7469a7feb2e7e72cd7e"
+      },
+      "/images/fdt@0": {
+        "bytes": 21486,
+        "sha256": "bda8484b21a73218f455412e1f87e31c0fa52fdd3d44d285d1cddc08e06d6738"
+      },
+      "/images/ramdisk@0": {
+        "bytes": 5728554,
+        "sha256": "e3f8ac06f41fe47af95377b9fa1d806a7a3558ea75fdbf377cfe3fb1f39370e9"
+      }
+    }
+  },
+  "rootfs_changed_paths": [
+    {
+      "path": "etc/dropbear/dropbear_rsa_host_key",
+      "before_bytes": null,
+      "after_bytes": 805
+    },
+    {
+      "path": "etc/network/interfaces",
+      "before_bytes": 615,
+      "after_bytes": 668
+    },
+    {
+      "path": "etc/terminfo/v/vt200",
+      "before_bytes": 0,
+      "after_bytes": 1377
+    },
+    {
+      "path": "etc/terminfo/v/vt220",
+      "before_bytes": 1377,
+      "after_bytes": 0
+    }
+  ],
+  "uploaded_binary_elf": {
+    "class": 32,
+    "machine": 40,
+    "static": true,
+    "arm_hard_float": true
+  },
+  "network_observation": {
+    "image": "image_fixed.ub",
+    "rootfs_path": "etc/network/interfaces",
+    "interface": "eth0",
+    "mode": "static",
+    "address": "192.168.10.2",
+    "netmask": "255.255.255.0",
+    "cold_boot_verified": false
+  }
+}

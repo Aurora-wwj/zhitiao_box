@@ -15,5 +15,10 @@
     "sha256": "1f87f8d6dad48ae1286790ebec802fd776a0e939093d7cb384498fa327abf052",
     "bytes": 116739469,
     "parts": 4
+  },
+  "zynq_linux_test_zip": {
+    "bytes": 37273220,
+    "sha256": "6cf4aaf320c9aaaae11b938725f0e9666cafa9fe6a97f8dc1a9a5159c1084b11",
+    "parts": 2
   }
 }

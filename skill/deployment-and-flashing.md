@@ -29,3 +29,10 @@ python -B -m unittest discover -s tests -p "test_real_workflow.py" -v
 ```
 
 Windows使用Python3.13时可将python换为`py -3.13`。这些是离线验证，硬件迁移还须按report/reproduction.md重新部署并获得自己的实测报告。
+## 已提供源码与新增构建观察
+
+Zynq Linux测试包中的887份OpenOCD脚本与源码一致；OpenOCD／libusb原tar和许可现已公开，构建入口见build/openocd。原上传ARM ELF的完整静态依赖／确切配方仍缺，不直接再分发。
+
+本机构建曾暴露libtool `-static`不等于完全静态ELF；`-all-static`需限定在Automake链接阶段，不能通过全局LDFLAGS传给直接用gcc的Jim Tcl。修正后实际x86-64构建／版本检查通过，仍需目标ARM和USB/SWD验收；静态glibc的NSS等警告保留。
+
+fixed镜像里有主机私钥和静态IP，不等于免密authorized_keys或PL已能冷启动恢复。私钥／含密钥镜像不公开；每块板用自己生成的主机身份，按可信指纹建known_hosts，不能复用现场私钥。

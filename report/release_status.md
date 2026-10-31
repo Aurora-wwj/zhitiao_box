@@ -1,6 +1,6 @@
 # 发布状态
 
-2026-11-01：FPGA四分包已合并整理，仍非最终完整比赛提交包。
+2026-11-01：FPGA四分包、Zynq Linux测试两分包均已合并整理，仍非最终完整比赛提交包。
 
 ## 已整理并核对
 
@@ -10,10 +10,12 @@
 - baseline/final原始utilization及timing报告，指标已解析并对照指导；只匿名化主机信息。
 - Vivado2017.4构建入口、四项外部IP的VLNV与37文件SHA、合法获取／检查步骤；不整体再分发未知许可IP。
 - 4份匿名历史smoke参考、5项分包工具回归、6项FPGA整理回归（含实际Icarus RTL仿真及Tcl替身控制流检查）。Agent457项离线回归此前通过，生产代码本轮未改。
+- Zynq_Linux_Test的OpenOCD0.12.0／libusb1.0.30源码与完整许可、887份部署脚本与源码一致性、FIT组成／rootfs差异分析、只读文件检查和OpenOCD构建配方。独立及镜像内SSH主机私钥均排除；原ELF、BOOT／Linux镜像与历史HEX不原样公开。
+- 根sim15项回归通过；额外完成OpenOCD Linux x86-64本机静态ELF构建与--version检查，不作为ARM／真机结果。日志与边界见data/test_summary.md。
 
 ## 仍需补齐或验收
 
-- Zhidiao_Linux_microSD.zip仍超过32MiB附件下载上限，无可读副本。需像FPGA一样分包上传，之后核对板端脚本、启动链、OpenOCD／Linux／BOOT来源和许可。
+- 完整BOOT／Linux／DT／rootfs重建输入、SDK／静态库来源及原OpenOCD精确编译记录仍缺。已收到的Zynq_Linux_Test不等于完整SD；原Zhidiao_Linux_microSD.zip仍未取得可读副本，但已有测试包无需重复上传。
 - 实物／接线照片与正式主报告的同版文件；现有设计报告PDF明确为整理初稿。
 - 实际Vivado2017.4重建记录及Windows Keil重建／本次整理后的上板验收。云端没有这些工具和板卡；命令替身测试不证明Vivado重建成功。
 - 时序覆盖审阅：原final报告有942个未约束最大延迟pin等HIGH警告，不能仅凭WNS0.709宣称全设计时序验收完成。

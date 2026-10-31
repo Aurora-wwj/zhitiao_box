@@ -25,3 +25,15 @@ Python3.13 + Icarus Verilog12.0实际运行根sim的11项回归，全部通过�
 RTL仿真确认sticky valid与startup HIGH首次残段的边界；原final报告的未约束路径／I/O等HIGH警告原样保留。不将本次检查说成硬件重建、所有启动相位正确或全设计时序闭合。黄金RTL、STM32 main.c、HEX和v5 bit均未改功能／字节；Agent生产代码本轮未改，不将既有457项测试冒充本轮重跑。SD仍待分包。
 
 Git暂存区14项FPGA文件SHA全部匹配；从暂存树导出的干净副本运行sim/check_release.py通过，包含STM32／HEX／FPGA／报告和历史归档检查，确认Git行尾处理未破坏黄金字节。新增文件未发现私钥块、原个人路径或主机名；原创整理文件whitespace检查通过。
+
+## Zynq Linux测试两分包，2026-11-01
+
+原ZIP37273220字节及整体SHA已核对；只读检查确认887份部署OpenOCD脚本与提供源码相同。20份公开源码／许可文件逐项SHA核验；独立及rootfs内主机私钥、凭据内容和原镜像未进入公开树。fixed与原FIT的kernel／fdt相同，rootfs变化及静态IP仅作为配置存在证据，不声称冷启动通过。
+
+Python3.13根sim现有15项回归全部通过（6 FPGA、5分包、4 Zynq），含实际Icarus12.0 RTL仿真、源码损坏／目录覆盖拒绝、ELF静态／ARM ABI解析、板端只读文件检查及坏SHA／缺工具拒绝。日志见zynq_release_tests.txt。文件检查不执行OpenOCD、MMIO或PL加载。Agent生产代码、黄金STM32／HEX／v5 bit本轮未改，既有457项Agent测试沿用已记录结果。
+
+额外实际完成OpenOCD／libusb的Linux x86-64本机构建与安装到临时package目录，执行新生成程序的--version返回Open On-Chip Debugger0.12.0；ELF无动态段，ST-Link HLA与libusb宏均启用。证据见openocd_native_check.json。首次尝试暴露libtool -static仍可能动态链接；全局-all-static又会传入Jim Tcl的gcc，最终通过AM_LDFLAGS限定链接阶段修复，再从新目录完整构建通过。保留glibc NSS相关链接警告，不能从静态ELF推出所有运行路径无外部依赖。
+
+未执行上传ARM ELF、ARM交叉构建、Windows／Keil／Vivado重建或本轮板卡测试。没有把PC编译成功等同Zynq OpenOCD／USB／SWD通过；Linux／BOOT完整构建配方和冷启动验收仍缺。
+
+暂存区20份Zynq源码／许可SHA匹配；逐项检查Git暂存树未包含排除清单中的原ELF／镜像／HEX／整个ZIP或私钥文件名／私钥块。从Git暂存树导出的干净副本再次运行sim/check_release.py通过，原STM32／HEX／FPGA身份及本轮源码归档都保持一致。
