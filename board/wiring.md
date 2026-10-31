@@ -1,0 +1,5 @@
+# 接线与寄存器契约
+
+AX7Z020 Zynq-7000，STM32G431，USB ST-Link/V2→SWD。PA1→M18（周期）；PA2/USART2_TX→M17（UART，115200 8N1）；共地和电平兼容由硬件部署者确认。
+100 MHz：period/high=0x43C30000/0x43C30008；edge/valid=0x43C40000/0x43C40008；UART RX/status/control=0x43C50000/0x43C50008/0x43C5000C。
+LED bank=0x43C60000，bit0～3=四工具，active-low，0xF全灭。指导资料称J14/K14/J18/H18为LED管脚；最终XDC尚未收到，仍待核对。

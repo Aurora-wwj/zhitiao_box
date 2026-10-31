@@ -1,0 +1,1998 @@
+{
+  "run_id": "run_5d8e004954664f6c8f8ff0f85d31959b",
+  "decision": "PASS",
+  "reason": "SELECTED_PHYSICAL_CHECKS_PASSED",
+  "report_schema": "1.0",
+  "parent_run_id": null,
+  "report_stage": "execution",
+  "task_entry": {
+    "wall_started_at": 1793364578.8789732,
+    "elapsed_s": 10.500796599997557,
+    "context_sharing_approved": true,
+    "model_info": {
+      "source": "nicecode_api",
+      "requested_model": "gpt-5.6-sol",
+      "protocol": "openai-responses"
+    },
+    "goal_response": {
+      "status": "ready",
+      "test_id": "gpio_period",
+      "observed_gpio": "PA1",
+      "params": {
+        "expected_period_ms": 1000.0,
+        "tolerance_ms": 50.0
+      },
+      "summary": "将 STM32 PA1 的完整 GPIO 周期目标设为 1000 ms，允许误差不超过 50 ms。"
+    },
+    "clarifications": [],
+    "reviews": [
+      {
+        "action": "goal",
+        "proposal_id": "6282ee5f9a514b5c95b1824f8c5c74aa",
+        "fingerprint": "38fb4b6087b4139bbc3a516ab1138321daece8944e2e549817a6da12c0cad085",
+        "approved": true,
+        "error_code": null,
+        "params": {
+          "scope": {
+            "project_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test",
+            "task": "把 STM32 PA1 的完整周期调到 1000 ms，误差不超过 50 ms。",
+            "goal": {
+              "expected_period_ms": 1000.0,
+              "tolerance_ms": 50.0
+            },
+            "observed_gpio": "PA1",
+            "duration_s": 5,
+            "test_id": "gpio_period",
+            "source_files": [
+              "Core/Src/main.c"
+            ],
+            "source_sha256": "084ecdfd547a68b602197719f438b6705c91574594ec7bd7a8d59325fea422cc",
+            "deployment": {
+              "allowed_roots": [
+                "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+              ],
+              "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+              "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+              "target": "GPIO_PL_Test",
+              "build_timeout_s": 120,
+              "flash_timeout_s": 120,
+              "host": "192.168.10.2",
+              "port": 22,
+              "user": "root",
+              "known_hosts": "C:\\Users\\USER\\.ssh\\known_hosts",
+              "identity_file": "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+              "allow_legacy_rsa": true,
+              "legacy_scp": true,
+              "mount_root": "/sd",
+              "observer": {
+                "pl_clock_hz": 100000000,
+                "observed_gpio": "PA1",
+                "period_addr": "0x43C30000",
+                "high_addr": "0x43C30008",
+                "edge_addr": "0x43C40000",
+                "valid_addr": "0x43C40008",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+                "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+                "prepare_policy": "check_only",
+                "bitstream_device": "/dev/xdevcfg",
+                "min_new_edges": 2,
+                "poll_interval_s": 0.05,
+                "timeout_s": 15,
+                "transport_margin_s": 3,
+                "monotonic_path": "/proc/uptime"
+              },
+              "uart_observer": {
+                "stm32_tx_gpio": "PA2",
+                "pl_rx_pin": "M17",
+                "baud_rate": 115200,
+                "data_bits": 8,
+                "parity": "none",
+                "stop_bits": 1,
+                "rx_addr": "0x43C50000",
+                "status_addr": "0x43C50008",
+                "control_addr": "0x43C5000C",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "monotonic_path": "/proc/uptime",
+                "poll_interval_s": 0.01,
+                "transport_margin_s": 3,
+                "max_bytes": 1024
+              },
+              "status_indicator": {
+                "type": "axi_gpio_led_bar",
+                "data_addr": "0x43C60000",
+                "active_low": true
+              }
+            },
+            "include_uart": true,
+            "max_attempts": 3,
+            "timeout_s": 591.4075685999996,
+            "allowed_roots": [
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+            ],
+            "runtime_identity": [
+              2136319986384,
+              2136320342208,
+              2136319922960,
+              2136320342544,
+              2136320340528,
+              2136320339856,
+              2136320341536,
+              2136320341200,
+              2136320340864
+            ]
+          },
+          "observation": {
+            "uart_available": true,
+            "period_available": true,
+            "descriptor": {
+              "deployment": {
+                "allowed_roots": [
+                  "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+                ],
+                "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+                "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+                "target": "GPIO_PL_Test",
+                "build_timeout_s": 120,
+                "flash_timeout_s": 120,
+                "host": "192.168.10.2",
+                "port": 22,
+                "user": "root",
+                "known_hosts": "C:\\Users\\USER\\.ssh\\known_hosts",
+                "identity_file": "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+                "allow_legacy_rsa": true,
+                "legacy_scp": true,
+                "mount_root": "/sd",
+                "observer": {
+                  "pl_clock_hz": 100000000,
+                  "observed_gpio": "PA1",
+                  "period_addr": "0x43C30000",
+                  "high_addr": "0x43C30008",
+                  "edge_addr": "0x43C40000",
+                  "valid_addr": "0x43C40008",
+                  "busybox_path": "/bin/busybox",
+                  "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                  "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+                  "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+                  "prepare_policy": "check_only",
+                  "bitstream_device": "/dev/xdevcfg",
+                  "min_new_edges": 2,
+                  "poll_interval_s": 0.05,
+                  "timeout_s": 15,
+                  "transport_margin_s": 3,
+                  "monotonic_path": "/proc/uptime"
+                },
+                "uart_observer": {
+                  "stm32_tx_gpio": "PA2",
+                  "pl_rx_pin": "M17",
+                  "baud_rate": 115200,
+                  "data_bits": 8,
+                  "parity": "none",
+                  "stop_bits": 1,
+                  "rx_addr": "0x43C50000",
+                  "status_addr": "0x43C50008",
+                  "control_addr": "0x43C5000C",
+                  "busybox_path": "/bin/busybox",
+                  "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                  "monotonic_path": "/proc/uptime",
+                  "poll_interval_s": 0.01,
+                  "transport_margin_s": 3,
+                  "max_bytes": 1024
+                },
+                "status_indicator": {
+                  "type": "axi_gpio_led_bar",
+                  "data_addr": "0x43C60000",
+                  "active_low": true
+                }
+              },
+              "timeout_s": 15.0,
+              "effects": "Read selected physical observations; no firmware changes. UART capture resets its RX FIFO to exclude stale bytes before reading.",
+              "observed_gpio": "PA1",
+              "period": {
+                "observer": {
+                  "pl_clock_hz": 100000000,
+                  "observed_gpio": "PA1",
+                  "period_addr": "0x43C30000",
+                  "high_addr": "0x43C30008",
+                  "edge_addr": "0x43C40000",
+                  "valid_addr": "0x43C40008",
+                  "busybox_path": "/bin/busybox",
+                  "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                  "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+                  "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+                  "prepare_policy": "check_only",
+                  "bitstream_device": "/dev/xdevcfg",
+                  "min_new_edges": 2,
+                  "poll_interval_s": 0.05,
+                  "timeout_s": 15,
+                  "transport_margin_s": 3,
+                  "monotonic_path": "/proc/uptime"
+                },
+                "commands": [
+                  [
+                    "ssh",
+                    "-o",
+                    "BatchMode=yes",
+                    "-o",
+                    "StrictHostKeyChecking=yes",
+                    "-o",
+                    "UserKnownHostsFile=\"C:/Users/USER/.ssh/known_hosts\"",
+                    "-o",
+                    "ConnectTimeout=10",
+                    "-o",
+                    "HostKeyAlgorithms=+ssh-rsa",
+                    "-o",
+                    "PubkeyAcceptedAlgorithms=+ssh-rsa",
+                    "-i",
+                    "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+                    "-o",
+                    "IdentitiesOnly=yes",
+                    "-p",
+                    "22",
+                    "root@192.168.10.2",
+                    "set -eu\nBB=/bin/busybox\ntest -x \"$BB\" || exit 72\n[ \"$((4294967295))\" = \"4294967295\" ] || exit 72\ntest -r /sys/class/xdevcfg/xdevcfg/device/prog_done || exit 73\n[ \"$(\"$BB\" cat /sys/class/xdevcfg/xdevcfg/device/prog_done)\" = \"1\" ] || exit 73\ntest -r /sd/pl/zhidiao_observe_v5_led.bit || exit 73\nimage_sha=$(\"$BB\" sha256sum < /sd/pl/zhidiao_observe_v5_led.bit) || exit 73\n[ \"$image_sha\" = 'fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6  -' ] || exit 73\nCLOCK=/proc/uptime\nclock_ms() {\n    read up rest < \"$CLOCK\" || exit 72\n    case \"$up\" in *.*) seconds=${up%%.*}; fraction=${up#*.} ;; *) exit 74 ;; esac\n    case \"$seconds:$fraction\" in *[!0123456789:]*|:*|*:) exit 74 ;; esac\n    [ \"${#seconds}\" -le 12 ] && [ \"${#fraction}\" -le 9 ] || exit 74\n    case \"$seconds\" in 0) ;; 0*) exit 74 ;; esac\n    fraction=${fraction}000\n    fraction=${fraction%${fraction#???}}\n    printf '%u' \"$((seconds * 1000 + 1$fraction - 1000))\"\n}\nread_reg() {\n    raw=$(\"$BB\" devmem \"$1\" 32) || exit 72\n    case \"$raw\" in 0x*) digits=${raw#0x} ;; *) exit 74 ;; esac\n    case \"$digits\" in ''|*[!0123456789abcdefABCDEF]*) exit 74 ;; esac\n    [ \"${#digits}\" -le 8 ] || exit 74\n    printf '%u' \"$((raw))\"\n}\n\n\"$BB\" usleep 0 || exit 72\nstarted=$(clock_ms) || exit $?\ndeadline=$((started + 15000))\nedge_start=$(read_reg 0x43C40000) || exit $?\ni=0\nwhile [ \"$i\" -lt 300 ]; do\n    now=$(clock_ms) || exit $?\n    [ \"$now\" -ge \"$started\" ] || exit 74\n    [ \"$now\" -lt \"$deadline\" ] || exit 75\n    edge_before=$(read_reg 0x43C40000) || exit $?\n    delta=$(( (edge_before - edge_start) & 4294967295 ))\n    valid=$(read_reg 0x43C40008) || exit $?\n    if [ \"$delta\" -ge 2 ] && [ \"$delta\" -lt 2147483648 ] && [ \"$valid\" -eq 1 ]; then\n        period=$(read_reg 0x43C30000) || exit $?\n        high=$(read_reg 0x43C30008) || exit $?\n        valid_after=$(read_reg 0x43C40008) || exit $?\n        edge_after=$(read_reg 0x43C40000) || exit $?\n        if [ \"$edge_before\" -eq \"$edge_after\" ] && [ \"$valid_after\" -eq 1 ]; then\n            now=$(clock_ms) || exit $?\n            [ \"$now\" -lt \"$deadline\" ] || exit 75\n            printf 'ZHIDIAO_PL_V1 %u %u %u %u %u %u\\n' \"$edge_start\" \"$edge_before\" \"$edge_after\" \"$valid_after\" \"$period\" \"$high\"\n            exit 0\n        fi\n    fi\n    i=$((i + 1))\n    if [ \"$i\" -lt 300 ]; then \"$BB\" usleep 50000 || exit 72; fi\ndone\nexit 75"
+                  ]
+                ],
+                "observation_timeout_s": 15.0,
+                "timeout_s": 18.0,
+                "effects": "Read-only PL readiness and fresh period/high register observation over SSH; no bitstream loading.",
+                "image_identity": "Deployment must prepare the configured observation image; prog_done and SD file hash do not identify the running image."
+              },
+              "uart": {
+                "uart_observer": {
+                  "stm32_tx_gpio": "PA2",
+                  "pl_rx_pin": "M17",
+                  "baud_rate": 115200,
+                  "data_bits": 8,
+                  "parity": "none",
+                  "stop_bits": 1,
+                  "rx_addr": "0x43C50000",
+                  "status_addr": "0x43C50008",
+                  "control_addr": "0x43C5000C",
+                  "busybox_path": "/bin/busybox",
+                  "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                  "monotonic_path": "/proc/uptime",
+                  "poll_interval_s": 0.01,
+                  "transport_margin_s": 3,
+                  "max_bytes": 1024
+                },
+                "duration_s": 5.0,
+                "timeout_s": 8.0,
+                "commands": [
+                  [
+                    "ssh",
+                    "-o",
+                    "BatchMode=yes",
+                    "-o",
+                    "StrictHostKeyChecking=yes",
+                    "-o",
+                    "UserKnownHostsFile=\"C:/Users/USER/.ssh/known_hosts\"",
+                    "-o",
+                    "ConnectTimeout=10",
+                    "-o",
+                    "HostKeyAlgorithms=+ssh-rsa",
+                    "-o",
+                    "PubkeyAcceptedAlgorithms=+ssh-rsa",
+                    "-i",
+                    "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+                    "-o",
+                    "IdentitiesOnly=yes",
+                    "-p",
+                    "22",
+                    "root@192.168.10.2",
+                    "set -eu\nBB=/bin/busybox\ntest -x \"$BB\" || exit 72\n[ \"$((4294967295))\" = \"4294967295\" ] || exit 72\ntest -r /sys/class/xdevcfg/xdevcfg/device/prog_done || exit 73\n[ \"$(\"$BB\" cat /sys/class/xdevcfg/xdevcfg/device/prog_done)\" = \"1\" ] || exit 73\ntest -r /sd/pl/zhidiao_observe_v5_led.bit || exit 73\nimage_sha=$(\"$BB\" sha256sum < /sd/pl/zhidiao_observe_v5_led.bit) || exit 72\n[ \"$image_sha\" = 'fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6  -' ] || exit 73\nCLOCK=/proc/uptime\nclock_ms() {\n    read up rest < \"$CLOCK\" || exit 72\n    case \"$up\" in *.*) seconds=${up%%.*}; fraction=${up#*.} ;; *) exit 74 ;; esac\n    case \"$seconds:$fraction\" in *[!0123456789:]*|:*|*:) exit 74 ;; esac\n    [ \"${#seconds}\" -le 12 ] && [ \"${#fraction}\" -le 9 ] || exit 74\n    case \"$seconds\" in 0) ;; 0*) exit 74 ;; esac\n    fraction=${fraction}000\n    fraction=${fraction%${fraction#???}}\n    printf '%u' \"$((seconds * 1000 + 1$fraction - 1000))\"\n}\nread_reg() {\n    raw=$(\"$BB\" devmem \"$1\" 32) || exit 72\n    case \"$raw\" in 0x*) digits=${raw#0x} ;; *) exit 74 ;; esac\n    case \"$digits\" in ''|*[!0123456789abcdefABCDEF]*) exit 74 ;; esac\n    [ \"${#digits}\" -le 8 ] || exit 74\n    printf '%u' \"$((raw))\"\n}\n\n\"$BB\" usleep 0 || exit 72\nclock_ms > /dev/null || exit $?\n# Read old sticky health flags before clearing the old RX session.\nread_reg 0x43C50008 > /dev/null || exit $?\n\"$BB\" devmem 0x43C5000C 32 0x00000002 > /dev/null || exit 72\nstarted=$(clock_ms) || exit $?\ndeadline=$((started + 5000))\ncount=0\noverflow=0\nframe=0\nparity=0\nlimited=0\niterations=0\nprintf 'ZHIDIAO_UART_V1\\n'\nwhile [ \"$iterations\" -lt 1526 ]; do\n    iterations=$((iterations + 1))\n    now=$(clock_ms) || exit $?\n    [ \"$now\" -ge \"$started\" ] || exit 74\n    [ \"$now\" -lt \"$deadline\" ] || break\n    status=$(read_reg 0x43C50008) || exit $?\n    [ \"$((status & 32))\" -eq 0 ] || overflow=1\n    [ \"$((status & 64))\" -eq 0 ] || frame=1\n    [ \"$((status & 128))\" -eq 0 ] || parity=1\n    if [ \"$((status & 1))\" -eq 1 ]; then\n        value=$(read_reg 0x43C50000) || exit $?\n        [ \"$value\" -le 255 ] || exit 74\n        now=$(clock_ms) || exit $?\n        [ \"$now\" -ge \"$started\" ] || exit 74\n        # A byte drained at/after the exclusive deadline is outside this window,\n        # not a capacity failure. Do not extend capture waiting for a newline.\n        if [ \"$now\" -ge \"$deadline\" ]; then break; fi\n        printf 'B %u %02X\\n' \"$((now - started))\" \"$value\"\n        count=$((count + 1))\n        if [ \"$count\" -ge 1024 ]; then limited=1; break; fi\n        # Immediately drain the next byte; sleep only once RX is empty.\n    else\n        \"$BB\" usleep 10000 || exit 72\n    fi\ndone\nnow=$(clock_ms) || exit $?\n[ \"$now\" -ge \"$started\" ] || exit 74\n[ \"$limited\" -eq 1 ] || [ \"$now\" -ge \"$deadline\" ] || exit 75\nprintf 'E %u %u %u %u %u %u\\n' \"$((now - started))\" \"$count\" \"$overflow\" \"$frame\" \"$parity\" \"$limited\"\n"
+                  ]
+                ],
+                "effects": "Reset UART RX FIFO once at the start of this approved capture to exclude stale bytes; drain only this UART channel. No bitstream loading or firmware changes.",
+                "fifo_reset": {
+                  "address": "0x43C5000C",
+                  "value": "0x00000002"
+                },
+                "timestamp_basis": "board_monotonic_capture_elapsed_ms"
+              },
+              "duration_s": 5
+            }
+          },
+          "summary": "批准此工程、目标、板卡和工具范围内的基线验证；每次新源码 diff 仍须批准。批准修改后自动重新构建、烧录和观测。",
+          "tools": [
+            "build_firmware",
+            "flash_firmware",
+            "read_target_log",
+            "run_hardware_test"
+          ],
+          "effects": "Build and program only this project's verified artifact; collect the selected physical evidence. If configured, update only the fixed 4-bit LED status bank at 0x43C60000. No Git, SSH configuration, boot file or Agent source changes.",
+          "approval_mode": "semantic"
+        }
+      }
+    ],
+    "last_error": null,
+    "resume_from": null
+  },
+  "metadata": {
+    "project_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test",
+    "task": "把 STM32 PA1 的完整周期调到 1000 ms，误差不超过 50 ms。",
+    "goal": {
+      "expected_period_ms": 1000.0,
+      "tolerance_ms": 50.0
+    },
+    "allowed_sources": [
+      "Core/Src/main.c"
+    ],
+    "include_uart": true,
+    "deployment": {
+      "allowed_roots": [
+        "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+      ],
+      "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+      "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+      "target": "GPIO_PL_Test",
+      "build_timeout_s": 120,
+      "flash_timeout_s": 120,
+      "host": "192.168.10.2",
+      "port": 22,
+      "user": "root",
+      "known_hosts": "C:\\Users\\USER\\.ssh\\known_hosts",
+      "identity_file": "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+      "allow_legacy_rsa": true,
+      "legacy_scp": true,
+      "mount_root": "/sd",
+      "observer": {
+        "pl_clock_hz": 100000000,
+        "observed_gpio": "PA1",
+        "period_addr": "0x43C30000",
+        "high_addr": "0x43C30008",
+        "edge_addr": "0x43C40000",
+        "valid_addr": "0x43C40008",
+        "busybox_path": "/bin/busybox",
+        "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+        "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+        "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+        "prepare_policy": "check_only",
+        "bitstream_device": "/dev/xdevcfg",
+        "min_new_edges": 2,
+        "poll_interval_s": 0.05,
+        "timeout_s": 15,
+        "transport_margin_s": 3,
+        "monotonic_path": "/proc/uptime"
+      },
+      "uart_observer": {
+        "stm32_tx_gpio": "PA2",
+        "pl_rx_pin": "M17",
+        "baud_rate": 115200,
+        "data_bits": 8,
+        "parity": "none",
+        "stop_bits": 1,
+        "rx_addr": "0x43C50000",
+        "status_addr": "0x43C50008",
+        "control_addr": "0x43C5000C",
+        "busybox_path": "/bin/busybox",
+        "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+        "monotonic_path": "/proc/uptime",
+        "poll_interval_s": 0.01,
+        "transport_margin_s": 3,
+        "max_bytes": 1024
+      },
+      "status_indicator": {
+        "type": "axi_gpio_led_bar",
+        "data_addr": "0x43C60000",
+        "active_low": true
+      }
+    },
+    "timeout_s": 591.4075685999996,
+    "model_info": {
+      "source": "nicecode_api",
+      "requested_model": "gpt-5.6-sol",
+      "protocol": "openai-responses"
+    }
+  },
+  "observed_gpio": "PA1",
+  "checkpoint": {
+    "source_sha256": "f4d8357bebe51d4ae35b4d0f26bf1a894e79a3503efe20806b1aa3ffcf8c28aa",
+    "source_hashes": {
+      "Core/Src/main.c": "79f6deb58231d3bc2cef887154c136a74e0da9e839a26ea41fd9468e205633cd"
+    }
+  },
+  "in_flight": null,
+  "hardware_state_uncertain": false,
+  "wall_started_at": 1793364587.471562,
+  "elapsed_s": 81.16940819999581,
+  "report_path": "E:\\zhidiao-agent\\.zhidiao\\runs\\run_5d8e004954664f6c8f8ff0f85d31959b.json",
+  "attempts": 2,
+  "max_attempts": 3,
+  "evidence_source": "real",
+  "verification_scope": "gpio_period_and_uart_capture",
+  "cycles": [
+    {
+      "attempt": 1,
+      "execution": {
+        "run_id": "run_2ff4c141683c486ca6dceb78f5bf02cb",
+        "decision": "FAIL",
+        "reason": "ATTEMPTS_EXHAUSTED",
+        "attempts": 1,
+        "cycle_number": 1,
+        "audit": [
+          {
+            "run_id": "run_2ff4c141683c486ca6dceb78f5bf02cb",
+            "attempt": 1,
+            "tool_name": "build_firmware",
+            "input": {
+              "project_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+            },
+            "start_time": "2026-10-30T12:49:51.124115+00:00",
+            "end_time": "2026-10-30T12:50:02.717601+00:00",
+            "result": {
+              "artifact_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test\\GPIO_PL_Test.hex",
+              "artifact_sha256": "d9ff6cdab8c2d75661b422912b4aba78168fb7d1bf0ebd76cfd95da9e388b1e7",
+              "compiler_log": "*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\\Keil_v5\\ARM\\ARMCC\\Bin'\r\nRebuild target 'GPIO_PL_Test'\r\nassembling startup_stm32g431xx.s...\r\ncompiling usart.c...\r\ncompiling gpio.c...\r\ncompiling stm32g4xx_hal_uart_ex.c...\r\ncompiling stm32g4xx_hal_msp.c...\r\ncompiling stm32g4xx_it.c...\r\ncompiling main.c...\r\ncompiling stm32g4xx_hal.c...\r\ncompiling stm32g4xx_hal_pwr_ex.c...\r\ncompiling stm32g4xx_hal_rcc.c...\r\ncompiling stm32g4xx_hal_flash.c...\r\ncompiling stm32g4xx_hal_rcc_ex.c...\r\ncompiling stm32g4xx_hal_uart.c...\r\ncompiling stm32g4xx_hal_flash_ramfunc.c...\r\ncompiling stm32g4xx_hal_exti.c...\r\ncompiling stm32g4xx_hal_dma_ex.c...\r\ncompiling system_stm32g4xx.c...\r\ncompiling stm32g4xx_hal_gpio.c...\r\ncompiling stm32g4xx_hal_pwr.c...\r\ncompiling stm32g4xx_hal_dma.c...\r\ncompiling stm32g4xx_hal_cortex.c...\r\ncompiling stm32g4xx_hal_flash_ex.c...\r\nlinking...\r\nProgram Size: Code=6538 RO-data=570 RW-data=16 ZI-data=1784  \r\nFromELF: creating hex file...\r\n\"GPIO_PL_Test\\GPIO_PL_Test.axf\" - 0 Error(s), 0 Warning(s).\r\nBuild Time Elapsed:  00:00:06\r\n",
+              "success": true,
+              "error_code": null,
+              "message": "Operation completed.",
+              "backend": "real_keil_zynq",
+              "duration_ms": 11593,
+              "contract_version": "0.2"
+            },
+            "backend": "real_keil_zynq"
+          },
+          {
+            "run_id": "run_2ff4c141683c486ca6dceb78f5bf02cb",
+            "attempt": 1,
+            "tool_name": "flash_firmware",
+            "input": {
+              "firmware_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test\\GPIO_PL_Test.hex"
+            },
+            "start_time": "2026-10-30T12:50:03.094835+00:00",
+            "end_time": "2026-10-30T12:50:05.951810+00:00",
+            "result": {
+              "artifact_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test\\GPIO_PL_Test.hex",
+              "remote_path": "/sd/firmware/run_2ea07cd161214c0d89ef55100b3703e7/firmware.hex",
+              "run_id": "run_2ea07cd161214c0d89ef55100b3703e7",
+              "target": "STM32G431RBT6",
+              "verified": true,
+              "upload_verified": true,
+              "artifact_sha256": "d9ff6cdab8c2d75661b422912b4aba78168fb7d1bf0ebd76cfd95da9e388b1e7",
+              "tool_log": "\n\n20097\n\nd9ff6cdab8c2d75661b422912b4aba78168fb7d1bf0ebd76cfd95da9e388b1e7  -\n\nOpen On-Chip Debugger 0.12.0\nLicensed under GNU GPL v2\nFor bug reports, read\n\thttp://openocd.org/doc/doxygen/bugs.html\nInfo : auto-selecting first available session transport \"hla_swd\". To override use 'transport select <transport>'.\nInfo : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD\nInfo : clock speed 2000 kHz\nInfo : STLINK V2J45S7 (API v2) VID:PID 0483:3748\nInfo : Target voltage: 3.189515\nInfo : [stm32g4x.cpu] Cortex-M4 r0p1 processor detected\nInfo : [stm32g4x.cpu] target has 6 breakpoints, 4 watchpoints\nInfo : starting gdb server for stm32g4x.cpu on 3333\nInfo : Listening on port 3333 for gdb connections\nInfo : Unable to match requested speed 2000 kHz, using 1800 kHz\nInfo : Unable to match requested speed 2000 kHz, using 1800 kHz\n[stm32g4x.cpu] halted due to debug-request, current mode: Thread \nxPSR: 0x01000000 pc: 0x08000278 msp: 0x20000708\n** Programming Started **\nInfo : device idcode = 0x20036468 (STM32G43/G44xx - Rev 'unknown' : 0x2003)\nInfo : RDP level 0 (0xAA)\nInfo : flash size = 128 KiB\nInfo : flash mode : single-bank\nInfo : Padding image section 0 at 0x08001bd4 with 4 bytes (bank write end alignment)\nWarn : Adding extra erase range, 0x08001bd8 .. 0x08001fff\n** Programming Finished **\n** Verify Started **\n** Verified OK **\n** Resetting Target **\nInfo : Unable to match requested speed 2000 kHz, using 1800 kHz\nInfo : Unable to match requested speed 2000 kHz, using 1800 kHz\nshutdown command invoked\n",
+              "remote_sha256": "d9ff6cdab8c2d75661b422912b4aba78168fb7d1bf0ebd76cfd95da9e388b1e7",
+              "success": true,
+              "error_code": null,
+              "message": "Operation completed.",
+              "backend": "real_keil_zynq",
+              "duration_ms": 2856,
+              "contract_version": "0.2"
+            },
+            "backend": "real_keil_zynq"
+          },
+          {
+            "run_id": "run_2ff4c141683c486ca6dceb78f5bf02cb",
+            "attempt": 1,
+            "tool_name": "read_target_log",
+            "input": {
+              "duration_s": 5
+            },
+            "start_time": "2026-10-30T12:50:06.352562+00:00",
+            "end_time": "2026-10-30T12:50:11.923947+00:00",
+            "result": {
+              "duration_s": 5.0,
+              "logs": [
+                {
+                  "timestamp_ms": 1480.0,
+                  "text": "ZHIDIAO_OK"
+                },
+                {
+                  "timestamp_ms": 2680.0,
+                  "text": "ZHIDIAO_OK"
+                },
+                {
+                  "timestamp_ms": 3890.0,
+                  "text": "ZHIDIAO_OK"
+                },
+                {
+                  "timestamp_ms": 4990.0,
+                  "text": "ZHIDIAO_O"
+                }
+              ],
+              "overflow": false,
+              "truncated": false,
+              "partial_tail": true,
+              "capture_end_reason": "deadline",
+              "decoding_errors": 0,
+              "frame_errors": 0,
+              "parity_errors": 0,
+              "bytes_captured": 45,
+              "capture_elapsed_ms": 5000,
+              "fifo_reset": true,
+              "timestamp_basis": "board_monotonic_capture_elapsed_ms",
+              "uart_tx_gpio": "PA2",
+              "pl_rx_pin": "M17",
+              "log_source": "pl_uart",
+              "evidence_source": "real_pl_uart",
+              "success": true,
+              "error_code": null,
+              "message": "Operation completed.",
+              "backend": "observation_uart",
+              "duration_ms": 5569,
+              "contract_version": "0.2"
+            },
+            "backend": "real_keil_zynq"
+          },
+          {
+            "run_id": "run_2ff4c141683c486ca6dceb78f5bf02cb",
+            "attempt": 1,
+            "tool_name": "run_hardware_test",
+            "input": {
+              "test_id": "gpio_period",
+              "params": {
+                "expected_period_ms": 1000.0,
+                "tolerance_ms": 50.0
+              }
+            },
+            "start_time": "2026-10-30T12:50:12.195922+00:00",
+            "end_time": "2026-10-30T12:50:13.217901+00:00",
+            "result": {
+              "test_id": "gpio_period",
+              "measurements": {
+                "period_ms": 601.7169,
+                "frequency_hz": 1.6619111080310358,
+                "high_ms": 300.36864,
+                "duty_cycle": 0.49918597932017533
+              },
+              "expected": {
+                "period_ms": 1000.0,
+                "tolerance_ms": 50.0
+              },
+              "passed": false,
+              "observation": {
+                "period_ticks": 60171690,
+                "high_ticks": 30036864,
+                "edge_start": 59581,
+                "edge_end": 59583,
+                "fresh_edges": 2,
+                "valid": 1,
+                "pl_clock_hz": 100000000,
+                "freshness_verified": true,
+                "evidence_source": "real_pl"
+              },
+              "observed_gpio": "PA1",
+              "success": true,
+              "error_code": null,
+              "message": "Operation completed.",
+              "backend": "observation_pl",
+              "duration_ms": 1021,
+              "contract_version": "0.2"
+            },
+            "backend": "real_keil_zynq"
+          }
+        ],
+        "cycle_approval": {
+          "proposal_id": "22618518352449a1a414e58bfe820249",
+          "fingerprint": "eb6edfc6b943c2ec16e275d9752e5e75223a9e4dd6324d30c54c90f4dac7d89d"
+        },
+        "evidence_source": "real",
+        "verification_scope": "gpio_period_and_uart_capture",
+        "uart_observed": true,
+        "skipped_tools": [],
+        "success": true,
+        "error_code": null,
+        "message": "Operation completed.",
+        "backend": "reviewed_controller",
+        "duration_ms": 22919,
+        "contract_version": "0.2"
+      },
+      "model_decision": {
+        "action": "edit",
+        "reason": "真实 PL 测得 PA1 完整周期为 601.7169 ms，高电平为 300.36864 ms，且当前循环每次翻转后 HAL_Delay(300)，因此一个完整周期包含两次约 300 ms 延时。将单次延时改为 500 ms，预计完整周期约 1000 ms，可满足 ±50 ms 目标。构建成功和烧录 verified 仅证明固件已成功生成并写入，不代表硬件周期通过；UART 的 partial_tail 仅表示采集结束时最后一行缺少换行，不是固件故障。修改后仍需由 PL 重新测量 PA1 判定。",
+        "edit": {
+          "path": "Core/Src/main.c",
+          "before_sha256": "7a9f900ade8d8564e51d4053d38edc1fd31cc227f87bb76ab63029567d92dc54",
+          "content": "/* USER CODE BEGIN Header */\r\n/**\r\n  ******************************************************************************\r\n  * @file           : main.c\r\n  * @brief          : Main program body\r\n  ******************************************************************************\r\n  * @attention\r\n  *\r\n  * Copyright (c) 2026 STMicroelectronics.\r\n  * All rights reserved.\r\n  *\r\n  * This software is licensed under terms that can be found in the LICENSE file\r\n  * in the root directory of this software component.\r\n  * If no LICENSE file comes with this software, it is provided AS-IS.\r\n  *\r\n  ******************************************************************************\r\n  */\r\n/* USER CODE END Header */\r\n/* Includes ------------------------------------------------------------------*/\r\n#include \"main.h\"\r\n#include \"usart.h\"\r\n#include \"gpio.h\"\r\n\r\n/* Private includes ----------------------------------------------------------*/\r\n/* USER CODE BEGIN Includes */\r\n\r\n/* USER CODE END Includes */\r\n\r\n/* Private typedef -----------------------------------------------------------*/\r\n/* USER CODE BEGIN PTD */\r\n\r\n/* USER CODE END PTD */\r\n\r\n/* Private define ------------------------------------------------------------*/\r\n/* USER CODE BEGIN PD */\r\n\r\n/* USER CODE END PD */\r\n\r\n/* Private macro -------------------------------------------------------------*/\r\n/* USER CODE BEGIN PM */\r\n\r\n/* USER CODE END PM */\r\n\r\n/* Private variables ---------------------------------------------------------*/\r\n\r\n/* USER CODE BEGIN PV */\r\n\r\n/* USER CODE END PV */\r\n\r\n/* Private function prototypes -----------------------------------------------*/\r\nvoid SystemClock_Config(void);\r\n/* USER CODE BEGIN PFP */\r\n\r\n/* USER CODE END PFP */\r\n\r\n/* Private user code ---------------------------------------------------------*/\r\n/* USER CODE BEGIN 0 */\r\n\r\n/* USER CODE END 0 */\r\n\r\n/**\r\n  * @brief  The application entry point.\r\n  * @retval int\r\n  */\r\nint main(void)\r\n{\r\n\r\n  /* USER CODE BEGIN 1 */\r\n\r\n  /* USER CODE END 1 */\r\n\r\n  /* MCU Configuration--------------------------------------------------------*/\r\n\r\n  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */\r\n  HAL_Init();\r\n\r\n  /* USER CODE BEGIN Init */\r\n\r\n  /* USER CODE END Init */\r\n\r\n  /* Configure the system clock */\r\n  SystemClock_Config();\r\n\r\n  /* USER CODE BEGIN SysInit */\r\n\r\n  /* USER CODE END SysInit */\r\n\r\n  /* Initialize all configured peripherals */\r\n  MX_GPIO_Init();\r\n  MX_USART2_UART_Init();\r\n  /* USER CODE BEGIN 2 */\r\n  HAL_GPIO_WritePin(PL_TEST_OUT_GPIO_Port,PL_TEST_OUT_Pin,GPIO_PIN_RESET);\r\n  \r\n  uint8_t msg[] = \"ZHIDIAO_OK\\r\\n\";\r\n  uint8_t uart_div = 0;\r\n\r\n  /* USER CODE END 2 */\r\n\r\n  /* Infinite loop */\r\n  /* USER CODE BEGIN WHILE */\r\n  while (1)\r\n  {\r\n    /* USER CODE END WHILE */\r\n\r\n    /* USER CODE BEGIN 3 */\r\n\tHAL_GPIO_TogglePin(PL_TEST_OUT_GPIO_Port,PL_TEST_OUT_Pin);\r\n\t  \r\n\tuart_div++;\r\n    if (uart_div >= 4)\r\n    {\r\n        HAL_UART_Transmit(&huart2, msg, sizeof(msg) - 1, 100);\r\n        uart_div = 0;\r\n    }\r\n\t\r\n\tHAL_Delay(500);\r\n\t  \r\n  }\r\n  /* USER CODE END 3 */\r\n}\r\n\r\n/**\r\n  * @brief System Clock Configuration\r\n  * @retval None\r\n  */\r\nvoid SystemClock_Config(void)\r\n{\r\n  RCC_OscInitTypeDef RCC_OscInitStruct = {0};\r\n  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};\r\n\r\n  /** Configure the main internal regulator output voltage\r\n  */\r\n  HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1);\r\n\r\n  /** Initializes the RCC Oscillators according to the specified parameters\r\n  * in the RCC_OscInitTypeDef structure.\r\n  */\r\n  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;\r\n  RCC_OscInitStruct.HSIState = RCC_HSI_ON;\r\n  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;\r\n  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;\r\n  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)\r\n  {\r\n    Error_Handler();\r\n  }\r\n\r\n  /** Initializes the CPU, AHB and APB buses clocks\r\n  */\r\n  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK\r\n                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;\r\n  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;\r\n  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;\r\n  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;\r\n  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;\r\n\r\n  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)\r\n  {\r\n    Error_Handler();\r\n  }\r\n}\r\n\r\n/* USER CODE BEGIN 4 */\r\n\r\n/* USER CODE END 4 */\r\n\r\n/**\r\n  * @brief  This function is executed in case of error occurrence.\r\n  * @retval None\r\n  */\r\nvoid Error_Handler(void)\r\n{\r\n  /* USER CODE BEGIN Error_Handler_Debug */\r\n  /* User can add his own implementation to report the HAL error return state */\r\n  __disable_irq();\r\n  while (1)\r\n  {\r\n  }\r\n  /* USER CODE END Error_Handler_Debug */\r\n}\r\n#ifdef USE_FULL_ASSERT\r\n/**\r\n  * @brief  Reports the name of the source file and the source line number\r\n  *         where the assert_param error has occurred.\r\n  * @param  file: pointer to the source file name\r\n  * @param  line: assert_param line source number\r\n  * @retval None\r\n  */\r\nvoid assert_failed(uint8_t *file, uint32_t line)\r\n{\r\n  /* USER CODE BEGIN 6 */\r\n  /* User can add his own implementation to report the file name and line number,\r\n     ex: printf(\"Wrong parameters value: file %s on line %d\\r\\n\", file, line) */\r\n  /* USER CODE END 6 */\r\n}\r\n#endif /* USE_FULL_ASSERT */\r\n"
+        }
+      },
+      "applied_edit": {
+        "path": "Core/Src/main.c",
+        "before_sha256": "7a9f900ade8d8564e51d4053d38edc1fd31cc227f87bb76ab63029567d92dc54",
+        "after_sha256": "79f6deb58231d3bc2cef887154c136a74e0da9e839a26ea41fd9468e205633cd"
+      }
+    },
+    {
+      "attempt": 2,
+      "execution": {
+        "run_id": "run_2fe20e3d3ac24b7fa6bd59b6b436e529",
+        "decision": "PASS",
+        "reason": "ALL_SELECTED_CHECKS_PASSED",
+        "attempts": 1,
+        "cycle_number": 2,
+        "audit": [
+          {
+            "run_id": "run_2fe20e3d3ac24b7fa6bd59b6b436e529",
+            "attempt": 2,
+            "tool_name": "build_firmware",
+            "input": {
+              "project_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+            },
+            "start_time": "2026-10-30T12:50:44.002626+00:00",
+            "end_time": "2026-10-30T12:50:55.477581+00:00",
+            "result": {
+              "artifact_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test\\GPIO_PL_Test.hex",
+              "artifact_sha256": "b6aca82331978cca76e967fd7d08f3d33994672215ff3e6a50f0173662b9f70f",
+              "compiler_log": "*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\\Keil_v5\\ARM\\ARMCC\\Bin'\r\nRebuild target 'GPIO_PL_Test'\r\nassembling startup_stm32g431xx.s...\r\ncompiling stm32g4xx_hal_msp.c...\r\ncompiling gpio.c...\r\ncompiling stm32g4xx_it.c...\r\ncompiling main.c...\r\ncompiling usart.c...\r\ncompiling stm32g4xx_hal.c...\r\ncompiling stm32g4xx_hal_uart_ex.c...\r\ncompiling stm32g4xx_hal_flash.c...\r\ncompiling stm32g4xx_hal_pwr_ex.c...\r\ncompiling stm32g4xx_hal_rcc.c...\r\ncompiling stm32g4xx_hal_rcc_ex.c...\r\ncompiling stm32g4xx_hal_uart.c...\r\ncompiling stm32g4xx_hal_flash_ramfunc.c...\r\ncompiling stm32g4xx_hal_exti.c...\r\ncompiling stm32g4xx_hal_gpio.c...\r\ncompiling stm32g4xx_hal_dma_ex.c...\r\ncompiling stm32g4xx_hal_cortex.c...\r\ncompiling system_stm32g4xx.c...\r\ncompiling stm32g4xx_hal_flash_ex.c...\r\ncompiling stm32g4xx_hal_pwr.c...\r\ncompiling stm32g4xx_hal_dma.c...\r\nlinking...\r\nProgram Size: Code=6538 RO-data=570 RW-data=16 ZI-data=1784  \r\nFromELF: creating hex file...\r\n\"GPIO_PL_Test\\GPIO_PL_Test.axf\" - 0 Error(s), 0 Warning(s).\r\nBuild Time Elapsed:  00:00:06\r\n",
+              "success": true,
+              "error_code": null,
+              "message": "Operation completed.",
+              "backend": "real_keil_zynq",
+              "duration_ms": 11474,
+              "contract_version": "0.2"
+            },
+            "backend": "real_keil_zynq"
+          },
+          {
+            "run_id": "run_2fe20e3d3ac24b7fa6bd59b6b436e529",
+            "attempt": 2,
+            "tool_name": "flash_firmware",
+            "input": {
+              "firmware_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test\\GPIO_PL_Test.hex"
+            },
+            "start_time": "2026-10-30T12:50:55.735214+00:00",
+            "end_time": "2026-10-30T12:50:59.845602+00:00",
+            "result": {
+              "artifact_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test\\GPIO_PL_Test.hex",
+              "remote_path": "/sd/firmware/run_eaaf8607fe1e44808fd7e7cb90ecf1bc/firmware.hex",
+              "run_id": "run_eaaf8607fe1e44808fd7e7cb90ecf1bc",
+              "target": "STM32G431RBT6",
+              "verified": true,
+              "upload_verified": true,
+              "artifact_sha256": "b6aca82331978cca76e967fd7d08f3d33994672215ff3e6a50f0173662b9f70f",
+              "tool_log": "\n\n20097\n\nb6aca82331978cca76e967fd7d08f3d33994672215ff3e6a50f0173662b9f70f  -\n\nOpen On-Chip Debugger 0.12.0\nLicensed under GNU GPL v2\nFor bug reports, read\n\thttp://openocd.org/doc/doxygen/bugs.html\nInfo : auto-selecting first available session transport \"hla_swd\". To override use 'transport select <transport>'.\nInfo : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD\nInfo : clock speed 2000 kHz\nInfo : STLINK V2J45S7 (API v2) VID:PID 0483:3748\nInfo : Target voltage: 3.191088\nInfo : [stm32g4x.cpu] Cortex-M4 r0p1 processor detected\nInfo : [stm32g4x.cpu] target has 6 breakpoints, 4 watchpoints\nInfo : starting gdb server for stm32g4x.cpu on 3333\nInfo : Listening on port 3333 for gdb connections\nInfo : Unable to match requested speed 2000 kHz, using 1800 kHz\nInfo : Unable to match requested speed 2000 kHz, using 1800 kHz\n[stm32g4x.cpu] halted due to debug-request, current mode: Thread \nxPSR: 0x01000000 pc: 0x08000278 msp: 0x20000708\n** Programming Started **\nInfo : device idcode = 0x20036468 (STM32G43/G44xx - Rev 'unknown' : 0x2003)\nInfo : RDP level 0 (0xAA)\nInfo : flash size = 128 KiB\nInfo : flash mode : single-bank\nInfo : Padding image section 0 at 0x08001bd4 with 4 bytes (bank write end alignment)\nWarn : Adding extra erase range, 0x08001bd8 .. 0x08001fff\n** Programming Finished **\n** Verify Started **\n** Verified OK **\n** Resetting Target **\nInfo : Unable to match requested speed 2000 kHz, using 1800 kHz\nInfo : Unable to match requested speed 2000 kHz, using 1800 kHz\nshutdown command invoked\n",
+              "remote_sha256": "b6aca82331978cca76e967fd7d08f3d33994672215ff3e6a50f0173662b9f70f",
+              "success": true,
+              "error_code": null,
+              "message": "Operation completed.",
+              "backend": "real_keil_zynq",
+              "duration_ms": 4110,
+              "contract_version": "0.2"
+            },
+            "backend": "real_keil_zynq"
+          },
+          {
+            "run_id": "run_2fe20e3d3ac24b7fa6bd59b6b436e529",
+            "attempt": 2,
+            "tool_name": "read_target_log",
+            "input": {
+              "duration_s": 5
+            },
+            "start_time": "2026-10-30T12:51:00.191686+00:00",
+            "end_time": "2026-10-30T12:51:06.751363+00:00",
+            "result": {
+              "duration_s": 5.0,
+              "logs": [
+                {
+                  "timestamp_ms": 1990.0,
+                  "text": "ZHIDIAO_OK"
+                },
+                {
+                  "timestamp_ms": 3960.0,
+                  "text": "ZHIDIAO_OK"
+                }
+              ],
+              "overflow": false,
+              "truncated": false,
+              "partial_tail": false,
+              "capture_end_reason": "deadline",
+              "decoding_errors": 0,
+              "frame_errors": 0,
+              "parity_errors": 0,
+              "bytes_captured": 24,
+              "capture_elapsed_ms": 5020,
+              "fifo_reset": true,
+              "timestamp_basis": "board_monotonic_capture_elapsed_ms",
+              "uart_tx_gpio": "PA2",
+              "pl_rx_pin": "M17",
+              "log_source": "pl_uart",
+              "evidence_source": "real_pl_uart",
+              "success": true,
+              "error_code": null,
+              "message": "Operation completed.",
+              "backend": "observation_uart",
+              "duration_ms": 6558,
+              "contract_version": "0.2"
+            },
+            "backend": "real_keil_zynq"
+          },
+          {
+            "run_id": "run_2fe20e3d3ac24b7fa6bd59b6b436e529",
+            "attempt": 2,
+            "tool_name": "run_hardware_test",
+            "input": {
+              "test_id": "gpio_period",
+              "params": {
+                "expected_period_ms": 1000.0,
+                "tolerance_ms": 50.0
+              }
+            },
+            "start_time": "2026-10-30T12:51:06.962517+00:00",
+            "end_time": "2026-10-30T12:51:08.436065+00:00",
+            "result": {
+              "test_id": "gpio_period",
+              "measurements": {
+                "period_ms": 1001.08682,
+                "frequency_hz": 0.9989143598953785,
+                "high_ms": 500.07403,
+                "duty_cycle": 0.4995311295777523
+              },
+              "expected": {
+                "period_ms": 1000.0,
+                "tolerance_ms": 50.0
+              },
+              "passed": true,
+              "observation": {
+                "period_ticks": 100108682,
+                "high_ticks": 50007403,
+                "edge_start": 68026,
+                "edge_end": 68028,
+                "fresh_edges": 2,
+                "valid": 1,
+                "pl_clock_hz": 100000000,
+                "freshness_verified": true,
+                "evidence_source": "real_pl"
+              },
+              "observed_gpio": "PA1",
+              "success": true,
+              "error_code": null,
+              "message": "Operation completed.",
+              "backend": "observation_pl",
+              "duration_ms": 1472,
+              "contract_version": "0.2"
+            },
+            "backend": "real_keil_zynq"
+          }
+        ],
+        "cycle_approval": {
+          "proposal_id": "2a31770d79e145bfa8a139800f1315cb",
+          "fingerprint": "3dc97bc45a25dda37bf3474bf2a0c1734228cadb1a2cbcbffb2f91ad287788e0"
+        },
+        "evidence_source": "real",
+        "verification_scope": "gpio_period_and_uart_capture",
+        "uart_observed": true,
+        "skipped_tools": [],
+        "success": true,
+        "error_code": null,
+        "message": "Operation completed.",
+        "backend": "reviewed_controller",
+        "duration_ms": 24953,
+        "contract_version": "0.2"
+      }
+    }
+  ],
+  "pending_edit": null,
+  "pending_execution": null,
+  "events": [
+    {
+      "sequence": 1,
+      "kind": "TASK_ACCEPTED",
+      "attempt": 0,
+      "elapsed_ms": 0,
+      "timestamp": "2026-10-30T12:49:38.879068+00:00"
+    },
+    {
+      "sequence": 2,
+      "kind": "TARGET_PARSED",
+      "attempt": 0,
+      "elapsed_ms": 8585,
+      "timestamp": "2026-10-30T12:49:47.464317+00:00"
+    },
+    {
+      "sequence": 3,
+      "kind": "TASK_ACCEPTED",
+      "attempt": 0,
+      "elapsed_ms": 10626,
+      "timestamp": "2026-10-30T12:49:49.504994+00:00"
+    },
+    {
+      "sequence": 4,
+      "kind": "WAITING_APPROVAL",
+      "attempt": 1,
+      "elapsed_ms": 10893,
+      "timestamp": "2026-10-30T12:49:49.772077+00:00"
+    },
+    {
+      "sequence": 5,
+      "kind": "BUILDING",
+      "attempt": 1,
+      "elapsed_ms": 12244,
+      "timestamp": "2026-10-30T12:49:51.123151+00:00",
+      "tool_name": "build_firmware"
+    },
+    {
+      "sequence": 6,
+      "kind": "TOOL_FINISHED",
+      "attempt": 1,
+      "elapsed_ms": 23839,
+      "timestamp": "2026-10-30T12:50:02.717467+00:00",
+      "tool_name": "build_firmware",
+      "success": true
+    },
+    {
+      "sequence": 7,
+      "kind": "FLASHING",
+      "attempt": 1,
+      "elapsed_ms": 24216,
+      "timestamp": "2026-10-30T12:50:03.094784+00:00",
+      "tool_name": "flash_firmware"
+    },
+    {
+      "sequence": 8,
+      "kind": "TOOL_FINISHED",
+      "attempt": 1,
+      "elapsed_ms": 27073,
+      "timestamp": "2026-10-30T12:50:05.951707+00:00",
+      "tool_name": "flash_firmware",
+      "success": true
+    },
+    {
+      "sequence": 9,
+      "kind": "OBSERVING",
+      "attempt": 1,
+      "elapsed_ms": 27474,
+      "timestamp": "2026-10-30T12:50:06.352500+00:00",
+      "tool_name": "read_target_log"
+    },
+    {
+      "sequence": 10,
+      "kind": "TOOL_FINISHED",
+      "attempt": 1,
+      "elapsed_ms": 33045,
+      "timestamp": "2026-10-30T12:50:11.923876+00:00",
+      "tool_name": "read_target_log",
+      "success": true,
+      "log_count": 4
+    },
+    {
+      "sequence": 11,
+      "kind": "OBSERVING",
+      "attempt": 1,
+      "elapsed_ms": 33317,
+      "timestamp": "2026-10-30T12:50:12.195874+00:00",
+      "tool_name": "run_hardware_test"
+    },
+    {
+      "sequence": 12,
+      "kind": "TOOL_FINISHED",
+      "attempt": 1,
+      "elapsed_ms": 34339,
+      "timestamp": "2026-10-30T12:50:13.217810+00:00",
+      "tool_name": "run_hardware_test",
+      "success": true,
+      "period_ms": 601.7169,
+      "passed": false
+    },
+    {
+      "sequence": 13,
+      "kind": "ANALYZING",
+      "attempt": 1,
+      "elapsed_ms": 34523,
+      "timestamp": "2026-10-30T12:50:13.402026+00:00"
+    },
+    {
+      "sequence": 14,
+      "kind": "ANALYSIS_FINISHED",
+      "attempt": 1,
+      "elapsed_ms": 49908,
+      "timestamp": "2026-10-30T12:50:28.786723+00:00"
+    },
+    {
+      "sequence": 15,
+      "kind": "WAITING_APPROVAL",
+      "attempt": 1,
+      "elapsed_ms": 49913,
+      "timestamp": "2026-10-30T12:50:28.792237+00:00"
+    },
+    {
+      "sequence": 16,
+      "kind": "APPLYING_EDIT",
+      "attempt": 1,
+      "elapsed_ms": 63672,
+      "timestamp": "2026-10-30T12:50:42.551085+00:00"
+    },
+    {
+      "sequence": 17,
+      "kind": "EDIT_APPLIED",
+      "attempt": 1,
+      "elapsed_ms": 63680,
+      "timestamp": "2026-10-30T12:50:42.559273+00:00"
+    },
+    {
+      "sequence": 18,
+      "kind": "WAITING_APPROVAL",
+      "attempt": 2,
+      "elapsed_ms": 64121,
+      "timestamp": "2026-10-30T12:50:43.000356+00:00"
+    },
+    {
+      "sequence": 19,
+      "kind": "BUILDING",
+      "attempt": 2,
+      "elapsed_ms": 65123,
+      "timestamp": "2026-10-30T12:50:44.002107+00:00",
+      "tool_name": "build_firmware"
+    },
+    {
+      "sequence": 20,
+      "kind": "TOOL_FINISHED",
+      "attempt": 2,
+      "elapsed_ms": 76599,
+      "timestamp": "2026-10-30T12:50:55.477524+00:00",
+      "tool_name": "build_firmware",
+      "success": true
+    },
+    {
+      "sequence": 21,
+      "kind": "FLASHING",
+      "attempt": 2,
+      "elapsed_ms": 76856,
+      "timestamp": "2026-10-30T12:50:55.734778+00:00",
+      "tool_name": "flash_firmware"
+    },
+    {
+      "sequence": 22,
+      "kind": "TOOL_FINISHED",
+      "attempt": 2,
+      "elapsed_ms": 80967,
+      "timestamp": "2026-10-30T12:50:59.845550+00:00",
+      "tool_name": "flash_firmware",
+      "success": true
+    },
+    {
+      "sequence": 23,
+      "kind": "OBSERVING",
+      "attempt": 2,
+      "elapsed_ms": 81312,
+      "timestamp": "2026-10-30T12:51:00.191092+00:00",
+      "tool_name": "read_target_log"
+    },
+    {
+      "sequence": 24,
+      "kind": "TOOL_FINISHED",
+      "attempt": 2,
+      "elapsed_ms": 87872,
+      "timestamp": "2026-10-30T12:51:06.751239+00:00",
+      "tool_name": "read_target_log",
+      "success": true,
+      "log_count": 2
+    },
+    {
+      "sequence": 25,
+      "kind": "OBSERVING",
+      "attempt": 2,
+      "elapsed_ms": 88084,
+      "timestamp": "2026-10-30T12:51:06.962469+00:00",
+      "tool_name": "run_hardware_test"
+    },
+    {
+      "sequence": 26,
+      "kind": "TOOL_FINISHED",
+      "attempt": 2,
+      "elapsed_ms": 89557,
+      "timestamp": "2026-10-30T12:51:08.435948+00:00",
+      "tool_name": "run_hardware_test",
+      "success": true,
+      "period_ms": 1001.08682,
+      "passed": true
+    },
+    {
+      "sequence": 27,
+      "kind": "PASS",
+      "attempt": 2,
+      "elapsed_ms": 89660,
+      "timestamp": "2026-10-30T12:51:08.539402+00:00"
+    }
+  ],
+  "session_approval": {
+    "proposal_id": "6282ee5f9a514b5c95b1824f8c5c74aa",
+    "fingerprint": "38fb4b6087b4139bbc3a516ab1138321daece8944e2e549817a6da12c0cad085",
+    "mode": "semantic"
+  },
+  "reviews": [
+    {
+      "kind": "session",
+      "attempt": 0,
+      "proposal_id": "6282ee5f9a514b5c95b1824f8c5c74aa",
+      "fingerprint": "38fb4b6087b4139bbc3a516ab1138321daece8944e2e549817a6da12c0cad085",
+      "approved": true,
+      "error_code": null,
+      "params": {
+        "scope": {
+          "project_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test",
+          "task": "把 STM32 PA1 的完整周期调到 1000 ms，误差不超过 50 ms。",
+          "goal": {
+            "expected_period_ms": 1000.0,
+            "tolerance_ms": 50.0
+          },
+          "observed_gpio": "PA1",
+          "duration_s": 5,
+          "test_id": "gpio_period",
+          "source_files": [
+            "Core/Src/main.c"
+          ],
+          "source_sha256": "084ecdfd547a68b602197719f438b6705c91574594ec7bd7a8d59325fea422cc",
+          "deployment": {
+            "allowed_roots": [
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+            ],
+            "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+            "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+            "target": "GPIO_PL_Test",
+            "build_timeout_s": 120,
+            "flash_timeout_s": 120,
+            "host": "192.168.10.2",
+            "port": 22,
+            "user": "root",
+            "known_hosts": "C:\\Users\\USER\\.ssh\\known_hosts",
+            "identity_file": "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+            "allow_legacy_rsa": true,
+            "legacy_scp": true,
+            "mount_root": "/sd",
+            "observer": {
+              "pl_clock_hz": 100000000,
+              "observed_gpio": "PA1",
+              "period_addr": "0x43C30000",
+              "high_addr": "0x43C30008",
+              "edge_addr": "0x43C40000",
+              "valid_addr": "0x43C40008",
+              "busybox_path": "/bin/busybox",
+              "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+              "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+              "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+              "prepare_policy": "check_only",
+              "bitstream_device": "/dev/xdevcfg",
+              "min_new_edges": 2,
+              "poll_interval_s": 0.05,
+              "timeout_s": 15,
+              "transport_margin_s": 3,
+              "monotonic_path": "/proc/uptime"
+            },
+            "uart_observer": {
+              "stm32_tx_gpio": "PA2",
+              "pl_rx_pin": "M17",
+              "baud_rate": 115200,
+              "data_bits": 8,
+              "parity": "none",
+              "stop_bits": 1,
+              "rx_addr": "0x43C50000",
+              "status_addr": "0x43C50008",
+              "control_addr": "0x43C5000C",
+              "busybox_path": "/bin/busybox",
+              "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+              "monotonic_path": "/proc/uptime",
+              "poll_interval_s": 0.01,
+              "transport_margin_s": 3,
+              "max_bytes": 1024
+            },
+            "status_indicator": {
+              "type": "axi_gpio_led_bar",
+              "data_addr": "0x43C60000",
+              "active_low": true
+            }
+          },
+          "include_uart": true,
+          "max_attempts": 3,
+          "timeout_s": 591.4075685999996,
+          "allowed_roots": [
+            "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+          ],
+          "runtime_identity": [
+            2136319986384,
+            2136320342208,
+            2136319922960,
+            2136320342544,
+            2136320340528,
+            2136320339856,
+            2136320341536,
+            2136320341200,
+            2136320340864
+          ]
+        },
+        "observation": {
+          "uart_available": true,
+          "period_available": true,
+          "descriptor": {
+            "deployment": {
+              "allowed_roots": [
+                "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+              ],
+              "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+              "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+              "target": "GPIO_PL_Test",
+              "build_timeout_s": 120,
+              "flash_timeout_s": 120,
+              "host": "192.168.10.2",
+              "port": 22,
+              "user": "root",
+              "known_hosts": "C:\\Users\\USER\\.ssh\\known_hosts",
+              "identity_file": "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+              "allow_legacy_rsa": true,
+              "legacy_scp": true,
+              "mount_root": "/sd",
+              "observer": {
+                "pl_clock_hz": 100000000,
+                "observed_gpio": "PA1",
+                "period_addr": "0x43C30000",
+                "high_addr": "0x43C30008",
+                "edge_addr": "0x43C40000",
+                "valid_addr": "0x43C40008",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+                "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+                "prepare_policy": "check_only",
+                "bitstream_device": "/dev/xdevcfg",
+                "min_new_edges": 2,
+                "poll_interval_s": 0.05,
+                "timeout_s": 15,
+                "transport_margin_s": 3,
+                "monotonic_path": "/proc/uptime"
+              },
+              "uart_observer": {
+                "stm32_tx_gpio": "PA2",
+                "pl_rx_pin": "M17",
+                "baud_rate": 115200,
+                "data_bits": 8,
+                "parity": "none",
+                "stop_bits": 1,
+                "rx_addr": "0x43C50000",
+                "status_addr": "0x43C50008",
+                "control_addr": "0x43C5000C",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "monotonic_path": "/proc/uptime",
+                "poll_interval_s": 0.01,
+                "transport_margin_s": 3,
+                "max_bytes": 1024
+              },
+              "status_indicator": {
+                "type": "axi_gpio_led_bar",
+                "data_addr": "0x43C60000",
+                "active_low": true
+              }
+            },
+            "timeout_s": 15.0,
+            "effects": "Read selected physical observations; no firmware changes. UART capture resets its RX FIFO to exclude stale bytes before reading.",
+            "observed_gpio": "PA1",
+            "period": {
+              "observer": {
+                "pl_clock_hz": 100000000,
+                "observed_gpio": "PA1",
+                "period_addr": "0x43C30000",
+                "high_addr": "0x43C30008",
+                "edge_addr": "0x43C40000",
+                "valid_addr": "0x43C40008",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+                "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+                "prepare_policy": "check_only",
+                "bitstream_device": "/dev/xdevcfg",
+                "min_new_edges": 2,
+                "poll_interval_s": 0.05,
+                "timeout_s": 15,
+                "transport_margin_s": 3,
+                "monotonic_path": "/proc/uptime"
+              },
+              "commands": [
+                [
+                  "ssh",
+                  "-o",
+                  "BatchMode=yes",
+                  "-o",
+                  "StrictHostKeyChecking=yes",
+                  "-o",
+                  "UserKnownHostsFile=\"C:/Users/USER/.ssh/known_hosts\"",
+                  "-o",
+                  "ConnectTimeout=10",
+                  "-o",
+                  "HostKeyAlgorithms=+ssh-rsa",
+                  "-o",
+                  "PubkeyAcceptedAlgorithms=+ssh-rsa",
+                  "-i",
+                  "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+                  "-o",
+                  "IdentitiesOnly=yes",
+                  "-p",
+                  "22",
+                  "root@192.168.10.2",
+                  "set -eu\nBB=/bin/busybox\ntest -x \"$BB\" || exit 72\n[ \"$((4294967295))\" = \"4294967295\" ] || exit 72\ntest -r /sys/class/xdevcfg/xdevcfg/device/prog_done || exit 73\n[ \"$(\"$BB\" cat /sys/class/xdevcfg/xdevcfg/device/prog_done)\" = \"1\" ] || exit 73\ntest -r /sd/pl/zhidiao_observe_v5_led.bit || exit 73\nimage_sha=$(\"$BB\" sha256sum < /sd/pl/zhidiao_observe_v5_led.bit) || exit 73\n[ \"$image_sha\" = 'fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6  -' ] || exit 73\nCLOCK=/proc/uptime\nclock_ms() {\n    read up rest < \"$CLOCK\" || exit 72\n    case \"$up\" in *.*) seconds=${up%%.*}; fraction=${up#*.} ;; *) exit 74 ;; esac\n    case \"$seconds:$fraction\" in *[!0123456789:]*|:*|*:) exit 74 ;; esac\n    [ \"${#seconds}\" -le 12 ] && [ \"${#fraction}\" -le 9 ] || exit 74\n    case \"$seconds\" in 0) ;; 0*) exit 74 ;; esac\n    fraction=${fraction}000\n    fraction=${fraction%${fraction#???}}\n    printf '%u' \"$((seconds * 1000 + 1$fraction - 1000))\"\n}\nread_reg() {\n    raw=$(\"$BB\" devmem \"$1\" 32) || exit 72\n    case \"$raw\" in 0x*) digits=${raw#0x} ;; *) exit 74 ;; esac\n    case \"$digits\" in ''|*[!0123456789abcdefABCDEF]*) exit 74 ;; esac\n    [ \"${#digits}\" -le 8 ] || exit 74\n    printf '%u' \"$((raw))\"\n}\n\n\"$BB\" usleep 0 || exit 72\nstarted=$(clock_ms) || exit $?\ndeadline=$((started + 15000))\nedge_start=$(read_reg 0x43C40000) || exit $?\ni=0\nwhile [ \"$i\" -lt 300 ]; do\n    now=$(clock_ms) || exit $?\n    [ \"$now\" -ge \"$started\" ] || exit 74\n    [ \"$now\" -lt \"$deadline\" ] || exit 75\n    edge_before=$(read_reg 0x43C40000) || exit $?\n    delta=$(( (edge_before - edge_start) & 4294967295 ))\n    valid=$(read_reg 0x43C40008) || exit $?\n    if [ \"$delta\" -ge 2 ] && [ \"$delta\" -lt 2147483648 ] && [ \"$valid\" -eq 1 ]; then\n        period=$(read_reg 0x43C30000) || exit $?\n        high=$(read_reg 0x43C30008) || exit $?\n        valid_after=$(read_reg 0x43C40008) || exit $?\n        edge_after=$(read_reg 0x43C40000) || exit $?\n        if [ \"$edge_before\" -eq \"$edge_after\" ] && [ \"$valid_after\" -eq 1 ]; then\n            now=$(clock_ms) || exit $?\n            [ \"$now\" -lt \"$deadline\" ] || exit 75\n            printf 'ZHIDIAO_PL_V1 %u %u %u %u %u %u\\n' \"$edge_start\" \"$edge_before\" \"$edge_after\" \"$valid_after\" \"$period\" \"$high\"\n            exit 0\n        fi\n    fi\n    i=$((i + 1))\n    if [ \"$i\" -lt 300 ]; then \"$BB\" usleep 50000 || exit 72; fi\ndone\nexit 75"
+                ]
+              ],
+              "observation_timeout_s": 15.0,
+              "timeout_s": 18.0,
+              "effects": "Read-only PL readiness and fresh period/high register observation over SSH; no bitstream loading.",
+              "image_identity": "Deployment must prepare the configured observation image; prog_done and SD file hash do not identify the running image."
+            },
+            "uart": {
+              "uart_observer": {
+                "stm32_tx_gpio": "PA2",
+                "pl_rx_pin": "M17",
+                "baud_rate": 115200,
+                "data_bits": 8,
+                "parity": "none",
+                "stop_bits": 1,
+                "rx_addr": "0x43C50000",
+                "status_addr": "0x43C50008",
+                "control_addr": "0x43C5000C",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "monotonic_path": "/proc/uptime",
+                "poll_interval_s": 0.01,
+                "transport_margin_s": 3,
+                "max_bytes": 1024
+              },
+              "duration_s": 5.0,
+              "timeout_s": 8.0,
+              "commands": [
+                [
+                  "ssh",
+                  "-o",
+                  "BatchMode=yes",
+                  "-o",
+                  "StrictHostKeyChecking=yes",
+                  "-o",
+                  "UserKnownHostsFile=\"C:/Users/USER/.ssh/known_hosts\"",
+                  "-o",
+                  "ConnectTimeout=10",
+                  "-o",
+                  "HostKeyAlgorithms=+ssh-rsa",
+                  "-o",
+                  "PubkeyAcceptedAlgorithms=+ssh-rsa",
+                  "-i",
+                  "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+                  "-o",
+                  "IdentitiesOnly=yes",
+                  "-p",
+                  "22",
+                  "root@192.168.10.2",
+                  "set -eu\nBB=/bin/busybox\ntest -x \"$BB\" || exit 72\n[ \"$((4294967295))\" = \"4294967295\" ] || exit 72\ntest -r /sys/class/xdevcfg/xdevcfg/device/prog_done || exit 73\n[ \"$(\"$BB\" cat /sys/class/xdevcfg/xdevcfg/device/prog_done)\" = \"1\" ] || exit 73\ntest -r /sd/pl/zhidiao_observe_v5_led.bit || exit 73\nimage_sha=$(\"$BB\" sha256sum < /sd/pl/zhidiao_observe_v5_led.bit) || exit 72\n[ \"$image_sha\" = 'fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6  -' ] || exit 73\nCLOCK=/proc/uptime\nclock_ms() {\n    read up rest < \"$CLOCK\" || exit 72\n    case \"$up\" in *.*) seconds=${up%%.*}; fraction=${up#*.} ;; *) exit 74 ;; esac\n    case \"$seconds:$fraction\" in *[!0123456789:]*|:*|*:) exit 74 ;; esac\n    [ \"${#seconds}\" -le 12 ] && [ \"${#fraction}\" -le 9 ] || exit 74\n    case \"$seconds\" in 0) ;; 0*) exit 74 ;; esac\n    fraction=${fraction}000\n    fraction=${fraction%${fraction#???}}\n    printf '%u' \"$((seconds * 1000 + 1$fraction - 1000))\"\n}\nread_reg() {\n    raw=$(\"$BB\" devmem \"$1\" 32) || exit 72\n    case \"$raw\" in 0x*) digits=${raw#0x} ;; *) exit 74 ;; esac\n    case \"$digits\" in ''|*[!0123456789abcdefABCDEF]*) exit 74 ;; esac\n    [ \"${#digits}\" -le 8 ] || exit 74\n    printf '%u' \"$((raw))\"\n}\n\n\"$BB\" usleep 0 || exit 72\nclock_ms > /dev/null || exit $?\n# Read old sticky health flags before clearing the old RX session.\nread_reg 0x43C50008 > /dev/null || exit $?\n\"$BB\" devmem 0x43C5000C 32 0x00000002 > /dev/null || exit 72\nstarted=$(clock_ms) || exit $?\ndeadline=$((started + 5000))\ncount=0\noverflow=0\nframe=0\nparity=0\nlimited=0\niterations=0\nprintf 'ZHIDIAO_UART_V1\\n'\nwhile [ \"$iterations\" -lt 1526 ]; do\n    iterations=$((iterations + 1))\n    now=$(clock_ms) || exit $?\n    [ \"$now\" -ge \"$started\" ] || exit 74\n    [ \"$now\" -lt \"$deadline\" ] || break\n    status=$(read_reg 0x43C50008) || exit $?\n    [ \"$((status & 32))\" -eq 0 ] || overflow=1\n    [ \"$((status & 64))\" -eq 0 ] || frame=1\n    [ \"$((status & 128))\" -eq 0 ] || parity=1\n    if [ \"$((status & 1))\" -eq 1 ]; then\n        value=$(read_reg 0x43C50000) || exit $?\n        [ \"$value\" -le 255 ] || exit 74\n        now=$(clock_ms) || exit $?\n        [ \"$now\" -ge \"$started\" ] || exit 74\n        # A byte drained at/after the exclusive deadline is outside this window,\n        # not a capacity failure. Do not extend capture waiting for a newline.\n        if [ \"$now\" -ge \"$deadline\" ]; then break; fi\n        printf 'B %u %02X\\n' \"$((now - started))\" \"$value\"\n        count=$((count + 1))\n        if [ \"$count\" -ge 1024 ]; then limited=1; break; fi\n        # Immediately drain the next byte; sleep only once RX is empty.\n    else\n        \"$BB\" usleep 10000 || exit 72\n    fi\ndone\nnow=$(clock_ms) || exit $?\n[ \"$now\" -ge \"$started\" ] || exit 74\n[ \"$limited\" -eq 1 ] || [ \"$now\" -ge \"$deadline\" ] || exit 75\nprintf 'E %u %u %u %u %u %u\\n' \"$((now - started))\" \"$count\" \"$overflow\" \"$frame\" \"$parity\" \"$limited\"\n"
+                ]
+              ],
+              "effects": "Reset UART RX FIFO once at the start of this approved capture to exclude stale bytes; drain only this UART channel. No bitstream loading or firmware changes.",
+              "fifo_reset": {
+                "address": "0x43C5000C",
+                "value": "0x00000002"
+              },
+              "timestamp_basis": "board_monotonic_capture_elapsed_ms"
+            },
+            "duration_s": 5
+          }
+        },
+        "summary": "批准此工程、目标、板卡和工具范围内的基线验证；每次新源码 diff 仍须批准。批准修改后自动重新构建、烧录和观测。",
+        "tools": [
+          "build_firmware",
+          "flash_firmware",
+          "read_target_log",
+          "run_hardware_test"
+        ],
+        "effects": "Build and program only this project's verified artifact; collect the selected physical evidence. If configured, update only the fixed 4-bit LED status bank at 0x43C60000. No Git, SSH configuration, boot file or Agent source changes.",
+        "approval_mode": "semantic"
+      }
+    },
+    {
+      "kind": "cycle",
+      "attempt": 0,
+      "proposal_id": "22618518352449a1a414e58bfe820249",
+      "fingerprint": "eb6edfc6b943c2ec16e275d9752e5e75223a9e4dd6324d30c54c90f4dac7d89d",
+      "approved": true,
+      "error_code": null,
+      "params": {
+        "binding": {
+          "project_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test",
+          "source_sha256": "084ecdfd547a68b602197719f438b6705c91574594ec7bd7a8d59325fea422cc",
+          "deployment": {
+            "allowed_roots": [
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+            ],
+            "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+            "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+            "target": "GPIO_PL_Test",
+            "build_timeout_s": 120,
+            "flash_timeout_s": 120,
+            "host": "192.168.10.2",
+            "port": 22,
+            "user": "root",
+            "known_hosts": "C:\\Users\\USER\\.ssh\\known_hosts",
+            "identity_file": "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+            "allow_legacy_rsa": true,
+            "legacy_scp": true,
+            "mount_root": "/sd",
+            "observer": {
+              "pl_clock_hz": 100000000,
+              "observed_gpio": "PA1",
+              "period_addr": "0x43C30000",
+              "high_addr": "0x43C30008",
+              "edge_addr": "0x43C40000",
+              "valid_addr": "0x43C40008",
+              "busybox_path": "/bin/busybox",
+              "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+              "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+              "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+              "prepare_policy": "check_only",
+              "bitstream_device": "/dev/xdevcfg",
+              "min_new_edges": 2,
+              "poll_interval_s": 0.05,
+              "timeout_s": 15,
+              "transport_margin_s": 3,
+              "monotonic_path": "/proc/uptime"
+            },
+            "uart_observer": {
+              "stm32_tx_gpio": "PA2",
+              "pl_rx_pin": "M17",
+              "baud_rate": 115200,
+              "data_bits": 8,
+              "parity": "none",
+              "stop_bits": 1,
+              "rx_addr": "0x43C50000",
+              "status_addr": "0x43C50008",
+              "control_addr": "0x43C5000C",
+              "busybox_path": "/bin/busybox",
+              "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+              "monotonic_path": "/proc/uptime",
+              "poll_interval_s": 0.01,
+              "transport_margin_s": 3,
+              "max_bytes": 1024
+            },
+            "status_indicator": {
+              "type": "axi_gpio_led_bar",
+              "data_addr": "0x43C60000",
+              "active_low": true
+            }
+          },
+          "test_id": "gpio_period",
+          "test_params": {
+            "expected_period_ms": 1000.0,
+            "tolerance_ms": 50.0
+          },
+          "duration_s": 5.0,
+          "include_uart": true,
+          "safety_limits": {
+            "allowed_roots": [
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+            ],
+            "max_attempts": 3
+          }
+        },
+        "build": {
+          "project_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test",
+          "project_file": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test.uvprojx",
+          "target": "GPIO_PL_Test",
+          "artifact_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test\\GPIO_PL_Test.hex",
+          "log_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\keil_build_34f7c875f56e4ca3b47590164d5575e6.log",
+          "source_sha256": "084ecdfd547a68b602197719f438b6705c91574594ec7bd7a8d59325fea422cc",
+          "commands": [
+            [
+              "C:\\Keil_v5\\UV4\\UV4.exe",
+              "-r",
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test.uvprojx",
+              "-t",
+              "GPIO_PL_Test",
+              "-o",
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\keil_build_34f7c875f56e4ca3b47590164d5575e6.log"
+            ]
+          ],
+          "timeout_s": 120,
+          "effects": "Rebuild the trusted Keil project; write compiler outputs and a build log.",
+          "deployment": {
+            "allowed_roots": [
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+            ],
+            "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+            "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+            "target": "GPIO_PL_Test",
+            "build_timeout_s": 120,
+            "flash_timeout_s": 120,
+            "host": "192.168.10.2",
+            "port": 22,
+            "user": "root",
+            "known_hosts": "C:\\Users\\USER\\.ssh\\known_hosts",
+            "identity_file": "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+            "allow_legacy_rsa": true,
+            "legacy_scp": true,
+            "mount_root": "/sd",
+            "observer": {
+              "pl_clock_hz": 100000000,
+              "observed_gpio": "PA1",
+              "period_addr": "0x43C30000",
+              "high_addr": "0x43C30008",
+              "edge_addr": "0x43C40000",
+              "valid_addr": "0x43C40008",
+              "busybox_path": "/bin/busybox",
+              "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+              "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+              "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+              "prepare_policy": "check_only",
+              "bitstream_device": "/dev/xdevcfg",
+              "min_new_edges": 2,
+              "poll_interval_s": 0.05,
+              "timeout_s": 15,
+              "transport_margin_s": 3,
+              "monotonic_path": "/proc/uptime"
+            },
+            "uart_observer": {
+              "stm32_tx_gpio": "PA2",
+              "pl_rx_pin": "M17",
+              "baud_rate": 115200,
+              "data_bits": 8,
+              "parity": "none",
+              "stop_bits": 1,
+              "rx_addr": "0x43C50000",
+              "status_addr": "0x43C50008",
+              "control_addr": "0x43C5000C",
+              "busybox_path": "/bin/busybox",
+              "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+              "monotonic_path": "/proc/uptime",
+              "poll_interval_s": 0.01,
+              "transport_margin_s": 3,
+              "max_bytes": 1024
+            },
+            "status_indicator": {
+              "type": "axi_gpio_led_bar",
+              "data_addr": "0x43C60000",
+              "active_low": true
+            }
+          }
+        },
+        "observation": {
+          "uart_available": true,
+          "period_available": true,
+          "descriptor": {
+            "deployment": {
+              "allowed_roots": [
+                "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+              ],
+              "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+              "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+              "target": "GPIO_PL_Test",
+              "build_timeout_s": 120,
+              "flash_timeout_s": 120,
+              "host": "192.168.10.2",
+              "port": 22,
+              "user": "root",
+              "known_hosts": "C:\\Users\\USER\\.ssh\\known_hosts",
+              "identity_file": "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+              "allow_legacy_rsa": true,
+              "legacy_scp": true,
+              "mount_root": "/sd",
+              "observer": {
+                "pl_clock_hz": 100000000,
+                "observed_gpio": "PA1",
+                "period_addr": "0x43C30000",
+                "high_addr": "0x43C30008",
+                "edge_addr": "0x43C40000",
+                "valid_addr": "0x43C40008",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+                "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+                "prepare_policy": "check_only",
+                "bitstream_device": "/dev/xdevcfg",
+                "min_new_edges": 2,
+                "poll_interval_s": 0.05,
+                "timeout_s": 15,
+                "transport_margin_s": 3,
+                "monotonic_path": "/proc/uptime"
+              },
+              "uart_observer": {
+                "stm32_tx_gpio": "PA2",
+                "pl_rx_pin": "M17",
+                "baud_rate": 115200,
+                "data_bits": 8,
+                "parity": "none",
+                "stop_bits": 1,
+                "rx_addr": "0x43C50000",
+                "status_addr": "0x43C50008",
+                "control_addr": "0x43C5000C",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "monotonic_path": "/proc/uptime",
+                "poll_interval_s": 0.01,
+                "transport_margin_s": 3,
+                "max_bytes": 1024
+              },
+              "status_indicator": {
+                "type": "axi_gpio_led_bar",
+                "data_addr": "0x43C60000",
+                "active_low": true
+              }
+            },
+            "timeout_s": 15.0,
+            "effects": "Read selected physical observations; no firmware changes. UART capture resets its RX FIFO to exclude stale bytes before reading.",
+            "observed_gpio": "PA1",
+            "period": {
+              "observer": {
+                "pl_clock_hz": 100000000,
+                "observed_gpio": "PA1",
+                "period_addr": "0x43C30000",
+                "high_addr": "0x43C30008",
+                "edge_addr": "0x43C40000",
+                "valid_addr": "0x43C40008",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+                "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+                "prepare_policy": "check_only",
+                "bitstream_device": "/dev/xdevcfg",
+                "min_new_edges": 2,
+                "poll_interval_s": 0.05,
+                "timeout_s": 15,
+                "transport_margin_s": 3,
+                "monotonic_path": "/proc/uptime"
+              },
+              "commands": [
+                [
+                  "ssh",
+                  "-o",
+                  "BatchMode=yes",
+                  "-o",
+                  "StrictHostKeyChecking=yes",
+                  "-o",
+                  "UserKnownHostsFile=\"C:/Users/USER/.ssh/known_hosts\"",
+                  "-o",
+                  "ConnectTimeout=10",
+                  "-o",
+                  "HostKeyAlgorithms=+ssh-rsa",
+                  "-o",
+                  "PubkeyAcceptedAlgorithms=+ssh-rsa",
+                  "-i",
+                  "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+                  "-o",
+                  "IdentitiesOnly=yes",
+                  "-p",
+                  "22",
+                  "root@192.168.10.2",
+                  "set -eu\nBB=/bin/busybox\ntest -x \"$BB\" || exit 72\n[ \"$((4294967295))\" = \"4294967295\" ] || exit 72\ntest -r /sys/class/xdevcfg/xdevcfg/device/prog_done || exit 73\n[ \"$(\"$BB\" cat /sys/class/xdevcfg/xdevcfg/device/prog_done)\" = \"1\" ] || exit 73\ntest -r /sd/pl/zhidiao_observe_v5_led.bit || exit 73\nimage_sha=$(\"$BB\" sha256sum < /sd/pl/zhidiao_observe_v5_led.bit) || exit 73\n[ \"$image_sha\" = 'fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6  -' ] || exit 73\nCLOCK=/proc/uptime\nclock_ms() {\n    read up rest < \"$CLOCK\" || exit 72\n    case \"$up\" in *.*) seconds=${up%%.*}; fraction=${up#*.} ;; *) exit 74 ;; esac\n    case \"$seconds:$fraction\" in *[!0123456789:]*|:*|*:) exit 74 ;; esac\n    [ \"${#seconds}\" -le 12 ] && [ \"${#fraction}\" -le 9 ] || exit 74\n    case \"$seconds\" in 0) ;; 0*) exit 74 ;; esac\n    fraction=${fraction}000\n    fraction=${fraction%${fraction#???}}\n    printf '%u' \"$((seconds * 1000 + 1$fraction - 1000))\"\n}\nread_reg() {\n    raw=$(\"$BB\" devmem \"$1\" 32) || exit 72\n    case \"$raw\" in 0x*) digits=${raw#0x} ;; *) exit 74 ;; esac\n    case \"$digits\" in ''|*[!0123456789abcdefABCDEF]*) exit 74 ;; esac\n    [ \"${#digits}\" -le 8 ] || exit 74\n    printf '%u' \"$((raw))\"\n}\n\n\"$BB\" usleep 0 || exit 72\nstarted=$(clock_ms) || exit $?\ndeadline=$((started + 15000))\nedge_start=$(read_reg 0x43C40000) || exit $?\ni=0\nwhile [ \"$i\" -lt 300 ]; do\n    now=$(clock_ms) || exit $?\n    [ \"$now\" -ge \"$started\" ] || exit 74\n    [ \"$now\" -lt \"$deadline\" ] || exit 75\n    edge_before=$(read_reg 0x43C40000) || exit $?\n    delta=$(( (edge_before - edge_start) & 4294967295 ))\n    valid=$(read_reg 0x43C40008) || exit $?\n    if [ \"$delta\" -ge 2 ] && [ \"$delta\" -lt 2147483648 ] && [ \"$valid\" -eq 1 ]; then\n        period=$(read_reg 0x43C30000) || exit $?\n        high=$(read_reg 0x43C30008) || exit $?\n        valid_after=$(read_reg 0x43C40008) || exit $?\n        edge_after=$(read_reg 0x43C40000) || exit $?\n        if [ \"$edge_before\" -eq \"$edge_after\" ] && [ \"$valid_after\" -eq 1 ]; then\n            now=$(clock_ms) || exit $?\n            [ \"$now\" -lt \"$deadline\" ] || exit 75\n            printf 'ZHIDIAO_PL_V1 %u %u %u %u %u %u\\n' \"$edge_start\" \"$edge_before\" \"$edge_after\" \"$valid_after\" \"$period\" \"$high\"\n            exit 0\n        fi\n    fi\n    i=$((i + 1))\n    if [ \"$i\" -lt 300 ]; then \"$BB\" usleep 50000 || exit 72; fi\ndone\nexit 75"
+                ]
+              ],
+              "observation_timeout_s": 15.0,
+              "timeout_s": 18.0,
+              "effects": "Read-only PL readiness and fresh period/high register observation over SSH; no bitstream loading.",
+              "image_identity": "Deployment must prepare the configured observation image; prog_done and SD file hash do not identify the running image."
+            },
+            "uart": {
+              "uart_observer": {
+                "stm32_tx_gpio": "PA2",
+                "pl_rx_pin": "M17",
+                "baud_rate": 115200,
+                "data_bits": 8,
+                "parity": "none",
+                "stop_bits": 1,
+                "rx_addr": "0x43C50000",
+                "status_addr": "0x43C50008",
+                "control_addr": "0x43C5000C",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "monotonic_path": "/proc/uptime",
+                "poll_interval_s": 0.01,
+                "transport_margin_s": 3,
+                "max_bytes": 1024
+              },
+              "duration_s": 5.0,
+              "timeout_s": 8.0,
+              "commands": [
+                [
+                  "ssh",
+                  "-o",
+                  "BatchMode=yes",
+                  "-o",
+                  "StrictHostKeyChecking=yes",
+                  "-o",
+                  "UserKnownHostsFile=\"C:/Users/USER/.ssh/known_hosts\"",
+                  "-o",
+                  "ConnectTimeout=10",
+                  "-o",
+                  "HostKeyAlgorithms=+ssh-rsa",
+                  "-o",
+                  "PubkeyAcceptedAlgorithms=+ssh-rsa",
+                  "-i",
+                  "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+                  "-o",
+                  "IdentitiesOnly=yes",
+                  "-p",
+                  "22",
+                  "root@192.168.10.2",
+                  "set -eu\nBB=/bin/busybox\ntest -x \"$BB\" || exit 72\n[ \"$((4294967295))\" = \"4294967295\" ] || exit 72\ntest -r /sys/class/xdevcfg/xdevcfg/device/prog_done || exit 73\n[ \"$(\"$BB\" cat /sys/class/xdevcfg/xdevcfg/device/prog_done)\" = \"1\" ] || exit 73\ntest -r /sd/pl/zhidiao_observe_v5_led.bit || exit 73\nimage_sha=$(\"$BB\" sha256sum < /sd/pl/zhidiao_observe_v5_led.bit) || exit 72\n[ \"$image_sha\" = 'fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6  -' ] || exit 73\nCLOCK=/proc/uptime\nclock_ms() {\n    read up rest < \"$CLOCK\" || exit 72\n    case \"$up\" in *.*) seconds=${up%%.*}; fraction=${up#*.} ;; *) exit 74 ;; esac\n    case \"$seconds:$fraction\" in *[!0123456789:]*|:*|*:) exit 74 ;; esac\n    [ \"${#seconds}\" -le 12 ] && [ \"${#fraction}\" -le 9 ] || exit 74\n    case \"$seconds\" in 0) ;; 0*) exit 74 ;; esac\n    fraction=${fraction}000\n    fraction=${fraction%${fraction#???}}\n    printf '%u' \"$((seconds * 1000 + 1$fraction - 1000))\"\n}\nread_reg() {\n    raw=$(\"$BB\" devmem \"$1\" 32) || exit 72\n    case \"$raw\" in 0x*) digits=${raw#0x} ;; *) exit 74 ;; esac\n    case \"$digits\" in ''|*[!0123456789abcdefABCDEF]*) exit 74 ;; esac\n    [ \"${#digits}\" -le 8 ] || exit 74\n    printf '%u' \"$((raw))\"\n}\n\n\"$BB\" usleep 0 || exit 72\nclock_ms > /dev/null || exit $?\n# Read old sticky health flags before clearing the old RX session.\nread_reg 0x43C50008 > /dev/null || exit $?\n\"$BB\" devmem 0x43C5000C 32 0x00000002 > /dev/null || exit 72\nstarted=$(clock_ms) || exit $?\ndeadline=$((started + 5000))\ncount=0\noverflow=0\nframe=0\nparity=0\nlimited=0\niterations=0\nprintf 'ZHIDIAO_UART_V1\\n'\nwhile [ \"$iterations\" -lt 1526 ]; do\n    iterations=$((iterations + 1))\n    now=$(clock_ms) || exit $?\n    [ \"$now\" -ge \"$started\" ] || exit 74\n    [ \"$now\" -lt \"$deadline\" ] || break\n    status=$(read_reg 0x43C50008) || exit $?\n    [ \"$((status & 32))\" -eq 0 ] || overflow=1\n    [ \"$((status & 64))\" -eq 0 ] || frame=1\n    [ \"$((status & 128))\" -eq 0 ] || parity=1\n    if [ \"$((status & 1))\" -eq 1 ]; then\n        value=$(read_reg 0x43C50000) || exit $?\n        [ \"$value\" -le 255 ] || exit 74\n        now=$(clock_ms) || exit $?\n        [ \"$now\" -ge \"$started\" ] || exit 74\n        # A byte drained at/after the exclusive deadline is outside this window,\n        # not a capacity failure. Do not extend capture waiting for a newline.\n        if [ \"$now\" -ge \"$deadline\" ]; then break; fi\n        printf 'B %u %02X\\n' \"$((now - started))\" \"$value\"\n        count=$((count + 1))\n        if [ \"$count\" -ge 1024 ]; then limited=1; break; fi\n        # Immediately drain the next byte; sleep only once RX is empty.\n    else\n        \"$BB\" usleep 10000 || exit 72\n    fi\ndone\nnow=$(clock_ms) || exit $?\n[ \"$now\" -ge \"$started\" ] || exit 74\n[ \"$limited\" -eq 1 ] || [ \"$now\" -ge \"$deadline\" ] || exit 75\nprintf 'E %u %u %u %u %u %u\\n' \"$((now - started))\" \"$count\" \"$overflow\" \"$frame\" \"$parity\" \"$limited\"\n"
+                ]
+              ],
+              "effects": "Reset UART RX FIFO once at the start of this approved capture to exclude stale bytes; drain only this UART channel. No bitstream loading or firmware changes.",
+              "fifo_reset": {
+                "address": "0x43C5000C",
+                "value": "0x00000002"
+              },
+              "timestamp_basis": "board_monotonic_capture_elapsed_ms"
+            },
+            "duration_s": 5
+          }
+        },
+        "timeout_s": 589.370608600002,
+        "attempt": 1,
+        "artifact_policy": "Flash only the validated HEX returned by this approved build, with matching path and SHA-256.",
+        "steps": [
+          "build_firmware",
+          "flash_firmware",
+          "read_target_log",
+          "run_hardware_test"
+        ],
+        "effects": "Rebuild this source snapshot, upload its resulting HEX, program/verify/reset STM32, and collect selected real observations. If configured, update only the fixed 4-bit LED status bank at 0x43C60000.",
+        "internal_preparation": null,
+        "observed_gpio": "PA1",
+        "verification_scope": "gpio_period_and_uart_capture"
+      }
+    },
+    {
+      "kind": "source_diff",
+      "attempt": 1,
+      "proposal_id": "5a6460fc44124bf3a71cd3b9c1ba76c7",
+      "fingerprint": "1a1fd7d354d8b39224ddb2ab9b4f92d468847c1ba15a4ea7cba58f32fe9df687",
+      "approved": true,
+      "error_code": null,
+      "params": {
+        "project": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test",
+        "path": "Core/Src/main.c",
+        "before_sha256": "7a9f900ade8d8564e51d4053d38edc1fd31cc227f87bb76ab63029567d92dc54",
+        "after_sha256": "79f6deb58231d3bc2cef887154c136a74e0da9e839a26ea41fd9468e205633cd",
+        "diff": "--- a/Core/Src/main.c\n+++ b/Core/Src/main.c\n@@ -112,7 +112,7 @@\n         uart_div = 0;\r\n     }\r\n \t\r\n-\tHAL_Delay(300);\r\n+\tHAL_Delay(500);\r\n \t  \r\n   }\r\n   /* USER CODE END 3 */\r\n@@ -181,7 +181,7 @@\n   * @brief  Reports the name of the source file and the source line number\r\n   *         where the assert_param error has occurred.\r\n   * @param  file: pointer to the source file name\r\n-  * @param  line: assert_param error line source number\r\n+  * @param  line: assert_param line source number\r\n   * @retval None\r\n   */\r\n void assert_failed(uint8_t *file, uint32_t line)\r\n"
+      },
+      "reason": "真实 PL 测得 PA1 完整周期为 601.7169 ms，高电平为 300.36864 ms，且当前循环每次翻转后 HAL_Delay(300)，因此一个完整周期包含两次约 300 ms 延时。将单次延时改为 500 ms，预计完整周期约 1000 ms，可满足 ±50 ms 目标。构建成功和烧录 verified 仅证明固件已成功生成并写入，不代表硬件周期通过；UART 的 partial_tail 仅表示采集结束时最后一行缺少换行，不是固件故障。修改后仍需由 PL 重新测量 PA1 判定。"
+    },
+    {
+      "kind": "cycle",
+      "attempt": 1,
+      "proposal_id": "2a31770d79e145bfa8a139800f1315cb",
+      "fingerprint": "3dc97bc45a25dda37bf3474bf2a0c1734228cadb1a2cbcbffb2f91ad287788e0",
+      "approved": true,
+      "error_code": null,
+      "params": {
+        "binding": {
+          "project_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test",
+          "source_sha256": "f4d8357bebe51d4ae35b4d0f26bf1a894e79a3503efe20806b1aa3ffcf8c28aa",
+          "deployment": {
+            "allowed_roots": [
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+            ],
+            "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+            "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+            "target": "GPIO_PL_Test",
+            "build_timeout_s": 120,
+            "flash_timeout_s": 120,
+            "host": "192.168.10.2",
+            "port": 22,
+            "user": "root",
+            "known_hosts": "C:\\Users\\USER\\.ssh\\known_hosts",
+            "identity_file": "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+            "allow_legacy_rsa": true,
+            "legacy_scp": true,
+            "mount_root": "/sd",
+            "observer": {
+              "pl_clock_hz": 100000000,
+              "observed_gpio": "PA1",
+              "period_addr": "0x43C30000",
+              "high_addr": "0x43C30008",
+              "edge_addr": "0x43C40000",
+              "valid_addr": "0x43C40008",
+              "busybox_path": "/bin/busybox",
+              "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+              "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+              "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+              "prepare_policy": "check_only",
+              "bitstream_device": "/dev/xdevcfg",
+              "min_new_edges": 2,
+              "poll_interval_s": 0.05,
+              "timeout_s": 15,
+              "transport_margin_s": 3,
+              "monotonic_path": "/proc/uptime"
+            },
+            "uart_observer": {
+              "stm32_tx_gpio": "PA2",
+              "pl_rx_pin": "M17",
+              "baud_rate": 115200,
+              "data_bits": 8,
+              "parity": "none",
+              "stop_bits": 1,
+              "rx_addr": "0x43C50000",
+              "status_addr": "0x43C50008",
+              "control_addr": "0x43C5000C",
+              "busybox_path": "/bin/busybox",
+              "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+              "monotonic_path": "/proc/uptime",
+              "poll_interval_s": 0.01,
+              "transport_margin_s": 3,
+              "max_bytes": 1024
+            },
+            "status_indicator": {
+              "type": "axi_gpio_led_bar",
+              "data_addr": "0x43C60000",
+              "active_low": true
+            }
+          },
+          "test_id": "gpio_period",
+          "test_params": {
+            "expected_period_ms": 1000.0,
+            "tolerance_ms": 50.0
+          },
+          "duration_s": 5.0,
+          "include_uart": true,
+          "safety_limits": {
+            "allowed_roots": [
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+            ],
+            "max_attempts": 3
+          }
+        },
+        "build": {
+          "project_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test",
+          "project_file": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test.uvprojx",
+          "target": "GPIO_PL_Test",
+          "artifact_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test\\GPIO_PL_Test.hex",
+          "log_path": "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\keil_build_f440ff1ce0a64828a31c556ec2dcf960.log",
+          "source_sha256": "f4d8357bebe51d4ae35b4d0f26bf1a894e79a3503efe20806b1aa3ffcf8c28aa",
+          "commands": [
+            [
+              "C:\\Keil_v5\\UV4\\UV4.exe",
+              "-r",
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\MDK-ARM\\GPIO_PL_Test.uvprojx",
+              "-t",
+              "GPIO_PL_Test",
+              "-o",
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test\\keil_build_f440ff1ce0a64828a31c556ec2dcf960.log"
+            ]
+          ],
+          "timeout_s": 120,
+          "effects": "Rebuild the trusted Keil project; write compiler outputs and a build log.",
+          "deployment": {
+            "allowed_roots": [
+              "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+            ],
+            "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+            "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+            "target": "GPIO_PL_Test",
+            "build_timeout_s": 120,
+            "flash_timeout_s": 120,
+            "host": "192.168.10.2",
+            "port": 22,
+            "user": "root",
+            "known_hosts": "C:\\Users\\USER\\.ssh\\known_hosts",
+            "identity_file": "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+            "allow_legacy_rsa": true,
+            "legacy_scp": true,
+            "mount_root": "/sd",
+            "observer": {
+              "pl_clock_hz": 100000000,
+              "observed_gpio": "PA1",
+              "period_addr": "0x43C30000",
+              "high_addr": "0x43C30008",
+              "edge_addr": "0x43C40000",
+              "valid_addr": "0x43C40008",
+              "busybox_path": "/bin/busybox",
+              "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+              "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+              "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+              "prepare_policy": "check_only",
+              "bitstream_device": "/dev/xdevcfg",
+              "min_new_edges": 2,
+              "poll_interval_s": 0.05,
+              "timeout_s": 15,
+              "transport_margin_s": 3,
+              "monotonic_path": "/proc/uptime"
+            },
+            "uart_observer": {
+              "stm32_tx_gpio": "PA2",
+              "pl_rx_pin": "M17",
+              "baud_rate": 115200,
+              "data_bits": 8,
+              "parity": "none",
+              "stop_bits": 1,
+              "rx_addr": "0x43C50000",
+              "status_addr": "0x43C50008",
+              "control_addr": "0x43C5000C",
+              "busybox_path": "/bin/busybox",
+              "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+              "monotonic_path": "/proc/uptime",
+              "poll_interval_s": 0.01,
+              "transport_margin_s": 3,
+              "max_bytes": 1024
+            },
+            "status_indicator": {
+              "type": "axi_gpio_led_bar",
+              "data_addr": "0x43C60000",
+              "active_low": true
+            }
+          }
+        },
+        "observation": {
+          "uart_available": true,
+          "period_available": true,
+          "descriptor": {
+            "deployment": {
+              "allowed_roots": [
+                "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+              ],
+              "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+              "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+              "target": "GPIO_PL_Test",
+              "build_timeout_s": 120,
+              "flash_timeout_s": 120,
+              "host": "192.168.10.2",
+              "port": 22,
+              "user": "root",
+              "known_hosts": "C:\\Users\\USER\\.ssh\\known_hosts",
+              "identity_file": "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+              "allow_legacy_rsa": true,
+              "legacy_scp": true,
+              "mount_root": "/sd",
+              "observer": {
+                "pl_clock_hz": 100000000,
+                "observed_gpio": "PA1",
+                "period_addr": "0x43C30000",
+                "high_addr": "0x43C30008",
+                "edge_addr": "0x43C40000",
+                "valid_addr": "0x43C40008",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+                "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+                "prepare_policy": "check_only",
+                "bitstream_device": "/dev/xdevcfg",
+                "min_new_edges": 2,
+                "poll_interval_s": 0.05,
+                "timeout_s": 15,
+                "transport_margin_s": 3,
+                "monotonic_path": "/proc/uptime"
+              },
+              "uart_observer": {
+                "stm32_tx_gpio": "PA2",
+                "pl_rx_pin": "M17",
+                "baud_rate": 115200,
+                "data_bits": 8,
+                "parity": "none",
+                "stop_bits": 1,
+                "rx_addr": "0x43C50000",
+                "status_addr": "0x43C50008",
+                "control_addr": "0x43C5000C",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "monotonic_path": "/proc/uptime",
+                "poll_interval_s": 0.01,
+                "transport_margin_s": 3,
+                "max_bytes": 1024
+              },
+              "status_indicator": {
+                "type": "axi_gpio_led_bar",
+                "data_addr": "0x43C60000",
+                "active_low": true
+              }
+            },
+            "timeout_s": 15.0,
+            "effects": "Read selected physical observations; no firmware changes. UART capture resets its RX FIFO to exclude stale bytes before reading.",
+            "observed_gpio": "PA1",
+            "period": {
+              "observer": {
+                "pl_clock_hz": 100000000,
+                "observed_gpio": "PA1",
+                "period_addr": "0x43C30000",
+                "high_addr": "0x43C30008",
+                "edge_addr": "0x43C40000",
+                "valid_addr": "0x43C40008",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+                "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+                "prepare_policy": "check_only",
+                "bitstream_device": "/dev/xdevcfg",
+                "min_new_edges": 2,
+                "poll_interval_s": 0.05,
+                "timeout_s": 15,
+                "transport_margin_s": 3,
+                "monotonic_path": "/proc/uptime"
+              },
+              "commands": [
+                [
+                  "ssh",
+                  "-o",
+                  "BatchMode=yes",
+                  "-o",
+                  "StrictHostKeyChecking=yes",
+                  "-o",
+                  "UserKnownHostsFile=\"C:/Users/USER/.ssh/known_hosts\"",
+                  "-o",
+                  "ConnectTimeout=10",
+                  "-o",
+                  "HostKeyAlgorithms=+ssh-rsa",
+                  "-o",
+                  "PubkeyAcceptedAlgorithms=+ssh-rsa",
+                  "-i",
+                  "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+                  "-o",
+                  "IdentitiesOnly=yes",
+                  "-p",
+                  "22",
+                  "root@192.168.10.2",
+                  "set -eu\nBB=/bin/busybox\ntest -x \"$BB\" || exit 72\n[ \"$((4294967295))\" = \"4294967295\" ] || exit 72\ntest -r /sys/class/xdevcfg/xdevcfg/device/prog_done || exit 73\n[ \"$(\"$BB\" cat /sys/class/xdevcfg/xdevcfg/device/prog_done)\" = \"1\" ] || exit 73\ntest -r /sd/pl/zhidiao_observe_v5_led.bit || exit 73\nimage_sha=$(\"$BB\" sha256sum < /sd/pl/zhidiao_observe_v5_led.bit) || exit 73\n[ \"$image_sha\" = 'fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6  -' ] || exit 73\nCLOCK=/proc/uptime\nclock_ms() {\n    read up rest < \"$CLOCK\" || exit 72\n    case \"$up\" in *.*) seconds=${up%%.*}; fraction=${up#*.} ;; *) exit 74 ;; esac\n    case \"$seconds:$fraction\" in *[!0123456789:]*|:*|*:) exit 74 ;; esac\n    [ \"${#seconds}\" -le 12 ] && [ \"${#fraction}\" -le 9 ] || exit 74\n    case \"$seconds\" in 0) ;; 0*) exit 74 ;; esac\n    fraction=${fraction}000\n    fraction=${fraction%${fraction#???}}\n    printf '%u' \"$((seconds * 1000 + 1$fraction - 1000))\"\n}\nread_reg() {\n    raw=$(\"$BB\" devmem \"$1\" 32) || exit 72\n    case \"$raw\" in 0x*) digits=${raw#0x} ;; *) exit 74 ;; esac\n    case \"$digits\" in ''|*[!0123456789abcdefABCDEF]*) exit 74 ;; esac\n    [ \"${#digits}\" -le 8 ] || exit 74\n    printf '%u' \"$((raw))\"\n}\n\n\"$BB\" usleep 0 || exit 72\nstarted=$(clock_ms) || exit $?\ndeadline=$((started + 15000))\nedge_start=$(read_reg 0x43C40000) || exit $?\ni=0\nwhile [ \"$i\" -lt 300 ]; do\n    now=$(clock_ms) || exit $?\n    [ \"$now\" -ge \"$started\" ] || exit 74\n    [ \"$now\" -lt \"$deadline\" ] || exit 75\n    edge_before=$(read_reg 0x43C40000) || exit $?\n    delta=$(( (edge_before - edge_start) & 4294967295 ))\n    valid=$(read_reg 0x43C40008) || exit $?\n    if [ \"$delta\" -ge 2 ] && [ \"$delta\" -lt 2147483648 ] && [ \"$valid\" -eq 1 ]; then\n        period=$(read_reg 0x43C30000) || exit $?\n        high=$(read_reg 0x43C30008) || exit $?\n        valid_after=$(read_reg 0x43C40008) || exit $?\n        edge_after=$(read_reg 0x43C40000) || exit $?\n        if [ \"$edge_before\" -eq \"$edge_after\" ] && [ \"$valid_after\" -eq 1 ]; then\n            now=$(clock_ms) || exit $?\n            [ \"$now\" -lt \"$deadline\" ] || exit 75\n            printf 'ZHIDIAO_PL_V1 %u %u %u %u %u %u\\n' \"$edge_start\" \"$edge_before\" \"$edge_after\" \"$valid_after\" \"$period\" \"$high\"\n            exit 0\n        fi\n    fi\n    i=$((i + 1))\n    if [ \"$i\" -lt 300 ]; then \"$BB\" usleep 50000 || exit 72; fi\ndone\nexit 75"
+                ]
+              ],
+              "observation_timeout_s": 15.0,
+              "timeout_s": 18.0,
+              "effects": "Read-only PL readiness and fresh period/high register observation over SSH; no bitstream loading.",
+              "image_identity": "Deployment must prepare the configured observation image; prog_done and SD file hash do not identify the running image."
+            },
+            "uart": {
+              "uart_observer": {
+                "stm32_tx_gpio": "PA2",
+                "pl_rx_pin": "M17",
+                "baud_rate": 115200,
+                "data_bits": 8,
+                "parity": "none",
+                "stop_bits": 1,
+                "rx_addr": "0x43C50000",
+                "status_addr": "0x43C50008",
+                "control_addr": "0x43C5000C",
+                "busybox_path": "/bin/busybox",
+                "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+                "monotonic_path": "/proc/uptime",
+                "poll_interval_s": 0.01,
+                "transport_margin_s": 3,
+                "max_bytes": 1024
+              },
+              "duration_s": 5.0,
+              "timeout_s": 8.0,
+              "commands": [
+                [
+                  "ssh",
+                  "-o",
+                  "BatchMode=yes",
+                  "-o",
+                  "StrictHostKeyChecking=yes",
+                  "-o",
+                  "UserKnownHostsFile=\"C:/Users/USER/.ssh/known_hosts\"",
+                  "-o",
+                  "ConnectTimeout=10",
+                  "-o",
+                  "HostKeyAlgorithms=+ssh-rsa",
+                  "-o",
+                  "PubkeyAcceptedAlgorithms=+ssh-rsa",
+                  "-i",
+                  "C:\\Users\\USER\\.ssh\\id_zhidiao_rsa",
+                  "-o",
+                  "IdentitiesOnly=yes",
+                  "-p",
+                  "22",
+                  "root@192.168.10.2",
+                  "set -eu\nBB=/bin/busybox\ntest -x \"$BB\" || exit 72\n[ \"$((4294967295))\" = \"4294967295\" ] || exit 72\ntest -r /sys/class/xdevcfg/xdevcfg/device/prog_done || exit 73\n[ \"$(\"$BB\" cat /sys/class/xdevcfg/xdevcfg/device/prog_done)\" = \"1\" ] || exit 73\ntest -r /sd/pl/zhidiao_observe_v5_led.bit || exit 73\nimage_sha=$(\"$BB\" sha256sum < /sd/pl/zhidiao_observe_v5_led.bit) || exit 72\n[ \"$image_sha\" = 'fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6  -' ] || exit 73\nCLOCK=/proc/uptime\nclock_ms() {\n    read up rest < \"$CLOCK\" || exit 72\n    case \"$up\" in *.*) seconds=${up%%.*}; fraction=${up#*.} ;; *) exit 74 ;; esac\n    case \"$seconds:$fraction\" in *[!0123456789:]*|:*|*:) exit 74 ;; esac\n    [ \"${#seconds}\" -le 12 ] && [ \"${#fraction}\" -le 9 ] || exit 74\n    case \"$seconds\" in 0) ;; 0*) exit 74 ;; esac\n    fraction=${fraction}000\n    fraction=${fraction%${fraction#???}}\n    printf '%u' \"$((seconds * 1000 + 1$fraction - 1000))\"\n}\nread_reg() {\n    raw=$(\"$BB\" devmem \"$1\" 32) || exit 72\n    case \"$raw\" in 0x*) digits=${raw#0x} ;; *) exit 74 ;; esac\n    case \"$digits\" in ''|*[!0123456789abcdefABCDEF]*) exit 74 ;; esac\n    [ \"${#digits}\" -le 8 ] || exit 74\n    printf '%u' \"$((raw))\"\n}\n\n\"$BB\" usleep 0 || exit 72\nclock_ms > /dev/null || exit $?\n# Read old sticky health flags before clearing the old RX session.\nread_reg 0x43C50008 > /dev/null || exit $?\n\"$BB\" devmem 0x43C5000C 32 0x00000002 > /dev/null || exit 72\nstarted=$(clock_ms) || exit $?\ndeadline=$((started + 5000))\ncount=0\noverflow=0\nframe=0\nparity=0\nlimited=0\niterations=0\nprintf 'ZHIDIAO_UART_V1\\n'\nwhile [ \"$iterations\" -lt 1526 ]; do\n    iterations=$((iterations + 1))\n    now=$(clock_ms) || exit $?\n    [ \"$now\" -ge \"$started\" ] || exit 74\n    [ \"$now\" -lt \"$deadline\" ] || break\n    status=$(read_reg 0x43C50008) || exit $?\n    [ \"$((status & 32))\" -eq 0 ] || overflow=1\n    [ \"$((status & 64))\" -eq 0 ] || frame=1\n    [ \"$((status & 128))\" -eq 0 ] || parity=1\n    if [ \"$((status & 1))\" -eq 1 ]; then\n        value=$(read_reg 0x43C50000) || exit $?\n        [ \"$value\" -le 255 ] || exit 74\n        now=$(clock_ms) || exit $?\n        [ \"$now\" -ge \"$started\" ] || exit 74\n        # A byte drained at/after the exclusive deadline is outside this window,\n        # not a capacity failure. Do not extend capture waiting for a newline.\n        if [ \"$now\" -ge \"$deadline\" ]; then break; fi\n        printf 'B %u %02X\\n' \"$((now - started))\" \"$value\"\n        count=$((count + 1))\n        if [ \"$count\" -ge 1024 ]; then limited=1; break; fi\n        # Immediately drain the next byte; sleep only once RX is empty.\n    else\n        \"$BB\" usleep 10000 || exit 72\n    fi\ndone\nnow=$(clock_ms) || exit $?\n[ \"$now\" -ge \"$started\" ] || exit 74\n[ \"$limited\" -eq 1 ] || [ \"$now\" -ge \"$deadline\" ] || exit 75\nprintf 'E %u %u %u %u %u %u\\n' \"$((now - started))\" \"$count\" \"$overflow\" \"$frame\" \"$parity\" \"$limited\"\n"
+                ]
+              ],
+              "effects": "Reset UART RX FIFO once at the start of this approved capture to exclude stale bytes; drain only this UART channel. No bitstream loading or firmware changes.",
+              "fifo_reset": {
+                "address": "0x43C5000C",
+                "value": "0x00000002"
+              },
+              "timestamp_basis": "board_monotonic_capture_elapsed_ms"
+            },
+            "duration_s": 5
+          }
+        },
+        "timeout_s": 536.0741067000054,
+        "attempt": 2,
+        "artifact_policy": "Flash only the validated HEX returned by this approved build, with matching path and SHA-256.",
+        "steps": [
+          "build_firmware",
+          "flash_firmware",
+          "read_target_log",
+          "run_hardware_test"
+        ],
+        "effects": "Rebuild this source snapshot, upload its resulting HEX, program/verify/reset STM32, and collect selected real observations. If configured, update only the fixed 4-bit LED status bank at 0x43C60000.",
+        "internal_preparation": null,
+        "observed_gpio": "PA1",
+        "verification_scope": "gpio_period_and_uart_capture"
+      }
+    }
+  ],
+  "model_info": {
+    "source": "nicecode_api",
+    "requested_model": "gpt-5.6-sol",
+    "protocol": "openai-responses"
+  }
+}

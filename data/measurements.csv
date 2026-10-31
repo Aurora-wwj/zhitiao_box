@@ -1,0 +1,3 @@
+attempt,period_ms,high_ms,error_ms,fresh_edges,passed
+1,601.7169,300.36864,398.2831,2,false
+2,1001.08682,500.07403,1.08682,2,true

@@ -1,0 +1,10 @@
+{
+  "agent_zip": {
+    "sha256": "bd0d841ae36ff2a70085a791205353856367f3c2b935f5264957feb4b0d170be",
+    "bytes": 8435523
+  },
+  "project_zip": {
+    "sha256": "33c58225ea24560eb20ce9054ade95d8cfe46977ecddccf4977ea06b7e7cbe2b",
+    "bytes": 16629484
+  }
+}

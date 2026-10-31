@@ -1,0 +1,59 @@
+{
+  "allowed_roots": [
+    "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+  ],
+  "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
+  "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+  "target": "GPIO_PL_Test",
+  "build_timeout_s": 120,
+  "flash_timeout_s": 120,
+  "host": "192.168.10.2",
+  "port": 22,
+  "user": "root",
+  "known_hosts": "C:\\Users\\YOUR_USER\\.ssh\\known_hosts",
+  "identity_file": "C:\\Users\\YOUR_USER\\.ssh\\id_zhidiao_rsa",
+  "allow_legacy_rsa": true,
+  "legacy_scp": true,
+  "mount_root": "/sd",
+  "status_indicator": {
+    "type": "axi_gpio_led_bar",
+    "data_addr": "0x43C60000",
+    "active_low": true
+  },
+  "observer": {
+    "observed_gpio": "PA1",
+    "pl_clock_hz": 100000000,
+    "period_addr": "0x43C30000",
+    "high_addr": "0x43C30008",
+    "edge_addr": "0x43C40000",
+    "valid_addr": "0x43C40008",
+    "busybox_path": "/bin/busybox",
+    "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+    "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+    "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
+    "min_new_edges": 2,
+    "poll_interval_s": 0.05,
+    "timeout_s": 15,
+    "transport_margin_s": 3,
+    "monotonic_path": "/proc/uptime",
+    "prepare_policy": "check_only",
+    "bitstream_device": "/dev/xdevcfg"
+  },
+  "uart_observer": {
+    "stm32_tx_gpio": "PA2",
+    "pl_rx_pin": "M17",
+    "baud_rate": 115200,
+    "data_bits": 8,
+    "parity": "none",
+    "stop_bits": 1,
+    "rx_addr": "0x43C50000",
+    "status_addr": "0x43C50008",
+    "control_addr": "0x43C5000C",
+    "busybox_path": "/bin/busybox",
+    "prog_done_path": "/sys/class/xdevcfg/xdevcfg/device/prog_done",
+    "monotonic_path": "/proc/uptime",
+    "poll_interval_s": 0.01,
+    "transport_margin_s": 3,
+    "max_bytes": 1024
+  }
+}

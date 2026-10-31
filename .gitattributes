@@ -1,0 +1,4 @@
+* text=auto eol=lf
+/src/stm32/** -text
+/build/stm32/*.hex -text
+*.pdf binary
