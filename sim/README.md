@@ -8,3 +8,7 @@ UART专项：-p "*uart*.py"；LED专项：-p test_status_indicator.py。
 ## 历史脚本
 
 smoke/ 保存经过匿名化的四份 .py.txt 历史材料，不能直接执行；正式入口映射及已知缺陷见 smoke/README.md。正式离线测试仍在 src/agent/tests。
+
+## 大附件分包
+
+prepare_upload_parts.py用于切分／验证重组上传原件，步骤见../report/upload_parts.md。工具回归：python -B -m unittest discover -s sim -p test_upload_parts.py -v（在根目录运行）。不访问硬件或API。

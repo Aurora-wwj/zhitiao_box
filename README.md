@@ -32,6 +32,8 @@ flowchart LR
 
 ## 快速开始
 
+FPGA／SD原ZIP超过附件上限时，按 [分包步骤](report/upload_parts.md) 生成每份小于30 MiB的小ZIP。当前两份大附件尚无可检视副本，其内容仍待核对。
+
 Python 3.13，Agent 运行依赖标准库。在仓库的 src/agent 目录执行：
 
 ```powershell

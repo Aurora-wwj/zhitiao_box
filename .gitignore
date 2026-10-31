@@ -26,3 +26,9 @@ Thumbs.db
 /src/stm32/gpio_pl_test/MDK-ARM/GPIO_PL_Test/
 *.uvoptx
 *.lst
+part-*.zip
+/fpga-parts/
+/sd-parts/
+/upload-parts/
+/Zhidiao_PL.zip
+/Zhidiao_Linux_microSD.zip
