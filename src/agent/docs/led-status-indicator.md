@@ -6,6 +6,8 @@
 
 未提供 status_indicator 或设为 null 时不创建适配器、不发出 LED SSH 命令。当前deployment.example.json与deployment-setup向导默认v5＋LED；deployment.no-led.example.json或向导--no-led保留相同v5／UART／PL、只关闭灯。已有配置不会自动迁移，原有四接口行为保持。
 
+当前v5 PL在初始化阶段加载完成，再启动Agent及LED；Agent使用check_only，保留现有执行顺序。初始化与SSH位流文件SHA校验参考[PL初始化说明](../../../board/zynq/pl_preparation.md)；SHA校验不执行加载，LED开始工作前需确认v5已准备好。
+
 仅在板上已准备包含该 4-bit AXI GPIO 的镜像、确认 Data 寄存器可写且方向已设为输出后，在本机 deployment.local.json 的最外层加入：
 
 ```json

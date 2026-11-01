@@ -21,7 +21,7 @@ sh check_files.sh /sd
 
 脚本只检查文件／可执行位和v5文件SHA，不执行OpenOCD、不读写MMIO、不加载PL；输出hardware_result=NOT_TESTED、running_pl_identity=NOT_VERIFIED。它不代替deployment-check／real-flash／real-log／real-test。
 
-PL加载／检查沿用已有Controller审批路径，详见pl_preparation.md。冷启动authorized_keys恢复与PL自动加载仍未验收，不能仅凭镜像中存在某配置就宣称持久化成功。
+当前v5 PL在初始化阶段加载完成，再启动Agent与LED；Agent使用check_only，保持现有四接口顺序。初始化前提、SSH文件SHA与PYTHONPATH参考命令，以及保留的受审批加载／检查能力，见[PL初始化说明](pl_preparation.md)。冷启动authorized_keys恢复与PL自动加载仍未验收，不能仅凭镜像中存在某配置就宣称持久化成功。
 
 ## 网络与SSH
 
