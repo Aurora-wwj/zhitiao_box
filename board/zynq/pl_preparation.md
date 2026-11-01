@@ -72,7 +72,7 @@ ssh `
 
 预期SHA-256为`fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6`。该命令只校验文件，不执行PL加载，也不单独证明正在运行的PL镜像身份；初始化加载完成需另行确认。
 
-文件SHA匹配后，在启动Agent及LED前手动加载。下面命令复用现有PLPreparation的`/dev/xdevcfg`路径和BusyBox超时方式，只适用于已确认支持该字符设备及`timeout` applet的当前Zynq Linux；加载会重置PL。
+文件SHA匹配后，在启动Agent及LED前手动加载。下面命令使用当前已确认的`/dev/xdevcfg`字符设备；加载会重置PL。提供的image_fixed.ub中`/bin/busybox`指向BusyBox 1.24.1，未包含`timeout` applet，因此当前手动初始化使用`cat`写入，不依赖该applet。
 
 ```powershell
 ssh -o BatchMode=yes `
@@ -82,10 +82,10 @@ ssh -o BatchMode=yes `
   -o PubkeyAcceptedAlgorithms=+ssh-rsa `
   -i "$HOME\.ssh\id_zhidiao_rsa" `
   root@192.168.10.2 `
-  "test -c /dev/xdevcfg && /bin/busybox timeout -s KILL 15 /bin/busybox sh -c 'cat /sd/pl/zhidiao_observe_v5_led.bit > /dev/xdevcfg' && cat /sys/class/xdevcfg/xdevcfg/device/prog_done"
+  "test -c /dev/xdevcfg && cat /sd/pl/zhidiao_observe_v5_led.bit > /dev/xdevcfg && cat /sys/class/xdevcfg/xdevcfg/device/prog_done"
 ```
 
-命令成功退出且最后输出`1`表示本次写入后配置完成。加载失败、超时或prog_done不是`1`时，先处理板端问题，再启动Agent。只有SHA校验、加载成功和配置完成分别确认，才进入当前`check_only`工作流；不要把单独读到旧的prog_done=1当作已加载该文件。
+命令成功退出且最后输出`1`表示本次写入后配置完成。该手动命令没有板端执行超时；若未正常返回、SSH中断、加载失败或prog_done不是`1`，先核查板端加载状态，再启动Agent或决定是否重试。只有SHA校验、加载成功和配置完成分别确认，才进入当前`check_only`工作流；不要把单独读到旧的prog_done=1当作已加载该文件。
 
 本次仅整理操作说明，未在云端执行SSH、公钥恢复或该手动加载命令；具体板端执行结果由部署者保留。
 
@@ -99,7 +99,7 @@ ssh -o BatchMode=yes `
 
 1. 使用deployment.example.json中的v5路径、SHA、寄存器和UART配置。
 2. 默认observer.prepare_policy=`check_only`，只查文件SHA与prog_done，**不能证明当前运行的镜像就是该文件**。
-3. `load_verified`作为现有可选能力保留：目标Linux需已确认支持可写字符设备`/dev/xdevcfg`和配置中的prog_done路径。程序会检查已批准镜像SHA、在timeout内加载并等待prog_done；这会重置PL，必须在原有工具审批中确认。当前初始化预加载部署使用`check_only`；启用LED时仍须在启动Agent前确认v5已加载。新Linux若仅支持FPGA manager，当前加载器不适用，不能猜测替代节点。
+3. `load_verified`作为现有可选能力保留：目标Linux需已确认支持可写字符设备`/dev/xdevcfg`、配置中的prog_done路径，以及加载器要求的BusyBox `timeout -s KILL`。提供的BusyBox 1.24.1镜像缺少该applet，当前部署保持手动初始化＋`check_only`，不直接切换此策略。具备全部依赖时，程序会检查已批准镜像SHA、在限定时间内加载并等待prog_done；这会重置PL，必须在原有工具审批中确认。启用LED时仍须在启动Agent前确认v5已加载。新Linux若仅支持FPGA manager，当前加载器不适用，不能猜测替代节点。
 
 先预览现有工具计划，再按提示批准执行：
 

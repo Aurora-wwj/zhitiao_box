@@ -23,6 +23,8 @@ sh check_files.sh /sd
 
 当前v5 PL在初始化阶段加载完成，再启动Agent与LED；Agent使用check_only，保持现有四接口顺序。路径变量、三步SSH公钥恢复、v5文件SHA与手动加载，以及保留的受审批加载／检查能力，统一见[板端初始化说明](pl_preparation.md)。最后输出ZHIDIAO_SSH_KEY_OK表示本次公钥登录恢复完成；冷启动authorized_keys恢复与PL自动加载仍未验收，不能将单次恢复成功当作持久化成功。
 
+已对提供的image_fixed.ub做只读检查：`/bin/busybox`指向BusyBox 1.24.1的busybox.nosuid，applet列表没有`timeout`。当前手动加载说明使用已有`cat`，Agent保持`check_only`；可选`load_verified`需要额外确认其BusyBox超时依赖可用，不把该镜像当作已满足此策略的全部条件。
+
 ## 网络与SSH
 
 已确认image_fixed.ub的rootfs有eth0静态192.168.10.2/24，示例见network_interfaces.example。PC参考192.168.10.1/24；应在目标系统合并配置并完成断电上电测试。该观察不证明当前板卡已启动此镜像，也不证明SSH免密已持久化。
