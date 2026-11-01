@@ -1,5 +1,7 @@
 # STM32测试工程
 
+当前仓库路径已按提交规范统一小写：原工程入口为`mdk-arm/gpio_pl_test.uvprojx`，源码为`core/src/main.c`；历史记录保留原名，见仓库`report/path_migration.md`。私人配置需按当前工程重新核对，不自动修改。
+
 | 工程 | 位置 | 说明 |
 | --- | --- | --- |
 | GPIO_PL_Test | [原工程](../../src/stm32/gpio_pl_test) | 现有黄金源码与HEX、两轮四接口JSON对应工程 |

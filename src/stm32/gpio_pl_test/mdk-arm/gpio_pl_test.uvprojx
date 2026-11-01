@@ -48,8 +48,8 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>GPIO_PL_Test\</OutputDirectory>
-          <OutputName>GPIO_PL_Test</OutputName>
+          <OutputDirectory>gpio_pl_test\</OutputDirectory>
+          <OutputName>gpio_pl_test</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32G431xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32G4xx_HAL_Driver/Inc;../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32G4xx/Include;../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../core/inc;../drivers/stm32g4xx_hal_driver/inc;../drivers/stm32g4xx_hal_driver/inc/legacy;../drivers/cmsis/device/st/stm32g4xx/include;../drivers/cmsis/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -397,17 +397,17 @@
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/Src/main.c</FilePath>
+              <FilePath>../core/src/main.c</FilePath>
             </File>
             <File>
               <FileName>gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/Src/gpio.c</FilePath>
+              <FilePath>../core/src/gpio.c</FilePath>
             </File>
             <File>
               <FileName>usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/Src/usart.c</FilePath>
+              <FilePath>../core/src/usart.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -463,12 +463,12 @@
             <File>
               <FileName>stm32g4xx_it.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/Src/stm32g4xx_it.c</FilePath>
+              <FilePath>../core/src/stm32g4xx_it.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_msp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/Src/stm32g4xx_hal_msp.c</FilePath>
+              <FilePath>../core/src/stm32g4xx_hal_msp.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -478,12 +478,12 @@
             <File>
               <FileName>stm32g4xx_hal_pwr_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_pwr_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_uart.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -539,7 +539,7 @@
             <File>
               <FileName>stm32g4xx_hal_uart_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_uart_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -595,62 +595,62 @@
             <File>
               <FileName>stm32g4xx_hal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_rcc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_rcc.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_rcc_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_rcc_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_flash.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_flash_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_flash_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_flash_ramfunc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_flash_ramfunc.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_gpio.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_exti.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_exti.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_dma.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_dma_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_dma_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_pwr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_pwr.c</FilePath>
             </File>
             <File>
               <FileName>stm32g4xx_hal_cortex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c</FilePath>
+              <FilePath>../drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_cortex.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -660,7 +660,7 @@
             <File>
               <FileName>system_stm32g4xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/Src/system_stm32g4xx.c</FilePath>
+              <FilePath>../core/src/system_stm32g4xx.c</FilePath>
             </File>
           </Files>
         </Group>

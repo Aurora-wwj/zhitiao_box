@@ -144,7 +144,7 @@ py -3.13 -B -m zhidiao_agent real-log --config deployment.local.json --duration-
 
 ## 7. 自然语言 Agent 与真实闭环
 
-先在同一终端按 [README](../README.md) 安全设置 NICECODE_API_KEY、NICECODE_BASE_URL 和当前可用的 NICECODE_MODEL。已配置的密钥无需再次输入，也不要输出变量值。
+先在同一终端按 [README](../readme.md) 安全设置 NICECODE_API_KEY、NICECODE_BASE_URL 和当前可用的 NICECODE_MODEL。已配置的密钥无需再次输入，也不要输出变量值。
 
 ```powershell
 py -3.13 -B -m zhidiao_agent agent-run "把 STM32 PA1 的完整周期调到 1000 ms，误差不超过 50 ms。" --project "E:\Project\GPIO_PL_Test" --source Core/Src/main.c --config deployment.local.json --protocol openai-responses --allow-network --pl-only --max-attempts 3 --timeout-s 300

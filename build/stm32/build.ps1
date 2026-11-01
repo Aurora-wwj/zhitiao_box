@@ -1,8 +1,8 @@
 param([Parameter(Mandatory=$true)][string]$KeilUv4)
 $ErrorActionPreference = "Stop"
 $taskRoot = (Resolve-Path (Join-Path $PSScriptRoot "../..")).Path
-$project = Join-Path $taskRoot "src/stm32/gpio_pl_test/MDK-ARM/GPIO_PL_Test.uvprojx"
-$artifact = Join-Path $taskRoot "src/stm32/gpio_pl_test/MDK-ARM/GPIO_PL_Test/GPIO_PL_Test.hex"
+$project = Join-Path $taskRoot "src/stm32/gpio_pl_test/mdk-arm/gpio_pl_test.uvprojx"
+$artifact = Join-Path $taskRoot "src/stm32/gpio_pl_test/mdk-arm/gpio_pl_test/gpio_pl_test.hex"
 $log = Join-Path $PSScriptRoot ("keil_build_" + [guid]::NewGuid().ToString("N") + ".log")
 if (!(Test-Path -LiteralPath $KeilUv4 -PathType Leaf)) { throw "Keil executable missing" }
 if (Test-Path -LiteralPath $artifact) { Remove-Item -LiteralPath $artifact }

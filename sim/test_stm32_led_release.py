@@ -52,16 +52,17 @@ class STM32LEDReleaseTests(unittest.TestCase):
 from zhidiao_agent.deployment import DeploymentConfig
 from zhidiao_agent.tools.artifacts import keil_target, source_manifest
 from zhidiao_agent.editing import SourceEditor
-p = Path("src/stm32/gpio_pl_test_led").resolve()
-c = DeploymentConfig(allowed_roots=(str(p),), project_file="mdk-arm/gpio_pl_test.uvprojx", target="GPIO_PL_Test")
-file, target, artifact = keil_target(p, c)
-assert target == "GPIO_PL_Test"
-assert file == p / "mdk-arm/gpio_pl_test.uvprojx"
-assert artifact == p / "mdk-arm/gpio_pl_test/gpio_pl_test.hex"
-sources = SourceEditor(str(p), ("core/src/main.c",)).snapshot()
-assert sources.success
-inputs = source_manifest(p)
-assert sources.data["sources"]["core/src/main.c"]["sha256"] == inputs["core/src/main.c"]
+for variant in ("gpio_pl_test", "gpio_pl_test_led"):
+    p = (Path("src/stm32") / variant).resolve()
+    c = DeploymentConfig(allowed_roots=(str(p),), project_file="mdk-arm/gpio_pl_test.uvprojx", target="GPIO_PL_Test")
+    file, target, artifact = keil_target(p, c)
+    assert target == "GPIO_PL_Test"
+    assert file == p / "mdk-arm/gpio_pl_test.uvprojx"
+    assert artifact == p / "mdk-arm/gpio_pl_test/gpio_pl_test.hex"
+    sources = SourceEditor(str(p), ("core/src/main.c",)).snapshot()
+    assert sources.success
+    inputs = source_manifest(p)
+    assert sources.data["sources"]["core/src/main.c"]["sha256"] == inputs["core/src/main.c"]
 print("AGENT_LED_PROJECT_DISCOVERY_PASSED")
 '''
         env = dict(os.environ, PYTHONPATH=str(ROOT / 'src/agent/src'))

@@ -1,5 +1,7 @@
 # 智调 Agent 软件包
 
+当前仓库路径已按提交规范统一小写：原工程入口为`mdk-arm/gpio_pl_test.uvprojx`，源码为`core/src/main.c`；历史记录保留原名，见仓库`report/path_migration.md`。私人配置需按当前工程重新核对，不自动修改。
+
 本目录保持 Python 3.13 的原 src/zhidiao_agent、tests、启动器布局。请先读仓库根 README.md 和 report/reproduction.md。
 
 最终真实两轮四接口：601.7169→1001.08682 ms PASS，证据见 ../../data/final_run_sanitized.json；src/agent/docs 内旧进度为历史快照。

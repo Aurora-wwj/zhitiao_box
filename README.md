@@ -16,7 +16,7 @@
 
 ![真实四接口两轮实测：601.717ms FAIL到1001.087ms PASS](data/screenshots/ui_four_tool_pass.png)
 
-原图显示三位小数，与JSON原精度一致；四张原图及场景说明见[截图索引](data/screenshots/README.md)。其中1000.192ms单轮图明确跳过UART，单独作为PL-only参考，不计入完整四接口闭环。
+原图显示三位小数，与JSON原精度一致；四张原图及场景说明见[截图索引](data/screenshots/readme.md)。其中1000.192ms单轮图明确跳过UART，单独作为PL-only参考，不计入完整四接口闭环。
 
 **已整理Agent、STM32、网页JSON／四张实测截图／最终HEX，以及FPGA RTL／BD／XDC／工程、v5 bit和baseline/final原始实现报告。** 另已加入Zynq测试包中带许可的OpenOCD／libusb源码、构建入口及板端文件检查。含私钥的镜像和来源不完整的二进制不原样发布。FPGA四项外部IP仍按依赖交付。队伍已确认BOOT／Linux镜像、Vivado工程和照片／视频原素材存在；完整从零构建说明、独立重建记录、照片选编与正式提交版仍需整理或验收，当前不是完整比赛提交包。原件与公开位置见[材料索引](report/material_index.md)及[发布状态](report/release_status.md)。
 
@@ -42,7 +42,7 @@ flowchart LR
 
 ## 快速开始
 
-FPGA四分包与Zynq_Linux_Test两分包均已重组检查。后续大材料可按 [分包步骤](report/upload_parts.md) 上传，现有原包无需重复。Zynq测试包不等于完整SD／Linux重建工程，范围见 [板端说明](board/zynq/README.md)。
+FPGA四分包与Zynq_Linux_Test两分包均已重组检查。后续大材料可按 [分包步骤](report/upload_parts.md) 上传，现有原包无需重复。Zynq测试包不等于完整SD／Linux重建工程，范围见 [板端说明](board/zynq/readme.md)。
 
 Python 3.13，Agent 运行依赖标准库。在仓库的 src/agent 目录执行：
 
@@ -55,7 +55,7 @@ py -3.13 -B -m unittest discover -s tests -v
 
 start_demo.bat：离线脚本模型＋模拟硬件；start_ai_mock.bat：真实 NiceCode＋模拟硬件；start_ui.bat：真实部署。真实 API 需要进程环境中的 Key 或启动器遮罩输入，可能计费。不要提交 Key。
 
-真实部署先阅读 [从零复现](report/reproduction.md)。在 src/agent 复制 deployment.example.json 为 deployment.local.json 并改成自己的绝对路径。默认示例和deployment-setup向导均为v5＋LED；deployment.no-led.example.json或向导--no-led使用同一v5，只关闭灯。私人deployment.local.json不提交，向导不会覆盖已有配置。位流见 [build/fpga](build/fpga/README.md)；加载镜像、认证与寄存器身份仍须在板端确认。
+真实部署先阅读 [从零复现](report/reproduction.md)。在 src/agent 复制 deployment.example.json 为 deployment.local.json 并改成自己的绝对路径。默认示例和deployment-setup向导均为v5＋LED；deployment.no-led.example.json或向导--no-led使用同一v5，只关闭灯。私人deployment.local.json不提交，向导不会覆盖已有配置。位流见 [build/fpga](build/fpga/readme.md)；加载镜像、认证与寄存器身份仍须在板端确认。
 
 **当前部署在初始化阶段加载 v5 PL，加载完成后再启动 Agent 和 LED；Agent 使用 `check_only`，保持现有四接口执行顺序。** 现有 `E:\zhidiao-agent\src` 的 `PYTHONPATH` 设置、三步SSH公钥恢复（最后输出`ZHIDIAO_SSH_KEY_OK`）、v5位流文件SHA校验与手动加载统一见 [板端初始化说明](board/zynq/pl_preparation.md)。
 
@@ -86,16 +86,16 @@ AX7Z020（Zynq-7000）＋STM32G431＋ST-Link/V2。PA1→M18 为周期观测；PA
 | skill | 按五类可复用能力组织，不要求原子化或固定数量 |
 | report | 设计初稿、LLM 记录、复现与证据索引 |
 
-除官方 README.md、LICENSE 及第三方／Keil 既有大小写名称外，新文件采用英文小写命名。保留 Core/Src、GPIO_PL_Test.uvprojx 等原名以维持第三方工程引用；Python 包名 zhidiao_agent 保持兼容。
+按指南3.3.5.4，发布路径统一使用英文小写、数字、下划线或连字符（扩展名使用点号）；仅保留指南目录示例明确列出的根`README.md`与`skill/README.md`。其他说明文件为`readme.md`，根许可证为`license`。原STM32工程已同步改为`core/src/main.c`、`mdk-arm/gpio_pl_test.uvprojx`，内部Keil Target仍为`GPIO_PL_Test`。第三方许可证正文不变；历史JSON／diff中的原路径保留，映射与校验见[路径迁移说明](report/path_migration.md)。Python包名`zhidiao_agent`保持兼容。
 
 ## 已知边界
 
-真实模型由 NiceCode API 提供，请求模型记录在报告中；未实现本地 LLM／PYNQ。一次修改一个批准的现有 UTF-8 文件；UART 115200 8N1。冷启动后的 SSH 公钥恢复和 PL 自动加载未验证持久化，需每次上电按部署说明准备。LED 表示工具状态，不等于 DUT PASS。原计数 RTL 在复位时输入已高的首次结果有启动残段边界，须等待后续稳定周期；见 [FPGA 说明](src/fpga/README.md)。云端没有 Keil/Vivado/板卡，硬件重建未在此环境执行。
+真实模型由 NiceCode API 提供，请求模型记录在报告中；未实现本地 LLM／PYNQ。一次修改一个批准的现有 UTF-8 文件；UART 115200 8N1。冷启动后的 SSH 公钥恢复和 PL 自动加载未验证持久化，需每次上电按部署说明准备。LED 表示工具状态，不等于 DUT PASS。原计数 RTL 在复位时输入已高的首次结果有启动残段边界，须等待后续稳定周期；见 [FPGA 说明](src/fpga/readme.md)。云端没有 Keil/Vivado/板卡，硬件重建未在此环境执行。
 
 ## 文档与许可
 
 [Skill 索引](skill/README.md) · [设计初稿](report/design_report.md) · [设计初稿PDF](report/design_report.pdf) · [优化与失败分析](report/optimization_notes.md) · [验证总结](data/test_summary.md)。src/agent/docs 中日期文档为开发历史，不替代本页当前状态。
 
-[Zynq测试包核对](report/zynq_intake.md) · [OpenOCD构建](build/openocd/README.md) · [PL加载与检查](board/zynq/pl_preparation.md)。已确认fixed镜像有静态IP配置，但未把配置存在当作冷启动已验收；内嵌SSH主机私钥的镜像不公开。
+[Zynq测试包核对](report/zynq_intake.md) · [OpenOCD构建](build/openocd/readme.md) · [PL加载与检查](board/zynq/pl_preparation.md)。已确认fixed镜像有静态IP配置，但未把配置存在当作冷启动已验收；内嵌SSH主机私钥的镜像不公开。
 
-原创内容采用 [MIT](LICENSE)，第三方范围见 [third_party_notices.md](third_party_notices.md)。
+原创内容采用 [MIT](license)，第三方范围见 [third_party_notices.md](third_party_notices.md)。

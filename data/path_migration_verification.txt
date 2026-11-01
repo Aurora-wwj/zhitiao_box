@@ -1,0 +1,38 @@
+Submission naming migration verification
+Date: 2026-11-01
+Base commit: 57693cb1090c637d2f00612921974d02732f4ca3
+The verified implementation was uncommitted when these commands ran.
+
+123 tracked files renamed to lowercase, including the original Keil inputs,
+expanded upstream licenses and nested readmes; only README.md and skill/README.md
+retain the official directory example spellings. Root MIT file is now license.
+Original/public paths and SHA-256 values: data/repository_path_map.json.
+All 24 listed historical evidence files retain their original bytes.
+Historical JSON and diff still record the original Core/Src/main.c path.
+
+Repository root:
+IVERILOG=/tmp/zhitiaohe-iverilog/usr/bin/iverilog VVP=/tmp/zhitiaohe-iverilog/usr/bin/vvp IVERILOG_BASE=/tmp/zhitiaohe-iverilog/usr/lib/x86_64-linux-gnu/ivl python3.13 -B -m unittest discover -s sim -v
+Ran 26 tests in 2.016s
+OK; no skips.
+Includes actual Icarus RTL simulation and host C HAL behavior execution.
+New release tests reject invalid/case-colliding names, missing migrated inputs
+and changed upstream licenses, and preprocess 21 C sources in each Keil project
+using GCC on the case-sensitive Linux filesystem (42 translation units total).
+Preprocessing checks headers only; it neither compiles ARM objects nor links firmware.
+The existing Agent discovers both lowercase projects and snapshots core/src/main.c.
+
+Working directory src/agent:
+PYTHONPATH=src python3.13 -B -m unittest discover -s tests -v
+Ran 465 tests in 23.968s
+OK; no skips.
+Includes three new desktop source-layout tests; no graphical session is started.
+Lowercase published paths, existing legacy paths and flat main.c remain supported.
+
+python3.13 -B sim/check_release.py
+PASS (final evidence, source/HEX/FPGA inputs, licenses and published path checks).
+Python AST: 102 files; Markdown local-link checks: 110 targets, none missing.
+
+No online model request, SSH, MMIO, board test, Windows, Keil or Vivado execution.
+New LED firmware still needs an independent Keil rebuild/HEX identity and board
+acceptance. Linux/BOOT reproduction inputs, Windows regression, timing/startup and
+cold-boot boundaries remain as documented in report/release_status.md.

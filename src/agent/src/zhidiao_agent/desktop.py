@@ -71,6 +71,14 @@ def build_service(settings: LaunchSettings) -> WebUIService:
     return service
 
 
+def suggested_source(project: Path) -> str | None:
+    """Prefer published paths while accepting an existing unmigrated project."""
+    for relative in ("core/src/main.c", "Core/Src/main.c", "main.c"):
+        if (project / relative).is_file():
+            return relative
+    return None
+
+
 def _choose_settings(config_path: str):
     try:
         import tkinter as tk
@@ -90,7 +98,7 @@ def _choose_settings(config_path: str):
     ttk.Label(frame, text="智调 AI 硬件调试控制台", font=("Microsoft YaHei", 17)).grid(row=0, column=0, columnspan=3, sticky="w", pady=(0, 6))
     ttk.Label(frame, text="选择部署范围后打开本机控制台。源码发送、任务范围及每次修改仍需在控制台确认。").grid(row=1, column=0, columnspan=3, sticky="w", pady=(0, 16))
     profile = tk.StringVar(value=str(Path(config_path).absolute()))
-    project, sources = tk.StringVar(), tk.StringVar(value="Core/Src/main.c")
+    project, sources = tk.StringVar(), tk.StringVar(value="core/src/main.c")
     model = tk.StringVar(value=os.environ.get("NICECODE_MODEL", "gpt-5.6-sol"))
     key = tk.StringVar()
     uart, strict = tk.BooleanVar(value=True), tk.BooleanVar(value=False)
@@ -101,8 +109,8 @@ def _choose_settings(config_path: str):
         try:
             config = DeploymentConfig.load(profile.get())
             project.set(config.allowed_roots[0])
-            if (Path(project.get()) / "Core/Src/main.c").is_file(): sources.set("Core/Src/main.c")
-            elif (Path(project.get()) / "main.c").is_file(): sources.set("main.c")
+            source = suggested_source(Path(project.get()))
+            if source is not None: sources.set(source)
             uart.set(config.uart_observer is not None)
         except AgentError:
             pass
@@ -115,7 +123,10 @@ def _choose_settings(config_path: str):
 
     def choose_project():
         value = filedialog.askdirectory(parent=root, title="选择 STM32 工程根目录")
-        if value: project.set(value)
+        if value:
+            project.set(value)
+            source = suggested_source(Path(value))
+            if source is not None: sources.set(source)
 
     def choose_sources():
         values = filedialog.askopenfilenames(parent=root, title="选择允许 AI 修改的现有 UTF-8 源码", initialdir=project.get(),

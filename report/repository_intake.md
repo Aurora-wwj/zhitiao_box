@@ -60,7 +60,7 @@ AMD 自主选题 3.3.5.1：完整源码、仿真／验证、资源／时序、�
 
 先验证这些内容，再更新主 README 为最终真实通过。PDF 的陈述不能替代原始运行 JSON、源码和实现报告。
 
-FPGA补充检查发现的边界也已公开：final报告有未约束路径等HIGH警告，正WNS不等于完整时序覆盖；原RTL启动HIGH的首次值可能含残段。位流未重建、黄金RTL未改；详情见fpga_evidence.md及src/fpga/README.md。
+FPGA补充检查发现的边界也已公开：final报告有未约束路径等HIGH警告，正WNS不等于完整时序覆盖；原RTL启动HIGH的首次值可能含残段。位流未重建、黄金RTL未改；详情见fpga_evidence.md及src/fpga/readme.md。
 
 ## 发布前检查
 

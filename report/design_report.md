@@ -43,7 +43,7 @@ Skill按闭环调试、可信PL、UART、部署和失败排查五类组织，各
 
 ## 复现与限制
 
-详见report/reproduction.md及build/fpga/README.md。实际Vivado2017.4，与指南推荐新版存在差异；已提供重建Tcl，但Vivado／Keil重建未在云端执行。四项供应商IP因完整再分发许可未附，按VLNV／37文件SHA和合法获取步骤列为外部依赖；不能称为无外部依赖的一键构建。UART有限窗口与字节上限，单文件修改且需审批，依赖第三方API的可用性。
+详见report/reproduction.md及build/fpga/readme.md。实际Vivado2017.4，与指南推荐新版存在差异；已提供重建Tcl，但Vivado／Keil重建未在云端执行。四项供应商IP因完整再分发许可未附，按VLNV／37文件SHA和合法获取步骤列为外部依赖；不能称为无外部依赖的一键构建。UART有限窗口与字节上限，单文件修改且需审批，依赖第三方API的可用性。
 
 Zynq_Linux_Test两分包已核对，带许可的OpenOCD／libusb源码及构建入口公开，887份部署脚本与源码一致。fixed FIT与原件kernel／fdt相同，ramdisk增加静态IP和主机私钥等；私钥和含密钥镜像不公开，原ARM ELF因确切静态依赖来源不齐也不直接发布。完整BOOT／Linux构建配方、实物照片与正式主报告仍待补齐，SSH authorized_keys与PL冷启动持久化待实测，不能从配置存在推断验收通过。
 
@@ -51,7 +51,7 @@ Zynq_Linux_Test两分包已核对，带许可的OpenOCD／libusb源码及构建�
 
 ## 实测截图与证据
 
-以下4张为用户photos.zip的原PNG，文件未重绘／改数值／重新压缩；详细SHA与场景在data/report_sources.json及data/screenshots/README.md。它们记录原界面版本，不是本次报告ID说明更新后重新执行的板卡测试，也不替代实物／接线照片。
+以下4张为用户photos.zip的原PNG，文件未重绘／改数值／重新压缩；详细SHA与场景在data/report_sources.json及data/screenshots/readme.md。它们记录原界面版本，不是本次报告ID说明更新后重新执行的板卡测试，也不替代实物／接线照片。
 
 ![图1：四接口两轮主案例，601.717ms FAIL到1001.087ms PASS。](../data/screenshots/ui_four_tool_pass.png)
 

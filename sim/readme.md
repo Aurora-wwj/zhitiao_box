@@ -7,6 +7,8 @@ UART专项：-p "*uart*.py"；LED专项：-p test_status_indicator.py。
 
 ## STM32 LED同步补充工程
 
+当前发布路径与历史路径的映射由`release_path_check.py`核对，已接入`check_release.py`。`python3.13 -B -m unittest discover -s sim -p test_release_paths.py -v`覆盖大小写／中文／空格和路径碰撞拒绝、缺失输入／许可证变更拒绝，以及两份Keil工程42个C翻译单元的GCC主机预处理。预处理验证include路径闭合，不是ARM编译或Keil链接。根README.md与skill/README.md按官方示例保留，其余发布路径小写。
+
 运行`python3.13 -B -m unittest discover -s sim -p test_stm32_led_release.py -v`。4项回归核对92份上传源码输入与许可证的SHA、小写发布路径、Keil引用和越界拒绝、现有Agent对新工程的目标／输出识别，以及提供的LED辅助函数和main循环在主机HAL替身中的行为。主机C编译器使用CC或cc／gcc，缺失时该项skip，不冒充执行。
 
 主机替身检查八次PA1翻转均更新八灯、低有效镜像、PD2锁存使能、500 ms延时调用和两条UART帧；没有运行Keil、ARM固件或真实GPIO。原工程的黄金源码／HEX及旧JSON保持独立。源文件检查也可运行`python3.13 -B sim/stm32_led_check.py`，结果明确hardware_result=NOT_TESTED。

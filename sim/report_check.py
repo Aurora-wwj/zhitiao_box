@@ -81,7 +81,7 @@ def check(root=ROOT):
     files = sources['screenshots']['files']
     if len(files) != 4 or len({item['path'] for item in files}) != 4:
         raise ValueError('Expected four distinct supplied screenshots')
-    captions = local('data/screenshots/README.md').read_text(encoding='utf-8')
+    captions = local('data/screenshots/readme.md').read_text(encoding='utf-8')
     for item in files:
         path = verified(item['path'], item['sha256'])
         data = path.read_bytes()

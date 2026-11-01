@@ -18,4 +18,4 @@ HEX SHA b6aca82331978cca76e967fd7d08f3d33994672215ff3e6a50f0173662b9f70f。
 
 完整审阅diff提取至data/final_source_change.diff，保留HAL_Delay(300)→500和assert_failed文档注释的一处变动，未改黄金main.c。原diff与LF公开副本分别记录SHA；不能将摘录当作完整改动。
 
-四张原PNG见data/screenshots/README.md，逐项SHA校验。主案例图与JSON按run_id、数值和日志关联；PL-only单轮1000.192ms图仅有截图，不能计作完整四接口闭环。审计图中历史下拉所选run_2178…与当前JSON的run_5d8e…不是同一个界面字段，当前版本已添加分别标识。截图为旧版本实测原件，不伪装成本次界面更新后的重新上板。
+四张原PNG见data/screenshots/readme.md，逐项SHA校验。主案例图与JSON按run_id、数值和日志关联；PL-only单轮1000.192ms图仅有截图，不能计作完整四接口闭环。审计图中历史下拉所选run_2178…与当前JSON的run_5d8e…不是同一个界面字段，当前版本已添加分别标识。截图为旧版本实测原件，不伪装成本次界面更新后的重新上板。

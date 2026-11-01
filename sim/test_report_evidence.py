@@ -13,7 +13,7 @@ ROOT = report_check.ROOT
 class ReportEvidenceTests(unittest.TestCase):
     def copy_evidence(self, target):
         paths = ['README.md', 'data/report_sources.json', 'data/final_run_sanitized.json',
-                 'data/measurements.csv', 'data/final_source_change.diff', 'data/screenshots/README.md']
+                 'data/measurements.csv', 'data/final_source_change.diff', 'data/screenshots/readme.md']
         sources = json.loads((ROOT / 'data/report_sources.json').read_text())
         paths += [item['path'] for item in sources['screenshots']['files']]
         for name in paths:

@@ -13,7 +13,7 @@
 - /sd/tools/openocd/share/openocd/scripts：interface/stlink.cfg、target/stm32g4x.cfg及其依赖；不要只拷两份cfg。
 - /sd/firmware/<run_id>/firmware.hex：由RealBackend上传并比较SHA后再program／verify／reset。
 
-先准备自己的合法Linux／BOOT系统及非交互SSH，再按../../build/openocd/README.md构建／取得工具。复制到SD目录、确认v5路径后，可在板端运行：
+先准备自己的合法Linux／BOOT系统及非交互SSH，再按../../build/openocd/readme.md构建／取得工具。复制到SD目录、确认v5路径后，可在板端运行：
 
 ```sh
 sh check_files.sh /sd

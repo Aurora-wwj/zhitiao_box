@@ -8,91 +8,91 @@
       "sha256": "bb367fd19ab96a65ee5b269b60326d9f36bca1c64d9865cc36985d3651aba563"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/README",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/readme",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/README",
       "bytes": 12242,
       "sha256": "a0b180f131496a0ee40496a67140e887d8b74930aba66f4f0cc46d43924bf769"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/license-rules.txt",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/license-rules.txt",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/license-rules.txt",
       "bytes": 10617,
       "sha256": "0a37155eb8bc0cb94477a0cae4f030e39da9317374e8a9f597e9229fd09aff78"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/exceptions/eCos-exception-2.0",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/exceptions/ecos-exception-2.0",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/exceptions/eCos-exception-2.0",
       "bytes": 1001,
       "sha256": "034da732b4f3079b8783fff756613c1cff89dec5ac80c5cdd90532b7539922a1"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-Source-Code",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/bsd-source-code",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/BSD-Source-Code",
       "bytes": 1654,
       "sha256": "5cf024f6e3611d5c6fb98748d1a0ad99b8cf9ffe46f2d60fa10c299cd29e0a75"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-3-Clause",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/bsd-3-clause",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/BSD-3-Clause",
       "bytes": 1845,
       "sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/gfdl-1.2.texi.readme",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/gfdl-1.2.texi.readme",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/gfdl-1.2.texi.readme",
       "bytes": 166,
       "sha256": "76515be2d7334a1a038f775238c9a4c2b37e19514248e5eea0434cdfee526f9d"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-2-Clause-Views",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/bsd-2-clause-views",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/BSD-2-Clause-Views",
       "bytes": 1898,
       "sha256": "1483f15e9fddc73b5df0acab1c42d21ecd0bf6ade8a79179fb90c09f13d03dcd"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/GFDL-1.2",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/gfdl-1.2",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/GFDL-1.2",
       "bytes": 21155,
       "sha256": "f35396f4095619f986736ca5e2976b313d381463a35c921c9ae677cc7eb83e28"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-2-Clause",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/bsd-2-clause",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/BSD-2-Clause",
       "bytes": 1641,
       "sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/MIT",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/mit",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/MIT",
       "bytes": 1372,
       "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/GPL-2.0",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/gpl-2.0",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/GPL-2.0",
       "bytes": 18732,
       "sha256": "7d35bc44da7bb763022e3c2c32cfc0125dd222060bc50992420599d8e65f6c0a"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-1-Clause",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/bsd-1-clause",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/preferred/BSD-1-Clause",
       "bytes": 1415,
       "sha256": "f3ba76203a7b6993db31f987559cc4c621ae1ff78119ced2a669756c2c5fd3b1"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/stand-alone/GPL-3.0",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/stand-alone/gpl-3.0",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/LICENSES/stand-alone/GPL-3.0",
       "bytes": 35789,
       "sha256": "9a41b56594cd89743ca72f188318c9871661847074dd16497ae0c695fe3ab9c9"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/COPYING",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/copying",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/COPYING",
       "bytes": 362,
       "sha256": "1b8f7e37ee5afbbf95c2a4d62b12b25232e29538692663b434318503a9a88419"
     },
     {
-      "path": "src/third_party/openocd/licenses/openocd-0.12.0/AUTHORS",
+      "path": "src/third_party/openocd/licenses/openocd-0.12.0/authors",
       "source": "openocd_sources/openocd-0.12.0.tar.gz!/openocd-0.12.0/AUTHORS",
       "bytes": 477,
       "sha256": "ee9d62773d4cf3183cdfd80abdb566a421bfcde531d5214ee46b474176839b1f"
@@ -104,19 +104,19 @@
       "sha256": "fea36f34f9156400209595e300840767ab1a385ede1dc7ee893015aea9c6dbaf"
     },
     {
-      "path": "src/third_party/openocd/licenses/libusb-1.0.30/COPYING",
+      "path": "src/third_party/openocd/licenses/libusb-1.0.30/copying",
       "source": "openocd_sources/libusb-1.0.30.tar.bz2!/libusb-1.0.30/COPYING",
       "bytes": 26436,
       "sha256": "5df07007198989c622f5d41de8d703e7bef3d0e79d62e24332ee739a452af62a"
     },
     {
-      "path": "src/third_party/openocd/licenses/libusb-1.0.30/README",
+      "path": "src/third_party/openocd/licenses/libusb-1.0.30/readme",
       "source": "openocd_sources/libusb-1.0.30.tar.bz2!/libusb-1.0.30/README",
       "bytes": 873,
       "sha256": "ba152b9ae04b7cdf3cf09e8c91f60971b0c8f6106562e7cd31a2f2bf97f690db"
     },
     {
-      "path": "src/third_party/openocd/licenses/libusb-1.0.30/AUTHORS",
+      "path": "src/third_party/openocd/licenses/libusb-1.0.30/authors",
       "source": "openocd_sources/libusb-1.0.30.tar.bz2!/libusb-1.0.30/AUTHORS",
       "bytes": 4015,
       "sha256": "27fd82b016838197d5276ba98d2187ed5a1ad0e171767322f356f0a9f6395941"

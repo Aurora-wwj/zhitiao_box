@@ -1,5 +1,7 @@
 # v0.5：UART 正式接入与 PC 控制台
 
+当前仓库已统一小写路径；此文操作命令使用`core/src/main.c`和`mdk-arm/gpio_pl_test.uvprojx`。旧实测路径不改写，详见[迁移说明](../../../report/path_migration.md)。
+
 更新：2026-11-01。产品名为“智调”（tiáo），代码统一发布到 main。日常使用以本文替代 v0.4 手册，旧文档保留历史背景。
 
 ## 1. 实测证据与本轮边界
@@ -59,7 +61,7 @@ prog_done 节点已在当前部署实测为 1。check_only 由部署方准备好
 v5 位流已公开在 build/fpga/zhidiao_observe_v5_led.bit；路径相对于仓库根目录。私人 deployment.local.json 不提交Git，也不被向导覆盖。现有部署保留认证及本机路径，仅在审阅后更新硬件字段。新建配置可运行：
 
 ```powershell
-py -3.13 -B -m zhidiao_agent deployment-setup --project "C:\work\zhitiaohe\src\stm32\gpio_pl_test" --keil "C:\Keil_v5\UV4\UV4.exe" --known-hosts "C:\Users\YOUR_USER\.ssh\known_hosts" --project-file MDK-ARM/GPIO_PL_Test.uvprojx --target GPIO_PL_Test --output deployment.local.json --preview-only
+py -3.13 -B -m zhidiao_agent deployment-setup --project "C:\work\zhitiaohe\src\stm32\gpio_pl_test" --keil "C:\Keil_v5\UV4\UV4.exe" --known-hosts "C:\Users\YOUR_USER\.ssh\known_hosts" --project-file mdk-arm/gpio_pl_test.uvprojx --target GPIO_PL_Test --output deployment.local.json --preview-only
 ```
 
 先审阅预览，再去掉--preview-only并批准新建；不启用灯时加--no-led。向导默认check_only，不加载PL、不写LED；只有批准后续工作流才会有相应操作。示例中的路径和认证需按本机实际配置，缺identity时使用SSH agent并另行验证。
@@ -95,7 +97,7 @@ py -3.13 -B -m zhidiao_agent real-log --config deployment.local.json --duration-
 核对来源和 FIFO reset 效果后，去掉预览参数并批准。至少验证正常多行、暂停发送后的空采集、SSH 超时和不完整日志的错误路径。
 
 ```powershell
-py -3.13 -B -m zhidiao_agent agent-run "把 STM32 PA1 的完整周期调到 1000 ms，误差不超过 50 ms。" --project "E:\Project\GPIO_PL_Test" --source Core/Src/main.c --config deployment.local.json --protocol openai-responses --allow-network --max-attempts 3 --timeout-s 600
+py -3.13 -B -m zhidiao_agent agent-run "把 STM32 PA1 的完整周期调到 1000 ms，误差不超过 50 ms。" --project "E:\Project\GPIO_PL_Test" --source core/src/main.c --config deployment.local.json --protocol openai-responses --allow-network --max-attempts 3 --timeout-s 600
 ```
 
 默认执行四接口，--pl-only 只保留作显式降级。NiceCode 环境变量按 README 配置；整个测试套件不需要在线 API Key。

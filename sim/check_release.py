@@ -5,6 +5,7 @@ from fpga_check import check as check_fpga
 from zynq_check import check as check_zynq
 from report_check import check as check_report
 from stm32_led_check import check as check_stm32_led
+from release_path_check import check as check_release_paths
 ROOT=Path(__file__).resolve().parents[1]
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
@@ -26,16 +27,16 @@ def main():
   uart=rows[2]['result'];assert not uart['overflow'] and not uart['truncated']
   assert not any(uart.get(k,0) for k in ('decoding_errors','frame_errors','parity_errors'))
  assert report['cycles'][0]['execution']['audit'][2]['result']['partial_tail'] is True
- project=ROOT/'src/stm32/gpio_pl_test'; source=project/'Core/Src/main.c'
+ project=ROOT/'src/stm32/gpio_pl_test'; source=project/'core/src/main.c'
  expected='79f6deb58231d3bc2cef887154c136a74e0da9e839a26ea41fd9468e205633cd'
  assert digest(source)==expected==report['checkpoint']['source_hashes']['Core/Src/main.c']
  assert hashlib.sha256(report['cycles'][0]['model_decision']['edit']['content'].encode()).hexdigest()==expected
  assert digest(ROOT/'build/stm32/firmware.hex')==report['cycles'][1]['execution']['audit'][0]['result']['artifact_sha256']
  manifest=json.loads((ROOT/'data/stm32_sha256.json').read_text())
  for name,sha in manifest.items():assert digest(ROOT/name)==sha,name
- tree=ET.parse(project/'MDK-ARM/GPIO_PL_Test.uvprojx')
+ tree=ET.parse(project/'mdk-arm/gpio_pl_test.uvprojx')
  for node in tree.findall('.//FilePath'):
-  path=(project/'MDK-ARM'/node.text.replace('\\','/')).resolve()
+  path=(project/'mdk-arm'/node.text.replace('\\','/')).resolve()
   assert path.is_relative_to(project.resolve()) and path.is_file(),node.text
  archive=ROOT/'sim/smoke/manifest.json'
  if archive.exists():
@@ -54,5 +55,6 @@ def main():
  check_zynq()
  check_report()
  check_stm32_led()
+ check_release_paths(ROOT)
  print('PASS: final export and screenshots / two complete cycles / source and HEX SHA / original and LED Keil inputs / FPGA identities and reports / licensed Zynq sources / historical archive / forbidden filenames')
 if __name__=='__main__':main()

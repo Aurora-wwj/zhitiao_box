@@ -19,9 +19,9 @@
 
 时序报告“已指定约束满足”的同时，final 有942个未约束最大延迟pin、22个无input delay输入、10个无output delay输出、两路cmos_pclk各244个寄存器无时钟及1个generated clock未接源。保留原警告；正WNS不是全设计时序覆盖证明。跨时钟同步与所有外部接口约束仍需实际Vivado审阅。
 
-独立 Icarus Verilog 仿真覆盖周期／高电平／边沿计数、变化、无信号、复位及32位回绕。它不是全BD／UART／AXI／LED仿真。startup HIGH的首次值可能包含复位残段，valid为sticky；见src/fpga/README.md。没有修改黄金RTL/bitstream来隐藏该边界。
+独立 Icarus Verilog 仿真覆盖周期／高电平／边沿计数、变化、无信号、复位及32位回绕。它不是全BD／UART／AXI／LED仿真。startup HIGH的首次值可能包含复位残段，valid为sticky；见src/fpga/readme.md。没有修改黄金RTL/bitstream来隐藏该边界。
 
-构建入口见build/fpga/README.md。外部IP因完整再分发许可未附而以VLNV／37文件SHA清单及合法获取步骤交付；不称为无需依赖的一键工程。后续已收到Zynq_Linux_Test并核对OpenOCD源码／FIT组成，详见report/zynq_intake.md；完整BOOT／Linux构建输入仍缺，不能把测试包检查说成镜像已重建或冷启动已验证。
+构建入口见build/fpga/readme.md。外部IP因完整再分发许可未附而以VLNV／37文件SHA清单及合法获取步骤交付；不称为无需依赖的一键工程。后续已收到Zynq_Linux_Test并核对OpenOCD源码／FIT组成，详见report/zynq_intake.md；完整BOOT／Linux构建输入仍缺，不能把测试包检查说成镜像已重建或冷启动已验证。
 
 ## 原件与提交版的区别
 

@@ -10,7 +10,7 @@ fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6
 
 ## Vivado 2017.4 重建
 
-先安装合法 Vivado 2017.4，取得并通过 `check_ip_repo.py` 检查四项外部 IP，详见 ../../src/fpga/README.md。在仓库根目录执行（在已配置 Vivado PATH 的终端）：
+先安装合法 Vivado 2017.4，取得并通过 `check_ip_repo.py` 检查四项外部 IP，详见 ../../src/fpga/readme.md。在仓库根目录执行（在已配置 Vivado PATH 的终端）：
 
 ```powershell
 py -3.13 -B build/fpga/check_ip_repo.py D:/vendor/ip_repo

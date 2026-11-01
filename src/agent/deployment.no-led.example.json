@@ -3,7 +3,7 @@
     "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
   ],
   "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
-  "project_file": "MDK-ARM/GPIO_PL_Test.uvprojx",
+  "project_file": "mdk-arm/gpio_pl_test.uvprojx",
   "target": "GPIO_PL_Test",
   "build_timeout_s": 120,
   "flash_timeout_s": 120,

@@ -4,6 +4,8 @@
 
 ## 已收到并整理
 
+- 已按指南统一123份既有文件的发布路径大小写，含旧STM32工程、展开许可证及其余readme；仅保留指南示例的两份README.md。历史JSON与黄金产物不改，路径映射及边界见path_migration.md。
+
 - Agent源码／PC UI／测试；STM32工程、黄金main.c与最终HEX，均有身份校验。
 - 新增并列LED同步Keil工程src/stm32/gpio_pl_test_led，说明名GPIO_PL_Test_LED；队友说明实测目录原名仍为GPIO_PL_Test。92份源码输入及许可证、实际500 ms主源码、工程引用及原始／公开SHA已整理，旧300 ms说明和生成产物未沿用。软件验证与真机边界见data/stm32_led_verification.txt，不把原工程JSON当作LED版实测。
 - 最终真实run_5d8e…两轮四接口601.7169→1001.08682 ms、模型提案、applied_edit、reviews、audit与events。公开脱敏JSON与网页原图已归档；同run不同导出不重复统计。

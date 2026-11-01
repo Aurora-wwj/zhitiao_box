@@ -65,3 +65,13 @@ sim/check_release.py通过。设计初稿Markdown／PDF同步更新为5页，表
 根sim全量22项，0.772s，OK，无skip，含4项新增LED回归、GCC主机HAL替身及原Icarus RTL仿真。新工程由既有Agent API识别，八次翻转／八灯低有效跟随、500 ms延时调用和两次UART发送均通过主机检查。完整命令与边界见stm32_led_verification.txt；该检查不是Keil／ARM构建或真机电气／周期验收。
 
 Agent生产代码与测试未改，沿用既有462项记录，不冒称本轮重跑。原黄金STM32源码／HEX、v5位流、原资源报告和主JSON保持原样，新LED工程不借用旧JSON作为新实测。全新工程的Keil构建与上板记录须单独保留。
+
+## 提交路径规范同步，2026-11-01
+
+以57693cb为基线，123份既有文件的发布路径统一小写，仅保留官方示例根README.md与skill/README.md。同步旧Keil／CubeMX／Legacy include路径、构建入口、两份公开部署示例、当前操作说明及校验器。旧JSON、完整diff、黄金main.c／HEX、位流、FPGA原报告及原PNG保持原字节；双路径／双SHA与24份不变证据见repository_path_map.json。
+
+启动器优先识别core/src/main.c，并兼容原Core/Src/main.c与平铺main.c；选择新工程时会更新源码建议，不改变四接口、审批或PASS规则。新增3项Agent回归覆盖这三种布局及不存在源码的情况。
+
+本轮Linux Python3.13.5 Agent全量465项，23.968s，OK，无skip；根sim全量26项，2.016s，OK，无skip。包含Icarus真实RTL仿真、原LED主机HAL替身，以及4项新增路径规范回归。GCC对两份Keil工程的42个C翻译单元实际完成预处理；现有Agent API可识别两工程的小写入口／输出并取得main源码快照。102份Python文件通过AST，110处Markdown本地链接目标存在。
+
+sim/check_release.py通过；主机预处理不等于ARM编译／Keil链接，原HAL替身不等于LED真机验收。本轮没有执行Keil／Vivado／Windows或新上板，也没有调用在线模型、SSH或MMIO。命令与范围见path_migration_verification.txt；正式技术报告Word／PDF未纳入仓库，本次仅同步仓库设计初稿的失效路径引用。

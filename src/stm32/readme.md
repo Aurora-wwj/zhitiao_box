@@ -1,5 +1,7 @@
 # STM32测试代码（Keil工程）
 
+当前仓库路径已按提交规范统一小写：原工程入口为`mdk-arm/gpio_pl_test.uvprojx`，源码为`core/src/main.c`；历史记录保留原名，见仓库`report/path_migration.md`。私人配置需按当前工程重新核对，不自动修改。
+
 原合集的`Project`目录对应本仓库`src/stm32`。两份工程并列，均可独立选择：
 
 | 合集／说明名称 | GitHub目录 | 用途与证据 |

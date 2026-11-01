@@ -1,0 +1,850 @@
+{
+  "schema_version": 1,
+  "base_commit": "57693cb1090c637d2f00612921974d02732f4ca3",
+  "basis": "AMD guide 3.3.5.4; only root README.md and skill/README.md retain the explicit official example spellings.",
+  "scope": "Tracked release paths; immutable upstream archives retain original internal names and are extracted outside the release tree.",
+  "historical_source_mapping": {
+    "report": "data/final_run_sanitized.json",
+    "recorded_path": "Core/Src/main.c",
+    "published_path": "src/stm32/gpio_pl_test/core/src/main.c",
+    "sha256": "79f6deb58231d3bc2cef887154c136a74e0da9e839a26ea41fd9468e205633cd"
+  },
+  "renames": [
+    {
+      "source_path": "LICENSE",
+      "public_path": "license",
+      "source_sha256": "562168427137d2051db735714f1c710e7597676e9caaf2b29acafed98a94bea4",
+      "public_sha256": "562168427137d2051db735714f1c710e7597676e9caaf2b29acafed98a94bea4"
+    },
+    {
+      "source_path": "board/stm32/README.md",
+      "public_path": "board/stm32/readme.md",
+      "source_sha256": "cf0c11d3eeebc7f1e9eb8322f708bc00b70e1dfa1607994c658aa91a97b2a1a9",
+      "public_sha256": "4e7d58c7089cd00f099f56b5d8614ac54ce1884db26799f1cbbb5e96349e0f31"
+    },
+    {
+      "source_path": "board/zynq/README.md",
+      "public_path": "board/zynq/readme.md",
+      "source_sha256": "904912ebfd6588ac340e5fc0297cc45e80e69c869cbf4311a08b87b72c4e4a84",
+      "public_sha256": "10e9fd72d377e766516bb4ec8163e62078c08c5a1b5cb0ecc133dd6944e8c1b2"
+    },
+    {
+      "source_path": "build/fpga/README.md",
+      "public_path": "build/fpga/readme.md",
+      "source_sha256": "ff3182eb620a4145a5094db5c97380223a2d324cdb1e194bfcea9d294f8f7b35",
+      "public_sha256": "cb5972ee3070ff440600a97232d4685ecece849e19005feb146e33016353e40e"
+    },
+    {
+      "source_path": "build/openocd/README.md",
+      "public_path": "build/openocd/readme.md",
+      "source_sha256": "aeb2dcc79600cea89f808758f161f83e316e7a79b0226012293e6b8e2aba4166",
+      "public_sha256": "aeb2dcc79600cea89f808758f161f83e316e7a79b0226012293e6b8e2aba4166"
+    },
+    {
+      "source_path": "build/stm32/README.md",
+      "public_path": "build/stm32/readme.md",
+      "source_sha256": "6f384fb1272e165901253b469f3d1c12924da2f342b1e09b6277577ad6057f08",
+      "public_sha256": "12f30008629eab3e06ff1b961c76e3a1a2e1201730dd9b2f833a19f75a4453c6"
+    },
+    {
+      "source_path": "data/screenshots/README.md",
+      "public_path": "data/screenshots/readme.md",
+      "source_sha256": "263672c99e024c11ecd716f241ca8a8ea0ba162712ce7a42baa6adf2bd648379",
+      "public_sha256": "263672c99e024c11ecd716f241ca8a8ea0ba162712ce7a42baa6adf2bd648379"
+    },
+    {
+      "source_path": "sim/README.md",
+      "public_path": "sim/readme.md",
+      "source_sha256": "3ddc5ceb73da27139fa95686c4373f310d93233c7664b982e281a3a3bbc85fae",
+      "public_sha256": "769a91228a75d478598ad3035929976c80ba6aaf00044ac3bbf411acd0ea3cd9"
+    },
+    {
+      "source_path": "sim/smoke/README.md",
+      "public_path": "sim/smoke/readme.md",
+      "source_sha256": "e8c8ca0356fe28ab141988fcc8fed5ac02427566b18f559aabede3c3c3d71c8a",
+      "public_sha256": "e8c8ca0356fe28ab141988fcc8fed5ac02427566b18f559aabede3c3c3d71c8a"
+    },
+    {
+      "source_path": "src/agent/README.md",
+      "public_path": "src/agent/readme.md",
+      "source_sha256": "a069b7f00650f05de06a96d00b2241c807be5c0ddf716c57fefb8924d77db9c4",
+      "public_sha256": "23853163f3d084cfd8da0ba8fac5ce5ef51dfce48b17035ca38d7823e93c177f"
+    },
+    {
+      "source_path": "src/agent/docs/README.md",
+      "public_path": "src/agent/docs/readme.md",
+      "source_sha256": "fc9e719214f783722e12159bdf9c4a825acc411b3ac53fcc91e97dc2f0b9e876",
+      "public_sha256": "eec67f7fd773726f6f232f848cdf6e21019265b2e99d79f5c124ed73ed5540c2"
+    },
+    {
+      "source_path": "src/fpga/README.md",
+      "public_path": "src/fpga/readme.md",
+      "source_sha256": "b10f6fbe26075d96c89f4e9d9023e6e80989e933b62ae4f8bc7343d376ae550e",
+      "public_sha256": "b10f6fbe26075d96c89f4e9d9023e6e80989e933b62ae4f8bc7343d376ae550e"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Core/Inc/gpio.h",
+      "public_path": "src/stm32/gpio_pl_test/core/inc/gpio.h",
+      "source_sha256": "e2d62f964a0b7f238384ed6a20a181d09df9647240a268dc547acf5b35099f74",
+      "public_sha256": "e2d62f964a0b7f238384ed6a20a181d09df9647240a268dc547acf5b35099f74"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Core/Inc/main.h",
+      "public_path": "src/stm32/gpio_pl_test/core/inc/main.h",
+      "source_sha256": "7810630570add14789515832826b07aae9be1c76afe56d41294f904ced3563a0",
+      "public_sha256": "7810630570add14789515832826b07aae9be1c76afe56d41294f904ced3563a0"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Core/Inc/stm32g4xx_hal_conf.h",
+      "public_path": "src/stm32/gpio_pl_test/core/inc/stm32g4xx_hal_conf.h",
+      "source_sha256": "bf71d0d2d0b849def6a7d5f2233db971ec79fbae93ea86d1dd81d9314e305134",
+      "public_sha256": "bf71d0d2d0b849def6a7d5f2233db971ec79fbae93ea86d1dd81d9314e305134"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Core/Inc/stm32g4xx_it.h",
+      "public_path": "src/stm32/gpio_pl_test/core/inc/stm32g4xx_it.h",
+      "source_sha256": "85e40c10dd9924c56e982329592230a245a165b1fa09f91c9b6617f68913e682",
+      "public_sha256": "85e40c10dd9924c56e982329592230a245a165b1fa09f91c9b6617f68913e682"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Core/Inc/usart.h",
+      "public_path": "src/stm32/gpio_pl_test/core/inc/usart.h",
+      "source_sha256": "2ddd1eaf81e3750b46df7222f4c34ae295bcdaaaa1152e4be4933d3a0ca90181",
+      "public_sha256": "2ddd1eaf81e3750b46df7222f4c34ae295bcdaaaa1152e4be4933d3a0ca90181"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Core/Src/gpio.c",
+      "public_path": "src/stm32/gpio_pl_test/core/src/gpio.c",
+      "source_sha256": "2b19dc36c79adf80046ee65b8e169aad11edb949560e4149e66308c54540836b",
+      "public_sha256": "2b19dc36c79adf80046ee65b8e169aad11edb949560e4149e66308c54540836b"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Core/Src/main.c",
+      "public_path": "src/stm32/gpio_pl_test/core/src/main.c",
+      "source_sha256": "79f6deb58231d3bc2cef887154c136a74e0da9e839a26ea41fd9468e205633cd",
+      "public_sha256": "79f6deb58231d3bc2cef887154c136a74e0da9e839a26ea41fd9468e205633cd"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Core/Src/stm32g4xx_hal_msp.c",
+      "public_path": "src/stm32/gpio_pl_test/core/src/stm32g4xx_hal_msp.c",
+      "source_sha256": "0af205ec7f9243cf09cafa79a6d304d6e6712bf89300fd75f9c96eb81d3a3ff2",
+      "public_sha256": "0af205ec7f9243cf09cafa79a6d304d6e6712bf89300fd75f9c96eb81d3a3ff2"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Core/Src/stm32g4xx_it.c",
+      "public_path": "src/stm32/gpio_pl_test/core/src/stm32g4xx_it.c",
+      "source_sha256": "1c1f3a0ec290a736e3ebab90e10670bf4de3152e63fda4e93b5165f2adce87e4",
+      "public_sha256": "1c1f3a0ec290a736e3ebab90e10670bf4de3152e63fda4e93b5165f2adce87e4"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Core/Src/system_stm32g4xx.c",
+      "public_path": "src/stm32/gpio_pl_test/core/src/system_stm32g4xx.c",
+      "source_sha256": "875f78f4a45764120e7626493e10a826cd936404c727131ffc15b4d18982b94c",
+      "public_sha256": "875f78f4a45764120e7626493e10a826cd936404c727131ffc15b4d18982b94c"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Core/Src/usart.c",
+      "public_path": "src/stm32/gpio_pl_test/core/src/usart.c",
+      "source_sha256": "d4a0ee8c9387583fbb05abab57bf4a7a4b89dbf5af0babd5d05fa43c415b343d",
+      "public_sha256": "d4a0ee8c9387583fbb05abab57bf4a7a4b89dbf5af0babd5d05fa43c415b343d"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g431xx.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/device/st/stm32g4xx/include/stm32g431xx.h",
+      "source_sha256": "958b15628550bc6b496b11434f59d41e3b715673c83f2a85739e2ebc16ddada4",
+      "public_sha256": "958b15628550bc6b496b11434f59d41e3b715673c83f2a85739e2ebc16ddada4"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/device/st/stm32g4xx/include/stm32g4xx.h",
+      "source_sha256": "e3d36c65a752101227c67fbfdf079070fda010eece1d54fba0b372661516b7a3",
+      "public_sha256": "e3d36c65a752101227c67fbfdf079070fda010eece1d54fba0b372661516b7a3"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Device/ST/STM32G4xx/Include/system_stm32g4xx.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/device/st/stm32g4xx/include/system_stm32g4xx.h",
+      "source_sha256": "36304c07e9cee84064015ebd7ae517af6f466c466c1bbf5e342c57a296601db2",
+      "public_sha256": "36304c07e9cee84064015ebd7ae517af6f466c466c1bbf5e342c57a296601db2"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Device/ST/STM32G4xx/LICENSE.txt",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/device/st/stm32g4xx/license.txt",
+      "source_sha256": "135fb2d86e9ecdf6824cc3bba21c72b8e380c07b055fbebb6b995463eb609baf",
+      "public_sha256": "135fb2d86e9ecdf6824cc3bba21c72b8e380c07b055fbebb6b995463eb609baf"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/cmsis_armcc.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/cmsis_armcc.h",
+      "source_sha256": "e6ba28e21b5a3cd44d4e2d2981e37568f419e5df693c8b58e87674fbdf28deeb",
+      "public_sha256": "e6ba28e21b5a3cd44d4e2d2981e37568f419e5df693c8b58e87674fbdf28deeb"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/cmsis_armclang.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/cmsis_armclang.h",
+      "source_sha256": "99b25ab977f383840994cb456ae3f259a5c9b036cb6a0d8c003b7cbba4f6123a",
+      "public_sha256": "99b25ab977f383840994cb456ae3f259a5c9b036cb6a0d8c003b7cbba4f6123a"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/cmsis_armclang_ltm.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/cmsis_armclang_ltm.h",
+      "source_sha256": "31622280a8296b67bdace0539710a3cfbf828b71f88bd0d5ccc5d7d291ab3a9f",
+      "public_sha256": "31622280a8296b67bdace0539710a3cfbf828b71f88bd0d5ccc5d7d291ab3a9f"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/cmsis_compiler.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/cmsis_compiler.h",
+      "source_sha256": "869640702d811c4c63abb52206715c891a93fd03be954df5ad40d378355af3d6",
+      "public_sha256": "869640702d811c4c63abb52206715c891a93fd03be954df5ad40d378355af3d6"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/cmsis_gcc.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/cmsis_gcc.h",
+      "source_sha256": "0837f98e834d6a529854c8c86336e9d99eb8e379bf1deb964858d7863950f862",
+      "public_sha256": "0837f98e834d6a529854c8c86336e9d99eb8e379bf1deb964858d7863950f862"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/cmsis_iccarm.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/cmsis_iccarm.h",
+      "source_sha256": "a40c60d322903d410fe892c2eccb92d82d8876dce605fbb4cb563d52182aeb16",
+      "public_sha256": "a40c60d322903d410fe892c2eccb92d82d8876dce605fbb4cb563d52182aeb16"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/cmsis_version.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/cmsis_version.h",
+      "source_sha256": "dd03af200b23bdd8d091ffa7beb3d1a2c4fc5611557567bd57ec613205f6df1f",
+      "public_sha256": "dd03af200b23bdd8d091ffa7beb3d1a2c4fc5611557567bd57ec613205f6df1f"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_armv81mml.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_armv81mml.h",
+      "source_sha256": "fb6ff226bc14b8730b3d5c5e49a32514de811b485dc3f0543045ffffd8787f85",
+      "public_sha256": "fb6ff226bc14b8730b3d5c5e49a32514de811b485dc3f0543045ffffd8787f85"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_armv8mbl.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_armv8mbl.h",
+      "source_sha256": "319fd8c698098a16f2775fe292b734c91aaeec3feee418e515cc3a1761edec76",
+      "public_sha256": "319fd8c698098a16f2775fe292b734c91aaeec3feee418e515cc3a1761edec76"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_armv8mml.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_armv8mml.h",
+      "source_sha256": "1778fd691a0768dbee4fbe537b3cc4d03fcfab4ab9f60e31ec52605364f3dd36",
+      "public_sha256": "1778fd691a0768dbee4fbe537b3cc4d03fcfab4ab9f60e31ec52605364f3dd36"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_cm0.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_cm0.h",
+      "source_sha256": "20300b57c02d5b7b34c7b58bf7009e81713a60f44ca2a338f67cb4b473f4f3c4",
+      "public_sha256": "20300b57c02d5b7b34c7b58bf7009e81713a60f44ca2a338f67cb4b473f4f3c4"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_cm0plus.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_cm0plus.h",
+      "source_sha256": "4b79d5bf9f9165ddae727c9f035f82fb0ea85ceee2587b503d5d7bcd172d2df9",
+      "public_sha256": "4b79d5bf9f9165ddae727c9f035f82fb0ea85ceee2587b503d5d7bcd172d2df9"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_cm1.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_cm1.h",
+      "source_sha256": "c243c4afb291068fe7078d2911b2f0001e78a4d5466c26728611b06147d65c2b",
+      "public_sha256": "c243c4afb291068fe7078d2911b2f0001e78a4d5466c26728611b06147d65c2b"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_cm23.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_cm23.h",
+      "source_sha256": "009f762a79b693f7f82efc9298a33a14765c06dbd4cb2bf5c9b4ffbb6f7e56ff",
+      "public_sha256": "009f762a79b693f7f82efc9298a33a14765c06dbd4cb2bf5c9b4ffbb6f7e56ff"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_cm3.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_cm3.h",
+      "source_sha256": "efefef85cd419652f5b7c1074ede2f5c24da943528c5156de8d2a194de1888dc",
+      "public_sha256": "efefef85cd419652f5b7c1074ede2f5c24da943528c5156de8d2a194de1888dc"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_cm33.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_cm33.h",
+      "source_sha256": "3e50058f0d08b8d8897fec65e636e2f96635d1f8bcef37d2dec289e834539548",
+      "public_sha256": "3e50058f0d08b8d8897fec65e636e2f96635d1f8bcef37d2dec289e834539548"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_cm35p.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_cm35p.h",
+      "source_sha256": "32dbde7edb75784b23411639fa8cb8ecd3a3da26f923530b9ae606e010fcae57",
+      "public_sha256": "32dbde7edb75784b23411639fa8cb8ecd3a3da26f923530b9ae606e010fcae57"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_cm4.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_cm4.h",
+      "source_sha256": "cdc0c5ab9ba0f24c065e891d26c3e686ed04106700ce6a572cc7e83e71965b59",
+      "public_sha256": "cdc0c5ab9ba0f24c065e891d26c3e686ed04106700ce6a572cc7e83e71965b59"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_cm7.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_cm7.h",
+      "source_sha256": "ff629c5bf98a8caadf360d0bcc48e1042fefa19995f7b64855d5e81e4c2e81cb",
+      "public_sha256": "ff629c5bf98a8caadf360d0bcc48e1042fefa19995f7b64855d5e81e4c2e81cb"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_sc000.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_sc000.h",
+      "source_sha256": "e306205844323c8fe4cc3e5433c91ed34d9d5055ed11eceef03401fdfb0c3600",
+      "public_sha256": "e306205844323c8fe4cc3e5433c91ed34d9d5055ed11eceef03401fdfb0c3600"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/core_sc300.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/core_sc300.h",
+      "source_sha256": "cddd97bb6172b5cdad96a48445124a6d97a449546f5617e48f03847cbc4a09a4",
+      "public_sha256": "cddd97bb6172b5cdad96a48445124a6d97a449546f5617e48f03847cbc4a09a4"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/mpu_armv7.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/mpu_armv7.h",
+      "source_sha256": "e504a7d47dfdb3d61dfae3cf08d27ba9bc69aa4b2b81ca568efdafd65d6abdcc",
+      "public_sha256": "e504a7d47dfdb3d61dfae3cf08d27ba9bc69aa4b2b81ca568efdafd65d6abdcc"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/mpu_armv8.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/mpu_armv8.h",
+      "source_sha256": "95a05e406c38cb770621f07ac066b8c89b90874a50559ec9b10c9587b6049503",
+      "public_sha256": "95a05e406c38cb770621f07ac066b8c89b90874a50559ec9b10c9587b6049503"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/Include/tz_context.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/include/tz_context.h",
+      "source_sha256": "7fcc21fc190f6fd970390e9caaa6a86d72fd10f9edf4efab36f12aecf1a8baa0",
+      "public_sha256": "7fcc21fc190f6fd970390e9caaa6a86d72fd10f9edf4efab36f12aecf1a8baa0"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/CMSIS/LICENSE.txt",
+      "public_path": "src/stm32/gpio_pl_test/drivers/cmsis/license.txt",
+      "source_sha256": "e03ba41d7fab20700769fe4118bab50d800cb74f990353a05d2f5fff1c228363",
+      "public_sha256": "e03ba41d7fab20700769fe4118bab50d800cb74f990353a05d2f5fff1c228363"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/legacy/stm32_hal_legacy.h",
+      "source_sha256": "49f726f3f3d94ada1596bd93e489a11a55d26181b1d6edd162759ea797a8e404",
+      "public_sha256": "49f726f3f3d94ada1596bd93e489a11a55d26181b1d6edd162759ea797a8e404"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal.h",
+      "source_sha256": "e9c236731bbd4e6095c3468ed41578965c9c7cfd7cdfebacce74493b8666bb01",
+      "public_sha256": "e9c236731bbd4e6095c3468ed41578965c9c7cfd7cdfebacce74493b8666bb01"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_cortex.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_cortex.h",
+      "source_sha256": "49a4f194ac0ae566e9c8f4c13660ba308872774bf4f55d188002e319ed602168",
+      "public_sha256": "49a4f194ac0ae566e9c8f4c13660ba308872774bf4f55d188002e319ed602168"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_def.h",
+      "source_sha256": "adcb12d4eeb391241481a75f738f81dc7c186abe0ded173da3a1191803658eb7",
+      "public_sha256": "ddc2f6f9e1a0478d7a421fcd6498f76097b1d63965d7ef66526d0b1a315052b5"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_dma.h",
+      "source_sha256": "3f98e441401e895e70367809b7b2b2ec54d644abfc78d405bf8fb962bb7c9bd1",
+      "public_sha256": "3f98e441401e895e70367809b7b2b2ec54d644abfc78d405bf8fb962bb7c9bd1"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma_ex.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_dma_ex.h",
+      "source_sha256": "c4581c1786d1a9498051849abe5ac230edda4102abb413c2415fd7d0b6fdca0a",
+      "public_sha256": "c4581c1786d1a9498051849abe5ac230edda4102abb413c2415fd7d0b6fdca0a"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_exti.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_exti.h",
+      "source_sha256": "66f2994bb5247e762fdbc3699ad53b0b8b8dc159c881d5b1b100c3d973b1726d",
+      "public_sha256": "66f2994bb5247e762fdbc3699ad53b0b8b8dc159c881d5b1b100c3d973b1726d"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_flash.h",
+      "source_sha256": "7bcce9a12e02de94e23343e696919874d5b7288fbb33e8e837b193626e49d14d",
+      "public_sha256": "7bcce9a12e02de94e23343e696919874d5b7288fbb33e8e837b193626e49d14d"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_flash_ex.h",
+      "source_sha256": "6857115967b5b929054fd9416f2f65237559201d9ed2d4dad63088b5aa72fe9f",
+      "public_sha256": "6857115967b5b929054fd9416f2f65237559201d9ed2d4dad63088b5aa72fe9f"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_flash_ramfunc.h",
+      "source_sha256": "59e2f2d847960b24daf76546b91fbd6b432b9883f521633cfd1f6e66f43c576a",
+      "public_sha256": "59e2f2d847960b24daf76546b91fbd6b432b9883f521633cfd1f6e66f43c576a"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_gpio.h",
+      "source_sha256": "aed7d74aa45633e88a7e13068bc00fd5979ec4960cf2b00a0466aa987df44c2e",
+      "public_sha256": "aed7d74aa45633e88a7e13068bc00fd5979ec4960cf2b00a0466aa987df44c2e"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio_ex.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_gpio_ex.h",
+      "source_sha256": "d790a2918fd3919af7442edf8a5b4bc28f0410bf6197bfd879266b8c554da9c2",
+      "public_sha256": "d790a2918fd3919af7442edf8a5b4bc28f0410bf6197bfd879266b8c554da9c2"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_pwr.h",
+      "source_sha256": "7f93f0ddd90ccd42f1900e8bca01d322ad7bafad94f0dc3a5f64c3566342d562",
+      "public_sha256": "7f93f0ddd90ccd42f1900e8bca01d322ad7bafad94f0dc3a5f64c3566342d562"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_pwr_ex.h",
+      "source_sha256": "d89ad8df209411b80e36b6ef6fb3d5274b4550437126dc9b3c8e56edcbc7631f",
+      "public_sha256": "d89ad8df209411b80e36b6ef6fb3d5274b4550437126dc9b3c8e56edcbc7631f"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_rcc.h",
+      "source_sha256": "8210ffdb8399e44d49efcfe757ebb9f85e8bf175390d9bb149ca7abd671dbd83",
+      "public_sha256": "8210ffdb8399e44d49efcfe757ebb9f85e8bf175390d9bb149ca7abd671dbd83"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc_ex.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_rcc_ex.h",
+      "source_sha256": "811567da6a4549ca325bbb8a00c5f0481fcd57eb982609ac586b5347fd2c5f52",
+      "public_sha256": "811567da6a4549ca325bbb8a00c5f0481fcd57eb982609ac586b5347fd2c5f52"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_uart.h",
+      "source_sha256": "e357e03164d945b332835c11d786f4d28c4c8d768fbe9f15401368f5418638b2",
+      "public_sha256": "e357e03164d945b332835c11d786f4d28c4c8d768fbe9f15401368f5418638b2"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_uart_ex.h",
+      "source_sha256": "4243de07fb90395212f436ec747bd7d91198e47437bd8d8c117a7d9e14061a85",
+      "public_sha256": "4243de07fb90395212f436ec747bd7d91198e47437bd8d8c117a7d9e14061a85"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_bus.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_bus.h",
+      "source_sha256": "44afb6ca13072671e1e4389800d28b3a8be922825e78481b911cbb3702f0c231",
+      "public_sha256": "44afb6ca13072671e1e4389800d28b3a8be922825e78481b911cbb3702f0c231"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_cortex.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_cortex.h",
+      "source_sha256": "0d8090fd47c74ef211b3ddb553f634a8b382af8873ccaa5faf4801e713e4b984",
+      "public_sha256": "0d8090fd47c74ef211b3ddb553f634a8b382af8873ccaa5faf4801e713e4b984"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_crs.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_crs.h",
+      "source_sha256": "381a4fb547d3463380ea8d787c5946737fe4e7a6d88cb478b7ab7b36f3a1e24d",
+      "public_sha256": "381a4fb547d3463380ea8d787c5946737fe4e7a6d88cb478b7ab7b36f3a1e24d"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dma.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_dma.h",
+      "source_sha256": "6b798aaf2e014bfb74da4837ecdf0a4a6f47b43f270e8cf4b0e93a8129dd1c50",
+      "public_sha256": "6b798aaf2e014bfb74da4837ecdf0a4a6f47b43f270e8cf4b0e93a8129dd1c50"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dmamux.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_dmamux.h",
+      "source_sha256": "ef49cfc67107cf357b63242bac336eae551266f5ee26cf2fef6ec8cb37537b50",
+      "public_sha256": "ef49cfc67107cf357b63242bac336eae551266f5ee26cf2fef6ec8cb37537b50"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_exti.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_exti.h",
+      "source_sha256": "466423accc1c07a5fd3612b9ccb9b159184829b3af8a027a5f4aaaa174346f01",
+      "public_sha256": "466423accc1c07a5fd3612b9ccb9b159184829b3af8a027a5f4aaaa174346f01"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_gpio.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_gpio.h",
+      "source_sha256": "cde1108f359ccad3eb3157c6333f490de14e82a0c38ea7a6b024ad3c45e48a49",
+      "public_sha256": "cde1108f359ccad3eb3157c6333f490de14e82a0c38ea7a6b024ad3c45e48a49"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_lpuart.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_lpuart.h",
+      "source_sha256": "b33d2e24a23634840666a38b1998959b516b2fe31c012bcbca78d85fdc77c51a",
+      "public_sha256": "b33d2e24a23634840666a38b1998959b516b2fe31c012bcbca78d85fdc77c51a"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_pwr.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_pwr.h",
+      "source_sha256": "ba6ff92d9cdaa69303abd8439b06dc32468c188bcfc65499a2a8dc702a291982",
+      "public_sha256": "ba6ff92d9cdaa69303abd8439b06dc32468c188bcfc65499a2a8dc702a291982"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_rcc.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_rcc.h",
+      "source_sha256": "bd54a7974fe8497de2138ae290b913d2b0c6e138d3272263622bc7a3f25febe6",
+      "public_sha256": "bd54a7974fe8497de2138ae290b913d2b0c6e138d3272263622bc7a3f25febe6"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_system.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_system.h",
+      "source_sha256": "a0ca093590e36ea19b9ef168cff1ed4973eccdc4a76661d8903264a3cace3bb5",
+      "public_sha256": "a0ca093590e36ea19b9ef168cff1ed4973eccdc4a76661d8903264a3cace3bb5"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_usart.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_usart.h",
+      "source_sha256": "c7d386b685ab5a35ad5c3cdef44e7602b11ea27f571717fe91da7afefd74e2d5",
+      "public_sha256": "c7d386b685ab5a35ad5c3cdef44e7602b11ea27f571717fe91da7afefd74e2d5"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_utils.h",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_utils.h",
+      "source_sha256": "1983eb94d3edcb11aee1d416a0ee823f7f8b52c3a6888408b52acd4a32435df6",
+      "public_sha256": "1983eb94d3edcb11aee1d416a0ee823f7f8b52c3a6888408b52acd4a32435df6"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/LICENSE.txt",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/license.txt",
+      "source_sha256": "d5a162f3eaf2b7b6762f00700017cae5695ebbdce7932fead8316448baafd9c1",
+      "public_sha256": "d5a162f3eaf2b7b6762f00700017cae5695ebbdce7932fead8316448baafd9c1"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal.c",
+      "source_sha256": "440ef82d5b7947563fe17db9ba69e610c3a2f7629ac7e3720bf9adeb5bc09958",
+      "public_sha256": "440ef82d5b7947563fe17db9ba69e610c3a2f7629ac7e3720bf9adeb5bc09958"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_cortex.c",
+      "source_sha256": "764627455c7ccfd157b45fe7bd5effe78d1bc1c8f99af041f39e1e1e7197c3b6",
+      "public_sha256": "764627455c7ccfd157b45fe7bd5effe78d1bc1c8f99af041f39e1e1e7197c3b6"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_dma.c",
+      "source_sha256": "99840fa5f2bc2189b7320a1446946dc79d73be7ac3428914604ce9651b7b6b9b",
+      "public_sha256": "99840fa5f2bc2189b7320a1446946dc79d73be7ac3428914604ce9651b7b6b9b"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_dma_ex.c",
+      "source_sha256": "6d50d6f3bd1f7dcceacf2a5d486d61a7bb897d49c3af7b8a079a88661efdb94f",
+      "public_sha256": "6d50d6f3bd1f7dcceacf2a5d486d61a7bb897d49c3af7b8a079a88661efdb94f"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_exti.c",
+      "source_sha256": "586f606300b4fbaf8cde528ef3ed3558297f52013fa4f824f4b868fad60e7e2d",
+      "public_sha256": "586f606300b4fbaf8cde528ef3ed3558297f52013fa4f824f4b868fad60e7e2d"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_flash.c",
+      "source_sha256": "7894f8cf4a3bd8b214fc826cbb93aa9a20596cfc3c45760f6f775d79e28cbda4",
+      "public_sha256": "7894f8cf4a3bd8b214fc826cbb93aa9a20596cfc3c45760f6f775d79e28cbda4"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_flash_ex.c",
+      "source_sha256": "faa9d7ffa04c9072035273fdf1dedbfee1886a4f58d29f5d0b075263ef06bc30",
+      "public_sha256": "faa9d7ffa04c9072035273fdf1dedbfee1886a4f58d29f5d0b075263ef06bc30"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_flash_ramfunc.c",
+      "source_sha256": "5d5d66378381d9db97bfae8077818de467344119516c00d205132786b0b67279",
+      "public_sha256": "5d5d66378381d9db97bfae8077818de467344119516c00d205132786b0b67279"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_gpio.c",
+      "source_sha256": "46d673a0f806f0148dbf873af0e02aeeba0c785c4a754dec4805d1640bb79679",
+      "public_sha256": "46d673a0f806f0148dbf873af0e02aeeba0c785c4a754dec4805d1640bb79679"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_pwr.c",
+      "source_sha256": "35a4385dc959fdfadcd14580c42565a981366b8a88c4cb7c85a6f1cb83534598",
+      "public_sha256": "35a4385dc959fdfadcd14580c42565a981366b8a88c4cb7c85a6f1cb83534598"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_pwr_ex.c",
+      "source_sha256": "1688ca0ef7b06a27254c62ddfd8c4ce997b8796a4d7bc13f35de6707a10b9024",
+      "public_sha256": "1688ca0ef7b06a27254c62ddfd8c4ce997b8796a4d7bc13f35de6707a10b9024"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_rcc.c",
+      "source_sha256": "e7a321420f83f12e7f5400589094781c107ee001278452c69493664ea155e362",
+      "public_sha256": "e7a321420f83f12e7f5400589094781c107ee001278452c69493664ea155e362"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_rcc_ex.c",
+      "source_sha256": "dc4d1e2fe7386fbea04a404d8eef29868c2258c8f508852811c2847964500983",
+      "public_sha256": "dc4d1e2fe7386fbea04a404d8eef29868c2258c8f508852811c2847964500983"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_uart.c",
+      "source_sha256": "0bbad99f0a421505d60cba6c309afeb76e4ba7643d4879c418232a98c11a0021",
+      "public_sha256": "0bbad99f0a421505d60cba6c309afeb76e4ba7643d4879c418232a98c11a0021"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c",
+      "public_path": "src/stm32/gpio_pl_test/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_uart_ex.c",
+      "source_sha256": "93462d61ba306842eea51b5462628868e5e60d6329b33b654186137b0a4f55ba",
+      "public_sha256": "93462d61ba306842eea51b5462628868e5e60d6329b33b654186137b0a4f55ba"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/GPIO_PL_Test.ioc",
+      "public_path": "src/stm32/gpio_pl_test/gpio_pl_test.ioc",
+      "source_sha256": "6094f9fa51d602379f4269005bd1a52602df191e664357a70bbcfda06189cba0",
+      "public_sha256": "0c663c709644dca58d9942a8c937609afc6461d5ea9ff020c6b42cd9fdcc7f0a"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/MDK-ARM/DebugConfig/GPIO_PL_Test_STM32G431RBTx.dbgconf",
+      "public_path": "src/stm32/gpio_pl_test/mdk-arm/debugconfig/gpio_pl_test_stm32g431rbtx.dbgconf",
+      "source_sha256": "a8df0c7c576998d18bae5716962844172a50b8b830348204ac62c92942c82200",
+      "public_sha256": "a8df0c7c576998d18bae5716962844172a50b8b830348204ac62c92942c82200"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/MDK-ARM/GPIO_PL_Test.uvprojx",
+      "public_path": "src/stm32/gpio_pl_test/mdk-arm/gpio_pl_test.uvprojx",
+      "source_sha256": "794a9f8289fd73fdbef0911c387a1313d826254faf274bacd00bfd68e07a3437",
+      "public_sha256": "c9be884df3d0ae294889a6ffcce8191855f21f5773e4823a121e8774dea85d36"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/MDK-ARM/RTE/_GPIO_PL_Test/RTE_Components.h",
+      "public_path": "src/stm32/gpio_pl_test/mdk-arm/rte/_gpio_pl_test/rte_components.h",
+      "source_sha256": "be89ebd81d89d820e51fad4137a3c3a75e857590c78e9e6d0271aa51f6575ffd",
+      "public_sha256": "be89ebd81d89d820e51fad4137a3c3a75e857590c78e9e6d0271aa51f6575ffd"
+    },
+    {
+      "source_path": "src/stm32/gpio_pl_test/MDK-ARM/startup_stm32g431xx.s",
+      "public_path": "src/stm32/gpio_pl_test/mdk-arm/startup_stm32g431xx.s",
+      "source_sha256": "f0ec2be901def7b2783843f981820729aa944211113afcc85392af104fac2c83",
+      "public_sha256": "f0ec2be901def7b2783843f981820729aa944211113afcc85392af104fac2c83"
+    },
+    {
+      "source_path": "src/third_party/openocd/README.md",
+      "public_path": "src/third_party/openocd/readme.md",
+      "source_sha256": "d4fc51d61341651a2be043798e8a17ae743c782e72b28eed83ccf5b87f4b7879",
+      "public_sha256": "d4fc51d61341651a2be043798e8a17ae743c782e72b28eed83ccf5b87f4b7879"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/libusb-1.0.30/AUTHORS",
+      "public_path": "src/third_party/openocd/licenses/libusb-1.0.30/authors",
+      "source_sha256": "27fd82b016838197d5276ba98d2187ed5a1ad0e171767322f356f0a9f6395941",
+      "public_sha256": "27fd82b016838197d5276ba98d2187ed5a1ad0e171767322f356f0a9f6395941"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/libusb-1.0.30/COPYING",
+      "public_path": "src/third_party/openocd/licenses/libusb-1.0.30/copying",
+      "source_sha256": "5df07007198989c622f5d41de8d703e7bef3d0e79d62e24332ee739a452af62a",
+      "public_sha256": "5df07007198989c622f5d41de8d703e7bef3d0e79d62e24332ee739a452af62a"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/libusb-1.0.30/README",
+      "public_path": "src/third_party/openocd/licenses/libusb-1.0.30/readme",
+      "source_sha256": "ba152b9ae04b7cdf3cf09e8c91f60971b0c8f6106562e7cd31a2f2bf97f690db",
+      "public_sha256": "ba152b9ae04b7cdf3cf09e8c91f60971b0c8f6106562e7cd31a2f2bf97f690db"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/AUTHORS",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/authors",
+      "source_sha256": "ee9d62773d4cf3183cdfd80abdb566a421bfcde531d5214ee46b474176839b1f",
+      "public_sha256": "ee9d62773d4cf3183cdfd80abdb566a421bfcde531d5214ee46b474176839b1f"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/COPYING",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/copying",
+      "source_sha256": "1b8f7e37ee5afbbf95c2a4d62b12b25232e29538692663b434318503a9a88419",
+      "public_sha256": "1b8f7e37ee5afbbf95c2a4d62b12b25232e29538692663b434318503a9a88419"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/exceptions/eCos-exception-2.0",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/exceptions/ecos-exception-2.0",
+      "source_sha256": "034da732b4f3079b8783fff756613c1cff89dec5ac80c5cdd90532b7539922a1",
+      "public_sha256": "034da732b4f3079b8783fff756613c1cff89dec5ac80c5cdd90532b7539922a1"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/license-rules.txt",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/license-rules.txt",
+      "source_sha256": "0a37155eb8bc0cb94477a0cae4f030e39da9317374e8a9f597e9229fd09aff78",
+      "public_sha256": "0a37155eb8bc0cb94477a0cae4f030e39da9317374e8a9f597e9229fd09aff78"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-1-Clause",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/bsd-1-clause",
+      "source_sha256": "f3ba76203a7b6993db31f987559cc4c621ae1ff78119ced2a669756c2c5fd3b1",
+      "public_sha256": "f3ba76203a7b6993db31f987559cc4c621ae1ff78119ced2a669756c2c5fd3b1"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-2-Clause",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/bsd-2-clause",
+      "source_sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd",
+      "public_sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-2-Clause-Views",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/bsd-2-clause-views",
+      "source_sha256": "1483f15e9fddc73b5df0acab1c42d21ecd0bf6ade8a79179fb90c09f13d03dcd",
+      "public_sha256": "1483f15e9fddc73b5df0acab1c42d21ecd0bf6ade8a79179fb90c09f13d03dcd"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-3-Clause",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/bsd-3-clause",
+      "source_sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3",
+      "public_sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/BSD-Source-Code",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/bsd-source-code",
+      "source_sha256": "5cf024f6e3611d5c6fb98748d1a0ad99b8cf9ffe46f2d60fa10c299cd29e0a75",
+      "public_sha256": "5cf024f6e3611d5c6fb98748d1a0ad99b8cf9ffe46f2d60fa10c299cd29e0a75"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/GFDL-1.2",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/gfdl-1.2",
+      "source_sha256": "f35396f4095619f986736ca5e2976b313d381463a35c921c9ae677cc7eb83e28",
+      "public_sha256": "f35396f4095619f986736ca5e2976b313d381463a35c921c9ae677cc7eb83e28"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/GPL-2.0",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/gpl-2.0",
+      "source_sha256": "7d35bc44da7bb763022e3c2c32cfc0125dd222060bc50992420599d8e65f6c0a",
+      "public_sha256": "7d35bc44da7bb763022e3c2c32cfc0125dd222060bc50992420599d8e65f6c0a"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/MIT",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/mit",
+      "source_sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
+      "public_sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/preferred/gfdl-1.2.texi.readme",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/preferred/gfdl-1.2.texi.readme",
+      "source_sha256": "76515be2d7334a1a038f775238c9a4c2b37e19514248e5eea0434cdfee526f9d",
+      "public_sha256": "76515be2d7334a1a038f775238c9a4c2b37e19514248e5eea0434cdfee526f9d"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/LICENSES/stand-alone/GPL-3.0",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/licenses/stand-alone/gpl-3.0",
+      "source_sha256": "9a41b56594cd89743ca72f188318c9871661847074dd16497ae0c695fe3ab9c9",
+      "public_sha256": "9a41b56594cd89743ca72f188318c9871661847074dd16497ae0c695fe3ab9c9"
+    },
+    {
+      "source_path": "src/third_party/openocd/licenses/openocd-0.12.0/README",
+      "public_path": "src/third_party/openocd/licenses/openocd-0.12.0/readme",
+      "source_sha256": "a0b180f131496a0ee40496a67140e887d8b74930aba66f4f0cc46d43924bf769",
+      "public_sha256": "a0b180f131496a0ee40496a67140e887d8b74930aba66f4f0cc46d43924bf769"
+    }
+  ],
+  "unchanged_evidence": [
+    {
+      "path": "build/fpga/reports/baseline/system_wrapper_timing_summary_routed.rpt",
+      "sha256": "9b6c61ad4240b87e9634e387b14bfa5fbaa3fe9c71aa7dafd2461987f5f03df4"
+    },
+    {
+      "path": "build/fpga/reports/baseline/system_wrapper_utilization_placed.rpt",
+      "sha256": "dbc572e139805ec35a5733c2b5043936d0a19d0cd021fbc86ba7cbf95138a9b9"
+    },
+    {
+      "path": "build/fpga/reports/final/system_wrapper_timing_summary_routed.rpt",
+      "sha256": "090949369d888cdd6c02a8c323f8dd8c263ac915af50a05cbc0b41ca9034fbff"
+    },
+    {
+      "path": "build/fpga/reports/final/system_wrapper_utilization_placed.rpt",
+      "sha256": "53df1de777ed70a3195dfbc93fa825a314b96fe52250d066cc1e06d3add0ada9"
+    },
+    {
+      "path": "build/fpga/zhidiao_observe_v5_led.bit",
+      "sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6"
+    },
+    {
+      "path": "build/stm32/firmware.hex",
+      "sha256": "b6aca82331978cca76e967fd7d08f3d33994672215ff3e6a50f0173662b9f70f"
+    },
+    {
+      "path": "data/final_run_sanitized.json",
+      "sha256": "6a4ff7c3ca3c44f17c4c9d48f9203423a2479e82a94979540a484cf8545a55a4"
+    },
+    {
+      "path": "data/final_source_change.diff",
+      "sha256": "c1711a187e304da90276002cc5fd8d3c837bb9194931131e6405f06c0415a4a6"
+    },
+    {
+      "path": "data/measurements.csv",
+      "sha256": "569e4ab94e7a9a25382876794380f0a3b4c82bc6506cbaab05721941f29e4fb4"
+    },
+    {
+      "path": "data/screenshots/ui_four_tool_pass.png",
+      "sha256": "76ff3798c4884ff880f2a95201645c8087a0b3cd6ce99b29577d472a4d7bafe3"
+    },
+    {
+      "path": "data/screenshots/ui_pl_only_baseline.png",
+      "sha256": "6ea10263ac30306191499e4742f1b4cb45ea096efea6081c05179eb523b6e828"
+    },
+    {
+      "path": "data/screenshots/ui_report_audit.png",
+      "sha256": "8e954c291e949cff5661d5889e814eb3b4cb512d9ed0c377a1d07342c3844fac"
+    },
+    {
+      "path": "data/screenshots/ui_uart_results.png",
+      "sha256": "ed1d31abaca75911e02ae98d6f9d003a5f86860ae997a17ebc6e660602d9b2b4"
+    },
+    {
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/constrs_1/new/an5642.xdc",
+      "sha256": "8b7ddbf13548beff5b4871cb93a7c161b94caa5abddcdaef18913fea4d7b0327"
+    },
+    {
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/constrs_1/new/hdmi_out.xdc",
+      "sha256": "55c6580ee9e5244514bf65d7dc4447faba37b779843310be7053e7bce0a378d5"
+    },
+    {
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/constrs_1/new/system.xdc",
+      "sha256": "b02bbce8764da2896e36d3cbc660fdfc826fba6a38a7bfec56b944a439e6af09"
+    },
+    {
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/constrs_1/new/zhidiao_measure.xdc",
+      "sha256": "2f6a5d06f4f09e8ad68b53be2c7de09ba290e93851ad0b49b8120cb509f979f6"
+    },
+    {
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/sources_1/bd/system/hdl/system_wrapper.v",
+      "sha256": "68e5eea35ee0bd1a6e916decbdb5aedbc28ec770a0f190e4812d621bf3cd798e"
+    },
+    {
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/sources_1/bd/system/system.bd",
+      "sha256": "47cf28ed6d8c51664bea705e5c67b8feee56a049c961fcee81cef89f3698f296"
+    },
+    {
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.srcs/sources_1/new/zhidiao_measure_core.v",
+      "sha256": "8894480ed22a6eb89e9b6613e35b4df0a633f904a5fadf81bf08f003ad14d455"
+    },
+    {
+      "path": "src/fpga/zhidiao_measure/linux_ov5640.xpr",
+      "sha256": "0e8c4c48fd6f2af0b7efad5f88064f44437e34724400b17b1eb2c3298330e5f0"
+    },
+    {
+      "path": "src/fpga/zhidiao_measure/system_bd.tcl",
+      "sha256": "5357846606a030bc56d58ce1423f29ae3efaeea0ab90cfe624380101baddc617"
+    },
+    {
+      "path": "src/stm32/gpio_pl_test/core/src/main.c",
+      "sha256": "79f6deb58231d3bc2cef887154c136a74e0da9e839a26ea41fd9468e205633cd"
+    },
+    {
+      "path": "src/stm32/gpio_pl_test_led/core/src/main.c",
+      "sha256": "053697e2f914f435bae950c1529dd6b68af01532c12b94318ae622115a7debfd"
+    }
+  ]
+}
