@@ -63,6 +63,8 @@ AI 开发者下一步运行 start_ai_mock.bat，按 [真实 NiceCode＋模拟硬
 
 Windows 离线通过后，在安装 Keil、保存工程并连接板卡的部署 PC 上，按v0.5手册确认uart_observer并准备v5。新建默认配置启用LED，尚未准备独立灯效验收时使用deployment.no-led.example.json或向导--no-led；它们不会退回旧镜像。
 
+启动前按[板端初始化说明](../../../board/zynq/pl_preparation.md)统一完成路径变量设置、三步SSH公钥恢复和v5手动加载。最后输出ZHIDIAO_SSH_KEY_OK只表示本次SSH登录恢复成功；继续确认v5文件SHA、手动加载及配置完成，再启动Agent。
+
 - deployment-check：READY；确认 usleep、monotonic_clock 和 uart_registers。
 - real-log：正常 ZHIDIAO_OK 多行；暂停发送时 success=true、logs=[]；正常窗口半行 partial_tail=true、truncated=false；真正触限／传输错误仍停止。
 - agent-run：不带 --pl-only，四工具均出现在同一轮 audit。

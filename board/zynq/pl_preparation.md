@@ -1,12 +1,62 @@
-# PL加载／检查复用现有审批路径
+# 板端初始化：路径变量、SSH公钥恢复与v5手动加载
 
 最终v5位流在build/fpga，板端约定 `/sd/pl/zhidiao_observe_v5_led.bit`，SHA为fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6。由部署者上传到该路径并核对SHA；本次未连接板卡、复制文件或修改开机流程。
 
-## 当前部署：初始化阶段加载v5
+## 当前部署的初始化顺序
 
 当前v5 PL在初始化阶段加载完成，再启动Agent及LED；Agent沿用`observer.prepare_policy=check_only`，保持原有build／flash／UART／PL四接口执行顺序。启动前由部署者确认初始化加载已完成，LED开始工作时相应寄存器已存在。
 
-在部署PC的PowerShell中，按现有板端初始化流程准备v5，并使用以下命令核对SD中的位流文件：
+在部署PC的PowerShell中依次完成：设置路径变量 → 恢复并验证SSH公钥登录 → 校验并手动加载v5 → 启动Agent。以下板端命令由部署者手动执行，不加入模型工具或Agent自动流程。
+
+## 1. 路径变量设置
+
+现有独立Agent目录的路径变量设置为：
+
+```powershell
+$env:PYTHONPATH = "E:\zhidiao-agent\src"
+```
+
+该绝对路径对应现有独立Agent目录。本GitHub仓库采用`src/agent/src`布局；进入仓库的`src/agent`目录时使用：
+
+```powershell
+$env:PYTHONPATH = (Resolve-Path .\src).Path
+```
+
+路径须与实际代码位置一致；环境变量只对当前PowerShell会话生效。
+
+## 2. SSH公钥恢复（三条命令）
+
+前提是已通过可信板端控制台核对主机公钥指纹并建立本机known_hosts，PC上已有自己生成的`id_zhidiao_rsa`和`id_zhidiao_rsa.pub`。前两条使用密码方式连接，会按提示输入板端root密码；密码和私钥内容不写入仓库。命令中的单引号保持原样，使第一条的`$HOME`在板端展开。
+
+第一条：检查板端HOME、SSH目录与authorized_keys状态。
+
+```powershell
+ssh -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAuthentication=no root@192.168.10.2 'echo HOME=$HOME; ls -ld /home/root/.ssh 2>/dev/null; ls -l /home/root/.ssh/authorized_keys 2>/dev/null || echo AUTHORIZED_KEYS_MISSING'
+```
+
+第二条：将PC上的公钥写入板端，并恢复目录权限及归属。此命令按当前单公钥部署覆盖authorized_keys；如已有其他授权公钥，需先备份并保留。上传的是`.pub`公钥，私钥留在PC。
+
+```powershell
+Get-Content "$HOME\.ssh\id_zhidiao_rsa.pub" | ssh -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAuthentication=no root@192.168.10.2 'mkdir -p /home/root/.ssh && cat > /home/root/.ssh/authorized_keys && chmod 700 /home/root/.ssh && chmod 600 /home/root/.ssh/authorized_keys && chown -R root:root /home/root/.ssh && echo ZHIDIAO_KEY_RESTORED'
+```
+
+第三条：使用私钥验证非交互登录，保留严格主机身份检查。
+
+```powershell
+ssh -o BatchMode=yes `
+  -o StrictHostKeyChecking=yes `
+  -o UserKnownHostsFile="$HOME\.ssh\known_hosts" `
+  -o HostKeyAlgorithms=+ssh-rsa `
+  -o PubkeyAcceptedAlgorithms=+ssh-rsa `
+  -i "$HOME\.ssh\id_zhidiao_rsa" `
+  root@192.168.10.2 "echo ZHIDIAO_SSH_KEY_OK"
+```
+
+三条依次执行，前面步骤无错误，最后一条SSH成功退出并输出`ZHIDIAO_SSH_KEY_OK`，即表示本次SSH公钥登录恢复完成。`ZHIDIAO_KEY_RESTORED`表示公钥写入步骤完成；它不能代替第三条的登录验证。SSH恢复成功后继续准备PL。
+
+## 3. v5比特流文件校验与手动加载
+
+先核对SD中的位流文件：
 
 ```powershell
 ssh `
@@ -22,13 +72,22 @@ ssh `
 
 预期SHA-256为`fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6`。该命令只校验文件，不执行PL加载，也不单独证明正在运行的PL镜像身份；初始化加载完成需另行确认。
 
-现有独立Agent目录的路径变量设置为：
+文件SHA匹配后，在启动Agent及LED前手动加载。下面命令复用现有PLPreparation的`/dev/xdevcfg`路径和BusyBox超时方式，只适用于已确认支持该字符设备及`timeout` applet的当前Zynq Linux；加载会重置PL。
 
 ```powershell
-$env:PYTHONPATH = "E:\zhidiao-agent\src"
+ssh -o BatchMode=yes `
+  -o StrictHostKeyChecking=yes `
+  -o UserKnownHostsFile="$HOME\.ssh\known_hosts" `
+  -o HostKeyAlgorithms=+ssh-rsa `
+  -o PubkeyAcceptedAlgorithms=+ssh-rsa `
+  -i "$HOME\.ssh\id_zhidiao_rsa" `
+  root@192.168.10.2 `
+  "test -c /dev/xdevcfg && /bin/busybox timeout -s KILL 15 /bin/busybox sh -c 'cat /sd/pl/zhidiao_observe_v5_led.bit > /dev/xdevcfg' && cat /sys/class/xdevcfg/xdevcfg/device/prog_done"
 ```
 
-该绝对路径对应现有独立Agent目录。本GitHub仓库采用`src/agent/src`布局，进入仓库的`src/agent`目录时，使用下面原有的`(Resolve-Path .\src).Path`设置。路径须与实际代码位置一致，私人密钥和本机配置不上传。
+命令成功退出且最后输出`1`表示本次写入后配置完成。加载失败、超时或prog_done不是`1`时，先处理板端问题，再启动Agent。只有SHA校验、加载成功和配置完成分别确认，才进入当前`check_only`工作流；不要把单独读到旧的prog_done=1当作已加载该文件。
+
+本次仅整理操作说明，未在云端执行SSH、公钥恢复或该手动加载命令；具体板端执行结果由部署者保留。
 
 初始化阶段预加载不表示已完成断电后的自动加载／SSH公钥持久化验收；冷启动恢复边界仍保留。
 

@@ -57,7 +57,7 @@ start_demo.bat：离线脚本模型＋模拟硬件；start_ai_mock.bat：真实 
 
 真实部署先阅读 [从零复现](report/reproduction.md)。在 src/agent 复制 deployment.example.json 为 deployment.local.json 并改成自己的绝对路径。默认示例和deployment-setup向导均为v5＋LED；deployment.no-led.example.json或向导--no-led使用同一v5，只关闭灯。私人deployment.local.json不提交，向导不会覆盖已有配置。位流见 [build/fpga](build/fpga/README.md)；加载镜像、认证与寄存器身份仍须在板端确认。
 
-**当前部署在初始化阶段加载 v5 PL，加载完成后再启动 Agent 和 LED；Agent 使用 `check_only`，保持现有四接口执行顺序。** 初始化前提、SSH 位流文件 SHA 校验命令及现有 `E:\zhidiao-agent\src` 的 `PYTHONPATH` 设置见 [PL 初始化说明](board/zynq/pl_preparation.md)。
+**当前部署在初始化阶段加载 v5 PL，加载完成后再启动 Agent 和 LED；Agent 使用 `check_only`，保持现有四接口执行顺序。** 现有 `E:\zhidiao-agent\src` 的 `PYTHONPATH` 设置、三步SSH公钥恢复（最后输出`ZHIDIAO_SSH_KEY_OK`）、v5位流文件SHA校验与手动加载统一见 [板端初始化说明](board/zynq/pl_preparation.md)。
 
 ## 硬件与连接
 

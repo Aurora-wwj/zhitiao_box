@@ -52,7 +52,7 @@
 
 prog_done 节点已在当前部署实测为 1。check_only 由部署方准备好正确 v5；prog_done 和文件 SHA 不证明运行镜像身份。显式 load_verified 时，保留受审批的 SHA→/dev/xdevcfg→prog_done 准备，界面展示替换 FPGA 的效果。不修改 BOOT.BIN、image.ub 或启动脚本。
 
-当前部署将v5 PL放在初始化阶段加载，完成后再启动Agent和LED；使用check_only并保持现有四接口顺序。SSH文件SHA校验和现有独立目录`$env:PYTHONPATH = "E:\zhidiao-agent\src"`参考命令见[PL初始化说明](../../../board/zynq/pl_preparation.md)；该文件校验命令不执行加载，也不表示冷启动自动恢复已验收。
+当前部署将v5 PL放在初始化阶段加载，完成后再启动Agent和LED；使用check_only并保持现有四接口顺序。现有独立目录`$env:PYTHONPATH = "E:\zhidiao-agent\src"`设置、三步SSH公钥恢复及v5文件SHA校验／手动加载统一见[板端初始化说明](../../../board/zynq/pl_preparation.md)。最后输出ZHIDIAO_SSH_KEY_OK表示本次公钥登录恢复完成；文件SHA校验本身不执行加载，也不表示冷启动自动恢复已验收。
 
 v5 位流已公开在 build/fpga/zhidiao_observe_v5_led.bit；路径相对于仓库根目录。私人 deployment.local.json 不提交Git，也不被向导覆盖。现有部署保留认证及本机路径，仅在审阅后更新硬件字段。新建配置可运行：
 
