@@ -63,11 +63,22 @@ start_demo.bat：离线脚本模型＋模拟硬件；start_ai_mock.bat：真实 
 
 AX7Z020（Zynq-7000）＋STM32G431＋ST-Link/V2。PA1→M18 为周期观测；PA2/USART2_TX→M17，115200 8N1。GPIO 0x43C60000 bit0–3 为 active-low 四灯；J14/K14/J18/H18 已与最终 XDC 核对。详见 [接线](board/wiring.md)。
 
+## 测试代码（Keil工程）
+
+原合集`Project`目录映射到本仓库`src/stm32`，两份工程并列保留：
+
+| 说明／合集名称 | 仓库位置 | 用途 |
+| --- | --- | --- |
+| GPIO_PL_Test | [原工程](src/stm32/gpio_pl_test) | 已有两轮四接口JSON及黄金HEX对应的工程 |
+| GPIO_PL_Test_LED | [LED同步工程](src/stm32/gpio_pl_test_led/readme.md) | DK117E-G4板上八个用户LED随PA1方波同步亮灭，无需新增外接显示器件 |
+
+**LED工程实测验证时，文件夹原名也是`GPIO_PL_Test`。** 为符合AMD指南的新增路径英文小写要求，发布目录使用`gpio_pl_test_led`，内部Keil Target仍为`GPIO_PL_Test`。本次上传的实际源码保持`HAL_Delay(500)`；旧说明中的300 ms基线未沿用。原工程和实测证据不变，新变体单独构建、记录验证结果；完整来源见[LED文件清单](data/stm32_led_manifest.json)。
+
 ## AMD 推荐目录对照
 
 | 推荐项 | 本仓库 |
 | --- | --- |
-| src | src/agent、src/stm32/gpio_pl_test、src/fpga/zhidiao_measure、src/third_party/openocd源码与许可 |
+| src | src/agent、src/stm32下原版与LED同步版Keil工程、src/fpga/zhidiao_measure、src/third_party/openocd源码与许可 |
 | sim | 软件／板端发布检查、计数核 RTL 仿真、构建控制流与匿名历史 smoke |
 | build | STM32入口／HEX；FPGA Tcl／v5 bit／原报告；OpenOCD构建入口 |
 | board | 接线、部署与冷启动说明 |

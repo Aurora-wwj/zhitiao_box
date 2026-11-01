@@ -10,7 +10,8 @@ jobs:
           python-version: '3.13'
       - run: python -B sim/check_release.py
       - run: python -B -m unittest discover -s sim -p test_upload_parts.py -v
-      - run: sudo apt-get update && sudo apt-get install -y iverilog tcl
+      - run: sudo apt-get update && sudo apt-get install -y iverilog tcl gcc
+      - run: python -B -m unittest discover -s sim -p test_stm32_led_release.py -v
       - run: python -B -m unittest discover -s sim -p test_fpga_release.py -v
       - run: python -B -m unittest discover -s sim -p test_zynq_release.py -v
       - run: python -B -m unittest discover -s sim -p test_report_evidence.py -v

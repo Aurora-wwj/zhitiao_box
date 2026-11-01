@@ -1,0 +1,1214 @@
+{
+  "schema_version": 1,
+  "source_archive": {
+    "original_name": "GPIO_PL_Test.zip",
+    "bytes": 9091280,
+    "sha256": "72d8115419da300532ecebdd9911addee02afb00b0292c4fc1c584dcaa78c0a1",
+    "project_directory": "GPIO_PL_Test"
+  },
+  "requested_display_name": "GPIO_PL_Test_LED",
+  "public_root": "src/stm32/gpio_pl_test_led",
+  "original_test_directory_name": "GPIO_PL_Test",
+  "naming_basis": "AMD guide 3.3.5.4 requires lowercase English paths; logical Project/GPIO_PL_Test_LED is published alongside the existing Project/GPIO_PL_Test mapping under src/stm32.",
+  "original_project": "src/stm32/gpio_pl_test",
+  "source_main_sha256": "053697e2f914f435bae950c1529dd6b68af01532c12b94318ae622115a7debfd",
+  "behavior": {
+    "mcu": "STM32G431RBT6",
+    "board_mapping": "DK117E-G4 as declared in supplied source",
+    "pa1": "GPIOA pin 1",
+    "user_led_count": 8,
+    "data_pins": "PC8..PC15",
+    "latch_enable": "PD2 high",
+    "led_active_low": true,
+    "hal_delay_ms": 500,
+    "uart": "PA2/USART2 115200 8N1",
+    "nominal_full_period_ms": 1000
+  },
+  "validation_boundary": {
+    "teammate_statement": "The project directory was also named GPIO_PL_Test during on-board validation.",
+    "new_variant_run_json_received": false,
+    "keil_rebuild_performed_here": false,
+    "board_retest_performed_here": false,
+    "old_final_run_is_evidence_for_this_variant": false
+  },
+  "stale_metadata_notice": "Supplied README, CHANGELOG, MANIFEST and verify_demo_source.py describe a 300 ms baseline; actual supplied main.c uses 500 ms and its SHA differs from the old MANIFEST. These metadata and generated build outputs are not used as new validation evidence.",
+  "files": [
+    {
+      "source_member": "GPIO_PL_Test/Core/Inc/gpio.h",
+      "path": "src/stm32/gpio_pl_test_led/core/inc/gpio.h",
+      "source_sha256": "e2d62f964a0b7f238384ed6a20a181d09df9647240a268dc547acf5b35099f74",
+      "public_sha256": "e2d62f964a0b7f238384ed6a20a181d09df9647240a268dc547acf5b35099f74",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Core/Inc/main.h",
+      "path": "src/stm32/gpio_pl_test_led/core/inc/main.h",
+      "source_sha256": "7810630570add14789515832826b07aae9be1c76afe56d41294f904ced3563a0",
+      "public_sha256": "7810630570add14789515832826b07aae9be1c76afe56d41294f904ced3563a0",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Core/Inc/stm32g4xx_hal_conf.h",
+      "path": "src/stm32/gpio_pl_test_led/core/inc/stm32g4xx_hal_conf.h",
+      "source_sha256": "bf71d0d2d0b849def6a7d5f2233db971ec79fbae93ea86d1dd81d9314e305134",
+      "public_sha256": "bf71d0d2d0b849def6a7d5f2233db971ec79fbae93ea86d1dd81d9314e305134",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Core/Inc/stm32g4xx_it.h",
+      "path": "src/stm32/gpio_pl_test_led/core/inc/stm32g4xx_it.h",
+      "source_sha256": "85e40c10dd9924c56e982329592230a245a165b1fa09f91c9b6617f68913e682",
+      "public_sha256": "85e40c10dd9924c56e982329592230a245a165b1fa09f91c9b6617f68913e682",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Core/Inc/usart.h",
+      "path": "src/stm32/gpio_pl_test_led/core/inc/usart.h",
+      "source_sha256": "2ddd1eaf81e3750b46df7222f4c34ae295bcdaaaa1152e4be4933d3a0ca90181",
+      "public_sha256": "2ddd1eaf81e3750b46df7222f4c34ae295bcdaaaa1152e4be4933d3a0ca90181",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Core/Src/gpio.c",
+      "path": "src/stm32/gpio_pl_test_led/core/src/gpio.c",
+      "source_sha256": "2b19dc36c79adf80046ee65b8e169aad11edb949560e4149e66308c54540836b",
+      "public_sha256": "2b19dc36c79adf80046ee65b8e169aad11edb949560e4149e66308c54540836b",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Core/Src/main.c",
+      "path": "src/stm32/gpio_pl_test_led/core/src/main.c",
+      "source_sha256": "053697e2f914f435bae950c1529dd6b68af01532c12b94318ae622115a7debfd",
+      "public_sha256": "053697e2f914f435bae950c1529dd6b68af01532c12b94318ae622115a7debfd",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Core/Src/stm32g4xx_hal_msp.c",
+      "path": "src/stm32/gpio_pl_test_led/core/src/stm32g4xx_hal_msp.c",
+      "source_sha256": "0af205ec7f9243cf09cafa79a6d304d6e6712bf89300fd75f9c96eb81d3a3ff2",
+      "public_sha256": "0af205ec7f9243cf09cafa79a6d304d6e6712bf89300fd75f9c96eb81d3a3ff2",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Core/Src/stm32g4xx_it.c",
+      "path": "src/stm32/gpio_pl_test_led/core/src/stm32g4xx_it.c",
+      "source_sha256": "1c1f3a0ec290a736e3ebab90e10670bf4de3152e63fda4e93b5165f2adce87e4",
+      "public_sha256": "1c1f3a0ec290a736e3ebab90e10670bf4de3152e63fda4e93b5165f2adce87e4",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Core/Src/system_stm32g4xx.c",
+      "path": "src/stm32/gpio_pl_test_led/core/src/system_stm32g4xx.c",
+      "source_sha256": "875f78f4a45764120e7626493e10a826cd936404c727131ffc15b4d18982b94c",
+      "public_sha256": "875f78f4a45764120e7626493e10a826cd936404c727131ffc15b4d18982b94c",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Core/Src/usart.c",
+      "path": "src/stm32/gpio_pl_test_led/core/src/usart.c",
+      "source_sha256": "d4a0ee8c9387583fbb05abab57bf4a7a4b89dbf5af0babd5d05fa43c415b343d",
+      "public_sha256": "d4a0ee8c9387583fbb05abab57bf4a7a4b89dbf5af0babd5d05fa43c415b343d",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g431xx.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/device/st/stm32g4xx/include/stm32g431xx.h",
+      "source_sha256": "958b15628550bc6b496b11434f59d41e3b715673c83f2a85739e2ebc16ddada4",
+      "public_sha256": "958b15628550bc6b496b11434f59d41e3b715673c83f2a85739e2ebc16ddada4",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/device/st/stm32g4xx/include/stm32g4xx.h",
+      "source_sha256": "e3d36c65a752101227c67fbfdf079070fda010eece1d54fba0b372661516b7a3",
+      "public_sha256": "e3d36c65a752101227c67fbfdf079070fda010eece1d54fba0b372661516b7a3",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Device/ST/STM32G4xx/Include/system_stm32g4xx.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/device/st/stm32g4xx/include/system_stm32g4xx.h",
+      "source_sha256": "36304c07e9cee84064015ebd7ae517af6f466c466c1bbf5e342c57a296601db2",
+      "public_sha256": "36304c07e9cee84064015ebd7ae517af6f466c466c1bbf5e342c57a296601db2",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Device/ST/STM32G4xx/LICENSE.txt",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/device/st/stm32g4xx/license.txt",
+      "source_sha256": "135fb2d86e9ecdf6824cc3bba21c72b8e380c07b055fbebb6b995463eb609baf",
+      "public_sha256": "135fb2d86e9ecdf6824cc3bba21c72b8e380c07b055fbebb6b995463eb609baf",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/cmsis_armcc.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/cmsis_armcc.h",
+      "source_sha256": "e6ba28e21b5a3cd44d4e2d2981e37568f419e5df693c8b58e87674fbdf28deeb",
+      "public_sha256": "e6ba28e21b5a3cd44d4e2d2981e37568f419e5df693c8b58e87674fbdf28deeb",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/cmsis_armclang.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/cmsis_armclang.h",
+      "source_sha256": "99b25ab977f383840994cb456ae3f259a5c9b036cb6a0d8c003b7cbba4f6123a",
+      "public_sha256": "99b25ab977f383840994cb456ae3f259a5c9b036cb6a0d8c003b7cbba4f6123a",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/cmsis_armclang_ltm.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/cmsis_armclang_ltm.h",
+      "source_sha256": "31622280a8296b67bdace0539710a3cfbf828b71f88bd0d5ccc5d7d291ab3a9f",
+      "public_sha256": "31622280a8296b67bdace0539710a3cfbf828b71f88bd0d5ccc5d7d291ab3a9f",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/cmsis_compiler.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/cmsis_compiler.h",
+      "source_sha256": "869640702d811c4c63abb52206715c891a93fd03be954df5ad40d378355af3d6",
+      "public_sha256": "869640702d811c4c63abb52206715c891a93fd03be954df5ad40d378355af3d6",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/cmsis_gcc.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/cmsis_gcc.h",
+      "source_sha256": "0837f98e834d6a529854c8c86336e9d99eb8e379bf1deb964858d7863950f862",
+      "public_sha256": "0837f98e834d6a529854c8c86336e9d99eb8e379bf1deb964858d7863950f862",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/cmsis_iccarm.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/cmsis_iccarm.h",
+      "source_sha256": "a40c60d322903d410fe892c2eccb92d82d8876dce605fbb4cb563d52182aeb16",
+      "public_sha256": "a40c60d322903d410fe892c2eccb92d82d8876dce605fbb4cb563d52182aeb16",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/cmsis_version.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/cmsis_version.h",
+      "source_sha256": "dd03af200b23bdd8d091ffa7beb3d1a2c4fc5611557567bd57ec613205f6df1f",
+      "public_sha256": "dd03af200b23bdd8d091ffa7beb3d1a2c4fc5611557567bd57ec613205f6df1f",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_armv81mml.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_armv81mml.h",
+      "source_sha256": "fb6ff226bc14b8730b3d5c5e49a32514de811b485dc3f0543045ffffd8787f85",
+      "public_sha256": "fb6ff226bc14b8730b3d5c5e49a32514de811b485dc3f0543045ffffd8787f85",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_armv8mbl.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_armv8mbl.h",
+      "source_sha256": "319fd8c698098a16f2775fe292b734c91aaeec3feee418e515cc3a1761edec76",
+      "public_sha256": "319fd8c698098a16f2775fe292b734c91aaeec3feee418e515cc3a1761edec76",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_armv8mml.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_armv8mml.h",
+      "source_sha256": "1778fd691a0768dbee4fbe537b3cc4d03fcfab4ab9f60e31ec52605364f3dd36",
+      "public_sha256": "1778fd691a0768dbee4fbe537b3cc4d03fcfab4ab9f60e31ec52605364f3dd36",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_cm0.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_cm0.h",
+      "source_sha256": "20300b57c02d5b7b34c7b58bf7009e81713a60f44ca2a338f67cb4b473f4f3c4",
+      "public_sha256": "20300b57c02d5b7b34c7b58bf7009e81713a60f44ca2a338f67cb4b473f4f3c4",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_cm0plus.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_cm0plus.h",
+      "source_sha256": "4b79d5bf9f9165ddae727c9f035f82fb0ea85ceee2587b503d5d7bcd172d2df9",
+      "public_sha256": "4b79d5bf9f9165ddae727c9f035f82fb0ea85ceee2587b503d5d7bcd172d2df9",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_cm1.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_cm1.h",
+      "source_sha256": "c243c4afb291068fe7078d2911b2f0001e78a4d5466c26728611b06147d65c2b",
+      "public_sha256": "c243c4afb291068fe7078d2911b2f0001e78a4d5466c26728611b06147d65c2b",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_cm23.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_cm23.h",
+      "source_sha256": "009f762a79b693f7f82efc9298a33a14765c06dbd4cb2bf5c9b4ffbb6f7e56ff",
+      "public_sha256": "009f762a79b693f7f82efc9298a33a14765c06dbd4cb2bf5c9b4ffbb6f7e56ff",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_cm3.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_cm3.h",
+      "source_sha256": "efefef85cd419652f5b7c1074ede2f5c24da943528c5156de8d2a194de1888dc",
+      "public_sha256": "efefef85cd419652f5b7c1074ede2f5c24da943528c5156de8d2a194de1888dc",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_cm33.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_cm33.h",
+      "source_sha256": "3e50058f0d08b8d8897fec65e636e2f96635d1f8bcef37d2dec289e834539548",
+      "public_sha256": "3e50058f0d08b8d8897fec65e636e2f96635d1f8bcef37d2dec289e834539548",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_cm35p.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_cm35p.h",
+      "source_sha256": "32dbde7edb75784b23411639fa8cb8ecd3a3da26f923530b9ae606e010fcae57",
+      "public_sha256": "32dbde7edb75784b23411639fa8cb8ecd3a3da26f923530b9ae606e010fcae57",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_cm4.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_cm4.h",
+      "source_sha256": "cdc0c5ab9ba0f24c065e891d26c3e686ed04106700ce6a572cc7e83e71965b59",
+      "public_sha256": "cdc0c5ab9ba0f24c065e891d26c3e686ed04106700ce6a572cc7e83e71965b59",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_cm7.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_cm7.h",
+      "source_sha256": "ff629c5bf98a8caadf360d0bcc48e1042fefa19995f7b64855d5e81e4c2e81cb",
+      "public_sha256": "ff629c5bf98a8caadf360d0bcc48e1042fefa19995f7b64855d5e81e4c2e81cb",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_sc000.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_sc000.h",
+      "source_sha256": "e306205844323c8fe4cc3e5433c91ed34d9d5055ed11eceef03401fdfb0c3600",
+      "public_sha256": "e306205844323c8fe4cc3e5433c91ed34d9d5055ed11eceef03401fdfb0c3600",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/core_sc300.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/core_sc300.h",
+      "source_sha256": "cddd97bb6172b5cdad96a48445124a6d97a449546f5617e48f03847cbc4a09a4",
+      "public_sha256": "cddd97bb6172b5cdad96a48445124a6d97a449546f5617e48f03847cbc4a09a4",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/mpu_armv7.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/mpu_armv7.h",
+      "source_sha256": "e504a7d47dfdb3d61dfae3cf08d27ba9bc69aa4b2b81ca568efdafd65d6abdcc",
+      "public_sha256": "e504a7d47dfdb3d61dfae3cf08d27ba9bc69aa4b2b81ca568efdafd65d6abdcc",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/mpu_armv8.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/mpu_armv8.h",
+      "source_sha256": "95a05e406c38cb770621f07ac066b8c89b90874a50559ec9b10c9587b6049503",
+      "public_sha256": "95a05e406c38cb770621f07ac066b8c89b90874a50559ec9b10c9587b6049503",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/Include/tz_context.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/include/tz_context.h",
+      "source_sha256": "7fcc21fc190f6fd970390e9caaa6a86d72fd10f9edf4efab36f12aecf1a8baa0",
+      "public_sha256": "7fcc21fc190f6fd970390e9caaa6a86d72fd10f9edf4efab36f12aecf1a8baa0",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/CMSIS/LICENSE.txt",
+      "path": "src/stm32/gpio_pl_test_led/drivers/cmsis/license.txt",
+      "source_sha256": "e03ba41d7fab20700769fe4118bab50d800cb74f990353a05d2f5fff1c228363",
+      "public_sha256": "e03ba41d7fab20700769fe4118bab50d800cb74f990353a05d2f5fff1c228363",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/legacy/stm32_hal_legacy.h",
+      "source_sha256": "49f726f3f3d94ada1596bd93e489a11a55d26181b1d6edd162759ea797a8e404",
+      "public_sha256": "49f726f3f3d94ada1596bd93e489a11a55d26181b1d6edd162759ea797a8e404",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal.h",
+      "source_sha256": "e9c236731bbd4e6095c3468ed41578965c9c7cfd7cdfebacce74493b8666bb01",
+      "public_sha256": "e9c236731bbd4e6095c3468ed41578965c9c7cfd7cdfebacce74493b8666bb01",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_cortex.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_cortex.h",
+      "source_sha256": "49a4f194ac0ae566e9c8f4c13660ba308872774bf4f55d188002e319ed602168",
+      "public_sha256": "49a4f194ac0ae566e9c8f4c13660ba308872774bf4f55d188002e319ed602168",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_def.h",
+      "source_sha256": "adcb12d4eeb391241481a75f738f81dc7c186abe0ded173da3a1191803658eb7",
+      "public_sha256": "ddc2f6f9e1a0478d7a421fcd6498f76097b1d63965d7ef66526d0b1a315052b5",
+      "changes": [
+        "lowercase_path",
+        "lowercase_local_legacy_include"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_dma.h",
+      "source_sha256": "3f98e441401e895e70367809b7b2b2ec54d644abfc78d405bf8fb962bb7c9bd1",
+      "public_sha256": "3f98e441401e895e70367809b7b2b2ec54d644abfc78d405bf8fb962bb7c9bd1",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma_ex.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_dma_ex.h",
+      "source_sha256": "c4581c1786d1a9498051849abe5ac230edda4102abb413c2415fd7d0b6fdca0a",
+      "public_sha256": "c4581c1786d1a9498051849abe5ac230edda4102abb413c2415fd7d0b6fdca0a",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_exti.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_exti.h",
+      "source_sha256": "66f2994bb5247e762fdbc3699ad53b0b8b8dc159c881d5b1b100c3d973b1726d",
+      "public_sha256": "66f2994bb5247e762fdbc3699ad53b0b8b8dc159c881d5b1b100c3d973b1726d",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_flash.h",
+      "source_sha256": "7bcce9a12e02de94e23343e696919874d5b7288fbb33e8e837b193626e49d14d",
+      "public_sha256": "7bcce9a12e02de94e23343e696919874d5b7288fbb33e8e837b193626e49d14d",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_flash_ex.h",
+      "source_sha256": "6857115967b5b929054fd9416f2f65237559201d9ed2d4dad63088b5aa72fe9f",
+      "public_sha256": "6857115967b5b929054fd9416f2f65237559201d9ed2d4dad63088b5aa72fe9f",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_flash_ramfunc.h",
+      "source_sha256": "59e2f2d847960b24daf76546b91fbd6b432b9883f521633cfd1f6e66f43c576a",
+      "public_sha256": "59e2f2d847960b24daf76546b91fbd6b432b9883f521633cfd1f6e66f43c576a",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_gpio.h",
+      "source_sha256": "aed7d74aa45633e88a7e13068bc00fd5979ec4960cf2b00a0466aa987df44c2e",
+      "public_sha256": "aed7d74aa45633e88a7e13068bc00fd5979ec4960cf2b00a0466aa987df44c2e",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio_ex.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_gpio_ex.h",
+      "source_sha256": "d790a2918fd3919af7442edf8a5b4bc28f0410bf6197bfd879266b8c554da9c2",
+      "public_sha256": "d790a2918fd3919af7442edf8a5b4bc28f0410bf6197bfd879266b8c554da9c2",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_pwr.h",
+      "source_sha256": "7f93f0ddd90ccd42f1900e8bca01d322ad7bafad94f0dc3a5f64c3566342d562",
+      "public_sha256": "7f93f0ddd90ccd42f1900e8bca01d322ad7bafad94f0dc3a5f64c3566342d562",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_pwr_ex.h",
+      "source_sha256": "d89ad8df209411b80e36b6ef6fb3d5274b4550437126dc9b3c8e56edcbc7631f",
+      "public_sha256": "d89ad8df209411b80e36b6ef6fb3d5274b4550437126dc9b3c8e56edcbc7631f",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_rcc.h",
+      "source_sha256": "8210ffdb8399e44d49efcfe757ebb9f85e8bf175390d9bb149ca7abd671dbd83",
+      "public_sha256": "8210ffdb8399e44d49efcfe757ebb9f85e8bf175390d9bb149ca7abd671dbd83",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc_ex.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_rcc_ex.h",
+      "source_sha256": "811567da6a4549ca325bbb8a00c5f0481fcd57eb982609ac586b5347fd2c5f52",
+      "public_sha256": "811567da6a4549ca325bbb8a00c5f0481fcd57eb982609ac586b5347fd2c5f52",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_uart.h",
+      "source_sha256": "e357e03164d945b332835c11d786f4d28c4c8d768fbe9f15401368f5418638b2",
+      "public_sha256": "e357e03164d945b332835c11d786f4d28c4c8d768fbe9f15401368f5418638b2",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_hal_uart_ex.h",
+      "source_sha256": "4243de07fb90395212f436ec747bd7d91198e47437bd8d8c117a7d9e14061a85",
+      "public_sha256": "4243de07fb90395212f436ec747bd7d91198e47437bd8d8c117a7d9e14061a85",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_bus.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_bus.h",
+      "source_sha256": "44afb6ca13072671e1e4389800d28b3a8be922825e78481b911cbb3702f0c231",
+      "public_sha256": "44afb6ca13072671e1e4389800d28b3a8be922825e78481b911cbb3702f0c231",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_cortex.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_cortex.h",
+      "source_sha256": "0d8090fd47c74ef211b3ddb553f634a8b382af8873ccaa5faf4801e713e4b984",
+      "public_sha256": "0d8090fd47c74ef211b3ddb553f634a8b382af8873ccaa5faf4801e713e4b984",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_crs.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_crs.h",
+      "source_sha256": "381a4fb547d3463380ea8d787c5946737fe4e7a6d88cb478b7ab7b36f3a1e24d",
+      "public_sha256": "381a4fb547d3463380ea8d787c5946737fe4e7a6d88cb478b7ab7b36f3a1e24d",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dma.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_dma.h",
+      "source_sha256": "6b798aaf2e014bfb74da4837ecdf0a4a6f47b43f270e8cf4b0e93a8129dd1c50",
+      "public_sha256": "6b798aaf2e014bfb74da4837ecdf0a4a6f47b43f270e8cf4b0e93a8129dd1c50",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dmamux.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_dmamux.h",
+      "source_sha256": "ef49cfc67107cf357b63242bac336eae551266f5ee26cf2fef6ec8cb37537b50",
+      "public_sha256": "ef49cfc67107cf357b63242bac336eae551266f5ee26cf2fef6ec8cb37537b50",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_exti.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_exti.h",
+      "source_sha256": "466423accc1c07a5fd3612b9ccb9b159184829b3af8a027a5f4aaaa174346f01",
+      "public_sha256": "466423accc1c07a5fd3612b9ccb9b159184829b3af8a027a5f4aaaa174346f01",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_gpio.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_gpio.h",
+      "source_sha256": "cde1108f359ccad3eb3157c6333f490de14e82a0c38ea7a6b024ad3c45e48a49",
+      "public_sha256": "cde1108f359ccad3eb3157c6333f490de14e82a0c38ea7a6b024ad3c45e48a49",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_lpuart.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_lpuart.h",
+      "source_sha256": "b33d2e24a23634840666a38b1998959b516b2fe31c012bcbca78d85fdc77c51a",
+      "public_sha256": "b33d2e24a23634840666a38b1998959b516b2fe31c012bcbca78d85fdc77c51a",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_pwr.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_pwr.h",
+      "source_sha256": "ba6ff92d9cdaa69303abd8439b06dc32468c188bcfc65499a2a8dc702a291982",
+      "public_sha256": "ba6ff92d9cdaa69303abd8439b06dc32468c188bcfc65499a2a8dc702a291982",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_rcc.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_rcc.h",
+      "source_sha256": "bd54a7974fe8497de2138ae290b913d2b0c6e138d3272263622bc7a3f25febe6",
+      "public_sha256": "bd54a7974fe8497de2138ae290b913d2b0c6e138d3272263622bc7a3f25febe6",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_system.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_system.h",
+      "source_sha256": "a0ca093590e36ea19b9ef168cff1ed4973eccdc4a76661d8903264a3cace3bb5",
+      "public_sha256": "a0ca093590e36ea19b9ef168cff1ed4973eccdc4a76661d8903264a3cace3bb5",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_usart.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_usart.h",
+      "source_sha256": "c7d386b685ab5a35ad5c3cdef44e7602b11ea27f571717fe91da7afefd74e2d5",
+      "public_sha256": "c7d386b685ab5a35ad5c3cdef44e7602b11ea27f571717fe91da7afefd74e2d5",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_utils.h",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/inc/stm32g4xx_ll_utils.h",
+      "source_sha256": "1983eb94d3edcb11aee1d416a0ee823f7f8b52c3a6888408b52acd4a32435df6",
+      "public_sha256": "1983eb94d3edcb11aee1d416a0ee823f7f8b52c3a6888408b52acd4a32435df6",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/LICENSE.txt",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/license.txt",
+      "source_sha256": "d5a162f3eaf2b7b6762f00700017cae5695ebbdce7932fead8316448baafd9c1",
+      "public_sha256": "d5a162f3eaf2b7b6762f00700017cae5695ebbdce7932fead8316448baafd9c1",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal.c",
+      "source_sha256": "440ef82d5b7947563fe17db9ba69e610c3a2f7629ac7e3720bf9adeb5bc09958",
+      "public_sha256": "440ef82d5b7947563fe17db9ba69e610c3a2f7629ac7e3720bf9adeb5bc09958",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_cortex.c",
+      "source_sha256": "764627455c7ccfd157b45fe7bd5effe78d1bc1c8f99af041f39e1e1e7197c3b6",
+      "public_sha256": "764627455c7ccfd157b45fe7bd5effe78d1bc1c8f99af041f39e1e1e7197c3b6",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_dma.c",
+      "source_sha256": "99840fa5f2bc2189b7320a1446946dc79d73be7ac3428914604ce9651b7b6b9b",
+      "public_sha256": "99840fa5f2bc2189b7320a1446946dc79d73be7ac3428914604ce9651b7b6b9b",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_dma_ex.c",
+      "source_sha256": "6d50d6f3bd1f7dcceacf2a5d486d61a7bb897d49c3af7b8a079a88661efdb94f",
+      "public_sha256": "6d50d6f3bd1f7dcceacf2a5d486d61a7bb897d49c3af7b8a079a88661efdb94f",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_exti.c",
+      "source_sha256": "586f606300b4fbaf8cde528ef3ed3558297f52013fa4f824f4b868fad60e7e2d",
+      "public_sha256": "586f606300b4fbaf8cde528ef3ed3558297f52013fa4f824f4b868fad60e7e2d",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_flash.c",
+      "source_sha256": "7894f8cf4a3bd8b214fc826cbb93aa9a20596cfc3c45760f6f775d79e28cbda4",
+      "public_sha256": "7894f8cf4a3bd8b214fc826cbb93aa9a20596cfc3c45760f6f775d79e28cbda4",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_flash_ex.c",
+      "source_sha256": "faa9d7ffa04c9072035273fdf1dedbfee1886a4f58d29f5d0b075263ef06bc30",
+      "public_sha256": "faa9d7ffa04c9072035273fdf1dedbfee1886a4f58d29f5d0b075263ef06bc30",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_flash_ramfunc.c",
+      "source_sha256": "5d5d66378381d9db97bfae8077818de467344119516c00d205132786b0b67279",
+      "public_sha256": "5d5d66378381d9db97bfae8077818de467344119516c00d205132786b0b67279",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_gpio.c",
+      "source_sha256": "46d673a0f806f0148dbf873af0e02aeeba0c785c4a754dec4805d1640bb79679",
+      "public_sha256": "46d673a0f806f0148dbf873af0e02aeeba0c785c4a754dec4805d1640bb79679",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_pwr.c",
+      "source_sha256": "35a4385dc959fdfadcd14580c42565a981366b8a88c4cb7c85a6f1cb83534598",
+      "public_sha256": "35a4385dc959fdfadcd14580c42565a981366b8a88c4cb7c85a6f1cb83534598",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_pwr_ex.c",
+      "source_sha256": "1688ca0ef7b06a27254c62ddfd8c4ce997b8796a4d7bc13f35de6707a10b9024",
+      "public_sha256": "1688ca0ef7b06a27254c62ddfd8c4ce997b8796a4d7bc13f35de6707a10b9024",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_rcc.c",
+      "source_sha256": "e7a321420f83f12e7f5400589094781c107ee001278452c69493664ea155e362",
+      "public_sha256": "e7a321420f83f12e7f5400589094781c107ee001278452c69493664ea155e362",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_rcc_ex.c",
+      "source_sha256": "dc4d1e2fe7386fbea04a404d8eef29868c2258c8f508852811c2847964500983",
+      "public_sha256": "dc4d1e2fe7386fbea04a404d8eef29868c2258c8f508852811c2847964500983",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_uart.c",
+      "source_sha256": "0bbad99f0a421505d60cba6c309afeb76e4ba7643d4879c418232a98c11a0021",
+      "public_sha256": "0bbad99f0a421505d60cba6c309afeb76e4ba7643d4879c418232a98c11a0021",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c",
+      "path": "src/stm32/gpio_pl_test_led/drivers/stm32g4xx_hal_driver/src/stm32g4xx_hal_uart_ex.c",
+      "source_sha256": "93462d61ba306842eea51b5462628868e5e60d6329b33b654186137b0a4f55ba",
+      "public_sha256": "93462d61ba306842eea51b5462628868e5e60d6329b33b654186137b0a4f55ba",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/GPIO_PL_Test.ioc",
+      "path": "src/stm32/gpio_pl_test_led/gpio_pl_test.ioc",
+      "source_sha256": "6094f9fa51d602379f4269005bd1a52602df191e664357a70bbcfda06189cba0",
+      "public_sha256": "0c663c709644dca58d9942a8c937609afc6461d5ea9ff020c6b42cd9fdcc7f0a",
+      "changes": [
+        "lowercase_path",
+        "lowercase_cubemx_project_name_and_main_location"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/DebugConfig/GPIO_PL_Test_STM32G431RBTx.dbgconf",
+      "path": "src/stm32/gpio_pl_test_led/mdk-arm/debugconfig/gpio_pl_test_stm32g431rbtx.dbgconf",
+      "source_sha256": "a8df0c7c576998d18bae5716962844172a50b8b830348204ac62c92942c82200",
+      "public_sha256": "a8df0c7c576998d18bae5716962844172a50b8b830348204ac62c92942c82200",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test.uvprojx",
+      "path": "src/stm32/gpio_pl_test_led/mdk-arm/gpio_pl_test.uvprojx",
+      "source_sha256": "7a6e7aeeed435f12638f03552e3f78ed93aeeea514ff4b795d8bd78697ce2fb7",
+      "public_sha256": "c20e84a4f309729ca5491231c8e1de6b3b66b80290de18cf03454bbaa3c8a8fe",
+      "changes": [
+        "lowercase_path",
+        "lowercase_local_project_paths_and_output_name"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/RTE/_GPIO_PL_Test/RTE_Components.h",
+      "path": "src/stm32/gpio_pl_test_led/mdk-arm/rte/_gpio_pl_test/rte_components.h",
+      "source_sha256": "be89ebd81d89d820e51fad4137a3c3a75e857590c78e9e6d0271aa51f6575ffd",
+      "public_sha256": "be89ebd81d89d820e51fad4137a3c3a75e857590c78e9e6d0271aa51f6575ffd",
+      "changes": [
+        "lowercase_path"
+      ]
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/startup_stm32g431xx.s",
+      "path": "src/stm32/gpio_pl_test_led/mdk-arm/startup_stm32g431xx.s",
+      "source_sha256": "f0ec2be901def7b2783843f981820729aa944211113afcc85392af104fac2c83",
+      "public_sha256": "f0ec2be901def7b2783843f981820729aa944211113afcc85392af104fac2c83",
+      "changes": [
+        "lowercase_path"
+      ]
+    }
+  ],
+  "excluded_members": [
+    {
+      "source_member": "GPIO_PL_Test/.mxproject",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/CHANGELOG.md",
+      "reason": "stale_demo_metadata"
+    },
+    {
+      "source_member": "GPIO_PL_Test/docs/main_led_demo.patch",
+      "reason": "stale_demo_metadata"
+    },
+    {
+      "source_member": "GPIO_PL_Test/keil_build_0e9cd4e31d8f4bc881f9ecf6ed273b2d.log",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/keil_build_2a4aff50acbf49ae8e7f600cb517d8e3.log",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/keil_build_ab7ceba4bc51496da484adac8d93f5b3.log",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/keil_build_e712a0883daf41a3a4566ab51d71b6fa.log",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MANIFEST.json",
+      "reason": "stale_demo_metadata"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/gpio.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/gpio.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/gpio.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/GPIO_PL_Test.axf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/GPIO_PL_Test.build_log.htm",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/GPIO_PL_Test.hex",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/GPIO_PL_Test.htm",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/GPIO_PL_Test.lnp",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/GPIO_PL_Test.map",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/GPIO_PL_Test.sct",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/GPIO_PL_Test_GPIO_PL_Test.dep",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/main.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/main.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/main.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/startup_stm32g431xx.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/startup_stm32g431xx.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_cortex.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_cortex.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_cortex.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_dma.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_dma.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_dma.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_dma_ex.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_dma_ex.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_dma_ex.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_exti.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_exti.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_exti.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_flash.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_flash.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_flash.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_flash_ex.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_flash_ex.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_flash_ex.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_flash_ramfunc.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_flash_ramfunc.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_flash_ramfunc.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_gpio.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_gpio.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_gpio.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_msp.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_msp.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_msp.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_pwr.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_pwr.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_pwr.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_pwr_ex.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_pwr_ex.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_pwr_ex.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_rcc.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_rcc.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_rcc.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_rcc_ex.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_rcc_ex.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_rcc_ex.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_uart.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_uart.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_uart.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_uart_ex.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_uart_ex.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_hal_uart_ex.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_it.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_it.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/stm32g4xx_it.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/system_stm32g4xx.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/system_stm32g4xx.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/system_stm32g4xx.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/usart.crf",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/usart.d",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test/usart.o",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test.uvguix.21914",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/GPIO_PL_Test.uvoptx",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/MDK-ARM/startup_stm32g431xx.lst",
+      "reason": "generated_build_output_or_user_options"
+    },
+    {
+      "source_member": "GPIO_PL_Test/README.md",
+      "reason": "stale_demo_metadata"
+    },
+    {
+      "source_member": "GPIO_PL_Test/tools/verify_demo_source.py",
+      "reason": "stale_demo_metadata"
+    }
+  ]
+}

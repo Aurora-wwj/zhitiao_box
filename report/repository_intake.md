@@ -25,6 +25,7 @@ AMD 自主选题 3.3.5.1：完整源码、仿真／验证、资源／时序、�
 | --- | --- | --- |
 | zhidiao-agent | src/agent | 正式源码、tests、启动器及必要文档；保持 zhidiao_agent 包名；排除嵌套 .git、运行历史、本机配置、备份 |
 | Project/GPIO_PL_Test | src/stm32/gpio_pl_test | 保留 ioc、Core、Drivers、Keil 工程与启动文件；主源码逐字节保持，移除中间对象 |
+| 补充GPIO_PL_Test.zip中的GPIO_PL_Test，发布名称GPIO_PL_Test_LED | src/stm32/gpio_pl_test_led | 与原工程并列；新增路径按指南小写，适配Keil／CubeMX本地路径与一处头文件include大小写；主逻辑与许可证原字节保留 |
 | Zhidiao_PL/zhidiao_measure_ax7z020 | src/fpga/zhidiao_measure | 保留最终 RTL、XDC、BD、必要 IP／工程引用；排除缓存及无用 runs |
 | 最终 v5 bit | build/fpga | 校验 SHA；配套构建 Tcl、资源与时序报告 |
 | 最终 HEX | build/stm32 | 与可参数化 Keil 构建入口、来源说明一起整理 |

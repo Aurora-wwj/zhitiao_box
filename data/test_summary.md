@@ -57,3 +57,11 @@ sim/check_release.py通过。设计初稿Markdown／PDF同步更新为5页，表
 本轮Linux Python3.13.5 Agent全量462项，24.211s，OK，无skip；根sim18项，0.598s，OK，无skip，含已提供Icarus12.0的实际RTL仿真。初次未指定模拟器路径的一次运行跳过RTL，随后明确工具路径重跑全部18项，最终记录为全执行。sim/check_release.py和改动Markdown的本地链接检查通过。具体命令、基线提交与实测源码SHA见configuration_sync_verification.txt；此时工作区尚未提交，不虚构新提交号。
 
 最终主JSON、黄金STM32 main.c／HEX、v5 bit、原实现报告及正式技术文档未改；只同步配置入口、材料索引、LLM证据说明与复现／验收边界。早期Word原件已重新核对，其PL-only结果不冒充完整四接口。私人配置／密钥未公开。本轮没有Windows／Keil／Vivado／在线模型或新上板执行；最新Windows由队伍同步代码后补跑并留提交号。
+
+## STM32 LED同步补充工程
+
+本次GPIO_PL_Test.zip的92份源码／工程／许可输入整理为src/stm32/gpio_pl_test_led，与原工程并列；说明名GPIO_PL_Test_LED，实测原目录名按队友说明记录为GPIO_PL_Test。实际main.c保持HAL_Delay(500)及原字节；附件旧300 ms说明与旧manifest不沿用，来源、双SHA及排除项见stm32_led_manifest.json。
+
+根sim全量22项，0.772s，OK，无skip，含4项新增LED回归、GCC主机HAL替身及原Icarus RTL仿真。新工程由既有Agent API识别，八次翻转／八灯低有效跟随、500 ms延时调用和两次UART发送均通过主机检查。完整命令与边界见stm32_led_verification.txt；该检查不是Keil／ARM构建或真机电气／周期验收。
+
+Agent生产代码与测试未改，沿用既有462项记录，不冒称本轮重跑。原黄金STM32源码／HEX、v5位流、原资源报告和主JSON保持原样，新LED工程不借用旧JSON作为新实测。全新工程的Keil构建与上板记录须单独保留。

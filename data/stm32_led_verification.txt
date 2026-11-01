@@ -1,0 +1,36 @@
+STM32 LED variant intake verification
+Base commit: 99b96afbc476350acfbf3d218fb3b90236cd7d93
+Source archive: GPIO_PL_Test.zip
+Archive SHA-256: 72d8115419da300532ecebdd9911addee02afb00b0292c4fc1c584dcaa78c0a1
+Requested display name: GPIO_PL_Test_LED
+Public directory: src/stm32/gpio_pl_test_led (AMD guide 3.3.5.4 lowercase naming)
+Original directory name during validation: GPIO_PL_Test (teammate statement)
+Supplied main.c SHA-256 (unchanged): 053697e2f914f435bae950c1529dd6b68af01532c12b94318ae622115a7debfd
+Actual supplied delay: HAL_Delay(500), not the 300 ms described by stale package metadata.
+
+Source intake:
+92 original source/project/license inputs retained; compiler outputs, user options and stale demo metadata excluded.
+Only local path/name casing is adapted for the new project: Keil XML, CubeMX name/main location,
+and the Legacy header include. Main.c, remaining C/headers, startup and three upstream license texts
+retain original bytes. The original successful project, its main.c/HEX and historical JSON are not replaced.
+
+Command (repository root):
+IVERILOG=/tmp/zhitiaohe-iverilog/usr/bin/iverilog VVP=/tmp/zhitiaohe-iverilog/usr/bin/vvp IVERILOG_BASE=/tmp/zhitiaohe-iverilog/usr/lib/x86_64-linux-gnu/ivl python3.13 -B -m unittest discover -s sim -v
+Ran 22 tests in 0.772s
+OK; no skips.
+
+Four new LED tests:
+- published lowercase source identities, original target and local Keil includes/source references;
+- changed main source and escaped Keil references are rejected;
+- the unchanged Agent discovers the new target/output and snapshots the allowed main source consistently;
+- host C compiler builds the supplied helpers and main body with HAL substitutes.
+LED_HOST_CHECKS_PASSED: 8 toggles, 8 LEDs, active-low mirror, 500 ms delays, 2 UART frames.
+The host harness adapts only the nonreturning main entry signature and uses mock HAL/ports;
+it does not measure real elapsed time, electrical signals or build an ARM firmware image.
+The original source main.c itself was not edited.
+
+Agent production source/tests are unchanged; their previously recorded 462-test results are not
+claimed as a new run here. New project discovery is checked with the actual existing Agent API.
+No Keil, online model request, SSH, SWD, FPGA loading or board test was executed here.
+The old run_5d8e... measurements are evidence for the original project, not this LED variant.
+New Keil rebuild/HEX identity, board LED behavior and independent PL measurement require local acceptance.

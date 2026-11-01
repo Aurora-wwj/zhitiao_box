@@ -12,6 +12,8 @@
 Windows 安装 Keil MDK（最终材料使用 V5.06 update 6）与 STM32G4xx DFP 2.0.0（工程 PackID 声明）；工程目标 GPIO_PL_Test，设备 STM32G431RBTx。运行根目录 build/stm32/build.ps1 -KeilUv4 <UV4.exe绝对路径>。该脚本在当前 Linux 未实际执行，Keil 生成工具和 DFP 须由部署者提供。
 保留原 Core/Src/main.c 字节；当前值为已通过的500。要演示 FAIL→编辑→PASS，用独立测试副本准备已知未达标的基线，并更新审批根路径；不要覆盖黄金源码／证据。
 
+另有独立[GPIO_PL_Test_LED工程](../src/stm32/gpio_pl_test_led/readme.md)，GitHub目录为src/stm32/gpio_pl_test_led，实测时原目录同为GPIO_PL_Test。它在PA1翻转后同步板载八个用户LED，本次源码仍为500 ms延时。使用其mdk-arm/gpio_pl_test.uvprojx和独立deployment.local.led.json，允许文件改为core/src/main.c；Keil Target仍为GPIO_PL_Test。按项目说明用原real-build接口重新构建，保存新HEX／SHA和测量记录；不覆盖原工程或借用旧JSON。
+
 ## Zynq 与四接口
 
 参考 board/hardware_setup.md 与 board/wiring.md。配置网口、严格 known_hosts 与非交互 SSH；私钥自行生成保管，不进入仓库。上电后恢复 authorized_keys、准备 PL（冷启动持久化未验收）。

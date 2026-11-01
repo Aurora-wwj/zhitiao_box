@@ -24,6 +24,7 @@ Thumbs.db
 .DS_Store
 
 /src/stm32/gpio_pl_test/MDK-ARM/GPIO_PL_Test/
+/src/stm32/gpio_pl_test_led/mdk-arm/gpio_pl_test/
 *.uvoptx
 *.lst
 part-*.zip

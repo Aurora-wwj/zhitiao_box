@@ -9,6 +9,7 @@
 | E:\Zhidiao_PL\zhidiao_measure_ax7z020 | src/fpga/zhidiao_measure保留RTL／BD／Tcl／XDC／工程；build/fpga/zhidiao_observe_v5_led.bit已公开且SHA一致 | 合法外部IP仍按清单提供；在Vivado环境执行独立重建 |
 | linux_ov5640.runs\impl_1\system_wrapper_utilization_placed.rpt、system_wrapper_timing_summary_routed.rpt；vendor_base_ax7z020对照 | build/fpga/reports中的baseline／final原报告及data/fpga_metrics.csv、data/fpga_metrics.json | 对比口径和警告见fpga_evidence.md；不是缺少资源报告，也不宣称全时序覆盖 |
 | E:\Project\GPIO_PL_Test | src/stm32/gpio_pl_test；build/stm32/firmware.hex；data/stm32_sha256.json | 黄金main.c及最终HEX已与主JSON匹配，勿改字节冒充历史产物 |
+| 新补充GPIO_PL_Test.zip；实测原目录同为GPIO_PL_Test，发布名GPIO_PL_Test_LED | src/stm32/gpio_pl_test_led；data/stm32_led_manifest.json | DK117E-G4八用户LED与PA1同步；源码保持500 ms延时，单独构建和验证，不借用旧JSON |
 | E:\zhidiao-agent\deployment.local.json | 私人原配置已在上传包中核对，仅参考非秘密硬件字段；公开deployment.example.json与deployment.no-led.example.json在src/agent | 不复制私人配置。主示例与deployment-setup均v5＋LED；--no-led仅关闭灯，保留v5／UART／PL |
 | BOOT／Linux镜像与Vivado原始工程 | 队伍确认原件已存在；测试包已核对部分镜像组成，Vivado工程已公开整理 | 镜像存在不等于完整从零重建说明齐全；含密钥镜像不原样发布，仍需构建配方、来源和独立记录 |
 | 照片／视频原素材 | 队伍将从原素材挑选；当前data/screenshots只有四张网页截图 | 补选接线照、整机照及四灯状态帧，不能认定原素材不存在 |

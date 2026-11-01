@@ -7,6 +7,7 @@
 | CMSIS | Arm / ST；src/stm32/gpio_pl_test/Drivers/CMSIS/LICENSE.txt（Apache-2.0） |
 | STM32G4 device headers | ST；Drivers/CMSIS/Device/ST/STM32G4xx/LICENSE.txt；按其声明适用 BSD-3-Clause |
 | STM32G4 HAL 与 CubeMX 生成框架 | ST；Drivers/STM32G4xx_HAL_Driver/LICENSE.txt，保留各文件版权与上游条款 |
+| LED同步工程中的CMSIS／ST头文件／HAL | src/stm32/gpio_pl_test_led中同一来源的独立副本；三个license.txt与版权头原字节保留。仅适配发布路径、Keil／CubeMX引用和一处Legacy头文件路径大小写，不适用根MIT重许可 |
 | Keil、CubeMX、Vivado | 外部专有工具，需要用户合法安装；不包含安装包或软件许可证 |
 | OpenOCD0.12.0 | src/third_party/openocd的原源码包：GPL-2.0-or-later及各文件SPDX／文档条款；COPYING、LICENSES与版权头保留。原上传静态ELF不再分发 |
 | libusb1.0.30 | 同目录原源码包：LGPL-2.1-or-later，COPYING／AUTHORS保留；不适用根MIT |
