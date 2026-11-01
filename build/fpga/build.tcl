@@ -22,7 +22,7 @@ proc build_main {flow_args} {
     set flow_ip [file normalize $flow_opt(-ip-repo)]
     foreach flow_dir {alinx/i2c_extender alinx/ov5640_ip ip/axi_dynclk_v1_0 ip/rgb2dvi_v1_3} {
         if {![file isfile [file join $flow_ip $flow_dir component.xml]]} {
-            error "Missing external IP: $flow_dir/component.xml; see src/fpga/README.md"
+            error "Missing external IP: $flow_dir/component.xml; see src/fpga/readme.md"
         }
     }
     set flow_output [file normalize $flow_opt(-output)]

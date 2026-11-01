@@ -35,7 +35,7 @@ python -B -m unittest discover -s sim -p test_fpga_release.py -v
 
 ## 历史脚本
 
-smoke/ 保存经过匿名化的四份 .py.txt 历史材料，不能直接执行；正式入口映射及已知缺陷见 smoke/README.md。正式离线测试仍在 src/agent/tests。
+smoke/ 保存经过匿名化的四份 .py.txt 历史材料，不能直接执行；正式入口映射及已知缺陷见[历史材料说明](smoke/readme.md)。正式离线测试仍在 src/agent/tests。
 
 ## 大附件分包
 

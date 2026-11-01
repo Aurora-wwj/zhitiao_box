@@ -11,4 +11,4 @@ OpenOCD 主许可为 GPL-2.0-or-later，另有各文件的 SPDX 条款、文档�
 
 上游入口：https://openocd.org/pages/getting-openocd.html ，https://libusb.info/ 。来源与公开 SHA 逐项见 ../../../data/zynq_linux_manifest.json。
 
-构建入口为 ../../../build/openocd/build.py，步骤见同目录 README。原上传 ARM 静态二进制未发布：未提供其确切工具链、编译参数和全部静态链接依赖的对应源码，不能用这两个压缩包声称已满足该二进制的全部源码／重链接要求。新构建也不默认等同于原件，需重新核对架构、SHA 和板卡行为。
+构建入口为 ../../../build/openocd/build.py，步骤见[构建说明](../../../build/openocd/readme.md)。原上传 ARM 静态二进制未发布：未提供其确切工具链、编译参数和全部静态链接依赖的对应源码，不能用这两个压缩包声称已满足该二进制的全部源码／重链接要求。新构建也不默认等同于原件，需重新核对架构、SHA 和板卡行为。

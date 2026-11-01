@@ -56,7 +56,7 @@
       "source_path": "sim/README.md",
       "public_path": "sim/readme.md",
       "source_sha256": "3ddc5ceb73da27139fa95686c4373f310d93233c7664b982e281a3a3bbc85fae",
-      "public_sha256": "769a91228a75d478598ad3035929976c80ba6aaf00044ac3bbf411acd0ea3cd9"
+      "public_sha256": "5ddf0f8dc8af0ef7a54dbb4bdccf446957d22264a276f2985b8ef580a1b4c1d8"
     },
     {
       "source_path": "sim/smoke/README.md",
@@ -638,7 +638,7 @@
       "source_path": "src/third_party/openocd/README.md",
       "public_path": "src/third_party/openocd/readme.md",
       "source_sha256": "d4fc51d61341651a2be043798e8a17ae743c782e72b28eed83ccf5b87f4b7879",
-      "public_sha256": "d4fc51d61341651a2be043798e8a17ae743c782e72b28eed83ccf5b87f4b7879"
+      "public_sha256": "c1e5962969609dba62cf6ee7d566a3b6ed08eca2bac608c33d4b9b7fad1aae64"
     },
     {
       "source_path": "src/third_party/openocd/licenses/libusb-1.0.30/AUTHORS",
