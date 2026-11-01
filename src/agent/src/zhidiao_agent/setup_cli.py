@@ -1,7 +1,7 @@
 """Trusted terminal approval for local setup and read-only pairing checks."""
 
 from .approval_ui import human_review
-from .deployment import DeploymentConfig, PLObserverConfig, UARTObserverConfig
+from .deployment import DeploymentConfig, PLObserverConfig, StatusIndicatorConfig, UARTObserverConfig
 from .models import OperationResult, invoke
 from .pairing import DeploymentDiagnostics, DeploymentSetup
 
@@ -25,7 +25,7 @@ def run_setup(
     target: str | None = None, host: str = "192.168.10.2", port: int = 22,
     user: str = "root", observed_gpio: str = "PA1",
     output_path: str = "deployment.local.json", preview_only: bool = False,
-    check_remote: bool = False,
+    check_remote: bool = False, no_led: bool = False,
 ) -> OperationResult:
     def operation():
         # Native absolute paths are deliberate: the CLI runs on the deployment
@@ -34,9 +34,10 @@ def run_setup(
             allowed_roots=(project_path,), keil_executable=keil_executable,
             project_file=project_file, target=target, known_hosts=known_hosts,
             identity_file=identity_file, host=host, port=port, user=user,
-            observer=PLObserverConfig(observed_gpio=observed_gpio, bitstream="/sd/pl/zhidiao_observe_v4.bit",
-                bitstream_sha256="8b224710de8b547198eeffe83ee2abd8a44cc6d2d18555af93a706ec4cfc56ab"),
+            observer=PLObserverConfig(observed_gpio=observed_gpio, bitstream="/sd/pl/zhidiao_observe_v5_led.bit",
+                bitstream_sha256="fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6"),
             uart_observer=UARTObserverConfig(),
+            status_indicator=None if no_led else StatusIndicatorConfig(),
         )
         setup = DeploymentSetup(config)
         result = _review(setup, setup.preview(output_path, check_remote=check_remote),

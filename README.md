@@ -18,7 +18,7 @@
 
 原图显示三位小数，与JSON原精度一致；四张原图及场景说明见[截图索引](data/screenshots/README.md)。其中1000.192ms单轮图明确跳过UART，单独作为PL-only参考，不计入完整四接口闭环。
 
-**已整理Agent、STM32、网页JSON／四张实测截图／最终HEX，以及FPGA RTL／BD／XDC／工程、v5 bit和baseline/final原始实现报告。** 另已加入Zynq测试包中带许可的OpenOCD／libusb源码、构建入口及板端文件检查。含私钥的镜像和来源不完整的二进制不原样发布。FPGA四项外部IP仍按依赖交付，完整BOOT／Linux构建输入、实际硬件重建、板卡／接线实物照片与正式主报告仍待补齐；当前不是完整比赛提交包。见[发布状态](report/release_status.md)。
+**已整理Agent、STM32、网页JSON／四张实测截图／最终HEX，以及FPGA RTL／BD／XDC／工程、v5 bit和baseline/final原始实现报告。** 另已加入Zynq测试包中带许可的OpenOCD／libusb源码、构建入口及板端文件检查。含私钥的镜像和来源不完整的二进制不原样发布。FPGA四项外部IP仍按依赖交付。队伍已确认BOOT／Linux镜像、Vivado工程和照片／视频原素材存在；完整从零构建说明、独立重建记录、照片选编与正式提交版仍需整理或验收，当前不是完整比赛提交包。原件与公开位置见[材料索引](report/material_index.md)及[发布状态](report/release_status.md)。
 
 v5 SHA 与指导一致。原 final 报告 LUT 7274、FF 12083、BRAM 20.5、DSP 0、IOB 44，WNS 0.709 ns、TNS 0。报告仍含未约束路径等 HIGH 警告，不能据此声称全设计时序验收完成；[原件与比较](report/fpga_evidence.md) 保留这些限制。
 
@@ -55,7 +55,7 @@ py -3.13 -B -m unittest discover -s tests -v
 
 start_demo.bat：离线脚本模型＋模拟硬件；start_ai_mock.bat：真实 NiceCode＋模拟硬件；start_ui.bat：真实部署。真实 API 需要进程环境中的 Key 或启动器遮罩输入，可能计费。不要提交 Key。
 
-真实部署先阅读 [从零复现](report/reproduction.md)。在 src/agent 复制 deployment.example.json 为 deployment.local.json 并改成自己的绝对路径。默认示例为 v5＋LED；deployment.no-led.example.json 使用同一 v5，只关闭灯。位流见 [build/fpga](build/fpga/README.md)；加载镜像、认证与寄存器身份仍须在板端确认。
+真实部署先阅读 [从零复现](report/reproduction.md)。在 src/agent 复制 deployment.example.json 为 deployment.local.json 并改成自己的绝对路径。默认示例和deployment-setup向导均为v5＋LED；deployment.no-led.example.json或向导--no-led使用同一v5，只关闭灯。私人deployment.local.json不提交，向导不会覆盖已有配置。位流见 [build/fpga](build/fpga/README.md)；加载镜像、认证与寄存器身份仍须在板端确认。
 
 ## 硬件与连接
 

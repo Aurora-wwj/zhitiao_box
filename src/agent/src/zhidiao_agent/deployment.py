@@ -82,7 +82,7 @@ class PLObserverConfig:
 
 @dataclass(frozen=True)
 class UARTObserverConfig:
-    """AXI Uartlite receive channel built into the known-good observation-v4.
+    """AXI Uartlite receive channel in the current observation-v5 LED design.
 
     These fields describe hardware already configured by the bitstream; the
     reader does not change baud rate, pin routing, or STM32 initialization.

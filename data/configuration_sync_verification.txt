@@ -1,0 +1,28 @@
+Local configuration/evidence synchronization verification — 2026-11-01
+Base commit: f9c46337b6fc27a654b01677fff5df30c9b839a0
+Tested state: uncommitted working-tree changes on this base; no new commit or push.
+Python: 3.13.5 (Linux)
+
+Agent command (cwd src/agent):
+PYTHONPATH=src python3.13 -B -m unittest discover -s tests -v
+Ran 462 tests in 24.211s
+OK; no skips. Includes three new actual setup/approval/persistence regressions.
+
+Root command (cwd repository):
+IVERILOG=/tmp/zhitiaohe-iverilog/usr/bin/iverilog VVP=/tmp/zhitiaohe-iverilog/usr/bin/vvp IVERILOG_BASE=/tmp/zhitiaohe-iverilog/usr/lib/x86_64-linux-gnu/ivl python3.13 -B -m unittest discover -s sim -v
+Ran 18 tests in 0.598s
+OK; no skips. Uses extracted Icarus Verilog 12.0 and actual RTL simulation.
+Initial run without simulator environment skipped one RTL test; the recorded final run above supplies the existing simulator and runs all tests.
+
+python3.13 -B sim/check_release.py: PASS
+Changed Markdown local link check: PASS
+Golden JSON, main.c, HEX, v5 bitstream and design report Markdown/PDF unchanged from base.
+No hardware, remote SSH, model API, Keil, Vivado, or Windows regression executed here.
+Windows current-version regression and independent hardware boundary acceptance remain pending.
+
+SHA-256 of tested source/test files (UTF-8 working-tree bytes):
+f18731457ecd92225c5936baf3c0c24b64ffd1dbc881c43a9ee56db23e30000f  src/agent/src/zhidiao_agent/setup_cli.py
+eecfdd6c3713501947d5b2346c68988284f6c54b76850186cf6b6f6d703be3cf  src/agent/src/zhidiao_agent/cli.py
+ffb46a0d9dd6f6691ab4a536b054b0d56679d4225c77840ee45e3bd4c68d8bfb  src/agent/src/zhidiao_agent/deployment.py
+dd8636df9d7fe3e1288b9cb3b7980317cbe158a80789a32c9e5e806e00f26cff  src/agent/tests/test_setup_profile.py
+ccb9ac8870539ec174be3280214044ff5c553de228a67329e595db37b63c4cea  src/agent/tests/test_new_cli.py

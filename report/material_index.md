@@ -1,0 +1,21 @@
+# 原始材料与公开仓库对照
+
+依据2026-11-01队伍补充及本次已收到附件重新核对。“已有原件”“已公开整理”和“已独立复现／验收”分别记录。下列E盘位置是队伍原始目录标识，不是要求其他部署PC照抄的运行路径；私人配置、认证和含密钥镜像不公开。
+
+| 原始材料 | 当前公开位置／状态 | 下一步 |
+| --- | --- | --- |
+| E:\zhidiao-agent\.zhidiao\runs\run_5d8e004954664f6c8f8ff0f85d31959b.json | Agent上传包已收到；data/final_run_sanitized.json为同run最后网页导出的脱敏副本；原始与公开SHA见data/report_sources.json | 使用model_decision、applied_edit、reviews、audit、events作主证据；不是缺少真机JSON |
+| 第一次真实完整LLM测试记录.docx | 原Word已收到，终端JSON再次核对；公开摘要src/agent/docs/validation/first-real-loop-2026-10-28.md | 原件不原样公开；该run明确PL-only，不计为四接口 |
+| E:\Zhidiao_PL\zhidiao_measure_ax7z020 | src/fpga/zhidiao_measure保留RTL／BD／Tcl／XDC／工程；build/fpga/zhidiao_observe_v5_led.bit已公开且SHA一致 | 合法外部IP仍按清单提供；在Vivado环境执行独立重建 |
+| linux_ov5640.runs\impl_1\system_wrapper_utilization_placed.rpt、system_wrapper_timing_summary_routed.rpt；vendor_base_ax7z020对照 | build/fpga/reports中的baseline／final原报告及data/fpga_metrics.csv、data/fpga_metrics.json | 对比口径和警告见fpga_evidence.md；不是缺少资源报告，也不宣称全时序覆盖 |
+| E:\Project\GPIO_PL_Test | src/stm32/gpio_pl_test；build/stm32/firmware.hex；data/stm32_sha256.json | 黄金main.c及最终HEX已与主JSON匹配，勿改字节冒充历史产物 |
+| E:\zhidiao-agent\deployment.local.json | 私人原配置已在上传包中核对，仅参考非秘密硬件字段；公开deployment.example.json与deployment.no-led.example.json在src/agent | 不复制私人配置。主示例与deployment-setup均v5＋LED；--no-led仅关闭灯，保留v5／UART／PL |
+| BOOT／Linux镜像与Vivado原始工程 | 队伍确认原件已存在；测试包已核对部分镜像组成，Vivado工程已公开整理 | 镜像存在不等于完整从零重建说明齐全；含密钥镜像不原样发布，仍需构建配方、来源和独立记录 |
+| 照片／视频原素材 | 队伍将从原素材挑选；当前data/screenshots只有四张网页截图 | 补选接线照、整机照及四灯状态帧，不能认定原素材不存在 |
+| 最新Windows回归 | 历史438项与LED28项保留；最新Linux见data/test_summary.md | 代码同步后运行src/agent/scripts/test_windows.ps1，保存完整结果、skip、提交号及工作区状态 |
+
+## 提交材料整理边界
+
+LLM证据见[协作记录](llm_collaboration.md)，复现步骤及未完成项见[复现说明](reproduction.md)，资源对照见[FPGA证据](fpga_evidence.md)。正式技术报告按队伍的单独流程定稿，本次不修改或导入Word／PDF技术报告。
+
+未约束路径、复位时输入HIGH的首次测量边界、SSH公钥及PL冷启动恢复均未宣称解决。已提供的JSON、源码、位流和报告无需重复索取；真正待补的是公开整理、合法构建来源及新环境验收记录。

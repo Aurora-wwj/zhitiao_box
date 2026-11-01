@@ -81,6 +81,7 @@ def main(argv: list[str] | None = None) -> int:
     setup.add_argument("--port", type=int, default=22)
     setup.add_argument("--user", default="root")
     setup.add_argument("--observed-gpio", default="PA1")
+    setup.add_argument("--no-led", action="store_true", help="Use v5 UART/PL observations without LED status writes")
     setup.add_argument("--output", default="deployment.local.json")
     setup.add_argument("--check-remote", action="store_true")
     setup.add_argument("--preview-only", action="store_true")
@@ -132,6 +133,7 @@ def main(argv: list[str] | None = None) -> int:
                     identity_file=args.identity, project_file=args.project_file, target=args.target,
                     host=args.host, port=args.port, user=args.user, observed_gpio=args.observed_gpio,
                     output_path=args.output, check_remote=args.check_remote, preview_only=args.preview_only,
+                    no_led=args.no_led,
                 )
             elif args.command == "deployment-check":
                 from .setup_cli import run_diagnostics

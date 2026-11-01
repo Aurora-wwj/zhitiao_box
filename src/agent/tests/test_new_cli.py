@@ -34,7 +34,7 @@ class NewCliTests(unittest.TestCase):
         setup.assert_called_once_with(
             project_path="project", keil_executable="UV4.exe", known_hosts="hosts", identity_file="identity",
             project_file="GPIO.uvprojx", target="GPIO", host="192.168.10.3", port=2222, user="root",
-            observed_gpio="PA1", output_path="new.json", check_remote=True, preview_only=True,
+            observed_gpio="PA1", output_path="new.json", check_remote=True, preview_only=True, no_led=False,
         )
 
     def test_setup_defaults_and_failures_do_not_claim_ready(self):

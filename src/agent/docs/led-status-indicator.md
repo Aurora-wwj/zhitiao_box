@@ -1,10 +1,10 @@
 # 可选四灯工具进度条
 
-更新：2026-10-29。软件适配器和离线回归已实现；新增 LED bitstream 与 0x43C60000 寄存器仍待硬件队友单独实测，不能视为已经真机验收。
+更新：2026-11-01。v5位流、BD／XDC和最终运行中的LED配置已收到并核对。软件适配器及离线回归已实现；独立灯效实测照片／视频仍待队伍整理，不把位流存在或完整四接口PASS等同于所有灯效已经验收。
 
 ## 启用
 
-未提供 status_indicator 或设为 null 时不创建适配器、不发出 LED SSH 命令。deployment.example.json 默认 null，原有四接口正常使用。
+未提供 status_indicator 或设为 null 时不创建适配器、不发出 LED SSH 命令。当前deployment.example.json与deployment-setup向导默认v5＋LED；deployment.no-led.example.json或向导--no-led保留相同v5／UART／PL、只关闭灯。已有配置不会自动迁移，原有四接口行为保持。
 
 仅在板上已准备包含该 4-bit AXI GPIO 的镜像、确认 Data 寄存器可写且方向已设为输出后，在本机 deployment.local.json 的最外层加入：
 
@@ -18,7 +18,7 @@
 
 JSON 地址须用字符串。该块只能写固定地址 0x43C60000、32 位宽访问、数值 0～15。bit0～3 依次为 LED1～4；active-low 时 0xF 全灭、0x0 全亮。软件不写 GPIO TRI 方向寄存器，也不主动加载 LED bitstream。
 
-原 v4 的路径和 SHA 只对应已知旧镜像，不能证明新增 LED 已存在。若升级观察镜像，需由部署方提供实际路径与 SHA、确认 UART／PL 测量寄存器继续兼容，并更新 observer 配置；不要用旧 SHA 指向新文件。prog_done 也不证明 LED 地址已可访问。
+当前位流为build/fpga/zhidiao_observe_v5_led.bit，部署路径/sd/pl/zhidiao_observe_v5_led.bit，SHA-256为fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6。新建配置与两份示例均采用此身份。历史v4路径与SHA只描述旧镜像，不用于当前默认配置；prog_done也不证明运行中的镜像身份或LED地址可访问。
 
 ## 显示规则
 

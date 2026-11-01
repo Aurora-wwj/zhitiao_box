@@ -1,27 +1,23 @@
 # v0.5：UART 正式接入与 PC 控制台
 
-更新：2026-10-30。产品名为“智调”（tiáo），代码统一发布到 main。日常使用以本文替代 v0.4 手册，旧文档保留历史背景。
+更新：2026-11-01。产品名为“智调”（tiáo），代码统一发布到 main。日常使用以本文替代 v0.4 手册，旧文档保留历史背景。
 
 ## 1. 实测证据与本轮边界
 
-Word 的 run_92dde302095a45cbb607f6371e524149 在真实 NiceCode、Keil、Zynq、OpenOCD、STM32 和 PL 上完成两轮：
+当前主证据为最终 run_5d8e004954664f6c8f8ff0f85d31959b：真实两轮四接口均 success=true，完整周期601.7169 ms FAIL，经AI提案、人工批准HAL_Delay(300)→500、重新构建烧录后，PL实测1001.08682 ms PASS。两轮fresh_edges=2；第一轮UART partial_tail=true、truncated=false，随后正常执行PL。完整提案、applied_edit、reviews、audit及events见[公开脱敏JSON](../../../data/final_run_sanitized.json)和[当前验证摘要](validation/final-real-loop-2026-10-30.md)。这不是本次云端新上板。
 
-| 轮次 | 实测完整周期 | 结果 |
-| --- | --- | --- |
-| 1 | 601.92511 ms | FAIL；目标 1000±50 ms |
-| AI 修改 | HAL_Delay(300) → HAL_Delay(500) | 正确识别翻转间隔为约半周期 |
-| 2 | 999.92936 ms | PASS；freshness_verified=true |
+早期Word与录像对应独立run_92dde302095a45cbb607f6371e524149：601.92511→999.92936 ms，明确--pl-only、uart_observed=false；它证明三接口LLM闭环，不能算完整四接口。原Word和附件已收到，摘要见[首次真实LLM记录](validation/first-real-loop-2026-10-28.md)。两次运行的结果、固件身份与验证范围分别保留，不合并或替换。
 
-录像和 Word 均明确 --pl-only、uart_observed=false。v0.5 PDF 另记录 UART 注入 reader 的正常文本与成功空采集。已收到 Windows 370 项测试通过、完整脚本界面 800→1001 PASS 的截图；新正式四接口真机验收仍单独记录，不能直接沿用旧 smoke 验收结论。具体范围见 validation/v0.5-software-checks.md。
+最新Linux离线结果见[验证记录](../../../data/test_summary.md)。Windows438项与LED28项是历史结果；代码同步后需重跑Windows并记录提交号。新环境的Keil／Vivado重建、LED独立灯效和冷启动验收分别记录，不能用历史smoke或软件测试替代。
 
 ## 2. 升级本地 Profile
 
-保留 allowed_roots、Keil、target、SSH identity_file、known_hosts 等本机值，参考 [完整示例](../deployment.example.json)。在 observer 中采用已知良好 v4：
+保留 allowed_roots、Keil、target、SSH identity_file、known_hosts 等本机值，参考 [完整示例](../deployment.example.json)。在 observer 中采用与最终运行配置相同的 v5：
 
 ```json
 {
-  "bitstream": "/sd/pl/zhidiao_observe_v4.bit",
-  "bitstream_sha256": "8b224710de8b547198eeffe83ee2abd8a44cc6d2d18555af93a706ec4cfc56ab",
+  "bitstream": "/sd/pl/zhidiao_observe_v5_led.bit",
+  "bitstream_sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6",
   "poll_interval_s": 0.05,
   "timeout_s": 15,
   "transport_margin_s": 3,
@@ -54,7 +50,15 @@ Word 的 run_92dde302095a45cbb607f6371e524149 在真实 NiceCode、Keil、Zynq�
 
 串口字段描述 bitstream 中已有的 115200 8N1，reader 不重配置波特率或接线。PA1→M18 用于周期；UART 来源为 PA2→M17。
 
-prog_done 节点已在当前部署实测为 1。check_only 由部署方准备好正确 v4；prog_done 和文件 SHA 不证明运行镜像身份。显式 load_verified 时，保留受审批的 SHA→/dev/xdevcfg→prog_done 准备，界面展示替换 FPGA 的效果。不修改 BOOT.BIN、image.ub 或启动脚本。
+prog_done 节点已在当前部署实测为 1。check_only 由部署方准备好正确 v5；prog_done 和文件 SHA 不证明运行镜像身份。显式 load_verified 时，保留受审批的 SHA→/dev/xdevcfg→prog_done 准备，界面展示替换 FPGA 的效果。不修改 BOOT.BIN、image.ub 或启动脚本。
+
+v5 位流已公开在 build/fpga/zhidiao_observe_v5_led.bit；路径相对于仓库根目录。私人 deployment.local.json 不提交Git，也不被向导覆盖。现有部署保留认证及本机路径，仅在审阅后更新硬件字段。新建配置可运行：
+
+```powershell
+py -3.13 -B -m zhidiao_agent deployment-setup --project "C:\work\zhitiaohe\src\stm32\gpio_pl_test" --keil "C:\Keil_v5\UV4\UV4.exe" --known-hosts "C:\Users\YOUR_USER\.ssh\known_hosts" --project-file MDK-ARM/GPIO_PL_Test.uvprojx --target GPIO_PL_Test --output deployment.local.json --preview-only
+```
+
+先审阅预览，再去掉--preview-only并批准新建；不启用灯时加--no-led。向导默认check_only，不加载PL、不写LED；只有批准后续工作流才会有相应操作。示例中的路径和认证需按本机实际配置，缺identity时使用SSH agent并另行验证。
 
 ## 3. UART 采集契约
 
@@ -76,7 +80,7 @@ deployment-check 新增 usleep、单调时钟和 UART status 检查，不读 RX 
 
 ## 5. 正式 real-log 与四接口 Agent
 
-从仓库根目录 PowerShell：
+从本仓库 src/agent 目录的 PowerShell：
 
 ```powershell
 $env:PYTHONPATH = (Resolve-Path ".\src").Path
@@ -118,4 +122,4 @@ UI 用同一份结构化事件快照展示阶段；第二轮不沿用第一轮�
 
 SSH 中断不能证明远端 OpenOCD 或 FPGA 加载停止。对应 hardware_state_uncertain 需要人工核对。公钥断电恢复、PL 冷启动集成继续列 P2；GPIO 自动初始化和更多协议留待后续扩展。
 
-可选 LED 四灯进度条已按新增硬件说明实现，默认 status_indicator=null；批准执行后复用结构化工具事件，固定写 0x43C60000 的四位状态。LED 错误只警告，不影响四接口或 DUT 结果。新镜像和 GPIO 尚待真机验收，启用与显示语义见 [LED 适配器](led-status-indicator.md)。
+可选 LED 四灯进度条已实现；deployment.example.json 与 deployment-setup 默认配置 v5＋LED，deployment.no-led.example.json 或向导 --no-led 仍使用相同 v5、UART 与 PL，仅将 status_indicator 置 null。未提供该块的既有配置仍不创建适配器。批准执行后才通过结构化事件写固定 0x43C60000，LED 错误只警告，不影响四接口或 DUT 结果。v5 位流和最终运行配置已收到，但独立灯效实物验收仍待整理，见 [LED 适配器](led-status-indicator.md)。

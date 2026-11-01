@@ -1,6 +1,6 @@
 # Zynq Linux测试材料与部署
 
-已接收两份分包重组的Zynq_Linux_Test.zip：37273220字节，整体SHA-256为6cf4aaf320c9aaaae11b938725f0e9666cafa9fe6a97f8dc1a9a5159c1084b11。它包含BOOT、两份FIT镜像、早期HEX、ARM测试程序、静态OpenOCD及两份源码包；不等于完整SD卡或Linux／BOOT可重建工程。原Zhidiao_Linux_microSD.zip仍无可读副本，不混淆两份材料。
+已接收两份分包重组的Zynq_Linux_Test.zip：37273220字节，整体SHA-256为6cf4aaf320c9aaaae11b938725f0e9666cafa9fe6a97f8dc1a9a5159c1084b11。它包含BOOT、两份FIT镜像、早期HEX、ARM测试程序、静态OpenOCD及两份源码包；不等于完整SD卡或Linux／BOOT可重建工程。队伍已确认原BOOT／Linux镜像材料存在；本次公开整理已直接核对的是测试包，不把它当作完整SD来源或从零构建配方。两份材料的范围分别记录。
 
 已发布：OpenOCD0.12.0／libusb1.0.30源码与完整许可、构建入口、文件检查、网络配置示例和现有PL加载入口说明。已核对部署的887份OpenOCD脚本全部与源码相同。来源与SHA见../../data/zynq_linux_manifest.json，检查详情见../../report/zynq_intake.md。
 

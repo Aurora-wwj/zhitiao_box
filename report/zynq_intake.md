@@ -20,4 +20,4 @@ build/openocd/build.py校验原tar SHA，在新目录构建并检查最终ELF、
 
 board/zynq/check_files.sh是只读文件检查；PL加载复用已受审批约束的PLPreparation，没有增加第五个公开工具。现有生产Agent、黄金STM32和v5位流未改。
 
-仍缺完整SD／BOOT／Linux重建工程、原工具链与编译记录、实物照片及正式主报告；镜像内存在静态IP或主机密钥不证明冷启动恢复、authorized_keys或PL加载已经验收。
+队伍已确认BOOT／Linux镜像、Vivado工程及照片／视频原素材存在；完整SD／BOOT／Linux从零构建说明、原工具链与独立重建记录、照片选编及正式主报告仍需整理；镜像内存在静态IP或主机密钥不证明冷启动恢复、authorized_keys或PL加载已经验收。

@@ -1,25 +1,23 @@
 # 发布状态
 
-2026-11-01：FPGA四分包、Zynq Linux测试两分包均已合并整理，仍非最终完整比赛提交包。
+2026-11-01材料澄清：大部分原始材料已存在，待补的是公开整理或新环境验证，不把原件存在误写成“已独立复现”。对应位置见[材料索引](material_index.md)。本轮调整部署配置与材料索引；正式技术报告另行处理。
 
-## 已整理并核对
+## 已收到并整理
 
-- Agent正式源码／测试／PC UI；STM32重建输入、黄金main.c与最终HEX。
-- 两轮真实四接口匿名JSON：601.7169→1001.08682ms，源码／提案／checkpoint及HEX身份一致，UART partial-tail、PL freshness保留。
-- 最终FPGA RTL／BD／导出Tcl／wrapper／四份XDC／XPR；v5 bit的SHA与指导一致。
-- baseline/final原始utilization及timing报告，指标已解析并对照指导；只匿名化主机信息。
-- Vivado2017.4构建入口、四项外部IP的VLNV与37文件SHA、合法获取／检查步骤；不整体再分发未知许可IP。
-- 4份匿名历史smoke参考、5项分包工具回归、6项FPGA整理回归（含实际Icarus RTL仿真及Tcl替身控制流检查）。最初Agent457项回归已记录；本轮只调整网页报告标识，不改Controller／工具／审批执行逻辑。
-- Zynq_Linux_Test的OpenOCD0.12.0／libusb1.0.30源码与完整许可、887份部署脚本与源码一致性、FIT组成／rootfs差异分析、只读文件检查和OpenOCD构建配方。独立及镜像内SSH主机私钥均排除；原ELF、BOOT／Linux镜像与历史HEX不原样公开。
-- 最新Linux Python3.13 Agent全量459项、根sim18项回归均通过；新增当前／历史报告ID的JavaScript回归及图文证据校验。此前额外完成OpenOCD Linux x86-64本机静态ELF构建与--version检查，不作为ARM／真机结果。日志与边界见data/test_summary.md。
-- 最终网页JSON与photos.zip的4张原图已归档：同一run_5d8e…的两轮四接口主案例、另一个仅有截图的PL-only基线场景分别说明。报名信息按对话截图转录，作品名称统一；完整diff包括一处注释变动。界面增加当前／历史报告ID说明，不改变执行和审批逻辑。
+- Agent源码／PC UI／测试；STM32工程、黄金main.c与最终HEX，均有身份校验。
+- 最终真实run_5d8e…两轮四接口601.7169→1001.08682 ms、模型提案、applied_edit、reviews、audit与events。公开脱敏JSON与网页原图已归档；同run不同导出不重复统计。
+- 早期《第一次真实完整LLM测试记录.docx》和run_92dde…摘要已收到，本次再次核对Word终端JSON；该次明确PL-only，不算四接口。见llm_collaboration.md。
+- FPGA RTL／BD／导出Tcl／wrapper／XDC／XPR、v5黄金位流、baseline／final资源及时序原报告。数据及来源见fpga_evidence.md，不再列作缺失原件。
+- 四项外部IP按VLNV与37文件SHA交付，不整体再分发未知许可IP。Vivado2017.4构建入口、STM32构建入口已整理。
+- Zynq测试包的OpenOCD／libusb源码及许可、887份脚本一致性、镜像组成、只读文件检查与工具构建入口已整理；独立与镜像内SSH主机私钥不公开。
+- 私人v5部署配置已在上传包内核对，仅采用非秘密硬件字段；公开示例本来已为v5，本次修复向导仍生成v4的问题。v5＋LED为新建默认，--no-led仍保留v5及UART／PL；既有配置不自动迁移。
+- 最新Linux结果与历史批次分别记录在data/test_summary.md。PC本机OpenOCD构建不作为ARM或真机结果；旧Windows438项／LED28项不冒充当前版本回归。
 
-## 仍需补齐或验收
+## 原件已存在，仍需整理或独立验证
 
-- 完整BOOT／Linux／DT／rootfs重建输入、SDK／静态库来源及原OpenOCD精确编译记录仍缺。已收到的Zynq_Linux_Test不等于完整SD；原Zhidiao_Linux_microSD.zip仍未取得可读副本，但已有测试包无需重复上传。
-- 网页实测截图已补齐；板卡实物／接线照片和正式主报告的同版文件仍缺，现有设计报告PDF明确为整理初稿。
-- 实际Vivado2017.4重建记录及Windows Keil重建／本次整理后的上板验收。云端没有这些工具和板卡；命令替身测试不证明Vivado重建成功。
-- 时序覆盖审阅：原final报告有942个未约束最大延迟pin等HIGH警告，不能仅凭WNS0.709宣称全设计时序验收完成。
-- 黄金RTL启动HIGH时首次值可能含残段、valid会保留旧值，须等待后续稳定周期并检查freshness；没有修改原v5来掩盖该边界。冷启动恢复仍未验收。
+- 队伍确认BOOT／Linux镜像及Vivado工程原件存在；当前公开仓库仍不具备完整BOOT／Linux／DT／rootfs从零构建说明、SDK／静态库来源及原OpenOCD精确编译记录。测试包不等于完整SD重建工程，含密钥镜像不直接发布。
+- 照片／视频原素材待队伍选取整机、接线与四灯状态帧；当前仅四张网页原图。正式报告按单独流程定稿，本次不导入或修改报告Word／PDF。
+- 实际Vivado2017.4与Windows Keil的新环境重建和日志；代码同步后的Windows全量回归须留提交号与工作区状态。云端软件／替身测试不证明这些环境已通过。
+- 未约束路径等HIGH时序警告、复位输入HIGH首次测量残段、valid保留旧结果，以及SSH／PL冷启动恢复仍是未解决或待验收边界。本次不修改黄金RTL／位流来改变历史结果。
 
-没有用旧Agent checkout、虚构源码或假成功日志填补缺件。分包步骤见upload_parts.md，FPGA证据详情见fpga_evidence.md。
+没有修改主JSON、黄金STM32源码、HEX、v5位流或原始实现报告，也不公开私人配置、API Key或私钥。

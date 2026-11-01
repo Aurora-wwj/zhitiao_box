@@ -49,3 +49,11 @@ Linux Python3.13.5 Agent全量：459 tests in 24.442s，OK，无skip；含2项�
 sim/check_release.py通过。设计初稿Markdown／PDF同步更新为5页，表格和4张原图已实际渲染检查。Agent执行／审批逻辑、黄金STM32 main.c／HEX与v5位流未改；这不是新一次Windows／Keil／Vivado或真机测试。没有调用在线模型或板端工具。
 
 暂存区4张PNG与原图SHA一致，STM32清单和14项FPGA文件SHA均保持。Git暂存树导出的干净副本通过sim/check_release.py及2项前端JavaScript测试，确认行尾归一化没有破坏证据或报告标识行为。
+
+## 当前v5配置与材料状态同步，2026-11-01
+
+修复deployment-setup仍生成v4路径／SHA的问题，统一当前v5＋LED，新增--no-led仍保留相同v5、UART与PL，仅关闭灯。公开两份示例本已为v5，未改其内容。新增3项端到端回归实际经过CLI解析、人工审批模拟、本地配置创建和load，另验证预览／拒绝不写配置且不连接板端；现有配置不会自动迁移或覆盖。
+
+本轮Linux Python3.13.5 Agent全量462项，24.211s，OK，无skip；根sim18项，0.598s，OK，无skip，含已提供Icarus12.0的实际RTL仿真。初次未指定模拟器路径的一次运行跳过RTL，随后明确工具路径重跑全部18项，最终记录为全执行。sim/check_release.py和改动Markdown的本地链接检查通过。具体命令、基线提交与实测源码SHA见configuration_sync_verification.txt；此时工作区尚未提交，不虚构新提交号。
+
+最终主JSON、黄金STM32 main.c／HEX、v5 bit、原实现报告及正式技术文档未改；只同步配置入口、材料索引、LLM证据说明与复现／验收边界。早期Word原件已重新核对，其PL-only结果不冒充完整四接口。私人配置／密钥未公开。本轮没有Windows／Keil／Vivado／在线模型或新上板执行；最新Windows由队伍同步代码后补跑并留提交号。
