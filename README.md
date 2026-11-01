@@ -18,7 +18,7 @@
 
 原图显示三位小数，与JSON原精度一致；四张原图及场景说明见[截图索引](data/screenshots/readme.md)。其中1000.192ms单轮图明确跳过UART，单独作为PL-only参考，不计入完整四接口闭环。
 
-**已整理Agent、STM32、网页JSON／四张实测截图／最终HEX，以及FPGA RTL／BD／XDC／工程、v5 bit和baseline/final原始实现报告。** 另已加入Zynq测试包中带许可的OpenOCD／libusb源码、构建入口及板端文件检查。含私钥的镜像和来源不完整的二进制不原样发布。FPGA四项外部IP仍按依赖交付。队伍已确认BOOT／Linux镜像、Vivado工程和照片／视频原素材存在；完整从零构建说明、独立重建记录、照片选编与正式提交版仍需整理或验收，当前不是完整比赛提交包。原件与公开位置见[材料索引](report/material_index.md)及[发布状态](report/release_status.md)。
+**已整理Agent、STM32、网页JSON／四张实测截图／最终HEX，以及FPGA RTL／BD／XDC／工程、v5 bit和baseline/final原始实现报告。** 另已加入Zynq测试包中带许可的OpenOCD／libusb源码、构建入口及板端文件检查。含私钥的镜像和来源不完整的二进制不原样发布。FPGA四项外部IP仍按依赖交付。Linux按实际完成的“ALINX预构建镜像→rootfs网络定制→FIT重封装→SD部署”路线交付，已有[可执行复现方法](build/linux/readme.md)和[冷启动验证步骤](board/zynq/sd_deployment.md)，不声称从源码重建整套Linux，也不将完整PetaLinux源工程列为本路线新增必做项。队伍报告已完成原系统冷启动链路验证；新生成镜像的独立上板记录、Windows／Keil／Vivado新环境记录、照片选编与正式提交版仍需归档。原件与公开位置见[材料索引](report/material_index.md)及[发布状态](report/release_status.md)。
 
 v5 SHA 与指导一致。原 final 报告 LUT 7274、FF 12083、BRAM 20.5、DSP 0、IOB 44，WNS 0.709 ns、TNS 0。报告仍含未约束路径等 HIGH 警告，不能据此声称全设计时序验收完成；[原件与比较](report/fpga_evidence.md) 保留这些限制。
 
@@ -42,7 +42,7 @@ flowchart LR
 
 ## 快速开始
 
-FPGA四分包与Zynq_Linux_Test两分包均已重组检查。后续大材料可按 [分包步骤](report/upload_parts.md) 上传，现有原包无需重复。Zynq测试包不等于完整SD／Linux重建工程，范围见 [板端说明](board/zynq/readme.md)。
+FPGA四分包与Zynq_Linux_Test两分包均已重组检查。后续大材料可按 [分包步骤](report/upload_parts.md) 上传，现有原包无需重复。两份SD分包已包含启动／部署材料，当前按预构建镜像rootfs定制路线复现，范围见 [板端说明](board/zynq/readme.md)。
 
 Python 3.13，Agent 运行依赖标准库。在仓库的 src/agent 目录执行：
 
@@ -58,6 +58,12 @@ start_demo.bat：离线脚本模型＋模拟硬件；start_ai_mock.bat：真实 
 真实部署先阅读 [从零复现](report/reproduction.md)。在 src/agent 复制 deployment.example.json 为 deployment.local.json 并改成自己的绝对路径。默认示例和deployment-setup向导均为v5＋LED；deployment.no-led.example.json或向导--no-led使用同一v5，只关闭灯。私人deployment.local.json不提交，向导不会覆盖已有配置。位流见 [build/fpga](build/fpga/readme.md)；加载镜像、认证与寄存器身份仍须在板端确认。
 
 **当前部署在初始化阶段加载 v5 PL，加载完成后再启动 Agent 和 LED；Agent 使用 `check_only`，保持现有四接口执行顺序。** 现有 `E:\zhidiao-agent\src` 的 `PYTHONPATH` 设置、三步SSH公钥恢复（最后输出`ZHIDIAO_SSH_KEY_OK`）、v5位流文件SHA校验与手动加载统一见 [板端初始化说明](board/zynq/pl_preparation.md)。
+
+## Linux平台与硬件交接
+
+目标系统为PetaLinux2017.4、Linux4.9.0-xilinx、armv7l／ARM32、BusyBox1.24.1；内核工具链为Linaro GCC6.2.1（2016.11），内核构建日期2019-10-18。版本依据队伍本次终端截图及原ramdisk的/etc/issue，详见[平台清单](data/linux_platform.json)。
+
+新导出的[system_wrapper.hdf](src/fpga/zhidiao_measure/system_wrapper.hdf)作为当前交接文件，内含bit与现有v5黄金位流、BD Tcl均逐字节一致。v5在Linux启动后通过`/sd/pl/zhidiao_observe_v5_led.bit → /dev/xdevcfg`加载，复现当前PL功能不要求重新生成BOOT.BIN。原镜像／修改镜像SHA及rootfs差异见[Linux定制说明](build/linux/readme.md)。
 
 ## 硬件与连接
 
@@ -90,7 +96,7 @@ AX7Z020（Zynq-7000）＋STM32G431＋ST-Link/V2。PA1→M18 为周期观测；PA
 
 ## 已知边界
 
-真实模型由 NiceCode API 提供，请求模型记录在报告中；未实现本地 LLM／PYNQ。一次修改一个批准的现有 UTF-8 文件；UART 115200 8N1。冷启动后的 SSH 公钥恢复和 PL 自动加载未验证持久化，需每次上电按部署说明准备。LED 表示工具状态，不等于 DUT PASS。原计数 RTL 在复位时输入已高的首次结果有启动残段边界，须等待后续稳定周期；见 [FPGA 说明](src/fpga/readme.md)。云端没有 Keil/Vivado/板卡，硬件重建未在此环境执行。
+真实模型由 NiceCode API 提供，请求模型记录在报告中；未实现本地 LLM／PYNQ。一次修改一个批准的现有 UTF-8 文件；UART 115200 8N1。队伍报告原系统冷启动网络／SSH、USB及SWD链路已验证；独立冷启动日志待归档，免密公钥持久化和PL开机自动加载未由本次版本截图证明，仍按每次上电的手动初始化步骤准备。LED 表示工具状态，不等于 DUT PASS。原计数 RTL 在复位时输入已高的首次结果有启动残段边界，须等待后续稳定周期；见 [FPGA 说明](src/fpga/readme.md)。云端没有 Keil/Vivado/板卡，硬件重建未在此环境执行。
 
 ## 文档与许可
 

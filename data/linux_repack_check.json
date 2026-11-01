@@ -1,0 +1,37 @@
+{
+  "bytes": 9537626,
+  "sha256": "28ca54d63467a2ec73d23e0cd31bf46fe8107a0966a2aec759e8fe92c6daaa45",
+  "components": {
+    "kernel@0": {
+      "bytes": 3787208,
+      "sha256": "1d79eb0f62608d56b475b62c775497677003d61d9c7fc7469a7feb2e7e72cd7e"
+    },
+    "fdt@0": {
+      "bytes": 21486,
+      "sha256": "bda8484b21a73218f455412e1f87e31c0fa52fdd3d44d285d1cddc08e06d6738"
+    },
+    "ramdisk@0": {
+      "bytes": 5726740,
+      "sha256": "8d516e607649a7ce1ecd2c711f945becfe777bfe63c6de53f85092b4287dc9f4"
+    }
+  },
+  "rootfs_issue": "PetaLinux 2017.4 \\n \\l",
+  "eth0_static_192_168_10_2": true,
+  "embedded_dropbear_host_key": false,
+  "base_sha256": "224b9b884352a931244541017024fdbff69297feeaadab2b1e5eb0d030bb0344",
+  "changed_rootfs_paths": [
+    "etc/network/interfaces"
+  ],
+  "boot_bin_rebuilt": false,
+  "board_tested": false,
+  "mkimage_version": "mkimage version 2025.01",
+  "original_cpio_members_without_trailer": 964,
+  "independently_compared_changed_paths": [
+    "etc/network/interfaces"
+  ],
+  "all_other_cpio_records_unchanged": true,
+  "standard_dumpimage_extraction_matches": true,
+  "repeated_full_image_bytes_identical": true,
+  "python_version": "3.13.5",
+  "base_source": "received Zynq_Linux_Test two-part archive; not downloaded from an invented vendor URL"
+}

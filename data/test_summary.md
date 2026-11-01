@@ -1,6 +1,6 @@
 # 软件与发布检查
 
-以下按资料接收批次保留历史记录；当前网页证据补充结果见末尾，不把历史测试数或硬件运行重复统计。
+以下按资料接收批次保留历史记录；当前结果与实现范围以末尾最近一节为准，不把历史测试数或硬件运行重复统计。
 
 上传最终运行报告：真实两轮四接口 PASS，周期／freshness／UART健康与源码及HEX身份已由 sim/check_release.py 独立核对。
 本次整理后 Linux Python 3.13 离线全量：457 tests in 24.324s，OK；sim/check_release.py 检查通过。未调用在线 API。Windows已有438项全量反馈和LED28项截图是历史证据，不能代替本次整理后执行。
@@ -75,3 +75,16 @@ Agent生产代码与测试未改，沿用既有462项记录，不冒称本轮重
 本轮Linux Python3.13.5 Agent全量465项，23.968s，OK，无skip；根sim全量26项，2.016s，OK，无skip。包含Icarus真实RTL仿真、原LED主机HAL替身，以及4项新增路径规范回归。GCC对两份Keil工程的42个C翻译单元实际完成预处理；现有Agent API可识别两工程的小写入口／输出并取得main源码快照。102份Python文件通过AST，110处Markdown本地链接目标存在。
 
 sim/check_release.py通过；主机预处理不等于ARM编译／Keil链接，原HAL替身不等于LED真机验收。本轮没有执行Keil／Vivado／Windows或新上板，也没有调用在线模型、SSH或MMIO。命令与范围见path_migration_verification.txt；正式技术报告Word／PDF未纳入仓库，本次仅同步仓库设计初稿的失效路径引用。
+
+
+## ALINX预构建Linux的rootfs定制与当前HDF，2026-11-01
+
+按队伍确认的实现路线整理：ALINX配套预构建镜像→rootfs网络定制→FIT重封装→SD部署和冷启动验证。不将完整PetaLinux/BSP、kernel／U-Boot／DT源码工程或FSBL／boot BIF列为本路线新增必做任务，也不声称从源码重建整套Linux。系统版本由本次用户终端截图及原ramdisk的/etc/issue交叉确认，见linux_platform.json。
+
+新system_wrapper.hdf按原字节交付，808369字节，SHA ff24021b…fd3198；内部10份成员／CRC、Vivado2017.4／xc7z020clg400-2、UART／LED地址均通过检查。内含bit与黄金v5、BD Tcl与现有导出文件逐字节相同。HDF作为当前交接版，Linux启动后继续runtime load v5，无需重新生成BOOT.BIN。
+
+对收到的原image.ub实际离线重封装两次，输出9537626字节且逐字节相同，SHA 28ca54d6…daaa45。独立dumpimage提取结果与解析器一致；kernel／FDT未变，964份CPIO成员中仅etc/network/interfaces改变，其他文件／设备节点／链接／uid／gid／权限和记录保持。新产物不复制历史设备私钥或无关terminfo变动，因此不冒充历史fixed的相同SHA。完整结果见linux_repack_check.json，命令及工具版本见linux_customization_verification.txt。
+
+根sim全量32项，2.066s，OK，无skip，含6项新增Linux／HDF回归、真实mkimage重封装、既有Icarus RTL及LED HAL替身。105份Python AST、142处Markdown本地链接目标检查通过；sim/check_release.py通过。Agent生产代码／测试未改，沿用已记录465项结果，不冒称本轮重跑。
+
+未执行Windows／Keil／Vivado、Linux源码构建、BOOT打包、新镜像上板、SSH或MMIO。队伍报告原系统冷启动网络／SSH／USB／OpenOCD／SWD已验证，版本截图与专门冷启动日志分别登记；免密公钥持久化和PL开机自动加载不据此推定。image.ub.known_good为队伍确认的现有备份，未出现在已核验两分包中，SHA保留待本地登记，不要求重复上传整包。原始镜像／现场私钥及新生成镜像均未进入公开树。

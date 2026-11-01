@@ -14,7 +14,8 @@
 | ALINX／Digilent 自定义 IP | 已核对上传包，四项 IP 不整体再分发；VLNV／37文件SHA及获取步骤见 data/fpga_external_ips.json、src/fpga/readme.md。保留依赖不等于赋予根MIT许可 |
 | AMD/Xilinx 自动生成的 BD、wrapper、约束／工程及工具报告 | 上传最终设计的配置／生成材料，保留原版权头；不以根MIT重许可供应商IP实现或模板。内置IP需由合法Vivado生成 |
 | 最终 v5 bitstream | 队伍提供的实现产物，保留黄金SHA；包含外部IP实现，不表示取得其中IP源码的独立许可 |
-| Linux/BOOT 镜像 | 已核对Zynq_Linux_Test组成，但缺完整构建来源／许可，且fixed内嵌私钥；不发布原镜像。原完整SD大包仍未读取 |
+| Linux/BOOT 镜像 | 以队伍提供的ALINX配套预构建镜像作本地基础，公开来源／版本、SHA、rootfs网络补丁与重封装方法；不以根MIT重新许可整套Linux。历史fixed内嵌私钥、原件含账号数据库，且未确认供应商整镜像再分发范围，原镜像不入Git；没有把完整PetaLinux源码工程列为本路线新增必做项 |
+| 当前system_wrapper.hdf | 用户重新导出的Vivado2017.4硬件交接ZIP，保留全部原字节及内部供应商版权／许可文本。内含bit／BD与已有v5一致，生成的PS初始化文件不改为根MIT许可 |
 
 上游参考：https://github.com/STMicroelectronics/STM32CubeG4 ，https://github.com/ARM-software/CMSIS_5 ，https://openocd.org/ 。上传包内第三方许可证与版权头原样保留。
 

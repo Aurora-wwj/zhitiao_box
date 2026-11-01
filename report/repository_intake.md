@@ -6,7 +6,7 @@
 
 已完整读取 AMD 2026 选题指南、仓库整理指导、Skill 小修正三份 PDF。
 上传的代码合集 ZIP 超过当前附件工具 32 MiB 单文件传输上限，未成功下载，工作区亦无该合集副本。
-后续已收到独立Agent、Project、历史smoke、FPGA四分包及Zynq_Linux_Test两分包：已迁入并核验Agent、最终STM32、运行JSON、HEX、FPGA源输入／v5位流／原始实现报告和可公开的OpenOCD源码／许可。不以旧Agent checkout代替上传版本。Linux测试包不是完整SD重建输入，原大SD包仍未在本环境直接读取；队伍已确认其原镜像材料存在，不能据此说没有原件，也不能认定完整构建配方齐全。
+后续已收到独立Agent、Project、历史smoke、FPGA四分包及Zynq_Linux_Test两分包：已迁入并核验Agent、最终STM32、运行JSON、HEX、FPGA源输入／v5位流／原始实现报告和可公开的OpenOCD源码／许可。不以旧Agent checkout代替上传版本。两分包确实包含SD启动／部署材料，已完整重组；不因归档名Zynq_Linux_Test与队伍SD目录名不同而认定未提供。Linux按预构建镜像rootfs定制路线补齐复现文档，不要求新增完整PetaLinux/BSP源工程，也不声称源码级重建整套系统。
 此文档是整理依据，不代表硬件重建或本次真机验证；当前缺件与验收范围统一见release_status.md。
 
 后续收到最终网页导出的zhidiao-run.json和photos.zip：前者与已归档run_5d8e…仅总elapsed_s差约0.02s，使用新导出作为主来源但不重复计数；后者含4张网页原图，没有报名介绍页原图或板卡实物照片。报名信息按对话截图转录，来源与图文对应见data/report_sources.json。

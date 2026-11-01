@@ -11,7 +11,8 @@
 | E:\Project\GPIO_PL_Test | src/stm32/gpio_pl_test；build/stm32/firmware.hex；data/stm32_sha256.json | 黄金main.c及最终HEX已与主JSON匹配，勿改字节冒充历史产物 |
 | 新补充GPIO_PL_Test.zip；实测原目录同为GPIO_PL_Test，发布名GPIO_PL_Test_LED | src/stm32/gpio_pl_test_led；data/stm32_led_manifest.json | DK117E-G4八用户LED与PA1同步；源码保持500 ms延时，单独构建和验证，不借用旧JSON |
 | E:\zhidiao-agent\deployment.local.json | 私人原配置已在上传包中核对，仅参考非秘密硬件字段；公开deployment.example.json与deployment.no-led.example.json在src/agent | 不复制私人配置。主示例与deployment-setup均v5＋LED；--no-led仅关闭灯，保留v5／UART／PL |
-| BOOT／Linux镜像与Vivado原始工程 | 队伍确认原件已存在；测试包已核对部分镜像组成，Vivado工程已公开整理 | 镜像存在不等于完整从零重建说明齐全；含密钥镜像不原样发布，仍需构建配方、来源和独立记录 |
+| BOOT／Linux及SD部署材料 | Zynq_Linux_Test两分包已完整重组，BOOT／image／fixed SHA和组成已核对；另有队伍确认的known_good备份 | 按ALINX预构建镜像做rootfs定制与FIT重封装；说明及脚本见build/linux，不声称源码级重建Linux，不要求补做完整PetaLinux工程；备份SHA单独登记 |
+| 新导出system_wrapper.hdf | src/fpga/zhidiao_measure/system_wrapper.hdf；data/linux_platform.json | 当前交接版，bit／BD与黄金v5相同；Linux启动后runtime load，不要求重新生成BOOT.BIN |
 | 照片／视频原素材 | 队伍将从原素材挑选；当前data/screenshots只有四张网页截图 | 补选接线照、整机照及四灯状态帧，不能认定原素材不存在 |
 | 最新Windows回归 | 历史438项与LED28项保留；最新Linux见data/test_summary.md | 代码同步后运行src/agent/scripts/test_windows.ps1，保存完整结果、skip、提交号及工作区状态 |
 
@@ -19,4 +20,4 @@
 
 LLM证据见[协作记录](llm_collaboration.md)，复现步骤及未完成项见[复现说明](reproduction.md)，资源对照见[FPGA证据](fpga_evidence.md)。正式技术报告按队伍的单独流程定稿，本次不修改或导入Word／PDF技术报告。
 
-未约束路径、复位时输入HIGH的首次测量边界、SSH公钥及PL冷启动恢复均未宣称解决。已提供的JSON、源码、位流和报告无需重复索取；真正待补的是公开整理、合法构建来源及新环境验收记录。
+未约束路径与启动HIGH首次测量边界仍保留。队伍报告原系统冷启动网络／SSH／USB／SWD已验；免密公钥持久化及PL开机自动加载分别记录。已提供的JSON、源码、HDF、位流和SD分包无需重复索取；补充重点是既有rootfs定制过程的公开整理和新环境验收记录。

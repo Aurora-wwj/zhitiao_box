@@ -1,6 +1,6 @@
 # 发布状态
 
-2026-11-01材料澄清：大部分原始材料已存在，待补的是公开整理或新环境验证，不把原件存在误写成“已独立复现”。对应位置见[材料索引](material_index.md)。本轮调整部署配置与材料索引；正式技术报告另行处理。
+2026-11-01材料澄清：大部分原始材料已存在，待补的是公开整理或新环境验证，不把原件存在误写成“已独立复现”。对应位置见[材料索引](material_index.md)。当前Linux交付范围及HDF以本页和build/linux/readme.md为准；正式技术报告另行处理。
 
 ## 已收到并整理
 
@@ -13,15 +13,17 @@
 - FPGA RTL／BD／导出Tcl／wrapper／XDC／XPR、v5黄金位流、baseline／final资源及时序原报告。数据及来源见fpga_evidence.md，不再列作缺失原件。
 - 四项外部IP按VLNV与37文件SHA交付，不整体再分发未知许可IP。Vivado2017.4构建入口、STM32构建入口已整理。
 - Zynq测试包的OpenOCD／libusb源码及许可、887份脚本一致性、镜像组成、只读文件检查与工具构建入口已整理；独立与镜像内SSH主机私钥不公开。
+- Linux按队伍确认的实际路线补齐：ALINX预构建镜像→rootfs静态网络定制→FIT重封装→SD部署。版本、原／fixed SHA、实际差异、脚本和验证方法见build/linux/readme.md及board/zynq/sd_deployment.md；不把完整PetaLinux／BSP源码工程列为当前路线新增必做项，也不声称源码级重编整套Linux。
+- 当前system_wrapper.hdf已按用户新导出原字节加入，10份内部成员、v5 bit／BD一致性及寄存器契约均已核对；最终PL在Linux启动后runtime load，不要求重建BOOT.BIN。
 - 私人v5部署配置已在上传包内核对，仅采用非秘密硬件字段；公开示例本来已为v5，本次修复向导仍生成v4的问题。v5＋LED为新建默认，--no-led仍保留v5及UART／PL；既有配置不自动迁移。
 - 最新Linux结果与历史批次分别记录在data/test_summary.md。PC本机OpenOCD构建不作为ARM或真机结果；旧Windows438项／LED28项不冒充当前版本回归。
 
 ## 原件已存在，仍需整理或独立验证
 
-- 队伍确认BOOT／Linux镜像及Vivado工程原件存在；当前公开仓库仍不具备完整BOOT／Linux／DT／rootfs从零构建说明、SDK／静态库来源及原OpenOCD精确编译记录。测试包不等于完整SD重建工程，含密钥镜像不直接发布。
+- 历史原件的完整PetaLinux／BSP源工程、FSBL ELF／boot BIF并未提供，作为范围事实保留，不列为本实现路线必须补做。基础镜像由ALINX配套介质取得，精确历史下载包标识／直链尚待归档；已收镜像以SHA锁定。image.ub.known_good由队伍确认存在，未在已核验两分包中出现，SHA待本地单独登记。
 - 照片／视频原素材待队伍选取整机、接线与四灯状态帧；当前仅四张网页原图。正式报告按单独流程定稿，本次不导入或修改报告Word／PDF。
 - 实际Vivado2017.4与Windows Keil的新环境重建和日志；代码同步后的Windows全量回归须留提交号与工作区状态。云端软件／替身测试不证明这些环境已通过。
 - 提供镜像的BusyBox 1.24.1缺少timeout applet；已将当前手动初始化说明修正为使用已有cat，Agent保持check_only。可选load_verified仍需额外验证超时依赖，不能把离线替身测试当作该镜像已支持它。
-- 未约束路径等HIGH时序警告、复位输入HIGH首次测量残段、valid保留旧结果，以及SSH／PL冷启动恢复仍是未解决或待验收边界。本次不修改黄金RTL／位流来改变历史结果。
+- 队伍报告原系统冷启动网络／SSH、USB Host及OpenOCD／ST-Link／SWD已验证；本次版本截图与专门冷启动日志分别记录，云端未代行新镜像上板。免密authorized_keys持久化及PL开机自动加载不由密码登录截图推定通过。未约束路径HIGH警告、启动HIGH首次残段和sticky valid边界继续保留，黄金RTL／位流未改。
 
 没有修改主JSON、黄金STM32源码、HEX、v5位流或原始实现报告，也不公开私人配置、API Key或私钥。

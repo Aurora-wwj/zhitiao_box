@@ -21,10 +21,10 @@
 
 独立 Icarus Verilog 仿真覆盖周期／高电平／边沿计数、变化、无信号、复位及32位回绕。它不是全BD／UART／AXI／LED仿真。startup HIGH的首次值可能包含复位残段，valid为sticky；见src/fpga/readme.md。没有修改黄金RTL/bitstream来隐藏该边界。
 
-构建入口见build/fpga/readme.md。外部IP因完整再分发许可未附而以VLNV／37文件SHA清单及合法获取步骤交付；不称为无需依赖的一键工程。后续已收到Zynq_Linux_Test并核对OpenOCD源码／FIT组成，详见report/zynq_intake.md；完整BOOT／Linux构建输入仍缺，不能把测试包检查说成镜像已重建或冷启动已验证。
+构建入口见build/fpga/readme.md。外部IP因完整再分发许可未附而以VLNV／37文件SHA清单及合法获取步骤交付；不称为无需依赖的一键工程。后续已收到Zynq_Linux_Test并核对OpenOCD源码／FIT组成，详见report/zynq_intake.md；Linux按预构建镜像＋rootfs定制复现，见build/linux/readme.md；云端实际重封装不等于新镜像已上板，队伍报告的原系统冷启动验证与云端结果分别记录。
 
 ## 原件与提交版的区别
 
 队伍原位置为E盘Zhidiao_PL/zhidiao_measure_ax7z020，final原报告在linux_ov5640.runs/impl_1，baseline在vendor_base_ax7z020；这些工程、v5位流及两套原报告已在代码包中找到并整理，不再列为缺件。公开原件、双SHA和指标解析仍按data/fpga_manifest.json及fpga_metrics文件核对。
 
-当前尚待的是实际Vivado重建记录、原生BD界面截图选编、全设计时序覆盖审阅和启动HIGH等边界验收；未约束路径、首次残段和冷启动恢复没有因这次材料整理而解决。源文件和报告存在、脚本替身通过均不等于已经重新实现或上板。
+新上传system_wrapper.hdf已作为当前交接文件，内含v5 bit及BD与公开黄金文件逐字节一致，10份内部成员身份见data/linux_platform.json。当前尚待实际Vivado重建记录、BD界面截图选编、时序覆盖及启动HIGH边界验收；冷启动网络链路按队伍新反馈记录，免密公钥持久化／PL自动加载不因HDF交付而推定通过。源文件和报告存在、脚本替身通过均不等于已经重新实现或上板。

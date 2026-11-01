@@ -35,4 +35,4 @@ Zynq Linux测试包中的887份OpenOCD脚本与源码一致；OpenOCD／libusb�
 
 本机构建曾暴露libtool `-static`不等于完全静态ELF；`-all-static`需限定在Automake链接阶段，不能通过全局LDFLAGS传给直接用gcc的Jim Tcl。修正后实际x86-64构建／版本检查通过，仍需目标ARM和USB/SWD验收；静态glibc的NSS等警告保留。
 
-fixed镜像里有主机私钥和静态IP，不等于免密authorized_keys或PL已能冷启动恢复。私钥／含密钥镜像不公开；每块板用自己生成的主机身份，按可信指纹建known_hosts，不能复用现场私钥。
+Linux采用ALINX预构建镜像的rootfs定制与FIT重封装，现提供build/linux/customize_rootfs.py和SD部署说明；不要求重新生成BOOT.BIN。队伍报告原系统冷启动网络／SSH／USB／SWD已验证；fixed镜像里的主机私钥、静态IP与免密authorized_keys持久化／PL开机自动加载分别记录。私钥／含密钥镜像不公开；每块板用自己生成的主机身份，按可信指纹建known_hosts，不能复用现场私钥。

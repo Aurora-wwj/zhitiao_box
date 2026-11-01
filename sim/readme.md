@@ -5,6 +5,10 @@ UART专项：-p "*uart*.py"；LED专项：-p test_status_indicator.py。
 根目录运行 python3 sim/check_release.py 核对最终证据、源码／HEX身份和Keil文件引用。
 工具没有Vivado／Keil／开发板时，不把软件验证当作硬件重建或重新上板。
 
+## Linux定制与HDF
+
+`python3.13 -B -m unittest discover -s sim -p test_linux_release.py -v`覆盖当前HDF的10份成员及v5一致性、坏HDF拒绝、CPIO网络单点改动与特殊文件／权限保留、坏FIT／未知基底／已有输出拒绝，以及实际mkimage重封装和重复产物一致性。安装u-boot-tools与device-tree-compiler后该项实际执行；缺工具时显示skip，不写成通过。主镜像方法见[Linux说明](../build/linux/readme.md)，SD操作见[部署说明](../board/zynq/sd_deployment.md)。此处没有Linux源码级构建、BOOT重建或板卡测试。
+
 ## STM32 LED同步补充工程
 
 当前发布路径与历史路径的映射由`release_path_check.py`核对，已接入`check_release.py`。`python3.13 -B -m unittest discover -s sim -p test_release_paths.py -v`覆盖大小写／中文／空格和路径碰撞拒绝、缺失输入／许可证变更拒绝，以及两份Keil工程42个C翻译单元的GCC主机预处理。预处理验证include路径闭合，不是ARM编译或Keil链接。根README.md与skill/README.md按官方示例保留，其余发布路径小写。

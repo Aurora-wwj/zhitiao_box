@@ -138,19 +138,19 @@
       "source": "BOOT.BIN",
       "bytes": 2427944,
       "sha256": "fa7c65b7880bf6c66ac4ce6186cb2dc88c7b6d3a48ed3c48e768c7cdb68f5641",
-      "reason": "Missing FSBL/U-Boot/boot project sources and redistribution provenance"
+      "reason": "Prebuilt ALINX boot artifact; reference SHA retained. Vendor whole-image redistribution scope not established; source-level BOOT rebuild is outside the implemented route."
     },
     {
       "source": "image.ub",
       "bytes": 9537472,
       "sha256": "224b9b884352a931244541017024fdbff69297feeaadab2b1e5eb0d030bb0344",
-      "reason": "Missing Linux/rootfs build sources and recipe; includes credential databases"
+      "reason": "Prebuilt ALINX base for local rootfs customization; contains account databases and is not relicensed or redistributed as a clean public image."
     },
     {
       "source": "image_fixed.ub",
       "bytes": 9539416,
       "sha256": "71fb28754b857b808340f87e9b54de2197d54141fd4c90eb1fd94360ac78635a",
-      "reason": "Contains an embedded private SSH host key; missing complete build sources"
+      "reason": "Contains a device-specific embedded private SSH host key; historical SHA/deltas retained, not published or byte-for-byte reproduced."
     },
     {
       "source": "arm_hello",

@@ -6,6 +6,10 @@
 
 实际工具 Vivado 2017.4，part xc7z020clg400-2，top system_wrapper。100 MHz FCLK0 经 BUFG 接入测量核与 AXI；system.bd 与导出 Tcl 包含 v5 UART 和 LED。此设计仍保留 ALINX 原示例的摄像头／HDMI／VDMA 电路，整板资源数字不等于观测核单独资源。
 
+当前交接文件为[system_wrapper.hdf](zhidiao_measure/system_wrapper.hdf)，由用户本次重新导出，原字节保留。内含system_wrapper.bit与黄金v5、system_bd.tcl与现有导出文件逐字节一致，10个成员及寄存器／LED参数由sim/linux_check.py检查，SHA见../../data/linux_platform.json。它作为当前交接版替代原归档vendor-base HDF；Git此前未跟踪旧HDF。内部MODE／资源字段不替代原impl报告。
+
+目标Linux为PetaLinux2017.4／4.9.0-xilinx，基于ALINX预构建镜像做rootfs定制与部署，见[Linux说明](../../build/linux/readme.md)。最终PL在Linux启动后从/sd/pl/zhidiao_observe_v5_led.bit动态加载到/dev/xdevcfg，复现v5不要求重新生成BOOT.BIN，也不因有HDF就声称具备完整PetaLinux源工程。
+
 ## 四项外部 IP
 
 未将上传目录 ip_repo、生成的 ipshared 或第三方网表整体套用根 MIT 发布。包内缺少覆盖所有供应商文件的完整再分发许可；清单保留每个 VLNV、相对路径、字节数与 SHA：../../data/fpga_external_ips.json。

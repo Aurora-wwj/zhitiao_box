@@ -24,5 +24,9 @@
   "photos_zip": {
     "bytes": 2080994,
     "sha256": "b35f07dce1f2a762e1cd161b69325f5a870ffddbd0a4ad09908a2cee3d59b98c"
+  },
+  "system_wrapper_hdf": {
+    "bytes": 808369,
+    "sha256": "ff24021b5052bf91d5101e804fdd2917c457fc8a45db16caed89d349c3fd3198"
   }
 }

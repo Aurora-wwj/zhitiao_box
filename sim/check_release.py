@@ -6,6 +6,7 @@ from zynq_check import check as check_zynq
 from report_check import check as check_report
 from stm32_led_check import check as check_stm32_led
 from release_path_check import check as check_release_paths
+from linux_check import check as check_linux
 ROOT=Path(__file__).resolve().parents[1]
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
@@ -56,5 +57,6 @@ def main():
  check_report()
  check_stm32_led()
  check_release_paths(ROOT)
+ check_linux(ROOT)
  print('PASS: final export and screenshots / two complete cycles / source and HEX SHA / original and LED Keil inputs / FPGA identities and reports / licensed Zynq sources / historical archive / forbidden filenames')
 if __name__=='__main__':main()

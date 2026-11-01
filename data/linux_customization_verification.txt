@@ -1,0 +1,49 @@
+ALINX prebuilt Linux rootfs customization and current HDF verification
+Date: 2026-11-01
+Base commit: 905e86b8cffa05c8b796e641e5c7cc0ad0c840fc
+Scope: rootfs customization/FIT repack and SD deployment; no Linux source rebuild.
+
+HDF source: newly uploaded system_wrapper.hdf, 808369 bytes.
+SHA-256: ff24021b5052bf91d5101e804fdd2917c457fc8a45db16caed89d349c3fd3198
+All 10 ZIP members and CRC checked. Tool/part: Vivado2017.4, xc7z020clg400-2.
+Embedded bitstream and BD Tcl are byte-identical to the public golden v5 inputs.
+HWH UART/period/status/LED addresses and LED width/default match current profiles.
+The c/h/tcl PS initialization files also match the provided vendor-base HDF.
+No previous HDF was tracked in the public repository; this is the canonical current handoff.
+
+Runtime version evidence: team-supplied terminal screenshot and original ramdisk /etc/issue.
+PetaLinux2017.4; Linux4.9.0-xilinx; armv7l/ARM32; BusyBox1.24.1.
+Linaro GCC6.2.1 (2016.11), gcc6.2.1 20161016; kernel built 2019-10-18 17:53:51 CST.
+/etc/os-release is absent in the supplied screenshot. It was not used as a prerequisite.
+
+Actual full-file repack, run twice in fresh temporary output directories:
+python3.13 -B build/linux/customize_rootfs.py repack /tmp/zhitiaohe-zynq-linux-intake/Zynq_Linux_Test/image.ub --output /tmp/zhitiao-linux-rootfs-repro
+Second output: /tmp/zhitiao-linux-rootfs-repro-repeat
+Host mkimage/dtc were extracted under /tmp; no system install or board access.
+Host tools: Python3.13.5, mkimage2025.01, dtc1.7.2.
+Input SHA: 224b9b884352a931244541017024fdbff69297feeaadab2b1e5eb0d030bb0344
+Both new FIT outputs SHA: 28ca54d63467a2ec73d23e0cd31bf46fe8107a0966a2aec759e8fe92c6daaa45
+Output bytes: 9537626.
+Independent standard dumpimage extraction of all three output payloads matches the parser.
+Kernel and FDT bytes/SHA remain unchanged. Of 964 original CPIO members (excluding trailer),
+only etc/network/interfaces differs. All other records retain their payload and metadata,
+including device nodes, symlinks, owners, modes and hardlink fields.
+The new image changes only eth0 DHCP -> static192.168.10.2/24; no device SSH key is added.
+Historical fixed includes additional key/terminfo differences and therefore has a different SHA.
+Output metadata and repeated-byte checks are published in linux_repack_check.json.
+
+No BOOT.BIN rebuild, PetaLinux source build, Windows/Keil/Vivado execution, SSH,
+MMIO, SD write or cloud board test was performed. New output board_tested=false.
+The team reports prior cold-boot network/SSH/USB/OpenOCD/ST-Link/SWD verification;
+that report and the version screenshot are distinct from a new-image boot log.
+No passwordless-key persistence or automatic power-on PL load is inferred.
+Agent production source/tests are unchanged; their previous 465-test result is reused.
+
+Repository regression after implementation:
+PATH=/tmp/zhitiao-linux-tools/usr/bin:$PATH LD_LIBRARY_PATH=/tmp/zhitiao-linux-tools/usr/lib/x86_64-linux-gnu IVERILOG=/tmp/zhitiaohe-iverilog/usr/bin/iverilog VVP=/tmp/zhitiaohe-iverilog/usr/bin/vvp IVERILOG_BASE=/tmp/zhitiaohe-iverilog/usr/lib/x86_64-linux-gnu/ivl python3.13 -B -m unittest discover -s sim -v
+Ran 32 tests in 2.066s
+OK; no skips. Includes six new Linux/HDF tests and real mkimage roundtrips.
+python3.13 -B sim/check_release.py: PASS.
+Static checks: 105 Python AST inputs; 142 Markdown local targets; none missing.
+Canonical HDF bytes equal the uploaded artifact; existing golden firmware/bit/JSON
+and screenshots remain unchanged. New image binaries are outside the Git release.

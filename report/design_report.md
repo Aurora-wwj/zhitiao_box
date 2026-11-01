@@ -45,9 +45,9 @@ Skill按闭环调试、可信PL、UART、部署和失败排查五类组织，各
 
 详见report/reproduction.md及build/fpga/readme.md。实际Vivado2017.4，与指南推荐新版存在差异；已提供重建Tcl，但Vivado／Keil重建未在云端执行。四项供应商IP因完整再分发许可未附，按VLNV／37文件SHA和合法获取步骤列为外部依赖；不能称为无外部依赖的一键构建。UART有限窗口与字节上限，单文件修改且需审批，依赖第三方API的可用性。
 
-Zynq_Linux_Test两分包已核对，带许可的OpenOCD／libusb源码及构建入口公开，887份部署脚本与源码一致。fixed FIT与原件kernel／fdt相同，ramdisk增加静态IP和主机私钥等；私钥和含密钥镜像不公开，原ARM ELF因确切静态依赖来源不齐也不直接发布。完整BOOT／Linux构建配方、实物照片与正式主报告仍待补齐，SSH authorized_keys与PL冷启动持久化待实测，不能从配置存在推断验收通过。
+Zynq_Linux_Test两分包已核对，带许可的OpenOCD／libusb源码及构建入口公开，887份部署脚本与源码一致。fixed FIT与原件kernel／fdt相同，ramdisk增加静态IP和主机私钥等；私钥和含密钥镜像不公开，原ARM ELF因确切静态依赖来源不齐也不直接发布。Linux采用ALINX配套预构建镜像的rootfs定制路线，重封装步骤及SD部署已整理，不声称完整PetaLinux源码级重建。当前版本PetaLinux2017.4、Linux4.9.0-xilinx、BusyBox1.24.1；新HDF的内含bit和BD与黄金v5相同。v5在Linux启动后动态加载，无需重新生成BOOT.BIN。队伍报告原系统冷启动网络／SSH／USB／SWD链路已验；云端离线新产物尚未上板，authorized_keys持久化及PL自动加载仍单独记录，实物照片和正式报告按单独流程整理。
 
-本轮Linux Python3.13 Agent全量459项及根sim18项检查通过，新增界面报告ID与证据关联回归。此前实际完成OpenOCD Linux x86-64本机静态构建与0.12.0版本检查，构建中的libtool／Jim Tcl链接问题已修正；保留glibc NSS警告。这些软件结果不代表ARM交叉编译、Zynq／USB／SWD或烧录已经复验，详见data/test_summary.md及data/openocd_native_check.json。
+Agent已记录Linux Python3.13全量465项通过，本轮Agent未改；rootfs／HDF及根sim的实际检查结果以data/test_summary.md和data/linux_customization_verification.txt为准。此前实际完成OpenOCD Linux x86-64本机静态构建与0.12.0版本检查，构建中的libtool／Jim Tcl链接问题已修正；保留glibc NSS警告。这些软件结果不代表ARM交叉编译、Zynq／USB／SWD或烧录已经复验，详见data/test_summary.md及data/openocd_native_check.json。
 
 ## 实测截图与证据
 

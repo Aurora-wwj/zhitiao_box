@@ -2,7 +2,7 @@
 
 ## 软件与状态
 
-克隆本仓库，安装Python3.13。FPGA源输入、v5位流和实现报告已收到，重建另需合法Vivado2017.4及四项外部IP。Zynq Linux测试包已核对并整理OpenOCD源码／许可及构建入口；队伍已确认BOOT／Linux镜像原件存在，但完整BOOT／Linux／rootfs从零构建输入与说明尚未齐全，不能仅凭当前仓库重建整套系统镜像。
+克隆本仓库，安装Python3.13。FPGA源输入、v5位流、当前HDF和实现报告已收到，FPGA重建另需合法Vivado2017.4及四项外部IP。Linux采用ALINX预构建镜像的可复现rootfs定制与部署，步骤见[定制说明](../build/linux/readme.md)及[SD部署](../board/zynq/sd_deployment.md)。没有完整PetaLinux源工程，不执行也不声称源码级重建Linux；该范围不作为当前路线突然新增的必做任务。
 
 在 src/agent 下设置 PYTHONPATH=src，运行 python -B -m unittest discover -s tests -v。Windows 可用 py -3.13 或 scripts/test_windows.ps1。
 运行 start_demo.bat 验证离线 UI；start_ai_mock.bat 另需 API Key、同意联网和上下文分享，不依赖真实板卡。
@@ -18,10 +18,10 @@ Windows 安装 Keil MDK（最终材料使用 V5.06 update 6）与 STM32G4xx DFP 
 
 ## Zynq 与四接口
 
-参考 board/hardware_setup.md 与 board/wiring.md。配置网口、严格 known_hosts 与非交互 SSH；私钥自行生成保管，不进入仓库。上电后恢复 authorized_keys、准备 PL（冷启动持久化未验收）。
+参考 board/hardware_setup.md 与 board/wiring.md。系统版本为PetaLinux2017.4／Linux4.9.0-xilinx／ARM32／BusyBox1.24.1，证据见data/linux_platform.json。先按rootfs复现和SD部署说明准备已知镜像，配置网口、严格known_hosts与非交互SSH；私钥由每块板生成保管。队伍报告原系统冷启动网络／SSH／USB／SWD已验证；免密公钥自动恢复和PL开机自动加载另行记录，仍按初始化步骤准备。
 当前部署在初始化阶段完成v5 PL加载，再启动Agent及LED；Agent保持check_only与原四接口执行顺序。现有独立目录`$env:PYTHONPATH = "E:\zhidiao-agent\src"`设置、三步SSH公钥恢复（最后输出ZHIDIAO_SSH_KEY_OK）、v5文件SHA校验与手动加载统一见[初始化参考](../board/zynq/pl_preparation.md)，本仓库目录布局继续使用下方的相对路径设置。
 本仓库build/fpga/zhidiao_observe_v5_led.bit先核对SHA fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6。当前部署按初始化说明手动加载，再使用check_only；提供镜像的BusyBox 1.24.1未包含timeout applet，手动加载示例使用已有cat。Agent内部可选加载／检查能力仍复用受审批约束的PLPreparation；load_verified另需已验证的BusyBox超时能力。步骤见../board/zynq/pl_preparation.md，只支持已确认的/dev/xdevcfg。check_only与prog_done不证明当前运行镜像身份。
-OpenOCD0.12.0安装在/sd/tools/openocd/bin/openocd，scripts为/sd/tools/openocd/share/openocd/scripts，使用interface/stlink.cfg与target/stm32g4x.cfg及其依赖。源码／构建步骤见../build/openocd/readme.md；原上传ELF未再分发，新ARM产物须重新验收。Linux／BOOT原件存在但完整构建来源与配方仍待整理，含主机私钥的原镜像不公开。../board/zynq/check_files.sh可先做只读文件检查，不代替四接口测试。
+OpenOCD0.12.0安装在/sd/tools/openocd/bin/openocd，scripts为/sd/tools/openocd/share/openocd/scripts，使用interface/stlink.cfg与target/stm32g4x.cfg及其依赖。源码／构建步骤见../build/openocd/readme.md；原上传ELF未再分发，新ARM产物须重新验收。原镜像SHA、rootfs修改及FIT重封装步骤已整理；含主机私钥的历史镜像不公开。本次HDF仅作当前硬件交接，v5继续runtime load，不要求重建BOOT.BIN。../board/zynq/check_files.sh可先做只读文件检查，不代替四接口测试。
 
 在src/agent复制deployment.example.json为deployment.local.json，修改本机绝对路径与SSH路径；私人配置不上传。也可使用deployment-setup预览并经批准新建，向导不会覆盖已有配置。主示例及向导均为v5＋LED；deployment.no-led.example.json或向导--no-led只关闭灯，仍保持相同v5、UART与PL。确认v5已正确加载；不要把配置存在或check_only当作运行镜像已认证。运行 deployment-check --preview-only，再按提示执行实际检查；real-build／real-flash／real-log／real-test 使用现有 CLI --help 的参数，均保留审批。
 启动 start_ui.bat，选择配置、工程、core/src/main.c、模型与 Key，勾选 UART。批准任务范围与每个 diff，确认每轮 audit 四工具齐全，PASS 来自 PL。导出新的报告，不能重放 data/ 中的历史审批。
@@ -56,4 +56,4 @@ py -3.13 -B -m zhidiao_agent real-test --config deployment.local.json --expected
 
 Keil与Vivado必须在真实工具环境运行现有构建入口，保留完整命令、依赖版本和日志；新产物如与历史黄金SHA不同，重新绑定配置并验收，不覆盖旧证据。板卡实验另保存四工具audit、UART健康、freshness、目标容差及LED独立验收结果。
 
-BOOT／Linux镜像有原件，但完整从零构建步骤仍需补齐；不以“镜像可以启动”替代工具链、源码／DT／rootfs、BOOT打包及冷启动持久化的复现记录。已有材料映射见material_index.md，资源比较见fpga_evidence.md。
+Linux复现验收按现有预构建基底、网络定制、FIT重封装、SD部署及冷启动日志执行，不把缺少原始PetaLinux／BSP源码工程写成必须另做一套Linux。保存基础系统来源／版本、输入输出SHA与实际修改；新的重封装产物需独立上板，不能借用原fixed的结果。已有材料映射见material_index.md，资源比较见fpga_evidence.md。

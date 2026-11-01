@@ -26,13 +26,13 @@
       "source_path": "board/zynq/README.md",
       "public_path": "board/zynq/readme.md",
       "source_sha256": "904912ebfd6588ac340e5fc0297cc45e80e69c869cbf4311a08b87b72c4e4a84",
-      "public_sha256": "10e9fd72d377e766516bb4ec8163e62078c08c5a1b5cb0ecc133dd6944e8c1b2"
+      "public_sha256": "5f79e1a9d093c4a9cd8308b9407933a14b5275900030623df20db7d4f49827cb"
     },
     {
       "source_path": "build/fpga/README.md",
       "public_path": "build/fpga/readme.md",
       "source_sha256": "ff3182eb620a4145a5094db5c97380223a2d324cdb1e194bfcea9d294f8f7b35",
-      "public_sha256": "cb5972ee3070ff440600a97232d4685ecece849e19005feb146e33016353e40e"
+      "public_sha256": "a3c073902727f11d343844ac3a0e3b936b7e83f5fa48fac960fc995bdebde9e7"
     },
     {
       "source_path": "build/openocd/README.md",
@@ -56,7 +56,7 @@
       "source_path": "sim/README.md",
       "public_path": "sim/readme.md",
       "source_sha256": "3ddc5ceb73da27139fa95686c4373f310d93233c7664b982e281a3a3bbc85fae",
-      "public_sha256": "5ddf0f8dc8af0ef7a54dbb4bdccf446957d22264a276f2985b8ef580a1b4c1d8"
+      "public_sha256": "5c9729fcec9d8d8d70ed74d6820073639d21374568f9e4904ed2852e6f372974"
     },
     {
       "source_path": "sim/smoke/README.md",
@@ -80,7 +80,7 @@
       "source_path": "src/fpga/README.md",
       "public_path": "src/fpga/readme.md",
       "source_sha256": "b10f6fbe26075d96c89f4e9d9023e6e80989e933b62ae4f8bc7343d376ae550e",
-      "public_sha256": "b10f6fbe26075d96c89f4e9d9023e6e80989e933b62ae4f8bc7343d376ae550e"
+      "public_sha256": "9cb71de94ffefa5f3c8f836293e8fbb69b61ab281172d4310e151ffcd621c441"
     },
     {
       "source_path": "src/stm32/gpio_pl_test/Core/Inc/gpio.h",

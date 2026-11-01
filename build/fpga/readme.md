@@ -1,5 +1,7 @@
 # FPGA 位流、报告与重建入口
 
+当前HDF交接文件为[src/fpga/zhidiao_measure/system_wrapper.hdf](../../src/fpga/zhidiao_measure/system_wrapper.hdf)，内含bit与本目录黄金v5逐字节一致；成员SHA及平台信息见data/linux_platform.json。它不替代原impl资源报告。当前Linux采用[预构建镜像rootfs定制](../linux/readme.md)，v5在Linux启动后动态加载，不要求重新生成BOOT.BIN。
+
 `zhidiao_observe_v5_led.bit` 是上传的最终 v5，1,904,732 bytes，SHA-256：
 
 ```text

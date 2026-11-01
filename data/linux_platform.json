@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "implementation_route": "ALINX prebuilt AX7Z020 Linux -> ramdisk/rootfs network customization -> FIT repack -> SD deployment -> cold-boot and runtime PL verification",
+  "source_level_petalinux_rebuild_claimed": false,
+  "base_source": {
+    "provider": "ALINX official/accompanying AX7Z020 Linux image, as identified by the team",
+    "upstream_entrypoint": "https://www.alinx.com/",
+    "exact_vendor_download_package": "not supplied; identify received files by SHA-256",
+    "archive": "zynq_linux_test_zip",
+    "parts": 2,
+    "image": "image.ub",
+    "bytes": 9537472,
+    "sha256": "224b9b884352a931244541017024fdbff69297feeaadab2b1e5eb0d030bb0344"
+  },
+  "runtime_version": {
+    "target_os": "PetaLinux 2017.4",
+    "kernel": "4.9.0-xilinx",
+    "architecture": "armv7l / ARM 32-bit",
+    "busybox": "1.24.1",
+    "kernel_toolchain": "Linaro GCC 6.2.1 (2016.11); gcc 6.2.1 20161016",
+    "kernel_build_time": "2019-10-18 17:53:51 CST",
+    "evidence": "team-supplied live terminal screenshot; /etc/issue also confirmed in both received ramdisks",
+    "etc_os_release": "absent in team screenshot"
+  },
+  "known_good_backup": {
+    "name": "image.ub.known_good",
+    "reported_available_by_team": true,
+    "included_in_verified_two_part_archive": false,
+    "sha256": null,
+    "note": "Record its local SHA separately; do not assume equality with another image."
+  },
+  "historical_customization": {
+    "input": "image.ub",
+    "output": "image_fixed.ub",
+    "output_sha256": "71fb28754b857b808340f87e9b54de2197d54141fd4c90eb1fd94360ac78635a",
+    "kernel_and_fdt_payloads_unchanged": true,
+    "network": "eth0 192.168.10.2/24; other interfaces retained",
+    "observed_other_changes": [
+      "added device-specific Dropbear host private key (not published or reproduced)",
+      "vt200/vt220 terminfo file placement changed"
+    ],
+    "cloud_boot_retest": false
+  },
+  "reproduction_recipe": {
+    "script": "build/linux/customize_rootfs.py",
+    "input_sha256_pinned": true,
+    "changed_rootfs_paths": [
+      "etc/network/interfaces"
+    ],
+    "preserve_kernel_fdt_metadata_and_other_cpio_members": true,
+    "embed_device_private_key": false,
+    "rebuild_boot_bin": false,
+    "historical_fixed_image_byte_identity_claimed": false,
+    "network_patch": "board/zynq/rootfs_network.patch"
+  },
+  "hardware_handoff": {
+    "path": "src/fpga/zhidiao_measure/system_wrapper.hdf",
+    "source_name": "system_wrapper.hdf",
+    "bytes": 808369,
+    "sha256": "ff24021b5052bf91d5101e804fdd2917c457fc8a45db16caed89d349c3fd3198",
+    "tool_version": "2017.4",
+    "part": "xc7z020clg400-2",
+    "members": [
+      {
+        "name": "sysdef.xml",
+        "bytes": 883,
+        "sha256": "e0760e5908e0331f8e1b8dc81791298818e699a5988c70ff8a54847bf4dc171e"
+      },
+      {
+        "name": "system.hwh",
+        "bytes": 888811,
+        "sha256": "7f954d39bd2d9d22a6908fba64e8fa71af8d05cf71681982f956d77a3b412ce0"
+      },
+      {
+        "name": "system_bd.tcl",
+        "bytes": 65167,
+        "sha256": "5357846606a030bc56d58ce1423f29ae3efaeea0ab90cfe624380101baddc617"
+      },
+      {
+        "name": "ps7_init.c",
+        "bytes": 579307,
+        "sha256": "2c70b8f3ebcd6c69fd1df927579cc1771a40e10d6eed8fce2d5eae3909aed421"
+      },
+      {
+        "name": "ps7_init.h",
+        "bytes": 5223,
+        "sha256": "1b2a02917fe8014bb636547ff1b165287491d775b92421d50cff2e34fe1e9bec"
+      },
+      {
+        "name": "ps7_init_gpl.c",
+        "bytes": 578528,
+        "sha256": "4f5c9eacdc6803ecc8fcb9432a7b1eae4c5020a420e45a041d9d27cc786cb582"
+      },
+      {
+        "name": "ps7_init_gpl.h",
+        "bytes": 5223,
+        "sha256": "1b2a02917fe8014bb636547ff1b165287491d775b92421d50cff2e34fe1e9bec"
+      },
+      {
+        "name": "ps7_init.html",
+        "bytes": 2993435,
+        "sha256": "470d04ae96d6b8438ec9613ac5e3b31152c877d3bf24724ba21d001e4d76d45c"
+      },
+      {
+        "name": "ps7_init.tcl",
+        "bytes": 36650,
+        "sha256": "38485ae4aaf6381c2c0f3be5ad4278a28691e76e956a60050b978fdcc92e407a"
+      },
+      {
+        "name": "system_wrapper.bit",
+        "bytes": 1904732,
+        "sha256": "fb4d05e6a075bd405ffa14c1d1a6631fa0a42e4833999c0a0f24b92b027118d6"
+      }
+    ],
+    "embedded_bitstream_matches": "build/fpga/zhidiao_observe_v5_led.bit",
+    "embedded_bd_tcl_matches": "src/fpga/zhidiao_measure/system_bd.tcl",
+    "vendor_base_ps_init_matches": [
+      "ps7_init.c",
+      "ps7_init.h",
+      "ps7_init.tcl"
+    ],
+    "note": "Current canonical handoff replaces use of the older vendor-base archive handoff; no previous HDF was tracked in the public repository."
+  },
+  "board_validation": {
+    "team_reports_cold_boot_verified": [
+      "static eth0",
+      "SSH connectivity",
+      "USB Host",
+      "OpenOCD / ST-Link / SWD"
+    ],
+    "cloud_board_retest_performed": false,
+    "dedicated_cold_boot_log_archived": false,
+    "passwordless_key_persistence": "not established by the supplied password-prompt terminal screenshot",
+    "final_pl_loading": "manual initialization after Linux boot: /sd/pl/zhidiao_observe_v5_led.bit -> /dev/xdevcfg",
+    "automatic_power_on_pl_loading_claimed": false
+  }
+}
