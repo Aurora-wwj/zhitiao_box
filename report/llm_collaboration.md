@@ -1,5 +1,90 @@
 # LLM协作与证据索引
 
+## Representative LLM Collaboration Record
+
+本项目保留了一次完整、可核验的大模型协作闭环。该案例展示了大模型如何依据真实硬件反馈提出源码修改，并由人工审批与确定性硬件测量完成最终验证。
+
+### Evidence-Driven Iteration
+
+```text
+Natural-language goal
+“把 STM32 PA1 的完整周期调到 1000 ms，误差不超过 50 ms”
+        ↓
+Build + Flash + UART + FPGA PL Measurement
+        ↓
+Round 1 physical evidence
+Period = 601.7169 ms
+High time = 300.36864 ms
+Verdict = FAIL
+        ↓
+Model reasoning
+A full GPIO period contains two toggle intervals.
+HAL_Delay(300) therefore produces a period of about 600 ms.
+        ↓
+Proposed source edit
+HAL_Delay(300) → HAL_Delay(500)
+        ↓
+Human review and approval
+        ↓
+Rebuild + Reflash Target MCU + UART + FPGA PL Measurement
+        ↓
+Round 2 physical evidence
+Period = 1001.08682 ms
+High time = 500.07403 ms
+Absolute error = 1.08682 ms
+Verdict = PASS
+```
+
+### Prompt / Context → Model Response → Approved Diff → Physical Verification
+
+**Prompt / Context.**
+模型接收自然语言目标、经批准的 STM32 源码以及本轮真实工具结果。第一轮中，构建与烧录均成功，但 FPGA PL 独立测得 PA1 完整周期仅为 `601.7169 ms`，因此工具执行成功并不等同于 DUT 达标。
+
+**Model Response.**
+模型结合源码中的 `HAL_Delay(300)` 与 PL 测得的 `601.7169 ms` 周期、`300.36864 ms` 高电平时间进行分析，判断一个完整周期包含两次约 300 ms 的翻转间隔，因此提出将单次延时修改为 500 ms，并明确要求修改后重新通过物理测量验证，而不能依据模型预测直接宣布 PASS。
+
+**Approved Diff.**
+人工审阅完整源码 diff 后批准修改。核心功能修改为：
+
+```diff
+- HAL_Delay(300);
++ HAL_Delay(500);
+```
+
+实际批准的完整 diff 还包含一处与功能无关的注释文字调整；项目保留原始完整差异，不将历史记录重新美化为“只修改一行”。
+
+**Physical Verification.**
+修改后系统重新构建并烧录目标 STM32G431RBT6，随后重新采集 UART 与 FPGA PL 证据。第二轮 PL 独立测得完整周期 `1001.08682 ms`，相对 1000 ms 目标的绝对误差为 `1.08682 ms`，满足 ±50 ms 容差，由确定性硬件测试规则判定为 `PASS`。
+
+### Responsibility Boundary
+
+本案例中的职责边界保持明确：
+
+* **AI Model**：理解目标、分析证据、提出源码修改；
+* **Human**：审阅并批准新的源码 diff；
+* **Controller**：约束工具顺序、路径、预算、重试与停止条件；
+* **Tool Backend**：执行真实构建、目标 MCU 烧录、UART 采集与硬件测试；
+* **FPGA PL**：独立测量目标硬件的真实物理行为；
+* **PASS / FAIL**：由确定性测试规则产生，而非由模型自行声明。
+
+因此，本项目中的“大模型协作”并非让模型直接控制任意硬件命令，而是形成：
+
+**真实证据 → 模型分析 → 人工批准 → 真实执行 → 新物理证据**
+
+的受控闭环。
+
+### Evidence Files
+
+该代表性交互可通过仓库中的以下材料交叉核验：
+
+* `data/final_run_sanitized.json`：两轮真实工具结果、模型决策、人工审批及最终判定；
+* `data/final_source_change.diff`：实际批准并应用的完整源码差异；
+* `data/measurements.csv`：两轮物理测量结果；
+* `report/test_evidence.md`：真机证据与测试口径说明。
+
+本文只将具有现有记录支持的内容归因于模型；未保存的原始网络请求或对话不会被重新构造为“原始交互记录”。
+
+
 ## 当前主案例：完整两轮四接口
 
 主证据为run_5d8e004954664f6c8f8ff0f85d31959b，公开脱敏版在[data/final_run_sanitized.json](../data/final_run_sanitized.json)。原Agent存档与最后网页导出是同一次run，只有elapsed_s约0.02s差异，来源及双SHA见[data/report_sources.json](../data/report_sources.json)。原始文件已收到，不再列为“缺少LLM或真机记录”。本次未重新上板。
