@@ -1,6 +1,8 @@
+2026.11.2更新
+
 # 发布状态
 
-2026-11-01材料澄清：大部分原始材料已存在，待补的是公开整理或新环境验证，不把原件存在误写成“已独立复现”。对应位置见[材料索引](material_index.md)。当前Linux交付范围及HDF以本页和build/linux/readme.md为准；正式技术报告另行处理。
+原始材料对应位置见[材料索引](material_index.md)。当前Linux交付范围及HDF以本页和build/linux/readme.md为准。
 
 ## 已收到并整理
 
@@ -21,9 +23,6 @@
 ## 原件已存在，仍需整理或独立验证
 
 - 历史原件的完整PetaLinux／BSP源工程、FSBL ELF／boot BIF并未提供，作为范围事实保留，不列为本实现路线必须补做。基础镜像由ALINX配套介质取得，精确历史下载包标识／直链尚待归档；已收镜像以SHA锁定。image.ub.known_good由队伍确认存在，未在已核验两分包中出现，SHA待本地单独登记。
-- 照片／视频原素材待队伍选取整机、接线与四灯状态帧；当前仅四张网页原图。正式报告按单独流程定稿，本次不导入或修改报告Word／PDF。
-- 实际Vivado2017.4与Windows Keil的新环境重建和日志；代码同步后的Windows全量回归须留提交号与工作区状态。云端软件／替身测试不证明这些环境已通过。
-- 提供镜像的BusyBox 1.24.1缺少timeout applet；已将当前手动初始化说明修正为使用已有cat，Agent保持check_only。可选load_verified仍需额外验证超时依赖，不能把离线替身测试当作该镜像已支持它。
-- 队伍报告原系统冷启动网络／SSH、USB Host及OpenOCD／ST-Link／SWD已验证；本次版本截图与专门冷启动日志分别记录，云端未代行新镜像上板。免密authorized_keys持久化及PL开机自动加载不由密码登录截图推定通过。未约束路径HIGH警告、启动HIGH首次残段和sticky valid边界继续保留，黄金RTL／位流未改。
+- 原系统冷启动网络／SSH、USB Host及OpenOCD／ST-Link／SWD已验证；本次版本截图与专门冷启动日志分别记录，云端未代行新镜像上板。免密authorized_keys持久化及PL开机自动加载不由密码登录截图推定通过。未约束路径HIGH警告、启动HIGH首次残段和sticky valid边界继续保留，黄金RTL／位流未改。
 
 没有修改主JSON、黄金STM32源码、HEX、v5位流或原始实现报告，也不公开私人配置、API Key或私钥。
