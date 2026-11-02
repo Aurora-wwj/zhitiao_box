@@ -84,6 +84,8 @@ AX7Z020（Zynq-7000）＋STM32G431＋ST-Link/V2。PA1→M18 为周期观测；PA
 
 **LED工程实测验证时，文件夹原名也是`GPIO_PL_Test`。** 为符合AMD指南的新增路径英文小写要求，发布目录使用`gpio_pl_test_led`，内部Keil Target仍为`GPIO_PL_Test`。本次上传的实际源码保持`HAL_Delay(500)`；旧说明中的300 ms基线未沿用。原工程和实测证据不变，新变体单独构建、记录验证结果；完整来源见[LED文件清单](data/stm32_led_manifest.json)。
 
+LED 同步工程作为独立辅助演示变体发布，保留独立源码及离线/主机替身验证；黄金主实验的 JSON 与 HEX 不作为该变体的新真机证据。
+
 ## AMD 推荐目录对照
 
 | 推荐项 | 本仓库 |
