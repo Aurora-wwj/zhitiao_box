@@ -5,6 +5,7 @@
 报名方向：**AMD-自主选题（初级）**。报名所选平台类别覆盖AMD 7 Series／Zynq-7000／UltraScale系列，实际使用ALINX AX7Z020（xc7z020clg400-2），目标板STM32G431。报名简介及已验证范围见[项目介绍](report/project_overview.md)。
 
 面向AI辅助硬件开发的“最后一米”：通过网络连接PC Agent，以USB／SWD完成烧录与复位，以UART和PL采集真实反馈。研发调试、远程协作、FAE支持与共享实验室是应用方向，当前实证是STM32 GPIO周期调节。
+
 智调盒并非单纯的自动下载器，而是让 AI 真正进入真实硬件调试闭环：反复构建与烧录的是 STM32 等目标 MCU 工程；Zynq/FPGA 作为长期驻留的执行与物理观测基础设施，在初始化后不随每轮任务反复烧录。
 
 自然语言目标 → Agent → 确定性 Controller → build / flash / UART / PL → FAIL 证据 → AI diff → 人工批准 → 重建验证 → PASS。
@@ -26,6 +27,7 @@ v5 SHA 与指导一致。原 final 报告 LUT 7274、FF 12083、BRAM 20.5、DSP 
 ## FPGA 的作用与架构
 
 Zynq-7000 AX7Z020 的 PL 以 100 MHz 独立测量完整周期／高电平，结合边沿 freshness 与一致性检查，避免软件自报周期代替实测；AXI Uartlite 采集 UART，AXI GPIO 表示工具进度。PC 负责 LLM、审批、Keil、SSH/SCP 与界面；PS 提供寄存器访问及 OpenOCD/ST-Link 通道。
+
 FPGA 丰富、可编程且可扩展的物理接口，使 PL 不只是通信桥，而能够独立测量 GPIO 等真实硬件信号，为 AI 提供目标程序自身之外的物理证据。
 
 ```mermaid
