@@ -13,11 +13,11 @@
 | E:\zhidiao-agent\deployment.local.json | 私人原配置已在上传包中核对，仅参考非秘密硬件字段；公开deployment.example.json与deployment.no-led.example.json在src/agent | 不复制私人配置。主示例与deployment-setup均v5＋LED；--no-led仅关闭灯，保留v5／UART／PL |
 | BOOT／Linux及SD部署材料 | Zynq_Linux_Test两分包已完整重组，BOOT／image／fixed SHA和组成已核对；另有队伍确认的known_good备份 | 按ALINX预构建镜像做rootfs定制与FIT重封装；说明及脚本见build/linux，不声称源码级重建Linux，不要求补做完整PetaLinux工程；备份SHA单独登记 |
 | 新导出system_wrapper.hdf | src/fpga/zhidiao_measure/system_wrapper.hdf；data/linux_platform.json | 当前交接版，bit／BD与黄金v5相同；Linux启动后runtime load，不要求重新生成BOOT.BIN |
-| 照片／视频原素材 | 队伍将从原素材挑选；当前data/screenshots只有四张网页截图 | 补选接线照、整机照及四灯状态帧，不能认定原素材不存在 |
+| 照片／视频原素材 | 四张网页截图、硬件整机照 | 原素材已补充 |
 | 最新Windows回归 | 历史438项与LED28项保留；最新Linux见data/test_summary.md | 代码同步后运行src/agent/scripts/test_windows.ps1，保存完整结果、skip、提交号及工作区状态 |
 
 ## 提交材料整理边界
 
-LLM证据见[协作记录](llm_collaboration.md)，复现步骤及未完成项见[复现说明](reproduction.md)，资源对照见[FPGA证据](fpga_evidence.md)。正式技术报告按队伍的单独流程定稿，本次不修改或导入Word／PDF技术报告。
+LLM证据见[协作记录](llm_collaboration.md)，复现步骤及未完成项见[复现说明](reproduction.md)，资源对照见[FPGA证据](fpga_evidence.md)。正式技术报告按队伍的单独流程定稿，已归档。
 
 未约束路径与启动HIGH首次测量边界仍保留。队伍报告原系统冷启动网络／SSH／USB／SWD已验；免密公钥持久化及PL开机自动加载分别记录。已提供的JSON、源码、HDF、位流和SD分包无需重复索取；补充重点是既有rootfs定制过程的公开整理和新环境验收记录。
