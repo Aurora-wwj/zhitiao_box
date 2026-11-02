@@ -12,7 +12,7 @@
 
 最终真实四接口两轮 run_5d8e004954664f6c8f8ff0f85d31959b：**601.7169 ms FAIL → HAL_Delay 300 改为 500 → 1001.08682 ms PASS**，目标完整周期 1000±50 ms。两轮均有四工具、fresh_edges=2；第一轮 partial_tail=true、truncated=false，未阻止 PL。
 
-原始最终报告、发布main.c与第二轮HEX已做SHA一致性核对。主证据现采用用户最后上传的网页导出JSON的脱敏副本；与此前归档是同一次run，仅导出总耗时相差约0.02秒，不是新增实测。见[公开JSON](data/final_run_sanitized.json)、[测量表](data/measurements.csv)、[证据说明](report/test_evidence.md)及[来源清单](data/report_sources.json)。这不是本次云端重新进行的板卡测试。
+原始最终报告、发布main.c与第二轮HEX已做SHA一致性核对。主证据现采用最后上传的网页导出JSON的脱敏副本；与此前归档是同一次run，仅导出总耗时相差约0.02秒，不是新增实测。见[公开JSON](data/final_run_sanitized.json)、[测量表](data/measurements.csv)、[证据说明](report/test_evidence.md)及[来源清单](data/report_sources.json)。这不是本次云端重新进行的板卡测试。
 
 ![真实四接口两轮实测：601.717ms FAIL到1001.087ms PASS](data/screenshots/ui_four_tool_pass.png)
 
