@@ -44,6 +44,11 @@ flowchart LR
 
 四个公开工具保持 contract_version=0.2；PASS 由 PL 数值与容差决定，AI 无审批权和任意命令入口。
 
+## 复现前置条件
+
+**FPGA 完整重建依赖合法安装的 Vivado 2017.4 及与 ALINX AX7Z020参考工程匹配的四项外部 IP；
+其 VLNV、文件 SHA 与校验入口见`data/fpga_external_ips.json` 和 `src/fpga/readme.md`。**
+
 ## 快速开始
 
 FPGA四分包与Zynq_Linux_Test两分包均已重组检查。后续大材料可按 [分包步骤](report/upload_parts.md) 上传，现有原包无需重复。两份SD分包已包含启动／部署材料，当前按预构建镜像rootfs定制路线复现，范围见 [板端说明](board/zynq/readme.md)。
