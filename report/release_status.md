@@ -20,7 +20,7 @@
 - 私人v5部署配置已在上传包内核对，仅采用非秘密硬件字段；公开示例本来已为v5，本次修复向导仍生成v4的问题。v5＋LED为新建默认，--no-led仍保留v5及UART／PL；既有配置不自动迁移。
 - 最新Linux结果与历史批次分别记录在data/test_summary.md。PC本机OpenOCD构建不作为ARM或真机结果；旧Windows438项／LED28项不冒充当前版本回归。
 
-## 原件已存在，仍需整理或独立验证
+## 待补充整理或独立验证
 
 - 历史原件的完整PetaLinux／BSP源工程、FSBL ELF／boot BIF并未提供，作为范围事实保留，不列为本实现路线必须补做。基础镜像由ALINX配套介质取得，精确历史下载包标识／直链尚待归档；已收镜像以SHA锁定。image.ub.known_good由队伍确认存在，未在已核验两分包中出现，SHA待本地单独登记。
 - 原系统冷启动网络／SSH、USB Host及OpenOCD／ST-Link／SWD已验证；本次版本截图与专门冷启动日志分别记录，云端未代行新镜像上板。免密authorized_keys持久化及PL开机自动加载不由密码登录截图推定通过。未约束路径HIGH警告、启动HIGH首次残段和sticky valid边界继续保留，黄金RTL／位流未改。
