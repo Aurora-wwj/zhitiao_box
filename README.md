@@ -208,7 +208,7 @@ AX7Z020（Zynq-7000）＋STM32G431＋ST-Link/V2。PA1→M18 为周期观测；PA
 
 原合集`Project`目录映射到本仓库`src/stm32`，两份工程并列保留：
 
-| 说明／合集名称 | 仓库位置 | 用途 |
+| 说明/合集名称 | 仓库位置 | 用途 |
 | --- | --- | --- |
 | GPIO_PL_Test | [原工程](src/stm32/gpio_pl_test) | 已有两轮四接口JSON及黄金HEX对应的工程 |
 | GPIO_PL_Test_LED | [LED同步工程](src/stm32/gpio_pl_test_led/readme.md) | DK117E-G4板上八个用户LED随PA1方波同步亮灭，无需新增外接显示器件 |
@@ -222,8 +222,8 @@ LED 同步工程作为独立辅助演示变体发布，保留独立源码及离�
 | 推荐项 | 本仓库 |
 | --- | --- |
 | src | src/agent、src/stm32下原版与LED同步版Keil工程、src/fpga/zhidiao_measure、src/third_party/openocd源码与许可 |
-| sim | 软件／板端发布检查、计数核 RTL 仿真、构建控制流与匿名历史 smoke |
-| build | STM32入口／HEX；FPGA Tcl／v5 bit／原报告；OpenOCD构建入口 |
+| sim | 软件/板端发布检查、计数核 RTL 仿真、构建控制流与匿名历史 smoke |
+| build | STM32入口/HEX；FPGA Tcl/v5 bit／原报告；OpenOCD构建入口 |
 | board | 接线、部署与冷启动说明 |
 | data | 匿名报告、测量 CSV、校验清单 |
 | skill | 按五类可复用能力组织，不要求原子化或固定数量 |
@@ -233,7 +233,7 @@ LED 同步工程作为独立辅助演示变体发布，保留独立源码及离�
 
 ## 已知边界
 
-真实模型由 NiceCode API 提供，请求模型记录在报告中；未实现本地 LLM／PYNQ。一次修改一个批准的现有 UTF-8 文件；UART 115200 8N1。队伍报告原系统冷启动网络／SSH、USB及SWD链路已验证；独立冷启动日志待归档，免密公钥持久化和PL开机自动加载未由本次版本截图证明，仍按每次上电的手动初始化步骤准备。LED 表示工具状态，不等于 DUT PASS。原计数 RTL 在复位时输入已高的首次结果有启动残段边界，须等待后续稳定周期；见 [FPGA 说明](src/fpga/readme.md)。云端没有 Keil/Vivado/板卡，硬件重建未在此环境执行。
+真实模型由 NiceCode API 提供，请求模型记录在报告中；LLM 集成上板，但暂未实现本地 LLM/PYNQ。一次修改一个批准的现有 UTF-8 文件；UART 115200 8N1。原系统冷启动网络／SSH、USB及SWD链路已验证，免密公钥持久化和PL开机自动加载仍按每次上电的手动初始化步骤准备。LED 表示工具状态，不等于 DUT PASS。原计数 RTL 在复位时输入已高的首次结果有启动残段边界，须等待后续稳定周期；见 [FPGA 说明](src/fpga/readme.md)。
 
 ## 文档与许可
 
