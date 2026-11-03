@@ -2,7 +2,7 @@
 
 ## 软件与状态
 
-克隆本仓库，安装Python3.13。FPGA源输入、v5位流、当前HDF和实现报告已收到，FPGA重建另需合法Vivado2017.4及四项外部IP。Linux采用ALINX预构建镜像的可复现rootfs定制与部署，步骤见[定制说明](../build/linux/readme.md)及[SD部署](../board/zynq/sd_deployment.md)。没有完整PetaLinux源工程，不执行也不声称源码级重建Linux；该范围不作为当前路线突然新增的必做任务。
+克隆本仓库，安装Python3.13。FPGA重建另需合法Vivado2017.4及四项外部IP。Linux采用ALINX预构建镜像的可复现rootfs定制与部署，步骤见[定制说明](../build/linux/readme.md)及[SD部署](../board/zynq/sd_deployment.md)。没有完整PetaLinux源工程，不执行也不声称源码级重建Linux；该范围不作为当前路线突然新增的必做任务。
 
 在 src/agent 下设置 PYTHONPATH=src，运行 python -B -m unittest discover -s tests -v。Windows 可用 py -3.13 或 scripts/test_windows.ps1。
 运行 start_demo.bat 验证离线 UI；start_ai_mock.bat 另需 API Key、同意联网和上下文分享，不依赖真实板卡。
