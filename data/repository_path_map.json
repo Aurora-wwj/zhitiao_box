@@ -74,7 +74,7 @@
       "source_path": "src/agent/docs/README.md",
       "public_path": "src/agent/docs/readme.md",
       "source_sha256": "fc9e719214f783722e12159bdf9c4a825acc411b3ac53fcc91e97dc2f0b9e876",
-      "public_sha256": "eec67f7fd773726f6f232f848cdf6e21019265b2e99d79f5c124ed73ed5540c2"
+      "public_sha256": "2cf551a872ec1c176ceb55c4667f16422f16974f170ba49b940ce0c9349b59f0"
     },
     {
       "source_path": "src/fpga/README.md",
