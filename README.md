@@ -44,35 +44,159 @@ flowchart LR
 
 四个公开工具保持 contract_version=0.2；PASS 由 PL 数值与容差决定，AI 无审批权和任意命令入口。
 
-## 复现前置条件
+## 复现步骤
 
-**FPGA 完整重建依赖合法安装的 Vivado 2017.4 及与 ALINX AX7Z020参考工程匹配的四项外部 IP；
-其 VLNV、文件 SHA 与校验入口见`data/fpga_external_ips.json` 和 `src/fpga/readme.md`。**
+本仓库提供从源码、板端环境到真实硬件闭环运行的复现材料。建议首次复现按以下顺序进行；更完整的环境说明、失败边界与逐项检查见 [`report/reproduction.md`](report/reproduction.md)。
 
-## 快速开始
+### 1. 准备环境与硬件
 
-FPGA四分包与Zynq_Linux_Test两分包均已重组检查。后续大材料可按 [分包步骤](report/upload_parts.md) 上传，现有原包无需重复。两份SD分包已包含启动／部署材料，当前按预构建镜像rootfs定制路线复现，范围见 [板端说明](board/zynq/readme.md)。
+本项目当前验证平台为：
 
-Python 3.13，Agent 运行依赖标准库。在仓库的 src/agent 目录执行：
+* PC：Windows，Python 3.13，Keil MDK；
+* FPGA/SoC：ALINX AX7Z020，器件 `xc7z020clg400-2`；
+* 目标 MCU：STM32G431RBT6；
+* 调试器：ST-Link/V2，SWD；
+* Zynq 板端：PetaLinux 2017.4 / Linux 4.9.0-xilinx / BusyBox 1.24.1。
+
+FPGA 完整重建依赖合法安装的 Vivado 2017.4 及与 ALINX AX7Z020 参考工程匹配的四项外部 IP；其 VLNV、文件 SHA 与校验入口见 [`data/fpga_external_ips.json`](data/fpga_external_ips.json) 和 [`src/fpga/readme.md`](src/fpga/readme.md)。
+
+如果只复现已经验证的最终闭环，不要求首先重新综合 FPGA；仓库已提供最终 v5 bitstream，PL 可在 Linux 启动后按板端初始化步骤加载。
+
+### 2. 完成硬件连接
+
+按照 [`board/wiring.md`](board/wiring.md) 完成连接。
+
+当前验证接线包括：
+
+* STM32 PA1 → Zynq M18：GPIO 周期与高电平测量；
+* STM32 PA2 / USART2_TX → Zynq M17：UART，115200 8N1；
+* Zynq USB Host → ST-Link/V2 → STM32 SWD：目标 MCU 烧录、校验与复位；
+* PC ↔ Zynq：以太网通信。
+
+其中反复构建和烧录的是 STM32 等目标 MCU 的固件；Zynq/FPGA 在初始化完成后作为执行与物理观测基础设施，不随每轮调试任务反复烧录。
+
+### 3. 初始化 Zynq 与 FPGA PL
+
+首先按照 [`board/zynq/pl_preparation.md`](board/zynq/pl_preparation.md) 完成板端准备，包括：
+
+* 检查网络和 SSH；
+* 检查 ST-Link USB 枚举；
+* 校验 v5 bitstream SHA；
+* 将最终 PL bitstream 加载到 `/dev/xdevcfg`；
+* 检查 PL 寄存器与板端工具状态。
+
+最终位流及相关构建材料见 [`build/fpga`](build/fpga/readme.md)。
+
+当前 PL 在 100 MHz 时钟下完成 GPIO 周期/高电平测量，并通过 AXI UART Lite 获取目标 MCU UART 数据。PL 提供独立于目标固件自报信息的物理观测证据。
+
+### 4. 配置并验证 Agent
+
+进入 Agent 目录：
 
 ```powershell
 cd src/agent
 $env:PYTHONPATH = (Resolve-Path .\src).Path
 py -3.13 -B -m unittest discover -s tests -v
-.\start_demo.bat
 ```
 
-start_demo.bat：离线脚本模型＋模拟硬件；start_ai_mock.bat：真实 NiceCode＋模拟硬件；start_ui.bat：真实部署。真实 API 需要进程环境中的 Key 或启动器遮罩输入，可能计费。不要提交 Key。
+复制部署配置：
 
-真实部署先阅读 [从零复现](report/reproduction.md)。在 src/agent 复制 deployment.example.json 为 deployment.local.json 并改成自己的绝对路径。默认示例和deployment-setup向导均为v5＋LED；deployment.no-led.example.json或向导--no-led使用同一v5，只关闭灯。私人deployment.local.json不提交，向导不会覆盖已有配置。位流见 [build/fpga](build/fpga/readme.md)；加载镜像、认证与寄存器身份仍须在板端确认。
+```text
+deployment.example.json
+        ↓
+deployment.local.json
+```
 
-**当前部署在初始化阶段加载 v5 PL，加载完成后再启动 Agent 和 LED；Agent 使用 `check_only`，保持现有四接口执行顺序。** 现有 `E:\zhidiao-agent\src` 的 `PYTHONPATH` 设置、三步SSH公钥恢复（最后输出`ZHIDIAO_SSH_KEY_OK`）、v5位流文件SHA校验与手动加载统一见 [板端初始化说明](board/zynq/pl_preparation.md)。
+并根据本机实际环境填写 Keil 工程路径、目标固件路径、Zynq 地址及板端工具路径。
 
-## Linux平台与硬件交接
+`deployment.local.json` 属于本机私有配置，不应提交到仓库。
 
-目标系统为PetaLinux2017.4、Linux4.9.0-xilinx、armv7l／ARM32、BusyBox1.24.1；内核工具链为Linaro GCC6.2.1（2016.11），内核构建日期2019-10-18。版本依据队伍本次终端截图及原ramdisk的/etc/issue，详见[平台清单](data/linux_platform.json)。
+### 5. 启动系统
 
-新导出的[system_wrapper.hdf](src/fpga/zhidiao_measure/system_wrapper.hdf)作为当前交接文件，内含bit与现有v5黄金位流、BD Tcl均逐字节一致。v5在Linux启动后通过`/sd/pl/zhidiao_observe_v5_led.bit → /dev/xdevcfg`加载，复现当前PL功能不要求重新生成BOOT.BIN。原镜像／修改镜像SHA及rootfs差异见[Linux定制说明](build/linux/readme.md)。
+可根据验证目的选择：
+
+```text
+start_demo.bat
+```
+
+用于离线脚本模型 + 模拟硬件；
+
+```text
+start_ai_mock.bat
+```
+
+用于真实模型 + 模拟硬件；
+
+```text
+start_ui.bat
+```
+
+用于真实部署与硬件闭环。
+
+真实模型调用需要在进程环境中提供 API Key；请勿将 Key 写入仓库或提交记录。
+
+### 6. 执行真实闭环任务
+
+在真实部署模式下输入自然语言调试目标，例如：
+
+```text
+把 STM32 PA1 的完整周期调到 1000 ms，误差不超过 50 ms。
+```
+
+系统按照以下顺序执行：
+
+```text
+自然语言目标
+    ↓
+Agent 分析
+    ↓
+Controller
+    ↓
+build_firmware
+    ↓
+flash_firmware
+    ↓
+read_target_log
+    ↓
+run_hardware_test
+    ↓
+FAIL → AI 提出 diff → 人工批准 → 下一轮
+    ↓
+PASS / 停止条件
+```
+
+新的源码 diff 必须经过人工批准；构建、烧录等工具成功不代表目标已经达成，最终 PASS / FAIL 由确定性硬件测试规则产生。
+
+### 7. 对照已验证结果
+
+仓库中的黄金闭环记录为：
+
+```text
+目标：1000 ± 50 ms
+
+Round 1
+PL period = 601.7169 ms
+HAL_Delay = 300 ms
+Result = FAIL
+
+AI proposal
+HAL_Delay(300) → HAL_Delay(500)
+
+Round 2
+PL period = 1001.08682 ms
+Absolute error = 1.08682 ms
+Result = PASS
+```
+
+复现后可与以下公开证据进行交叉核验：
+
+* [`data/final_run_sanitized.json`](data/final_run_sanitized.json)：完整两轮执行记录；
+* [`data/measurements.csv`](data/measurements.csv)：物理测量结果；
+* [`report/test_evidence.md`](report/test_evidence.md)：证据与判定口径；
+* [`report/llm_collaboration.md`](report/llm_collaboration.md)：代表性大模型协作过程；
+* [`report/reproduction.md`](report/reproduction.md)：完整复现说明。
+
+> **复现成功的核心判据不是界面启动或烧录成功，而是目标 MCU 经重新构建、烧录后，由 FPGA PL 获得新的物理证据，并由确定性测试规则得到预期 PASS / FAIL。**
 
 ## 硬件与连接
 
