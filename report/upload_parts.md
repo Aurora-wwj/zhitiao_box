@@ -2,7 +2,7 @@
 
 附件下载工具单文件上限32MiB。FPGA四分包和Zynq_Linux_Test两分包现已收到、校验并整理；SD启动／部署材料已通过Zynq_Linux_Test两分包完整接收核验，本轮直接复用。以下仅用于后续大附件，不需要重复提交已经收到的包。
 
-在Windows的zhitiaohe项目目录拉取main，使用Python3.13：
+在Windows的zhitiao_box项目目录拉取main，使用Python3.13：
 
 ```powershell
 git pull --ff-only origin main
