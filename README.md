@@ -2,9 +2,9 @@
 
 · [嵌赛官网提交的正式技术文档PDF](report/design_report.pdf) ·
 
-智调读 tiáo / ZHITIAO。基于 FPGA 独立物理反馈的 STM32 AI 闭环调试系统。
+智调读 tiáo / ZHITIAO，是一个基于 FPGA UART 监测 + PL 独立物理反馈的 MCU LLM 闭环调试系统。
 
-报名方向：**AMD-自主选题（初级）**。报名所选平台类别覆盖AMD 7 Series／Zynq-7000／UltraScale系列，实际使用ALINX AX7Z020（xc7z020clg400-2），目标板STM32G431。报名简介及已验证范围见[项目介绍](report/project_overview.md)。
+报名方向：**AMD-自主选题（初级）**。报名所选平台类别覆盖AMD 7 Series／Zynq-7000／UltraScale系列，实际使用ALINX AX7Z020（xc7z020clg400-2），以STM32G431RBT6为目标板例。报名简介及已验证范围见[项目介绍](report/project_overview.md)。
 
 面向AI辅助硬件开发的“最后一米”：通过网络连接PC Agent，以USB／SWD完成烧录与复位，以UART和PL采集真实反馈。研发调试、远程协作、FAE支持与共享实验室是应用方向，当前实证是STM32 GPIO周期调节。
 
