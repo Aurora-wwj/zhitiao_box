@@ -22,9 +22,9 @@
 
 原图显示三位小数，与JSON原精度一致；四张原图及场景说明见[截图索引](data/screenshots/readme.md)。其中1000.192ms单轮图明确跳过UART，单独作为PL-only参考，不计入完整四接口闭环。
 
-**已整理Agent、STM32、网页JSON／四张实测截图／最终HEX，以及FPGA RTL／BD／XDC／工程、v5 bit和baseline/final原始实现报告。** 另已加入Zynq测试包中带许可的OpenOCD／libusb源码、构建入口及板端文件检查。含私钥的镜像和来源不完整的二进制不原样发布。FPGA四项外部IP仍按依赖交付。Linux按实际完成的“ALINX预构建镜像→rootfs网络定制→FIT重封装→SD部署”路线交付，已有[可执行复现方法](build/linux/readme.md)和[冷启动验证步骤](board/zynq/sd_deployment.md)，不声称从源码重建整套Linux，也不将完整PetaLinux源工程列为本路线新增必做项。队伍报告已完成原系统冷启动链路验证。原件与公开位置见[材料索引](report/material_index.md)及[发布状态](report/release_status.md)。
+**已整理Agent、STM32、网页JSON／四张实测截图／最终HEX，以及FPGA RTL／BD／XDC／工程、v5 bit和baseline/final原始实现报告。** 另已加入Zynq测试包中带许可的OpenOCD／libusb源码、构建入口及板端文件检查。含私钥的镜像和来源不完整的二进制不原样发布。FPGA四项外部IP仍按依赖交付。Linux按实际完成的“ALINX预构建镜像→rootfs网络定制→FIT重封装→SD部署”路线交付，已有[可执行复现方法](build/linux/readme.md)和[冷启动验证步骤](board/zynq/sd_deployment.md)，不声称从源码重建整套Linux。队伍报告已完成原系统冷启动链路验证。原件与公开位置见[材料索引](report/material_index.md)及[发布状态](report/release_status.md)。
 
-v5 SHA 与指导一致。原 final 报告 LUT 7274、FF 12083、BRAM 20.5、DSP 0、IOB 44，WNS 0.709 ns、TNS 0。报告仍含未约束路径等 HIGH 警告，不能据此声称全设计时序验收完成；[原件与比较](report/fpga_evidence.md) 保留这些限制。
+v5 SHA 与指导一致。原 final 报告 LUT 7274、FF 12083、BRAM 20.5、DSP 0、IOB 44，WNS 0.709 ns、TNS 0。报告仍含未约束路径等 HIGH 警告，[原件与比较](report/fpga_evidence.md) 保留这些限制。
 
 ## FPGA 的作用与架构
 
