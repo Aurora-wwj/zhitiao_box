@@ -1,6 +1,6 @@
 {
   "allowed_roots": [
-    "C:\\work\\zhitiaohe\\src\\stm32\\gpio_pl_test"
+    "C:\\work\\zhitiao_box\\src\\stm32\\gpio_pl_test"
   ],
   "keil_executable": "C:\\Keil_v5\\UV4\\UV4.exe",
   "project_file": "mdk-arm/gpio_pl_test.uvprojx",
