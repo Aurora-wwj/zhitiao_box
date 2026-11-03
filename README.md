@@ -1,5 +1,7 @@
 # 智调盒——AI上板摆渡站
 
+· [嵌赛官网提交的正式技术文档PDF](report/design_report.pdf) ·
+
 智调读 tiáo / ZHITIAO。基于 FPGA 独立物理反馈的 STM32 AI 闭环调试系统。
 
 报名方向：**AMD-自主选题（初级）**。报名所选平台类别覆盖AMD 7 Series／Zynq-7000／UltraScale系列，实际使用ALINX AX7Z020（xc7z020clg400-2），目标板STM32G431。报名简介及已验证范围见[项目介绍](report/project_overview.md)。
