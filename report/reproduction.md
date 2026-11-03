@@ -12,7 +12,7 @@
 当前发布目录已统一小写；旧目录与原JSON路径的关系、私人配置迁移及校验见[path_migration.md](path_migration.md)。
 
 Windows 安装 Keil MDK（最终材料使用 V5.06 update 6）与 STM32G4xx DFP 2.0.0（工程 PackID 声明）；工程目标 GPIO_PL_Test，设备 STM32G431RBTx。运行根目录 build/stm32/build.ps1 -KeilUv4 <UV4.exe绝对路径>。该脚本在当前 Linux 未实际执行，Keil 生成工具和 DFP 须由部署者提供。
-保留原 core/src/main.c 字节；当前值为已通过的500。要演示 FAIL→编辑→PASS，用独立测试副本准备已知未达标的基线，并更新审批根路径；不要覆盖黄金源码／证据。
+保留原 core/src/main.c 字节；当前值为已通过的500。要演示 FAIL→编辑→PASS，用独立测试副本准备已知未达标的基线，并更新审批根路径；不要覆盖黄金源码/证据。
 
 另有独立[GPIO_PL_Test_LED工程](../src/stm32/gpio_pl_test_led/readme.md)，GitHub目录为src/stm32/gpio_pl_test_led，实测时原目录同为GPIO_PL_Test。它在PA1翻转后同步板载八个用户LED，本次源码仍为500 ms延时。使用其mdk-arm/gpio_pl_test.uvprojx和独立deployment.local.led.json，允许文件改为core/src/main.c；Keil Target仍为GPIO_PL_Test。按项目说明用原real-build接口重新构建，保存新HEX／SHA和测量记录；不覆盖原工程或借用旧JSON。
 
@@ -30,7 +30,9 @@ OpenOCD0.12.0安装在/sd/tools/openocd/bin/openocd，scripts为/sd/tools/openoc
 
 ## 验证边界
 
-云端软件测试不等于 Windows Keil／Vivado 重建或本轮上板验证。Vivado 实际版本 2017.4，较指南推荐版本旧；正式报告需解释差异。重建步骤见 ../build/fpga/readme.md，外部IP清单见 ../src/fpga/readme.md。已提供Tcl，尚待真实Vivado执行并保存新构建记录。
+云端软件测试不等于 Windows Keil／Vivado 重建或本轮上板验证。
+
+Vivado 实际版本 2017.4，较指南推荐版本旧；重建步骤见 ../build/fpga/readme.md，外部IP清单见 ../src/fpga/readme.md；已提供Tcl。
 
 安装Icarus Verilog和Tcl后，在根目录运行 `python -B -m unittest discover -s sim -p test_fpga_release.py -v` 验证RTL与整理脚本；未安装模拟器时RTL项会显示skip，不能称为仿真通过。原始全设计报告仍含未约束路径等HIGH警告，启动相位边界见FPGA说明。
 
@@ -52,7 +54,7 @@ py -3.13 -B -m zhidiao_agent real-test --config deployment.local.json --expected
 
 ## 保存新的复现记录
 
-新实验保留代码提交号、git status --short、工具版本、部署配置的非秘密硬件字段、构建日志和新产物SHA。Windows全量在src/agent运行scripts/test_windows.ps1，保存VERIFY_COMMIT、TEST_EXIT、Ran／OK／skip；提交号与未提交改动分别记录。最新Windows由队伍代码同步后补跑，不能提前填写通过。
+新实验保留代码提交号、git status --short、工具版本、部署配置的非秘密硬件字段、构建日志和新产物SHA。Windows全量在src/agent运行scripts/test_windows.ps1，保存VERIFY_COMMIT、TEST_EXIT、Ran／OK／skip；提交号与未提交改动分别记录。
 
 Keil与Vivado必须在真实工具环境运行现有构建入口，保留完整命令、依赖版本和日志；新产物如与历史黄金SHA不同，重新绑定配置并验收，不覆盖旧证据。板卡实验另保存四工具audit、UART健康、freshness、目标容差及LED独立验收结果。
 
