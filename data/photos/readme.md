@@ -1,23 +1,45 @@
 # 硬件实物照片
 
-该文件夹下存放硬件实物照片作为项目实体化例证。
+本目录用于存放“智调盒——AI上板摆渡站”的硬件实物照片、接线说明及板载 LED 状态记录，作为项目实体化实现与真实硬件运行的补充证据。
 
-fpga_overview.jpg      项目使用开发板 AX7Z020 Zynq7000 正面总览
+## 1. 硬件平台与开发板
 
-fpga_back.jpg          开发板背面
+| 文件名                                  | 说明                                                 |
+| ------------------------------------ | -------------------------------------------------- |
+| `fpga_overview.jpg`                  | 项目所使用的 ALINX AX7Z020 Zynq-7000 开发板正面总览             |
+| `fpga_back.jpg`                      | AX7Z020 开发板背面实物图                                   |
+| `hardware_overview.jpg`              | 智调盒真实硬件测试平台总览，包括 Zynq-7000、目标 MCU、ST-Link 及相关连接    |
+| `wiring_overview.jpg`                | 硬件接口与连接关系批注图，展示目标 MCU、Zynq、ST-Link、GPIO/UART 等主要链路 |
+| `ax7z020_hardware_block_diagram.png` | AX7Z020 开发板 Hardware Block Diagram，用于说明主要硬件模块及接口布局 |
 
-hardware_overview.jpg  硬件平台总览
+## 2. 板载 LED 工作流状态
 
-wiring_overview.jpg    硬件接口连线批注
+Zynq PL 侧使用四路板载 LED 显示四个公开工具接口的执行进度。四路 LED 分别对应：
 
-ax7z020_hardware_block_diagram.png  AX7Z020 开发板硬件布局原理图框图参考
+| LED   | 对应阶段                                 | 图片                   |
+| ----- | ------------------------------------ | -------------------- |
+| LED 1 | `build_firmware`：目标 MCU 工程编译构建完成     | `led_1_complete.png` |
+| LED 2 | `flash_firmware`：目标 MCU 固件烧录、校验与复位完成 | `led_2_complete.png` |
+| LED 3 | `read_target_log`：UART 日志采集完成        | `led_3_complete.png` |
+| LED 4 | `run_hardware_test`：PL 硬件测试完成        | `led_4_complete.png` |
 
-led_1_complete.png     LED 1 亮起，程序编译构建完成
+补充场景：
 
-led_2_complete.png     LED 2 亮起，目标 MCU 烧录完成
+| 文件名               | 说明                                                                     |
+| ----------------- | ---------------------------------------------------------------------- |
+| `led_no_uart.png` | 在初始化页面关闭“采集 UART”选项后执行 PL-only 测试时，LED 3 保持熄灭，用于说明 LED 状态与实际工具执行阶段保持一致 |
 
-led_3_complete.png     LED 3 亮起，UART 采集完成
+> **说明：** 板载 LED 用于显示工具工作流状态，不作为 DUT 是否达到物理目标的判定依据。
+> 例如，`run_hardware_test` 可以执行成功并使 LED 4 进入完成状态，但如果测得的 GPIO 周期未满足目标容差，DUT 仍会被确定性测试规则判定为 `FAIL`。
 
-led_4_complete.png     LED 4 亮起，PL 硬件测试完成
+## 3. 证据用途
 
-led_no_uart.png        在初始化页面关闭“采集UART”选项时，LED 3不亮
+本目录中的照片主要用于：
+
+* 展示项目真实硬件平台与物理连接关系；
+* 说明 Zynq/FPGA 在系统中的实际硬件作用；
+* 展示四工具工作流与板载 LED 状态之间的映射；
+* 为技术报告、演示视频及仓库文档提供真实硬件素材；
+* 与软件日志、PL 测量结果及运行记录共同构成项目证据链。
+
+这些图片属于实物与过程记录，不替代原始 JSON、测量数据、综合实现报告及正式实验记录。
