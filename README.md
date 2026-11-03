@@ -242,3 +242,7 @@ LED 同步工程作为独立辅助演示变体发布，保留独立源码及离�
 [Zynq测试包核对](report/zynq_intake.md) · [OpenOCD构建](build/openocd/readme.md) · [PL加载与检查](board/zynq/pl_preparation.md)。已确认fixed镜像有静态IP配置，但未把配置存在当作冷启动已验收；内嵌SSH主机私钥的镜像不公开。
 
 原创内容采用 [MIT](license)，第三方范围见 [third_party_notices.md](third_party_notices.md)。
+
+**希望“智调盒——AI 上板摆渡站”这个项目的尝试，哪怕只是很小的一步，也能够触碰到嵌入式开发新范式的一角。**
+
+**也感谢每一位愿意看到这里、愿意了解这个想法的人。希望这个尚不完美、却真实运行在硬件上的作品，能够让您看到我们所期待的那种可能。**
