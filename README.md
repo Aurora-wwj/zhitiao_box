@@ -235,7 +235,7 @@ LED 同步工程作为独立辅助演示变体发布，保留独立源码及离�
 
 ## 文档与许可
 
-[Skill 索引](skill/README.md) · [正式设计技术文档](report/design_report.md) · [正式设计技术文档PDF](report/design_report.pdf) · [LLM协作记录](report/llm_collaboration.md) · [完整复现说明](report/reproduction.md) · [优化与失败分析](report/optimization_notes.md) · [验证总结](data/test_summary.md)。src/agent/docs 中日期文档为开发历史，不替代当前状态。
+[Skill 索引](skill/README.md) · [正式设计技术文档PDF](report/design_report.pdf) · [LLM协作记录](report/llm_collaboration.md) · [完整复现说明](report/reproduction.md) · [优化与失败分析](report/optimization_notes.md) · [验证总结](data/test_summary.md)。src/agent/docs 中日期文档为开发历史，不替代当前状态。
 
 [Zynq测试包核对](report/zynq_intake.md) · [OpenOCD构建](build/openocd/readme.md) · [PL加载与检查](board/zynq/pl_preparation.md)。已确认fixed镜像有静态IP配置，但未把配置存在当作冷启动已验收；内嵌SSH主机私钥的镜像不公开。
 
