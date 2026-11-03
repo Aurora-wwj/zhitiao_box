@@ -225,7 +225,7 @@ LED 同步工程作为独立辅助演示变体发布，保留独立源码及离�
 | board | 接线、部署与冷启动说明 |
 | data | 匿名报告、测量 CSV、校验清单 |
 | skill | 按五类可复用能力组织，不要求原子化或固定数量 |
-| report | 设计初稿、LLM 记录、复现与证据索引 |
+| report | 正式设计报告、LLM协作记录、完整复现说明与证据索引 |
 
 按指南3.3.5.4，发布路径统一使用英文小写、数字、下划线或连字符（扩展名使用点号）；仅保留指南目录示例明确列出的根`README.md`与`skill/README.md`。其他说明文件为`readme.md`，根许可证为`license`。原STM32工程已同步改为`core/src/main.c`、`mdk-arm/gpio_pl_test.uvprojx`，内部Keil Target仍为`GPIO_PL_Test`。第三方许可证正文不变；历史JSON／diff中的原路径保留，映射与校验见[路径迁移说明](report/path_migration.md)。Python包名`zhidiao_agent`保持兼容。
 
@@ -235,7 +235,7 @@ LED 同步工程作为独立辅助演示变体发布，保留独立源码及离�
 
 ## 文档与许可
 
-[Skill 索引](skill/README.md) · [设计初稿](report/design_report.md) · [设计初稿PDF](report/design_report.pdf) · [优化与失败分析](report/optimization_notes.md) · [验证总结](data/test_summary.md)。src/agent/docs 中日期文档为开发历史，不替代本页当前状态。
+[Skill 索引](skill/README.md) · [正式设计技术文档](report/design_report.md) · [正式设计技术文档PDF](report/design_report.pdf) · [LLM协作记录](report/llm_collaboration.md) · [完整复现说明](report/reproduction.md) · [优化与失败分析](report/optimization_notes.md) · [验证总结](data/test_summary.md)。src/agent/docs 中日期文档为开发历史，不替代当前状态。
 
 [Zynq测试包核对](report/zynq_intake.md) · [OpenOCD构建](build/openocd/readme.md) · [PL加载与检查](board/zynq/pl_preparation.md)。已确认fixed镜像有静态IP配置，但未把配置存在当作冷启动已验收；内嵌SSH主机私钥的镜像不公开。
 
