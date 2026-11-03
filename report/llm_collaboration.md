@@ -116,4 +116,4 @@ Agent系统提示在[src/agent/src/zhidiao_agent/agent.py](../src/agent/src/zhid
 
 原错误记录的read_target_log成功且健康错误为零，窗口末尾只剩Z／ZH，却被truncated触发LOG_INCOMPLETE。修复把正常deadline半行与capture_limit、真实传输错误分开；最终主案例第一轮partial_tail=true、truncated=false后确实继续到PL。详见[窗口修复记录](../src/agent/docs/uart-window-boundary-2026-10-30.md)。这是按原日志和代码归纳的工程纠错，不伪造逐字LLM聊天。
 
-BusyBox整数usleep、UI模型120s deadline、结构化events与LED隔离等工程经验分别见日期文档及[优化记录](optimization_notes.md)。接线照、四灯状态帧、新Windows回归和独立重建仍待整理，不影响已存在的主运行证据。
+BusyBox整数usleep、UI模型120s deadline、结构化events与LED隔离等工程经验分别见日期文档及[优化记录](optimization_notes.md)。
