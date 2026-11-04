@@ -40,6 +40,25 @@ Verdict = PASS
 **Prompt / Context.**
 模型接收自然语言目标、经批准的 STM32 源码以及本轮真实工具结果。第一轮中，构建与烧录均成功，但 FPGA PL 独立测得 PA1 完整周期仅为 `601.7169 ms`，因此工具执行成功并不等同于 DUT 达标。
 
+**Recorded User Prompt.**
+主案例中保存的用户任务原文为：
+
+```text
+把 STM32 PA1 的完整周期调到 1000 ms，误差不超过 50 ms
+```
+
+**Representative System Prompt Excerpt.**
+当前固定代码 `src/agent/src/zhidiao_agent/agent.py` 中的系统提示模板包含以下原文，用于约束模型只能依据已提供证据提出建议，并明确区分模型推理、工具执行与硬件判定：
+
+```text
+Propose changes and explain evidence. Never claim that tools ran or tests passed
+without supplied results. You cannot approve or execute operations.
+The deterministic controller owns tool order and retry limits.
+Distinguish tool success, flash verification and hardware test pass.
+```
+
+该摘录来自当前公开源码中的系统提示模板；运行时模型还会接收用户任务、经批准的源码和本轮结构化工具证据。历史未保存的 HTTP 请求/响应报文不据此重建。
+
 **Model Response.**
 模型结合源码中的 `HAL_Delay(300)` 与 PL 测得的 `601.7169 ms` 周期、`300.36864 ms` 高电平时间进行分析，判断一个完整周期包含两次约 300 ms 的翻转间隔，因此提出将单次延时修改为 500 ms，并明确要求修改后重新通过物理测量验证，而不能依据模型预测直接宣布 PASS。
 
