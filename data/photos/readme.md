@@ -11,6 +11,7 @@
 | `hardware_overview.jpg`              | 智调盒真实硬件测试平台总览，包括 Zynq-7000、目标 MCU、ST-Link 及相关连接    |
 | `wiring_overview.jpg`                | 硬件接口与连接关系批注图，展示目标 MCU、Zynq、ST-Link、GPIO/UART 等主要链路 |
 | `ax7z020_hardware_block_diagram.png` | AX7Z020 开发板 Hardware Block Diagram，用于说明主要硬件模块及接口布局 |
+| `oscilloscope_cross_validation.png`  | 示波器辅助交叉验证黄金 Run 中引脚 PA1 输出波形的频率、周期、占空比均达到目标 |
 
 ## 2. 板载 LED 工作流状态
 
